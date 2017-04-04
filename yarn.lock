@@ -2751,6 +2751,10 @@ materialize-css@^0.98.1:
     jquery "^2.1.4"
     node-archiver "^0.3.0"
 
+materialnote@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/materialnote/-/materialnote-1.2.1.tgz#2bee36f12ee637fbab3894389b388bb15903ae7b"
+
 md5@^2.0.0:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/md5/-/md5-2.2.1.tgz#53ab38d5fe3c8891ba465329ea23fac0540126f9"

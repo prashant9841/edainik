@@ -17,6 +17,7 @@
     "vue": "^2.1.10"
   },
   "dependencies": {
-    "materialize-css": "^0.98.1"
+    "materialize-css": "^0.98.1",
+    "materialnote": "^1.2.1"
   }
 }
