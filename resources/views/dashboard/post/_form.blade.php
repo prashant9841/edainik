@@ -12,6 +12,6 @@
 		</div>
 	</div>
 	<p>
-		<input type="checkbox" class="filled-in" id="filled-in-box" checked="" name="status" />
+		<input type="checkbox" class="filled-in" id="filled-in-box"  name="status" />
 		<label for="filled-in-box">Publish</label>
 	</p>
