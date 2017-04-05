@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "materialize-css": "^0.98.1",
-    "materialnote": "^1.2.1"
+    "materialnote": "^1.2.1",
+    "wow": "^0.0.6"
   }
 }

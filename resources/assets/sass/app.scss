@@ -33,15 +33,17 @@ body {
 
 p, a, body {
 	font-family: $font;
+	color: $primary-color !important;
 }
 
-p {
-	color: $primary-color;
+a.btn {
+	color: #fff !important;
 }
 
 a {
 	&:hover {
-		text-decoration: none;
+		color: $secondary-color;
+		text-decoration: none !important;
 	}
 }
 
@@ -63,49 +65,50 @@ h1, h2, h3, h4 {
 
 --------------------------------*/
 
-
-nav ul a,
-nav .brand-logo {
-  color: #444;
+header {
+	width: $container-width !important;
+	.logo-div {
+		.logo {
+			background: $primary-color;
+		}
+		img {
+			width: 200px;
+		}
+	}
 }
 
-p {
-  line-height: 2rem;
-}
 
-.button-collapse {
-  color: #26a69a;
-}
 
 .parallax-container {
-  min-height: 380px;
-  line-height: 0;
-  height: auto;
-  color: rgba(255,255,255,.9);
-}
-  .parallax-container .section {
-    width: 100%;
-  }
+	min-height: 380px;
+	line-height: 0;
+	height: auto;
+	color: rgba(255,255,255,.9);
 
-@media only screen and (max-width : 992px) {
-  .parallax-container .section {
-    position: absolute;
-    top: 40%;
-  }
-  #index-banner .section {
-    top: 10%;
-  }
+	.section {
+		position: absolute;
+		bottom: 0;
+		background: rgba($primary-color, 0.5);
+		width: 100%;
+
+		.header {
+			color: #fff;
+		}
+	}
+}
+.content {
+	p.wrap {
+		width: 80%;
+		margin: 50px auto 25px;
+
+		@include line-clamp (24px, 6);
+	}
+
+	.btn-row {
+		margin-bottom: 50px;
+	}
 }
 
-@media only screen and (max-width : 600px) {
-  #index-banner .section {
-    top: 0;
-  }
-}
+.page-footer {
 
-.icon-block {
-  padding: 0 15px;
-}
-.icon-block .material-icons {
-  font-size: inherit;
 }

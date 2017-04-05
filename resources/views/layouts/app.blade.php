@@ -16,7 +16,7 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
 
     <!-- Scripts -->
     <script>
@@ -26,16 +26,53 @@
     </script>
 </head>
 <body>
-    <header class="pageHeader">
+        {{-- Ads --}}
+        <div class="ads container">
+            
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title">Nice and Clean Ads</span>
+                    <p>I am a very simple card. I am good at containing small bits of information.
+                      I am convenient because I require little markup to use effectively.</p>
+                </div>
+            </div>
+        </div>
+        {{-- Ads --}}
+
+        <header class="pageHeader container">
+            <div class="logo-div row">
+                <div class="col s12 m4 logo">
+                    <img src="{{asset('images/logo.png')}}" alt="">
+                </div>
+                <div class="col s12 m4">
+                    <div class="card">
+                        <div class="card-content">
+                            <h1>Nice and clean Ads</h1>
+                        </div>
+                    </div>                    
+                </div>
+                <div class="col s12 m4">
+                    <div class="card">
+                        <div class="card-content">
+                            <h1>Nice and clean Ads</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <nav class="white" role="navigation">
                 <div class="nav-wrapper container">
-                    <a id="logo-container" href="#" class="brand-logo">Logo</a>
-                    <ul class="right hide-on-med-and-down">
-                        <li><a href="#">Navbar Link</a></li>
+                    <ul class="hide-on-med-and-down">
+                        <li><a href="#">Politics</a></li>
+                        <li><a href="#">Sports</a></li>
+                        <li><a href="#">Celebrety</a></li>
+                        <li><a href="#">Global</a></li>
                     </ul>
 
                     <ul id="nav-mobile" class="side-nav">
-                        <li><a href="#">Navbar Link</a></li>
+                        <li><a href="#">Politics</a></li>
+                        <li><a href="#">Sports</a></li>
+                        <li><a href="#">Celebrety</a></li>
+                        <li><a href="#">Global</a></li>
                     </ul>
                     <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="ti-menu"></i></a>
                 </div>
