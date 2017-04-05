@@ -4,7 +4,8 @@
 
 	<h1>{{ $category->title }} </h1>
 	<div class="row">
-		@foreach($category->posts as $post)
+	<h1>Related Posts</h1>
+		@foreach($category->approvedPosts as $post)
 			<div class="col s12">
 				<h3>{{$post->title}}</h3>
 				<p>{{ str_limit($post->content,20) }}</p>

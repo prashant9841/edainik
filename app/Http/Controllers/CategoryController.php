@@ -53,7 +53,8 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        return view('category.show')->with('category',$category->with('posts')->findOrFail($category->id));
+
+        return view('category.show')->with('category',$category);
     }
 
     /**

@@ -8,6 +8,8 @@ class Category extends Model
 {
 	protected $fillable = ['title','slug'];
 
+	protected $with = ['approvedPosts'];
+
 	public function menu()
 	{
 		return $this->has(Menu::class);
@@ -16,5 +18,10 @@ class Category extends Model
 	public function posts()
 	{
 		return $this->hasMany(Post::class);
+	}
+
+	public function approvedPosts()
+	{
+		return $this->hasMany(Post::class)->where('verified', 1)->where('status', 1);
 	}
 }
