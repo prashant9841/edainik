@@ -15,6 +15,16 @@ class Category extends Model
 		return $this->has(Menu::class);
 	}
 
+	public function published()
+	{
+		return $this->where('status',1);
+	}
+
+	public function unPublished()
+	{
+		return $this->where('status',0);
+	}
+
 	public function posts()
 	{
 		return $this->hasMany(Post::class);
@@ -23,5 +33,10 @@ class Category extends Model
 	public function approvedPosts()
 	{
 		return $this->hasMany(Post::class)->where('verified', 1)->where('status', 1);
+	}
+
+	public function userPosts($id)
+	{
+		return $this->hasMany(Post::class)->where('user_id', $id)->get();
 	}
 }

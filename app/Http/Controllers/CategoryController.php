@@ -18,7 +18,7 @@ class CategoryController extends Controller
      */
     public function index(Category $category)
     {
-        return view('category.index')->with('categories',$category->all());
+        return view('dashboard.category.index')->with('categories',$category->all());
     }
 
     /**

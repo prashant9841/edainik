@@ -27,7 +27,6 @@ Route::get('/home', 'HomeController@index');
 |
 */
 
-//Everyone can see 
 Route::get('/posts', 'Site\PostController@index');
 Route::get('/posts/{post}', 'Site\PostController@show'); 
 
@@ -38,12 +37,8 @@ Route::get('/posts/{post}', 'Site\PostController@show');
 | All the routes for category are listed below
 |
 */
-Route::get('/categories', 'CategoryController@index');
-Route::post('/categories', 'CategoryController@store');
-Route::get('/categories/create', 'CategoryController@create');
-Route::get('/categories/{category}', 'CategoryController@show');
-Route::delete('/categories/{category}','CategoryController@destroy');
-Route::get('/categories/{category}/edit', 'CategoryController@edit');
+Route::get('/categories', 'Site\CategoryController@index');
+Route::get('/categories/{category}', 'Site\CategoryController@show'); 
 
 /*
 |--------------------------------------------------------------------------
@@ -72,6 +67,12 @@ Route::group(['prefix'=>'/dashboard'],function(){
 	|--------------------------------------------------------------------------
 	*/
 
+	Route::get('/categories', 'CategoryController@index');
+	Route::post('/categories', 'CategoryController@store');
+	Route::get('/categories/create', 'CategoryController@create');
+	Route::get('/categories/{category}', 'CategoryController@show');
+	Route::delete('/categories/{category}','CategoryController@destroy');
+	Route::get('/categories/{category}/edit', 'CategoryController@edit');
 
 });
 
