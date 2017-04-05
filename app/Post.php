@@ -2,10 +2,12 @@
 
 namespace App;
 
+use Spatie\Sluggable\{HasSlug,SlugOptions};
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
+    use HasSlug;
 
 	protected $fillable = ['title','slug','content','status','verified','publish_on' ];
 
@@ -21,4 +23,10 @@ class Post extends Model
     	return $this->where('verified',true)->where('status',true);
     }
 
+    public function getSlugOptions() : SlugOptions
+    {
+        return SlugOptions::create()
+            ->generateSlugsFrom('title')
+            ->saveSlugsTo('slug');
+    }
 }
