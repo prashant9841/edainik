@@ -1,98 +1,34 @@
 @extends('layouts.app')
 
 @section('content')
-    <div id="index-banner" class="parallax-container">
-        <div class="section no-pad-bot">
-            <div class="container">
-                <br><br>
-                <h1 class="header center teal-text text-lighten-2">Parallax Template</h1>
-                <div class="row center">
-                    <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-                </div>
-                <div class="row center">
-                    <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
-                </div>
-                <br><br>
+    @for ($i = 0; $i < 3; $i++)
 
+        <section class="post">        
+            <div class="parallax-container">
+                <div class="section">
+                    <div class="container">
+                        <h1 class="header center">News Title Goes Here</h1>
+                    </div>
+                </div>
+                <div class="parallax"><img src="http://lorempixel.com/1600/900" alt="Unsplashed background img 1"></div>
             </div>
-        </div>
-        <div class="parallax"><img src="http://lorempixel.com/1600/900" alt="Unsplashed background img 1"></div>
-    </div>
-
-
-    <div class="container">
-        <div class="section">
-
-          <!--   Icon Section   -->
-            <div class="row">
-                <div class="col s12 m4">
-                    <div class="icon-block">
-                        <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
-                        <h5 class="center">Speeds up development</h5>
-
-                        <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
-                    </div>
+            <div class="content container">
+                <div class="row center">
+                    <p class="wrap">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta vitae recusandae, culpa, architecto quas velit temporibus nemo autem quia beatae dolores repellat maxime facere nostrum eveniet nulla eos assumenda repellendus voluptatem iure similique sed! Nisi reiciendis numquam iste quo eius atque voluptate nam veniam omnis! Dolorem non dignissimos ullam commodi ipsa voluptatum dolores animi sit eligendi velit, rem quas ratione. Vel excepturi optio, praesentium quasi earum error eaque ducimus reprehenderit quae inventore non, vero! Veniam animi ipsam facere quidem, debitis autem neque consequuntur in nulla fugiat pariatur distinctio, deserunt, id, saepe aut? Blanditiis, harum! Facere, alias molestias quam consectetur necessitatibus porro. Mollitia architecto incidunt sequi, aliquam sint quia ad sapiente tenetur rem. Assumenda labore in fugit voluptate cumque voluptatibus tempore eum tempora, nam aperiam. Voluptatum odit asperiores dolores animi maiores cupiditate est eaque, eveniet voluptates vitae in ducimus, sit quae veritatis minus. Dolore magni, maiores iure perspiciatis ducimus tempore quae provident architecto, nemo, numquam recusandae optio quisquam accusamus! Sed qui, deleniti beatae sint aspernatur nulla saepe. Explicabo expedita voluptatibus sint amet quas eum nemo neque. Necessitatibus pariatur error laboriosam sit iure consequatur amet maiores itaque. Iure distinctio eum doloribus repellat. Animi ipsam accusamus numquam quidem voluptatibus ducimus rem ratione voluptate libero nesciunt quis odio, nemo eveniet vitae aliquid similique qui provident sed, ea cum. Inventore voluptates nam ullam a blanditiis laborum molestias minima exercitationem quasi velit, adipisci, iusto possimus perspiciatis aperiam quos explicabo. Dolore quidem quos qui perferendis assumenda aliquam expedita veniam corporis maxime, nisi possimus explicabo deserunt ex, itaque ipsam architecto impedit quo dolor delectus, cumque veritatis provident amet eius sapiente. Explicabo numquam voluptatibus cupiditate, dolores saepe delectus modi, repellat, architecto molestias quae earum! Illum aliquid consectetur facere, a esse sapiente ad veniam harum tempora sint. Accusamus, quod, deserunt fugit sint aliquam quisquam quia aperiam, amet repellendus non laboriosam?</p>
                 </div>
-
-                <div class="col s12 m4">
-                    <div class="icon-block">
-                        <h2 class="center brown-text"><i class="material-icons">group</i></h2>
-                        <h5 class="center">User Experience Focused</h5>
-
-                        <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
-                    </div>
+                <div class="row center btn-row">
+                    <a href="#" class="btn waves-effect waves-light teal lighten-1">View All</a>
                 </div>
-
-                <div class="col s12 m4">
-                    <div class="icon-block">
-                        <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
-                        <h5 class="center">Easy to work with</h5>
-
-                        <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+            </div>
+            <div class="ads container">
+                <div class="card">
+                    <div class="card-content">
+                        <h1>Nice and Clean Ads</h1>
                     </div>
                 </div>
             </div>
+        </section>
 
-        </div>
-    </div>
-
-
-  <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-        </div>
-      </div>
-    </div>
-    <div class="parallax"><img src="http://lorempixel.com/1600/900" alt="Unsplashed background img 2"></div>
-  </div>
-
-  <div class="container">
-    <div class="section">
-
-      <div class="row">
-        <div class="col s12 center">
-          <h3><i class="mdi-content-send brown-text"></i></h3>
-          <h4>Contact Us</h4>
-          <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-
-  <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-        </div>
-      </div>
-    </div>
-    <div class="parallax"><img src="http://lorempixel.com/1600/900" alt="Unsplashed background img 3"></div>
-  </div>
-
-
+    @endfor
+    
 @stop
