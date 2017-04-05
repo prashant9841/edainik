@@ -28,10 +28,20 @@ $factory->define(App\Post::class, function (Faker\Generator $faker) {
 
     return [
         'title' => $faker->name,
-		'slug' => $faker->slug(10),
-		'content' => $faker->paragraph(3),
-		'status' => random_int(0, 1),
-		'verified' => random_int(0, 1),
-		'user_id' => 1,
+        'slug' => $faker->slug(10),
+        'content' => $faker->paragraph(3),
+        'status' => random_int(0, 1),
+        'verified' => random_int(0, 1),
+        'user_id' => 1,
+        'category_id' => random_int(1, 6),
+    ];
+});
+
+$factory->define(App\Category::class, function (Faker\Generator $faker) {
+    static $password;
+
+    return [
+        'title' => $faker->name,
+		'slug' => $faker->slug(2),
     ];
 });

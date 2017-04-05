@@ -10,7 +10,7 @@ class UserPostController extends Controller
 {
 	public function _constructor()
 	{
-		$this->middleware('auth')->except(['index','show']);
+		$this->middleware('auth')->except(['index','show','create']);
 	}
 
     public function index()
@@ -23,7 +23,11 @@ class UserPostController extends Controller
     	return Auth::user()->post()->findOrFail($id);
     }
 
-    public function create(Request $request)
+    public function create()
+    {
+    	return view('posts.create');
+    }
+    public function store(Request $request)
     {
     	if(Auth::user()->posts()->create($request->toArray())){
     		return "Created";

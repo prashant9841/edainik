@@ -19,6 +19,7 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->text('content');
             $table->unsignedInteger('user_id');
+            $table->unsignedInteger('category_id')->nullable();
             $table->boolean('status')->default(false);
             $table->boolean('verified')->default(false);
             $table->date('publish_on')->nullable();

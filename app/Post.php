@@ -23,6 +23,11 @@ class Post extends Model
     	return $this->where('verified',true)->where('status',true);
     }
 
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
     public function getSlugOptions() : SlugOptions
     {
         return SlugOptions::create()
