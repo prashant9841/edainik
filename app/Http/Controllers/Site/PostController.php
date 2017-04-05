@@ -15,7 +15,9 @@ class PostController extends Controller
 
     public function show(Post $post)
     {
-    	$view = $post->approved()->find($post->id)->first() ?? abort(404);
-    	return view('posts.show')->with('post',$view);
+    	if($post->status == 1 && $post->verified == 1){
+	    	return view('posts.show')->with('post',$post);
+    	}
+    	abort(404);
     }
 }

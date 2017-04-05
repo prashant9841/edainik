@@ -28,8 +28,8 @@ $factory->define(App\Post::class, function (Faker\Generator $faker) {
 
     return [
         'title' => $faker->name,
-        'slug' => $faker->slug(10),
-        'content' => $faker->paragraph(3),
+        'slug' => $faker->slug(5),
+        'content' => $faker->paragraph(10),
         'status' => random_int(0, 1),
         'verified' => random_int(0, 1),
         'user_id' => 1,
