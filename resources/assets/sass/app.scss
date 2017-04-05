@@ -1,9 +1,111 @@
 
-// Fonts
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
 
-// Variables
-@import "variables";
 
-// Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+
+// Materialize
+@import "node_modules/materialize-css/sass/materialize";
+
+// Custom Functions And Mixins
+@import "includes/var";
+@import "includes/mixins";
+
+// Fonts and Stuff
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+// Direct Variables
+$primary-color : #5a5a5a;
+$secondary-color : #e13c3c;
+$alternate-color : #4f3021;
+
+$font: 'Open Sans', sans-serif;
+
+
+
+// Default Styles
+
+body {
+	// background: #eee;
+	margin: 0;
+	overflow-x: hidden;
+}
+
+
+p, a, body {
+	font-family: $font;
+}
+
+p {
+	color: $primary-color;
+}
+
+a {
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+h1, h2, h3, h4 {
+	font-family: $font;
+	letter-spacing: 2px;
+	font-size: 28px;
+	color: $primary-color;
+}
+
+.flow {	
+	font-size: 18px !important;
+	padding-bottom: 15px
+}
+
+/*---------------------------------
+
+// FOr Frontend
+
+--------------------------------*/
+
+
+nav ul a,
+nav .brand-logo {
+  color: #444;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.button-collapse {
+  color: #26a69a;
+}
+
+.parallax-container {
+  min-height: 380px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+  .parallax-container .section {
+    width: 100%;
+  }
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
