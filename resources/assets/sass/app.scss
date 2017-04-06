@@ -47,10 +47,16 @@ a {
 	}
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3 {
 	font-family: $font;
 	letter-spacing: 2px;
 	font-size: 28px;
+	color: $primary-color;
+}
+h4 {
+	font-family: $font;
+	letter-spacing: 2px;
+	font-size: 22px;
 	color: $primary-color;
 }
 
@@ -78,34 +84,55 @@ header {
 }
 
 
+.large-post {
+	.parallax-container {
+		min-height: 380px;
+		line-height: 0;
+		height: auto;
+		color: rgba(255,255,255,.9);
 
-.parallax-container {
-	min-height: 380px;
-	line-height: 0;
-	height: auto;
-	color: rgba(255,255,255,.9);
+		.section {
+			position: absolute;
+			bottom: 0;
+			background: rgba($primary-color, 0.5);
+			width: 100%;
 
-	.section {
-		position: absolute;
-		bottom: 0;
-		background: rgba($primary-color, 0.5);
-		width: 100%;
-
-		.header {
-			color: #fff;
+			.header {
+				color: #fff;
+			}
 		}
 	}
-}
-.content {
-	p.wrap {
-		width: 80%;
-		margin: 50px auto 25px;
+	.content {
+		p.wrap {
+			width: 80%;
+			margin: 50px auto 25px;
 
-		@include line-clamp (24px, 6);
+			@include line-clamp (24px, 6);
+		}
+
+		.btn-row {
+			margin-bottom: 50px;
+		}
 	}
 
-	.btn-row {
-		margin-bottom: 50px;
+}
+
+.small-post {
+	border-bottom: 1px solid #ccc;
+
+	a {		
+	    padding-right: 30px;
+	    padding-bottom: 15px;
+	} 
+}
+
+section {
+	padding-bottom: 75px;
+}
+
+.img-div {
+	img {
+		width: 100%;
 	}
 }
 
