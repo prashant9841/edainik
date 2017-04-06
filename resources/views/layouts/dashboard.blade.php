@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('title') Dashboard</title>
 
     <link rel="stylesheet" href="/stylesheets/font-awesome.css">
     <link rel="stylesheet" href="/stylesheets/themify-icons.css">
@@ -26,15 +26,18 @@
     </script>
 </head>
 <body>
-        
+    
+    @include('layouts._dashSideNav')        
+    
+    <div class="container">
+        <div class="row">
+            <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+            @yield('page-title')
 
-        
-
-        @yield('content')
-
-
-        <script src="{{ mix('js/app.js') }}"></script>
-
-
+            @yield('content')
+        </div>
+    </div>
+    <script src="{{ mix('js/app.js') }}"></script>
+    
 </body>
 </html>

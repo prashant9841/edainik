@@ -80,10 +80,17 @@ Route::group(['prefix'=>'/dashboard'],function(){
 	|--------------------------------------------------------------------------
 	*/
 
+
 	Route::get('/menus','MenuController@index');
 	Route::post('/menus','MenuController@store');
 	Route::delete('/menus/{id}','MenuController@destroy');
+	/*
+	|--------------------------------------------------------------------------
+	| Menu Routes
+	|--------------------------------------------------------------------------
+	*/
 	
+	Route::get('/users','UsersController@index');	
 
 });
 
