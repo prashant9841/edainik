@@ -80,6 +80,12 @@ header {
 		img {
 			width: 200px;
 		}
+
+		.card {
+			.card-content {
+				padding: 0;
+			}
+		}
 	}
 }
 
@@ -90,6 +96,7 @@ header {
 		line-height: 0;
 		height: auto;
 		color: rgba(255,255,255,.9);
+		min-width: 100%;
 
 		.section {
 			position: absolute;
