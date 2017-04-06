@@ -2,6 +2,8 @@
 
 @section('content')
 	@foreach($categories as $category)
-		<a href="{{ url('/category/'.$category->id) }}">{{ $category->title }} </a>
+	<div class="col s12">
+		<a href="{{ url('/categories/'.$category->id) }}">{{ $category->title }} </a>
+	</div>
 	@endforeach
 @stop

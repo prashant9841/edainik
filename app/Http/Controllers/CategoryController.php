@@ -18,7 +18,7 @@ class CategoryController extends Controller
      */
     public function index(Category $category)
     {
-        return view('category.index')->with('categories',$category->all());
+        return view('dashboard.category.index')->with('categories',$category->all());
     }
 
     /**
@@ -28,7 +28,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('category.create');
+        return view('dashboard.category.create');
     }
 
     /**
@@ -53,7 +53,8 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        return view('category.show')->with('category',$category->with('posts')->findOrFail($category->id));
+
+        return view('dashboard.category.show')->with('category',$category);
     }
 
     /**
@@ -64,7 +65,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        return view('category.edit')->with('category',$category->findOrFail($category->id));
+        return view('dashboard.category.edit')->with('category',$category);
     }
 
     /**

@@ -8,28 +8,29 @@ use Illuminate\Http\Request;
 
 class UserPostController extends Controller
 {
-	public function _constructor()
+	public function __construct()
 	{
-		$this->middleware('auth')->except(['index','show','create']);
+		$this->middleware('auth')->except(['index','show']);
 	}
 
     public function index()
     {
-    	return Auth::user()->posts;
+        return view('dashboard.post.index')->with('posts',Auth::user()->posts()->latest()->get());
     }
 
     public function show($id)
     {
-    	return Auth::user()->post()->findOrFail($id);
+    	return view('dashboard.post.show')->with('post',Auth::user()->posts()->findOrFail($id));
     }
 
     public function create()
     {
-    	return view('posts.create');
+    	return view('dashboard.post.create');
     }
     public function store(Request $request)
     {
-    	if(Auth::user()->posts()->create($request->toArray())){
+
+    	if(Auth::user()->posts()->create($this->getStub($request))){
     		return "Created";
     	}
 		return "ERROR";
@@ -51,4 +52,14 @@ class UserPostController extends Controller
     	}
 		return 'ERROR';
     }
+
+    protected function getStub(Request $request)
+    {
+        return [
+            'title' => $request->title,
+            'content' => $request->content,
+            'status' => ($request->status == 'on') ? 1:0,
+
+        ];
+    } 
 }

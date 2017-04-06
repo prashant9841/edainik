@@ -7,8 +7,11 @@
 	</div>
 	<div class="row">
 		<div class="input-field col s12">
-			<input placeholder="Slug" id="slug" type="text" name="slug" class="validate">
-			<label for="slug">Slug</label>
+			<textarea id="textarea" name="content" class="materialize-textarea"></textarea>
+			<label for="textarea">Content</label>
 		</div>
 	</div>
-	
+	<p>
+		<input type="checkbox" class="filled-in" id="filled-in-box"  name="status" />
+		<label for="filled-in-box">Publish</label>
+	</p>

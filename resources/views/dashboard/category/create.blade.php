@@ -1,10 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.dashboard')
 
 @section('content')
 	<div class="row">
 		 <form class="col s12" role="form" method="POST" action="{{-- route('login') --}}">
-          @include('posts._form')
+          @include('dashboard.category._form')
         </form>
 	</div>
-
 @stop
