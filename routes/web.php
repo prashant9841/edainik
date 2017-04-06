@@ -74,5 +74,16 @@ Route::group(['prefix'=>'/dashboard'],function(){
 	Route::delete('/categories/{category}','CategoryController@destroy');
 	Route::get('/categories/{category}/edit', 'CategoryController@edit');
 
+	/*
+	|--------------------------------------------------------------------------
+	| Menu Routes
+	|--------------------------------------------------------------------------
+	*/
+
+	Route::get('/menus','MenuController@index');
+	Route::post('/menus','MenuController@store');
+	Route::delete('/menus/{id}','MenuController@destroy');
+	
+
 });
 

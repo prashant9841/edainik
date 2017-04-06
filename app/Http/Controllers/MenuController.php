@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\{Menu,Category};
 use Illuminate\Http\Request;
 
 class MenuController extends Controller
@@ -9,16 +10,20 @@ class MenuController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth')
+        $this->middleware('auth');
     }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Menu $menu, Category $category)
     {
-        //
+        return view('dashboard.menu.index')
+                ->with([
+                    'menus' => $menu->orderBy('order','DESC')->get(), 
+                    'categories' => $category->all()
+                    ]);
     }
 
     /**
@@ -37,9 +42,13 @@ class MenuController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Menu $menu, Category $category,Request $request)
     {
-        //
+        $category = $category->findOrFail($request->category_id);
+        $order = ($menu->latest()->first()) ? $menu->latest()->first()->order : 0;
+        if($menu->create(['category_id'=>$category->id, 'order' => $order + 1 ])){
+            return redirect()->back();
+        }
     }
 
     /**
@@ -82,8 +91,11 @@ class MenuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Menu $menu,$id)
     {
-        //
+        if($menu->findOrFail($id)->delete())
+        {
+            return redirect()->back();
+        }
     }
 }
