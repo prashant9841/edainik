@@ -12,7 +12,7 @@ class Category extends Model
 
 	public function menu()
 	{
-		return $this->has(Menu::class);
+		return $this->hasOne(Menu::class);
 	}
 
 	public function published()
