@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => 'Laravel',
+    'name' => 'eDainik Post',
 
     /*
     |--------------------------------------------------------------------------
@@ -181,6 +181,8 @@ return [
          * 
          */
         Spatie\MediaLibrary\MediaLibraryServiceProvider::class, //Medialibrary for image/videos uploads
+        Mastergalen\AdsenseAds\AdsServiceProvider::class, //Ad Sense Management
+
 
     ],
 
@@ -230,6 +232,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        'Ads' => Mastergalen\AdsenseAds\AdsFacade::class, 
 
     ],
 
