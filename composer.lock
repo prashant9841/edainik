@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "15837a23323f9a99c7fbb6190e31ea39",
-    "content-hash": "f098e2aac38bd091a4c79fec231b8b04",
+    "hash": "f54066dec4e5cc50752a689d56dbf208",
+    "content-hash": "23c4fdea4582cd9991051f44d2018eb5",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -693,6 +693,48 @@
                 "processing"
             ],
             "time": "2017-01-19 01:26:54"
+        },
+        {
+            "name": "mastergalen/adsense-ads",
+            "version": "v0.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Mastergalen/Adsense-Ads.git",
+                "reference": "ead443f3cd0f53f19a05ed22c94b7453916680f2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Mastergalen/Adsense-Ads/zipball/ead443f3cd0f53f19a05ed22c94b7453916680f2",
+                "reference": "ead443f3cd0f53f19a05ed22c94b7453916680f2",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/view": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Mastergalen\\AdsenseAds\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Galen Han",
+                    "email": "Mastergalen@users.noreply.github.com"
+                }
+            ],
+            "description": "Display Adsense ads in your application.",
+            "keywords": [
+                "ads",
+                "adsense",
+                "laravel"
+            ],
+            "time": "2017-02-04 12:56:11"
         },
         {
             "name": "monolog/monolog",
