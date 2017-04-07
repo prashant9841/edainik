@@ -17,6 +17,10 @@ Route::get('/', function (App\Post $post) {
 
 Auth::routes();
 
+Route::get('/logout',function(\Auth $auth){
+	return $auth->logOut();
+});
+
 Route::get('/home', 'HomeController@index');
 
 /*
@@ -47,6 +51,13 @@ Route::get('/categories/{category}', 'Site\CategoryController@show');
 */
 
 Route::group(['prefix'=>'/dashboard'],function(){
+
+	/*
+	|--------------------------------------------------------------------------
+	| Pages Routes
+	|--------------------------------------------------------------------------
+	*/
+	Route::get('/','DashboardController@index');
 
 	/*
 	|--------------------------------------------------------------------------
