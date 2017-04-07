@@ -2,6 +2,7 @@ require('./bootstrap');
 require('./pace');
 // require('./wow');
 require('./materialize');
+require('./social');
 
 // require ("materialize-css/dist/js/materialize");
 
@@ -20,6 +21,8 @@ require('./materialize');
 	//   offset: 0,
 	//   live: true
 	// });
+
+   
 
 }));
 

@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/stylesheets/font-awesome.css">
     <link rel="stylesheet" href="/stylesheets/themify-icons.css">
     <link rel="stylesheet" href="/stylesheets/animate.css">
+    <link rel="stylesheet" href="/stylesheets/social.css">
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
     <!-- Styles -->
@@ -72,6 +73,15 @@
             
 
         <script src="{{ mix('js/app.js') }}"></script>
+        <script src="/js/social.js"></script>
+        <script>
+             $("#share").jsSocials({
+                shares: ["twitter", "facebook", "googleplus", "pinterest"],
+                showLabel: false,
+                showCount: false,
+                url: "https://www.facebook.com/jojiri/?ref=br_rs"
+            });
+        </script>
 
 
 </body>

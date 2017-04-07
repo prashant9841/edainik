@@ -14,13 +14,14 @@
                             <h1 class="header center">{{$post->title}}</h1>
                         </div>
                     </div>
-                    <div class="parallax"><img src="http://lorempixel.com/1600/900" alt="Unsplashed background img 1"></div>
+                    <div class="parallax"><img src="http://lorempixel.com/1000/600" alt="Unsplashed background img 1"></div>
                 </div>
 
                 <div class="content container">
                     <div class="row center">
                         <p class="wrap">{{ $post->content }}</p>
                     </div>
+                    <div id="share" class="row center"> </div>
                     <div class="row center btn-row">
                         <a href="{{ url('/posts/'.$post->id) }}" class="btn waves-effect waves-light teal lighten-1">View All</a>
                     </div>
