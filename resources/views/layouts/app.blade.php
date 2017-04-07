@@ -60,33 +60,7 @@
                 </div>
             </div>
         </header>
-        <nav class="white" role="navigation">
-            <div class="nav-wrapper container">
-                <ul class="hide-on-med-and-down left">
-                    <li><a href="#">Politics</a></li>
-                    <li><a href="#">Sports</a></li>
-                    <li><a href="#">Celebrety</a></li>
-                    <li><a href="#">Global</a></li>
-                </ul>
-
-                <ul class="hide-on-med-and-down right">
-                    <li><input type="text" placeholder="Search"></li>
-                    <li><a href="#">Login</a></li>
-                    <li><a href="#">Register</a></li>
-                </ul>
-
-                <ul id="nav-mobile" class="side-nav">
-                    <li><input type="text" placeholder="Search"></li>
-                    <li><a href="#">Politics</a></li>
-                    <li><a href="#">Sports</a></li>
-                    <li><a href="#">Celebrety</a></li>
-                    <li><a href="#">Global</a></li>
-                    <li><a href="#">Login</a></li>
-                    <li><a href="#">Register</a></li>
-                </ul>
-                <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="ti-menu"></i></a>
-            </div>
-        </nav>
+        @include('layouts._frontendNav')
 
 
         @yield('content')
@@ -94,31 +68,7 @@
 
 
 
-        <footer class="page-footer">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-              </div>
-              <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="footer-copyright">
-            <div class="container">
-            © 2014 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-            </div>
-          </div>
-        </footer>
+        @include('layouts._frontendFooter')
             
 
         <script src="{{ mix('js/app.js') }}"></script>
