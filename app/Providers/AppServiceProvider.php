@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Auth;
+use App\Menu;
 use Illuminate\View\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -17,7 +18,10 @@ class AppServiceProvider extends ServiceProvider
     {
         view()->composer('layouts._dashSideNav',function(View $view){
             if(Auth::check())
-                $view->with('user', Auth::user()); 
+                return $view->with('user', Auth::user()); 
+        });
+        view()->composer('layouts._frontendNav',function(View $view){   
+            return $view->with('menus', Menu::ordered()->get()); 
         });
 
     }

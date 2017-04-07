@@ -10,6 +10,11 @@ class Menu extends Model
 
     protected $casts = ['order' => 'integer'];
 
+    public static function ordered()
+    {
+    	return self::orderBy('order','DESC');
+    }
+
     public function category()
     {
     	return $this->belongsTo(Category::class);
