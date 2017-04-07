@@ -4,13 +4,13 @@
 	<div class="row">
 		<div class="col s12 m6 l6">
 			<h3>Categories</h3>
-			<ul>
+			<ul class="collection">
 				@foreach($categories as $category)
-					<li>
-					<div class="col m6">
-						{{$category->title}}
-					</div>
-					<div class="col m6">
+					<li class="collection-item">
+						<span class="left">
+							{{$category->title}} 
+						</span>
+						<span class="right">	
 							<form method="post" action="{{ url('/dashboard/menus')}}">
 								@include('dashboard.menu._form')
 								<input type="submit" class="btn 
@@ -19,8 +19,7 @@
 								@endif
 								" value="Add to menu">
 							</form>
-						<span>&nbsp;</span>
-					</div>
+						</span>
 
 					</li>
 				@endforeach
