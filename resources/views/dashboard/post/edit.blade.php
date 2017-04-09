@@ -6,7 +6,7 @@
 		<form class="col s12" role="form" method="POST" action="{{ url('/dashboard/posts/'.$post->id) }}" enctype="multipart/form-data">
   		 	<input type="hidden" name="_method" value="PUT">
 			@include('dashboard.post._form')
-			<input type="submit" value="Update">
+			<button type="submit" class="btn">Update</button>
 		</form>
 	</div>
 @stop
