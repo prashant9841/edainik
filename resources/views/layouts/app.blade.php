@@ -55,6 +55,7 @@
             </div>
         </header>
         @include('layouts._frontendNav')
+        @include('layouts._flashNews')
 
 
         @yield('content')
@@ -68,7 +69,7 @@
         <script src="{{ mix('js/app.js') }}"></script>
         <script src="/js/social.js"></script>
         <script>
-             $("#share").jsSocials({
+             $(".share").jsSocials({
                 shares: ["twitter", "facebook", "googleplus", "pinterest"],
                 showLabel: false,
                 showCount: false,

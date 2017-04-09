@@ -189,6 +189,25 @@ ul.auth {
 	a {		
 	    padding-right: 30px;
 	    padding-bottom: 15px;
+
+	    span {
+			width: 0%;
+			// position: absolute;
+			display: block;
+			margin: 0 auto;
+			background: $primary-color;
+			height: 1px;
+			// left: 50%;
+			// transform: translateX(50%);
+			@include vendor(transition, all 0.2s ease-out);
+		}
+
+		&:hover {
+			color: $primary-color !important;
+			span {
+				width: 100%
+			}
+		}
 	} 
 }
 
@@ -203,14 +222,14 @@ section {
 }
 
 .page-footer {
-
+	background-color: $primary-color;
 }
 
 
 // DASHBOARD
 
 .top-nav {
-	background: $primary-color;
+	background: $secondary-color;
 
 	.dropdown-content.active {
 		min-width: 175px;
