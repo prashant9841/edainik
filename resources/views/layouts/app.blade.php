@@ -29,9 +29,7 @@
 <body>
         {{-- Ads --}}
         <div class="ads container">
-            
-    
-                    {!! Ads::show('responsive') !!}
+            {!! Ads::show('responsive') !!}
         </div>
         {{-- Ads --}}
 
