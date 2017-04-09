@@ -83,6 +83,7 @@ Route::group(['prefix'=>'/dashboard'],function(){
 	Route::post('/categories', 'CategoryController@store');
 	Route::get('/categories/create', 'CategoryController@create');
 	Route::get('/categories/{category}', 'CategoryController@show');
+	Route::put('/categories/{category}', 'CategoryController@update');
 	Route::delete('/categories/{category}','CategoryController@destroy');
 	Route::get('/categories/{category}/edit', 'CategoryController@edit');
 

@@ -29,3 +29,18 @@
 		<input type="checkbox" class="filled-in" id="filled-in-box" @if(isset($post)) {{ ($post->status) ?'checked': null }} @endif name="status" />
 		<label for="filled-in-box">Publish</label>
 	</p>
+
+<div class="row">
+	<div class="input-field col s12">
+		<input type="file" name="image">
+	</div>
+
+	@if(isset($post))
+		<pre>
+			{{var_dump($post)}}
+		</pre>
+		@foreach($post->getMedia('images') as $image)
+			<img src="{{$image->getUrl()}}" alt="">
+		@endforeach
+	@endif
+</div>

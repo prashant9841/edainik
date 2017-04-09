@@ -14,7 +14,7 @@
 		</div>
 
 		<div class="row">
-			 <form class="col s12" role="form" method="POST" action="{{url('dashboard/posts')}}">
+			 <form class="col s12" role="form" method="POST" action="{{url('dashboard/posts')}}" enctype="multipart/form-data">
 	          @include('dashboard.post._form')
 
 	          <button type="submit" name="submit" class="btn">Post</button>

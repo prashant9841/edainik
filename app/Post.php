@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Spatie\MediaLibrary\HasMedia\Interfaces\HasMedia;
 
-class Post extends Model
+class Post extends Model implements HasMedia
 {
     use HasSlug,HasMediaTrait;
 
@@ -23,6 +23,11 @@ class Post extends Model
     public function approved()
     {
     	return $this->where('verified',true)->where('status',true);
+    }
+
+    public function attachImageFromRequest($field = 'image' ,$collection = 'images')
+    {
+        return $this->addMediaFromRequest($field)->toMediaCollection('images');
     }
 
     public function category()

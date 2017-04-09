@@ -58,7 +58,8 @@ class UserPostController extends Controller
      */
     public function store(Request $request)
     {
-        if (Auth::user()->posts()->create($this->getStub($request))) {
+        if ($post = Auth::user()->posts()->create($this->getStub($request))) {
+            ($request->hasFile('image'))? $post->attachImageFromRequest() : null;
             return redirect()->to('/dashboard/posts');
         }
         return redirect()->back();
@@ -71,7 +72,14 @@ class UserPostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if (Auth::user()->posts()->findOrFail($id)->update($request->toArray())) {
+        $post = Auth::user()->posts()->findOrFail($id);
+
+        if($request->hasFile('image'))
+        {
+            $post->attachImageFromRequest();
+        }
+        
+        if ($post->update($this->getStub($request))) {
             return redirect()->to('/dashboard/posts/' . $id);
         }
         return redirect()->back();

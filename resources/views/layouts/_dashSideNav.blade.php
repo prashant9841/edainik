@@ -4,10 +4,12 @@
         <div class="background">
             <img src="{{asset('/images/pattern.jpg')}}" style="width: 100%">
         </div>
-        @if($user->isSuperAdmin())
-            <p class="white-text">You're Admin</p>
-        @endif 
         <a href="#!user"><img class="circle" src="{{ asset('/images/logo.png') }}"></a>
+        
+        @if($user->isSuperAdmin())
+            <a href="#"><span class="white-text">You're Admin</span></a>
+        @endif 
+        
         <a href="#!name"><span class="white-text name">{{ $user->name }}</span></a>
         <a href="#!email"><span class="white-text email">{{ $user->email }}</span></a>
         </div>
