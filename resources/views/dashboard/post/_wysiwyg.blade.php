@@ -3,7 +3,7 @@
 	 <link href="/js/materialnote/css/materialNote.css" rel="stylesheet">
     <link href="/js/materialnote/css/codeMirror/codemirror.css" rel="stylesheet">
     <link href="/js/materialnote/css/codeMirror/monokai.css" rel="stylesheet">
-    <link href="/js/materialnote/css/main.css" rel="stylesheet">
+    {{--<link href="/js/materialnote/css/main.css" rel="stylesheet">--}}
 @stop
 
 
