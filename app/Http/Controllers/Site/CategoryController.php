@@ -10,11 +10,11 @@ class CategoryController extends Controller
 {
     public function index(Category $category)
     {
-    	return view('category.index')->with('categories',$category->all());
+        return view('category.index')->with('categories', $category->all());
     }
 
     public function show(Category $category)
     {
-    	return view('category.show')->with('category',$category);
+        return view('category.show')->with('category', $category);
     }
 }

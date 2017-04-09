@@ -11,6 +11,7 @@ class DashboardController extends Controller
     {
         return $this->middleware('auth');
     }
+
     /**
      * Display a listing of the resource.
      *
