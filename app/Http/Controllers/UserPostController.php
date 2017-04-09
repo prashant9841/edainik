@@ -42,7 +42,7 @@ class UserPostController extends Controller
      */
     public function edit($id)
     {
-        return view('dashboard.post.edit')->with('post', Auth::user()->post()->findOrFail($id));
+        return view('dashboard.post.edit')->with('post', Auth::user()->posts()->findOrFail($id));
     }
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
@@ -89,6 +89,10 @@ class UserPostController extends Controller
         return redirect()->back();
     }
 
+    protected function attachImage($model,$request,$requestClass ='image', $collection = 'images')
+    {
+        return $model->addMediaFromRequest($requestClass)->toCollection($collection);
+    } 
     /**
      * @param Request $request
      * @return array
