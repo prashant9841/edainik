@@ -47,7 +47,7 @@
                             <div class="col s8">
                                 <h4>{{ $post->title }}</h4>
                                 <p>{{ $post->description }}</p>
-                                <a href="#" class="right">Read More <span></span></a>
+                                <a href="{{ url('posts',$post->slug)}}" class="right">Read More <span></span></a>
                             </div>
                         </li>
                     @endforeach
@@ -64,7 +64,7 @@
                         <h4>Related Posts</h4>
                         <ul>
                             @foreach($related as $post)
-                                <li><a href="{{ url('posts',$post->slug)}}">Related News Title</a></li>
+                                <li><a href="{{ url('posts',$post->slug)}}">{{ $post->title }}</a></li>
                             @endforeach
                         </ul>
                     </div>
