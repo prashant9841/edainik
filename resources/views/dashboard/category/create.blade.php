@@ -7,4 +7,5 @@
           <button type="submit" class="btn">Submit</button>
         </form>
 	</div>
+	@include('dashboard.post._wysiwyg')
 @stop

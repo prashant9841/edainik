@@ -9,4 +9,5 @@
 			<button type="submit" class="btn">Update</button>
 		</form>
 	</div>
+	@include('dashboard.post._wysiwyg')
 @stop

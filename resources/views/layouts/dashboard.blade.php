@@ -13,10 +13,9 @@
     <link rel="stylesheet" href="/stylesheets/font-awesome.css">
     <link rel="stylesheet" href="/stylesheets/themify-icons.css">
     <link rel="stylesheet" href="/stylesheets/animate.css">
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    @yield('links')
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-
     <!-- Styles -->
     {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
 
@@ -40,6 +39,7 @@
         </div>
     </div>
     <script src="{{ mix('js/app.js') }}"></script>
+    @yield('scripts')
     
 </body>
 </html>
