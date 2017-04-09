@@ -22,7 +22,7 @@ require('./social');
 	//   live: true
 	// });
 
-   
+   $('ul.navigation li').append('<span></span>');
 
 }));
 

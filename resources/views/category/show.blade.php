@@ -22,7 +22,7 @@
 		                    <p class="wrap">{{ $post->content }}</p>
 		                </div>
 		                <div class="row center btn-row">
-		                    <a href="{{ url('/posts/'.$post->id) }}" class="btn waves-effect waves-light teal lighten-1">View All</a>
+		                    <a href="{{ url('/posts/'.$post->id) }}" class="btn waves-effect waves-light">View All</a>
 		                </div>
 		            </div>
 		            <div class="ads container">
@@ -49,7 +49,7 @@
                             <div class="col s8">
                                 <h4>News Title Goes Here</h4>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda debitis esse praesentium cupiditate corporis quaerat autem minus tempora, molestiae, non placeat aliquam commodi qui, voluptatem.</p>
-                                <a href="#" class="right">Read More</a>
+                                <a href="#" class="right">Read More <span></span></a>
                             </div>
                         </li>
                     @endfor

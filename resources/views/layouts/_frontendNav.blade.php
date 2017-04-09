@@ -1,18 +1,19 @@
 <nav class="white" role="navigation">
             <div class="nav-wrapper container">
-                <ul class="hide-on-med-and-down left">
+                <ul class="hide-on-med-and-down left navigation">
 
-                    <li><a href="/">Home</a></li>
+                    <li class="active"><a href="/">Home</a></li>
                     @include('layouts._frontendMenu')
                 </ul>
 
-                <ul class="hide-on-med-and-down right">
+                <ul class="hide-on-med-and-down right navigation auth">
                     <li><input type="text" placeholder="Search"></li>
                     @include('layouts._authNav')
                 </ul>
 
-                <ul id="nav-mobile" class="side-nav">
+                <ul id="nav-mobile" class="side-nav navigation">
                     <li><input type="text" placeholder="Search"></li>
+                    <li><a href="/">Home</a></li>
                     @include('layouts._frontendMenu')
                    
                 </ul>
