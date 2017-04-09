@@ -7,71 +7,103 @@ use Illuminate\Http\Request;
 
 class AdminPostController extends Controller
 {
-	public function __contruct()
-	{
-		$this->middleware('superAdmin');
-	}
-	
-	public function verify($postId)
-	{
-		if(Post::findOrFail($postId)->update(['verified' => 1]))
-		{
-			return redirect()->back();
-		}
-		return redirect()->back();
-	}
 
-	public function unVerify($postId)
-	{
-		if(Post::findOrFail($postId)->update(['verified' => 0]))
-		{
-			return redirect()->back();
-		}
-		return redirect()->back();
-	}
+    /**
+     * AdminPostController constructor.
+     */
+    public function __construct()
+    {
+        $this->middleware('superAdmin');
+    }
 
-	public function index()
-	{
-		return view('dashboard.post.index')->with('posts',Post::all());
-	}
+    /**
+     * @param $postId
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function verify($postId)
+    {
+        if (Post::findOrFail($postId)->update(['verified' => 1])) {
+            return redirect()->back();
+        }
+        return redirect()->back();
+    }
 
-	public function show($id)
-	{
-		return view('dashboard.post.show')->with('post',Post::findOrFail($id));
-	}
+    /**
+     * @param $postId
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function unVerify($postId)
+    {
+        if (Post::findOrFail($postId)->update(['verified' => 0])) {
+            return redirect()->back();
+        }
+        return redirect()->back();
+    }
 
-	public function edit($id)
-	{
-		return view('dashboard.post.edit')->with('post',Post::findOrFail($id));
-	}
+    /**
+     * @return $this
+     */
+    public function index()
+    {
+        return view('dashboard.post.index')->with('posts', Post::all());
+    }
 
-	public function update(Request $request,$id)
-	{
-		if(Post::findOrFail($id)->update($this->getStub($request)))
-		{
-			//Redirect to admin dash
-		}
-		return redirect()->back();
-	}
+    /**
+     * @param $id
+     * @return $this
+     */
+    public function show($id)
+    {
+        return view('dashboard.post.show')->with('post', Post::findOrFail($id));
+    }
 
-	public function delete($id)
-	{
-		if(Post::findOrFail($id)->delete())
-		{
-			return redirect()->back();
-			//Redirect to admin dash
-		}
-		return redirect()->back();
-	}
+    /**
+     * @param $id
+     * @return $this
+     */
+    public function edit($id)
+    {
+        return view('dashboard.post.edit')->with('post', Post::findOrFail($id));
+    }
 
-	protected function getStub(Request $request)
-	{
-		return [
+    /**
+     * @param Request $request
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function update(Request $request, $id)
+    {
+        if (Post::findOrFail($id)->update($this->getStub($request))) {
+            //Redirect to admin dash
+        }
+        return redirect()->back();
+    }
+
+    /**
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function delete($id)
+    {
+        if (Post::findOrFail($id)->delete()) {
+            return redirect()->back();
+            //Redirect to admin dash
+        }
+        return redirect()->back();
+    }
+
+    /**
+     * @param Request $request
+     * @return array
+     */
+    protected function getStub(Request $request)
+    {
+        return [
             'title' => $request->title,
             'content' => $request->content,
             'status' => ($request->status == 'on') ? 1 : 0,
 
         ];
-	} 
+    }
 
 }

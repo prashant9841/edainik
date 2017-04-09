@@ -60,10 +60,9 @@
                             Recent Uploaded
                         </div>
                         <div class="collection">
-                            <a href="#!" class="collection-item">Alvin</a>
-                            <a href="#!" class="collection-item">Alvin</a>
-                            <a href="#!" class="collection-item">Alvin</a>
-                            <a href="#!" class="collection-item">Alvin</a>
+                            @foreach($recent as $item)
+                                <a href="{{ url('/dashboard/posts',$item->id) }}" class="collection-item">{{ $item->title }} - {{$item->updated_at->diffForHumans()}}</a>
+                            @endforeach
                         </div>                        
                     </div>
                 </div>

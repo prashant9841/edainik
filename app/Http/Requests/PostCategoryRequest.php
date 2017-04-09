@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Auth;
 use Illuminate\Foundation\Http\FormRequest;
 
 class PostCategoryRequest extends FormRequest
@@ -13,7 +14,7 @@ class PostCategoryRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return Auth::user()->isSuperAdmin();
     }
 
     /**
@@ -24,7 +25,8 @@ class PostCategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => 'required|min:5|max:200',
+            'slug' => 'unique:posts'
         ];
     }
 }

@@ -44,6 +44,7 @@ class UserPostController extends Controller
     {
         return view('dashboard.post.edit')->with('post', Auth::user()->posts()->findOrFail($id));
     }
+
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -59,7 +60,7 @@ class UserPostController extends Controller
     public function store(Request $request)
     {
         if ($post = Auth::user()->posts()->create($this->getStub($request))) {
-            ($request->hasFile('image'))? $post->attachImageFromRequest() : null;
+            ($request->hasFile('image')) ? $post->attachImageFromRequest() : null;
             return redirect()->to('/dashboard/posts');
         }
         return redirect()->back();
@@ -74,8 +75,7 @@ class UserPostController extends Controller
     {
         $post = Auth::user()->posts()->findOrFail($id);
 
-        if($request->hasFile('image'))
-        {
+        if ($request->hasFile('image')) {
             $post->attachImageFromRequest();
         }
 
@@ -97,7 +97,7 @@ class UserPostController extends Controller
         return redirect()->back();
     }
 
-    /**
+    /**w
      * @param Request $request
      * @return array
      */
@@ -107,7 +107,6 @@ class UserPostController extends Controller
             'title' => $request->title,
             'content' => $request->content,
             'status' => ($request->status == 'on') ? 1 : 0,
-
         ];
     }
 }

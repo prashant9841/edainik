@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\{Menu,Category};
+use App\{
+    Menu, Category
+};
 use Illuminate\Http\Request;
 
 class MenuController extends Controller
@@ -12,6 +14,7 @@ class MenuController extends Controller
     {
         $this->middleware('auth');
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -20,10 +23,10 @@ class MenuController extends Controller
     public function index(Menu $menu, Category $category)
     {
         return view('dashboard.menu.index')
-                ->with([
-                    'menus' => $menu->orderBy('order','DESC')->get(), 
-                    'categories' => $category->all()
-                    ]);
+            ->with([
+                'menus' => $menu->orderBy('order', 'DESC')->get(),
+                'categories' => $category->all()
+            ]);
     }
 
     /**
@@ -39,14 +42,14 @@ class MenuController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Menu $menu, Category $category,Request $request)
+    public function store(Menu $menu, Category $category, Request $request)
     {
         $category = $category->findOrFail($request->category_id);
         $order = ($menu->latest()->first()) ? $menu->latest()->first()->order : 0;
-        if($menu->create(['category_id'=>$category->id, 'order' => $order + 1 ])){
+        if ($menu->create(['category_id' => $category->id, 'order' => $order + 1])) {
             return redirect()->back();
         }
     }
@@ -54,7 +57,7 @@ class MenuController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -65,7 +68,7 @@ class MenuController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -76,8 +79,8 @@ class MenuController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -88,13 +91,12 @@ class MenuController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Menu $menu,$id)
+    public function destroy(Menu $menu, $id)
     {
-        if($menu->findOrFail($id)->delete())
-        {
+        if ($menu->findOrFail($id)->delete()) {
             return redirect()->back();
         }
     }

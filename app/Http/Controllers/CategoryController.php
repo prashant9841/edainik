@@ -40,7 +40,7 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        if (Category::create($request->toArray())) {
+        if (Category::create($this->getStub($request))) {
             return redirect()->to('/dashboard/categories');
         }
         return redirect()->back();
@@ -78,7 +78,7 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if (Category::findOrFail($id)->update($request->toArray())) {
+        if (Category::findOrFail($id)->update($this->getStub($request))) {
             return redirect()->to('/dashboard/categories/' . $id);
         }
         return redirect()->back();
@@ -96,5 +96,18 @@ class CategoryController extends Controller
             return redirect()->to('/dashboard/categories');
         }
         return redirect()->back();
+    }
+
+    protected function getStub($request)
+    {
+        $data = [
+            'title' => $request->title,
+        ];
+        //If the slug exists
+        if (strlen($request->slug) > 5) {
+            $data = array_merge($data, ['slug' => str_slug($request->slug)]);
+        }
+
+        return $data;
     }
 }

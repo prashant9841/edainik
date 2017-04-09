@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -19,7 +20,8 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard.index');
+        $recent = Auth::user()->posts()->latest()->take(5)->get();
+        return view('dashboard.index')->with('recent',$recent);
     }
 
 
