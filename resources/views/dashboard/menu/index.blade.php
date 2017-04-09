@@ -1,6 +1,19 @@
 @extends('layouts.dashboard')
 
 @section('content')
+<div class="menus-page">
+	<div class="row">
+		<div class="col s12">
+			<h3>Navigation</h3>
+		</div>
+		<nav class="breadcrumbs col s12">
+			<div class="nav-wrapper">
+				<a class="breadcrumb" href="/dashboard">Dashboard</a>
+				<a class="breadcrumb" href="#!">Navigation</a>
+			</div>
+		</nav>
+	</div>
+</div>
 	<div class="row">
 		<div class="col s12 m6 l6">
 			<h3>Categories</h3>

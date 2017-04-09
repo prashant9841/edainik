@@ -37,7 +37,7 @@
           </div>
         </li>
     </ul>
-    <li><a href="{{ url('/dashboard/menus') }}"><i class="ti-layout-menu-separated"></i>Menus</a></li>
+    <li><a href="{{ url('/dashboard/menus') }}"><i class="ti-layout-menu-separated"></i>Navigation</a></li>
     <li><a href="{{ url('/dashboard/users') }}"><i class="ti-user"></i>Users</a></li>
 
 </ul>
