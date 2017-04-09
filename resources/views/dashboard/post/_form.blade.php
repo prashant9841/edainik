@@ -36,9 +36,6 @@
 	</div>
 
 	@if(isset($post))
-		<pre>
-			{{var_dump($post)}}
-		</pre>
 		@foreach($post->getMedia('images') as $image)
 			<img src="{{$image->getUrl()}}" alt="">
 		@endforeach
