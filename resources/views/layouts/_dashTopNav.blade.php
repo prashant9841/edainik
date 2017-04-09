@@ -1,8 +1,8 @@
 <div class="row top-nav">
     <div class="container">
-        <div class="left">            
+        <ul class="left">            
             <a href="#" data-activates="slide-out" class="button-collapse btn"><i class="ti-menu"></i></a>
-        </div>
+        </ul>
 
         <div class="right">
             <ul class="inline">
