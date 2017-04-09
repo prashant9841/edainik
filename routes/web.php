@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function (App\Post $post) {
-    return view('welcome')->with('posts',$post->approved()->get());
+    return view('welcome')->with('posts', $post->approved()->latest('updated_at')->get());
 });
 
 Auth::routes();
@@ -21,8 +21,6 @@ Route::get('/logout',function(){
 	 Auth::logout();
 	return redirect('/');
 });
-
-Route::get('/home', 'HomeController@index');
 
 /*
 |--------------------------------------------------------------------------
@@ -62,7 +60,7 @@ Route::group(['prefix'=>'/dashboard'],function(){
 
 	/*
 	|--------------------------------------------------------------------------
-	| Post Routes
+	| User Post Routes
 	|--------------------------------------------------------------------------
 	*/
 	Route::get('/posts','UserPostController@index');
@@ -72,13 +70,49 @@ Route::group(['prefix'=>'/dashboard'],function(){
 	Route::put('/posts/{post}', 'UserPostController@update');
 	Route::get('/posts/{post}/edit', 'UserPostController@edit');
 	Route::delete('/posts/{post}','UserPostController@destroy');
+	
+	/*
+	|--------------------------------------------------------------------------
+	| All Posts for admin Routes
+	|--------------------------------------------------------------------------
+	*/
+	Route::get('/all-posts','AdminPostController@index');
+	Route::get('/all-posts/{post}','AdminPostController@show');
+	//Route::get('/all-posts/create', 'AdminPostController@create');
+	//Route::post('/all-posts', 'AdminPostController@store');
+	Route::put('/all-posts/{post}', 'AdminPostController@update');
+	Route::get('/all-posts/{post}/edit', 'AdminPostController@edit');
+	Route::delete('/all-posts/{post}','AdminPostController@destroy');
+
+
+	/*
+	|--------------------------------------------------------------------------
+	| Admin Post Verifications Routes
+	|--------------------------------------------------------------------------
+	*/
+	Route::get('/posts/{post}/verify','AdminPostController@verify');
+	Route::get('/posts/{post}/unverify','AdminPostController@unVerify');
+
+
 	/*
 	|--------------------------------------------------------------------------
 	| Images Routes
 	|--------------------------------------------------------------------------
 	*/
+	Route::get('/medias','UserMediaController@index'); 
+	Route::post('/medias','UserMediaController@store'); 
 
-	Route::get('/medias/remove/{postId}/{mediaId}','PostMediaController@removeImage');
+	Route::get('/medias/{media}','UserMediaController@show'); 
+	Route::get('/medias/create','UserMediaController@create'); 
+
+	Route::put('/medias/{media}','UserMediaController@update'); 
+	Route::get('/medias/{media}/edit','UserMediaController@edit'); 
+
+	//Post Images Manipulations
+	Route::get('/medias/removeImage/{mediaId}','PostMediaController@deleteImage'); //Remove an image
+	Route::get('/medias/remove/{postId}/{mediaId}','PostMediaController@removeImage'); //Remove an image
+	Route::get('/medias/detach/{postId}/{mediaId}','PostMediaController@removeImage'); //Detach image from model
+	Route::get('/medias/remove-all/{postId}','PostMediaController@removeByPost'); // Remove all the images in post
 	
 	/*
 	|--------------------------------------------------------------------------

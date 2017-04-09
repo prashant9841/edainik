@@ -34,7 +34,18 @@
 						<td>{{ $post->title }}</td>
 						<td class="line-clamp">{{ $post->content }}</td>
 						<td>{{ $post->updated_at->diffForHumans() }}</td>
-						<td><a class="btn" href="{{ url('/dashboard/posts/'.$post->id) }}">View</a></td>
+						<td>
+							<a class="btn" href="{{ url('/dashboard/posts/'.$post->id) }}">View</a>
+							<a class="btn" href="{{ url('/dashboard/posts/'.$post->id.'/edit') }}">Edit</a>
+							@if(Auth::user()->isSuperAdmin())
+								@if($post->verified)
+									<a class="btn" href="{{ url('/dashboard/posts/'.$post->id.'/unverify') }}">Unverify</a>
+								@else
+									<a class="btn" href="{{ url('/dashboard/posts/'.$post->id.'/verify') }}">Verify</a>
+								@endif
+
+							@endif
+						</td>
 					</tr>
 				@endforeach
 			</tbody>

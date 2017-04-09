@@ -14,7 +14,13 @@
                             <h1 class="header center">{{$post->title}}</h1>
                         </div>
                     </div>
-                    <div class="parallax"><img src="http://lorempixel.com/1000/600" alt="Unsplashed background img 1"></div>
+                    <div class="parallax">
+                    @if($post->getMedia('images')->count() > 0)
+                        <img src="{{ $post->getFirstImageUrl() }}" alt="Unsplashed background img 1">
+                    @else
+                        <img src="http://lorempixel.com/1000/600" alt="Unsplashed background img 1">
+                    @endif
+                    </div>
                 </div>
 
                 <div class="content container">

@@ -28,6 +28,10 @@
         </li>
     </ul>
     
+    @if($user->isSuperAdmin())
+        <li><a href="{{ url('/dashboard/all-posts') }}"><i class="ti-layout-list-thumb-alt"></i>All Posts</a></li>
+    @endif 
+    
     <ul class="collapsible" data-collapsible="accordion">
         <li>
           <div class="collapsible-header"><i class="ti-layout-menu-v"></i>Categories</div>

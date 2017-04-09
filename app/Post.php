@@ -20,9 +20,13 @@ class Post extends Model implements HasMedia
     	return $this->belongsTo(User::class);
     }
 
+    public function getFirstImageUrl()
+    {
+        return $this->getMedia('images')->first()->getUrl();
+    }
     public function approved()
     {
-    	return $this->where('verified',true)->where('status',true);
+    	return $this->where(['verified' => true, 'status' =>true]);
     }
 
     public function attachImageFromRequest($field = 'image' ,$collection = 'images')

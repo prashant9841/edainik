@@ -14,7 +14,7 @@
         </div>
         <div class="row">
             <div class="col s12 m3">
-                <a href="#">
+                <a href="{{ url('/dashboard/posts/create') }}">
                     <div class="card">
                         <div class="card-content center-align">
                             <p>Add A News</p>
@@ -22,8 +22,9 @@
                     </div>
                 </a>
             </div>
+            @if(Auth::user()->isSuperAdmin())
             <div class="col s12 m3">
-                <a href="#">
+                <a href="{{ url('/dashboard/categories') }}">
                     <div class="card">
                         <div class="card-content center-align">
                             <p>Manage Categories</p>
@@ -32,7 +33,7 @@
                 </a>
             </div>
             <div class="col s12 m3">
-                <a href="#">
+                <a href="{{ url('/dashboard/menus') }}">
                     <div class="card">
                         <div class="card-content center-align">
                             <p>Manage Menus</p>
@@ -41,7 +42,7 @@
                 </a>
             </div>
             <div class="col s12 m3">
-                <a href="#">
+                <a href="{{ url('/dashboard/users') }}">
                     <div class="card">
                         <div class="card-content center-align">
                             <p>Manage Users</p>
@@ -49,6 +50,7 @@
                     </div>
                 </a>
             </div>
+            @endif
         </div>
         <div class="row content">
             <div class="col s12 m4">
