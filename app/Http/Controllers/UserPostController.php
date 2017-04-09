@@ -27,30 +27,31 @@ class UserPostController extends Controller
     {
     	return view('dashboard.post.create');
     }
+
     public function store(Request $request)
     {
 
     	if(Auth::user()->posts()->create($this->getStub($request))){
-    		return "Created";
-    	}
-		return "ERROR";
+            return redirect()->to('/dashboard/posts');
+        }
+        return redirect()->back();
     }
 
     public function update(Request $request,$id)
     {
-    	if(Auth::user()->posts()->findOrFail($id)->update($request->toArray())){
-    		return "updated";
-    	}
-		return "ERROR";
+        if(Auth::user()->posts()->findOrFail($id)->update($request->toArray())){
+            return redirect()->to('/dashboard/posts/'.$id);
+        }
+        return redirect()->back();
     }
 
     public function delete($id)
     {
-    	if(Auth::user()->posts()->findOrFail($id)->delete())
-    	{
-    		return 'DELETED';
-    	}
-		return 'ERROR';
+        if(Auth::user()->posts()->findOrFail($id)->delete())
+        {
+            return redirect()->to('/dashboard/posts');
+        }
+		return redirect()->back();
     }
 
     protected function getStub(Request $request)

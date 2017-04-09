@@ -41,8 +41,9 @@ class CategoryController extends Controller
     {
         if(Category::create($request->toArray()))
         {
-            return 'Done';
+            return redirect()->to('/dashboard/categories');
         }
+        return redirect()->back();
     }
 
     /**
@@ -79,8 +80,9 @@ class CategoryController extends Controller
     {
         if(Category::findOrFail($id)->update($request->toArray()))
         {
-            return 'Done';
+            return redirect()->to('/dashboard/categories/'.$id);
         }
+        return redirect()->back();
     }
 
     /**
@@ -93,7 +95,8 @@ class CategoryController extends Controller
     {
         if(Category::findOrFail($id)->delete())
         {
-            return 'Done';
+            return redirect()->to('/dashboard/categories');
         }
+        return redirect()->back();
     }
 }
