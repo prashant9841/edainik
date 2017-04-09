@@ -35,6 +35,11 @@ class Category extends Model
 		return $this->hasMany(Post::class)->where('verified', 1)->where('status', 1);
 	}
 
+	public function unApprovedPosts()
+	{
+		return $this->hasMany(Post::class)->where('verified', 0)->where('status', 0);
+	}
+
 	public function userPosts($id)
 	{
 		return $this->hasMany(Post::class)->where('user_id', $id)->get();

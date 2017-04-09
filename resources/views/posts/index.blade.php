@@ -5,7 +5,7 @@
 		<div>
 			<h3>{{ $post->title }}</h3>
 			<p>{{ $post->content }}</p>
-			<a href="{{ url('posts/'.$post->id) }}">View More</a >
+			<a href="{{ url('posts/'.$post->slug) }}">View More</a >
 		</div>
 	@endforeach
 @stop

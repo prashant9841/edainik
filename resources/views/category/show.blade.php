@@ -5,8 +5,6 @@
 	<div class="row">
 		<section class="featured-post">
 			@foreach($category->approvedPosts as $post)
-    
-
 		        <div class="large-post">        
 		            <div class="parallax-container">
 		                <div class="section">
@@ -14,7 +12,7 @@
 		                        <h1 class="header center">{{$post->title}}</h1>
 		                    </div>
 		                </div>
-		                <div class="parallax"><img src="http://lorempixel.com/1600/900" alt="Unsplashed background img 1"></div>
+		                <div class="parallax"><img src="{{ $post->getFirstImageUrl() }}" alt="Unsplashed background img 1"></div>
 		            </div>
 
 		            <div class="content container">
@@ -22,7 +20,7 @@
 		                    <p class="wrap">{{ $post->content }}</p>
 		                </div>
 		                <div class="row center btn-row">
-		                    <a href="{{ url('/posts/'.$post->id) }}" class="btn waves-effect waves-light">View All</a>
+		                    <a href="{{ url('/posts/'.$post->slug) }}" class="btn waves-effect waves-light">View All</a>
 		                </div>
 		            </div>
 		            <div class="ads container">
@@ -41,18 +39,18 @@
         <div class="row">
             <div class="col s12 m9">
                 <ul>
-                    @for($i=0; $i < 4; $i++)
+                    @foreach($related as $post)
                         <li class="row small-post">
                             <div class="col s4 img-div">
-                                <img src="http://lorempixel.com/400/200" alt="">
+                                <img src="{{ $post->getFirstImageUrl() }}" alt="">
                             </div>
                             <div class="col s8">
-                                <h4>News Title Goes Here</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda debitis esse praesentium cupiditate corporis quaerat autem minus tempora, molestiae, non placeat aliquam commodi qui, voluptatem.</p>
+                                <h4>{{ $post->title }}</h4>
+                                <p>{{ $post->description }}</p>
                                 <a href="#" class="right">Read More <span></span></a>
                             </div>
                         </li>
-                    @endfor
+                    @endforeach
                 </ul>
             </div>
             <div class="col s12 m3">
@@ -65,10 +63,9 @@
                     <div class="card-content">
                         <h4>Related Posts</h4>
                         <ul>
-                            <li><a href="#">Related News Title</a></li>
-                            <li><a href="#">Related News Title</a></li>
-                            <li><a href="#">Related News Title</a></li>
-                            <li><a href="#">Related News Title</a></li>
+                            @foreach($related as $post)
+                                <li><a href="{{ url('posts',$post->slug)}}">Related News Title</a></li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>

@@ -106,6 +106,7 @@ class UserPostController extends Controller
         return [
             'title' => $request->title,
             'content' => $request->content,
+            'description' => $request->description,
             'status' => ($request->status == 'on') ? 1 : 0,
         ];
     }

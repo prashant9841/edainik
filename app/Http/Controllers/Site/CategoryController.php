@@ -21,8 +21,13 @@ class CategoryController extends Controller
      * @param Category $category
      * @return $this
      */
-    public function show(Category $category)
+    public function show($slug)
     {
-        return view('category.show')->with('category', $category);
+        
+        if($category = Category::where('slug',$slug)->first()){
+            $relatedPosts = $category->posts()->latest()->take(5)->get();
+            return view('category.show')->with('category', $category)->with('related',$relatedPosts);
+        }
+        return abort(404);
     }
 }

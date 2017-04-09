@@ -11,7 +11,7 @@ class Post extends Model implements HasMedia
 {
     use HasSlug,HasMediaTrait;
 
-	protected $fillable = ['title','slug','content','status','verified','publish_on' ];
+	protected $fillable = ['title','slug','content','status','verified','publish_on','description' ];
 
 	protected $casts = ['publish_on' => 'date', 'status' => 'boolean', 'verified' => 'boolean'];
 
@@ -22,7 +22,10 @@ class Post extends Model implements HasMedia
 
     public function getFirstImageUrl()
     {
-        return $this->getMedia('images')->first()->getUrl();
+        if($this->getMedia('images')->first()){
+            return $this->getMedia('images')->first()->getUrl();
+        }
+        return 'https://www.lorempixel.com/200/300';
     }
     public function approved()
     {

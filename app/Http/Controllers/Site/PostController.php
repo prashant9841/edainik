@@ -21,8 +21,9 @@ class PostController extends Controller
      * @param Post $post
      * @return $this
      */
-    public function show(Post $post)
+    public function show($slug)
     {
+        $post = Post::where('slug',$slug)->first() ?? abort(404);
         if ($post->status == 1 && $post->verified == 1) {
             return view('posts.show')->with('post', $post);
         }

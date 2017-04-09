@@ -29,7 +29,7 @@
                     </div>
                     <div class="row share center"> </div>
                     <div class="row center btn-row">
-                        <a href="{{ url('/posts/'.$post->id) }}" class="btn waves-effect waves-light">View All</a>
+                        <a href="{{ url('/posts/'.$post->slug) }}" class="btn waves-effect waves-light">View All</a>
                     </div>
                 </div>
                 <div class="ads container">
