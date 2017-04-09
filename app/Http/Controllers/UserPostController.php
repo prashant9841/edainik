@@ -78,7 +78,7 @@ class UserPostController extends Controller
         {
             $post->attachImageFromRequest();
         }
-        
+
         if ($post->update($this->getStub($request))) {
             return redirect()->to('/dashboard/posts/' . $id);
         }
@@ -97,10 +97,6 @@ class UserPostController extends Controller
         return redirect()->back();
     }
 
-    protected function attachImage($model,$request,$requestClass ='image', $collection = 'images')
-    {
-        return $model->addMediaFromRequest($requestClass)->toCollection($collection);
-    } 
     /**
      * @param Request $request
      * @return array

@@ -72,6 +72,13 @@ Route::group(['prefix'=>'/dashboard'],function(){
 	Route::put('/posts/{post}', 'UserPostController@update');
 	Route::get('/posts/{post}/edit', 'UserPostController@edit');
 	Route::delete('/posts/{post}','UserPostController@destroy');
+	/*
+	|--------------------------------------------------------------------------
+	| Images Routes
+	|--------------------------------------------------------------------------
+	*/
+
+	Route::get('/medias/remove/{postId}/{mediaId}','PostMediaController@removeImage');
 	
 	/*
 	|--------------------------------------------------------------------------

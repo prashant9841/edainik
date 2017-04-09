@@ -34,10 +34,17 @@
 	<div class="input-field col s12">
 		<input type="file" name="image">
 	</div>
-
 	@if(isset($post))
 		@foreach($post->getMedia('images') as $image)
-			<img src="{{$image->getUrl()}}" alt="">
+	<div class="card col m4 s6 l4">
+		<div class="card-image">
+			<img src="{{$image->getUrl()}}">
+			<span class="card-title">Card Title</span>
+		</div>
+		<div class="card-action">
+			<a href="{{ url('/dashboard/medias/remove/'.$post->id.'/'.$image->id)}}">Remove</a>
+		</div>
+	</div>
 		@endforeach
 	@endif
 </div>

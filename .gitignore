@@ -9,3 +9,5 @@ Homestead.yaml
 .env
 yarn.lock
 yarn-error.log
+/public/media/3
+/public/media/4
