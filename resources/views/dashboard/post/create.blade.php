@@ -23,3 +23,4 @@
 
 	</div>
 @stop
+@include('dashboard.post._wysiwyg')
