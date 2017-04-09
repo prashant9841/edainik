@@ -1,7 +1,7 @@
   {{ csrf_field() }}
 	<div class="row">
 		<div class="input-field col s6">
-			<input placeholder="Title" id="title" type="text" name="title" class="validate">
+			<input id="title" type="text" name="title" class="validate materialize-textarea">
 			<label for="title">Title</label>
 		</div>
 	</div>

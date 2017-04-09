@@ -3,11 +3,16 @@
 @section('content')
 	<div class="post-page">
 		<div class="row">
-			<h3>All News</h3>
-			<nav class="breadcrumbs">
-				<div class="nav-wrapper container">
+			<div class="col s12 m8">
+				<h3>All News</h3>
+			</div>
+			<div class="col s12 m4">
+				<a href="/dashboard/posts/create" class="btn right">Create A News</a>
+			</div>
+			<nav class="breadcrumbs col s12">
+				<div class="nav-wrapper">
 					<a class="breadcrumb" href="/dashboard">Dashboard</a>
-					<a class="breadcrumb" href="#!">All NEws</a>
+					<a class="breadcrumb" href="#!">All News</a>
 				</div>
 			</nav>
 		</div>

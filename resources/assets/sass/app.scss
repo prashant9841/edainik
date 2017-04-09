@@ -158,6 +158,15 @@ section {
 		// margin-left: -60px;
 	}
 
+	.btn {
+		background: $t;
+		color: #fff;
+		padding: 0 1rem;
+		font-size: 18px;
+		font-weight: bold;
+		border-radius: 0;
+	}
+
 }
 
 .side-nav {
@@ -183,5 +192,24 @@ section {
 }
 
 nav.breadcrumbs {
-	background: #ddd;
+	background: #e3e3e3;
+	height: auto;
+	line-height: 35px;
+	padding-left: 15px;
+	box-shadow: none;
+
+	a {
+		font-size: 13px;
+	}
+}
+
+.collection {
+	.row {
+		margin-bottom: 0;
+	}
+	p {
+		margin: 0;
+		padding: 0;
+		padding-left: 15px;
+	}
 }
