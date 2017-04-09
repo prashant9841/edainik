@@ -28,10 +28,10 @@
 <body>
     
     @include('layouts._dashSideNav')        
+    @include('layouts._dashTopNav')        
     
     <div class="container">
         <div class="row">
-            <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
             @yield('page-title')
 
             @yield('content')

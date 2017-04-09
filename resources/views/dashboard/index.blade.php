@@ -1,16 +1,17 @@
 @extends('layouts.dashboard')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col m8">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
-
-                <div class="panel-body">
-                    You are logged in!
-                </div>
-            </div>
+<div class="dashboard">    
+    <div class="container">
+        <div class="row">
+            
+                <h3>Dashboard</h3>
+                <ul class="breadcrumb inline">
+                    <li><a href="#">Dashboard</a></li>
+                </ul>
+        </div>
+        <div class="row content">
+            .
         </div>
     </div>
 </div>
