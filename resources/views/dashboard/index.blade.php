@@ -2,45 +2,52 @@
 
 @section('content')
 <div class="dashboard-page">    
-    <div class="container">
+    <div class="">
         <div class="row page-title">
             
             <h3>Dashboard</h3>            
             <nav class="breadcrumbs">
-                <div class="nav-wrapper container">
-                    <a class="breadcrumb" href="/dashboard">Dashboard</a>
-                    <a class="breadcrumb" href="#!">All NEws</a>
+                <div class="nav-wrapper">
+                    <a class="breadcrumb" href="#!">Dashboard</a>
                 </div>
             </nav>
         </div>
         <div class="row">
             <div class="col s12 m3">
-                <div class="card">
-                    <div class="card-content center-align">
-                        <a href="#">Add A News</a>
+                <a href="#">
+                    <div class="card">
+                        <div class="card-content center-align">
+                            <p>Add A News</p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col s12 m3">
-                <div class="card">
-                    <div class="card-content center-align">
-                        <a href="#">Manage Categories</a>
+                <a href="#">
+                    <div class="card">
+                        <div class="card-content center-align">
+                            <p>Manage Categories</p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col s12 m3">
-                <div class="card">
-                    <div class="card-content center-align">
-                        <a href="#">Manage Menus</a>
+                <a href="#">
+                    <div class="card">
+                        <div class="card-content center-align">
+                            <p>Manage Menus</p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col s12 m3">
-                <div class="card">
-                    <div class="card-content center-align">
-                        <a href="#">Manage Users</a>
+                <a href="#">
+                    <div class="card">
+                        <div class="card-content center-align">
+                            <p>Manage Users</p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
         <div class="row content">
