@@ -27,18 +27,18 @@
 		</div>
 		<div class="col s12 m6 l6">
 			<h3>Menus</h3>
-			<ul>
+			<ul class="collection">
 				@foreach($menus as $menu)
-					<li class="col s12 m12">
+					<li class="collection-item row">
 						<div class="col s12 m6 l6">
 							{{$menu->category->title}} - {{$menu->order}}
 						</div>
 						<div class="col s12 m6 l6">
-						<form method="post" action="{{ url('/dashboard/menus/'.$menu->id) }}">
-							{{ csrf_field() }}
-							<input type="hidden" name="_method" value="DELETE">
-							<button type="submit" class="btn red"><i class="ti-trash"></i></button>
-						</form>
+							<form method="post" action="{{ url('/dashboard/menus/'.$menu->id) }}">
+								{{ csrf_field() }}
+								<input type="hidden" name="_method" value="DELETE">
+								<button type="submit" class="btn red right"><i class="ti-trash"></i></button>
+							</form>
 						</div>
 					</li>
 				@endforeach
