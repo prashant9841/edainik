@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="/stylesheets/font-awesome.css">
     <link rel="stylesheet" href="/stylesheets/themify-icons.css">
     <link rel="stylesheet" href="/stylesheets/animate.css">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
     <!-- Styles -->
@@ -30,7 +32,7 @@
     @include('layouts._dashSideNav')        
     @include('layouts._dashTopNav')        
     
-    <div class="container">
+    <div class="container dashboard">
         <div class="row">
             @yield('page-title')
 

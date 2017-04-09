@@ -6,7 +6,7 @@
 			<h3>Categories</h3>
 			<ul class="collection">
 				@foreach($categories as $category)
-					<li class="collection-item">
+					<li class="collection-item row">
 						<span class="left">
 							{{$category->title}} 
 						</span>
@@ -37,7 +37,7 @@
 						<form method="post" action="{{ url('/dashboard/menus/'.$menu->id) }}">
 							{{ csrf_field() }}
 							<input type="hidden" name="_method" value="DELETE">
-							<button type="submit" class="btn">-</button>
+							<button type="submit" class="btn red"><i class="ti-trash"></i></button>
 						</form>
 						</div>
 					</li>
