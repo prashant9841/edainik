@@ -26,7 +26,7 @@
 					<div class="col s12 m3">
 						<div class="card">
 							<div class="card-image">
-				              	<img src="http://lorempixel.com/400/200">
+				              	<img src="{{$post->getFirstImageUrl() }}">
 				            </div>
 							<div class="card-content">
 								<span class="card-title">{{$post->title}}</span>
