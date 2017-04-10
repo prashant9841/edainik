@@ -50,7 +50,7 @@
 	<div class="input-field col s12">
 		<div class="file-field input-field">
 	      <div class="btn">
-	        <span>Media</span>
+	        <span><i class="material-icons">add_a_photo</i></span>
 	        <input type="file" name="image">
 	      </div>
 	      <div class="file-path-wrapper">
@@ -61,13 +61,19 @@
 	</div>
 	@if(isset($post))
 		@foreach($post->getMedia('images') as $image)
-		<div class="card col m4 s6 l4">
-			<div class="card-image">
-				<img src="{{$image->getUrl()}}">
-				<span class="card-title">Card Title</span>
-			</div>
-			<div class="card-action">
-				<a href="{{ url('/dashboard/medias/remove/'.$post->id.'/'.$image->id)}}">Remove</a>
+		<div class="col m4 s6 l4">
+			<div class="card">
+				<div class="card-image">
+					<img src="{{$image->getUrl()}}">
+					<div class="card-title row">
+						<h5 class="left">
+							Image
+						</h5>
+						<div class="right">							
+							<a class="btn red" href="{{ url('/dashboard/medias/remove/'.$post->id.'/'.$image->id)}}"><i class="material-icons">delete</i></a>
+						</div>
+					</div>
+				</div>		
 			</div>
 		</div>
 		@endforeach
