@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+    
+        @include('layouts._flashNews')
 
     <section class="featured-post">
         

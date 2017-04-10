@@ -58,7 +58,6 @@
             </div>
         </header>
         @include('layouts._frontendNav')
-        @include('layouts._flashNews')
 
 
         @yield('content')

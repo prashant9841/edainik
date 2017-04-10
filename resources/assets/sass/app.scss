@@ -33,7 +33,6 @@ body {
 
 a {
 	font-family: $font;
-	color: $secondary-color !important;
 }
 
 a.btn, .btn, button.btn, button {
@@ -94,13 +93,17 @@ header {
 
 .flash-news {
 	background: $primary-color;
-	color: #fff;
-	font-size: 18px;
+
 	.slick-dots, .slick-arrow {
 		display: none !important;
 	}
 	.slick-dotted.slick-slider {
 		margin-bottom: 0;
+	}
+
+	p a {
+		color: #fff;
+		font-size: 18px !important;
 	}
 }
 
@@ -108,6 +111,7 @@ ul.navigation {
 	li {
 		// position: relative;
 		a {
+			color: $secondary-color;
 			&:hover {
 				background: $t;
 				color: $primary-color !important;
@@ -205,6 +209,7 @@ ul.auth {
 	a {		
 	    padding-right: 30px;
 	    padding-bottom: 15px;
+	    color: $secondary-color;
 
 	    span {
 			width: 0%;
@@ -231,6 +236,7 @@ ul.auth {
 		overflow: hidden;
 	}
 }
+
 
 section {
 	padding-bottom: 75px;
