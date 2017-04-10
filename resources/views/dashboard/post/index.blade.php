@@ -7,7 +7,7 @@
 				<h3>All News</h3>
 			</div>
 			<div class="col s12 m4">
-				<a href="/dashboard/posts/create" class="btn right">Create A News</a>
+				<a href="/dashboard/posts/create" class="btn right"><i class="material-icons">add</i></a>
 			</div>
 			<nav class="breadcrumbs col s12">
 				<div class="nav-wrapper">

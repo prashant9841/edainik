@@ -8,7 +8,7 @@
 				<h3>All Categories</h3>
 			</div>
 			<div class="col s12 m4">
-				<a href="/dashboard/categories/create" class="btn right">Create A Category</a>
+				<a href="/dashboard/categories/create" class="btn right"><i class="material-icons">add</i></a>
 			</div>
 			<nav class="breadcrumbs col s12">
 				<div class="nav-wrapper">

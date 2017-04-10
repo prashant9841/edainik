@@ -7,7 +7,7 @@
 				<h3>All Medias</h3>
 			</div>
 			<div class="col s12 m4">
-				<a href="/dashboard/medias/create" class="btn right">Create A Media</a>
+				<a href="/dashboard/medias/create" class="btn right"><i class="material-icons">add</i></a>
 			</div>
 			<nav class="breadcrumbs col s12">
 				<div class="nav-wrapper">

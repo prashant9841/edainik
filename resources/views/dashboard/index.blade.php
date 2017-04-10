@@ -12,12 +12,12 @@
                 </div>
             </nav>
         </div>
-        <div class="row">
+        <div class="row btn-cards">
             <div class="col s12 m3">
                 <a href="{{ url('/dashboard/posts/create') }}">
-                    <div class="card">
+                    <div class="card light-blue accent-4">
                         <div class="card-content center-align">
-                            <p>Add A News</p>
+                            <p><i class="material-icons">description</i> Add A News</p>
                         </div>
                     </div>
                 </a>
@@ -25,27 +25,27 @@
             @if(Auth::user()->isSuperAdmin())
             <div class="col s12 m3">
                 <a href="{{ url('/dashboard/categories') }}">
-                    <div class="card">
+                    <div class="card red">
                         <div class="card-content center-align">
-                            <p>Manage Categories</p>
+                            <p><i class="material-icons">view_compact</i><span> Manage Categories</span></p>
                         </div>
                     </div>
                 </a>
             </div>
-            <div class="col s12 m3">
+            <div class="col s12 m3 ">
                 <a href="{{ url('/dashboard/menus') }}">
-                    <div class="card">
+                    <div class="card green">
                         <div class="card-content center-align">
-                            <p>Manage Menus</p>
+                            <p><i class="material-icons">sort</i> Manage Navigation</p>
                         </div>
                     </div>
                 </a>
             </div>
-            <div class="col s12 m3">
+            <div class="col s12 m3 ">
                 <a href="{{ url('/dashboard/users') }}">
-                    <div class="card">
+                    <div class="card brown darken-1">
                         <div class="card-content center-align">
-                            <p>Manage Users</p>
+                            <p><i class="material-icons">group</i>  Manage Users</p>
                         </div>
                     </div>
                 </a>
