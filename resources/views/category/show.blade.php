@@ -33,7 +33,7 @@
 		        </div>
 			@endforeach
 		</section>
-
+    @if(isset($related))
     <section class="related container">
         <h3>Related Posts</h3>
         <div class="row">
@@ -77,7 +77,7 @@
             </div>
         </div>
     </section>
-
+    @endif
 	</div>
 
 @stop
