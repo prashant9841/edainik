@@ -30,20 +30,20 @@
     
     @if($user->isSuperAdmin())
         <li><a href="{{ url('/dashboard/all-posts') }}"><i class="ti-layout-list-thumb-alt"></i>All Posts</a></li>
-    @endif 
     
-    <ul class="collapsible" data-collapsible="accordion">
-        <li>
-          <div class="collapsible-header"><i class="ti-layout-menu-v"></i>Categories</div>
-          <div class="collapsible-body">              
-              <ul>
-                  <li><a href="{{ url('/dashboard/categories') }}"> View All Categories</a></li>
-                  <li><a href="{{ url('/dashboard/categories/create') }}"> Add A Category</a></li>
-              </ul>
-          </div>
-        </li>
-    </ul>
-    <li><a href="{{ url('/dashboard/menus') }}"><i class="ti-layout-menu-separated"></i>Navigation</a></li>
-    <li><a href="{{ url('/dashboard/users') }}"><i class="ti-user"></i>Users</a></li>
+      <ul class="collapsible" data-collapsible="accordion">
+          <li>
+            <div class="collapsible-header"><i class="ti-layout-menu-v"></i>Categories</div>
+            <div class="collapsible-body">              
+                <ul>
+                    <li><a href="{{ url('/dashboard/categories') }}"> View All Categories</a></li>
+                    <li><a href="{{ url('/dashboard/categories/create') }}"> Add A Category</a></li>
+                </ul>
+            </div>
+          </li>
+      </ul>
+      <li><a href="{{ url('/dashboard/menus') }}"><i class="ti-layout-menu-separated"></i>Navigation</a></li>
+      <li><a href="{{ url('/dashboard/users') }}"><i class="ti-user"></i>Users</a></li>
+    @endif 
 
 </ul>
