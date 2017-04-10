@@ -102,6 +102,7 @@ class CategoryController extends Controller
     {
         $data = [
             'title' => $request->title,
+            'status' => ($request->status == 'on') ? 1 : 0,
         ];
         //If the slug exists
         if (strlen($request->slug) > 5) {

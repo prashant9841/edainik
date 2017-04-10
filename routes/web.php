@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function (App\Post $post) {
-    return view('welcome')->with('posts', $post->approved()->latest('updated_at')->get());
-});
+Route::get('/', 'Site\PagesController@homepage');
 
 Auth::routes();
 

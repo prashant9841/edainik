@@ -22,3 +22,8 @@
 	</div>
 </div>
 
+<p>
+	<input type="checkbox" class="filled-in" id="filled-in-box" @if(isset($category)) {{ ($category->status) ?'checked': null }} @endif name="status" />
+	<label for="filled-in-box">Publish</label>
+</p>
+

@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Auth;
-use App\Menu;
+use App\{Menu,Category};
 use Illuminate\View\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -22,6 +22,10 @@ class AppServiceProvider extends ServiceProvider
         });
         view()->composer('layouts._frontendNav',function(View $view){   
             return $view->with('menus', Menu::ordered()->get()); 
+        });
+
+        view()->composer('dashboard.post._form',function(View $view){   
+            return $view->with('categories', Category::where('status',1)->get()); 
         });
 
     }

@@ -27,8 +27,25 @@
 
 <div class="row">
 	<div class="input-field col s12">
-		<label for="textarea">Category</label>
-	</div>
+    <select name="category_id">
+  	<option value="" disabled 
+  	@if(isset($post) && $post->category_id == null)
+  		selected
+  	@endif
+  	>Choose your option</option>
+
+	
+	  @foreach($categories as $category)
+	      <option value="{{ $category->id }}"
+			@if(isset($post) && $post->category_id == $category->id)
+			selected
+			@endif
+	      >{{ $category->title }}</option>
+	  @endforeach
+
+    </select>
+    <label>Choose a category</label>
+  </div>
 </div>
 
 <p>
@@ -54,3 +71,12 @@
 		@endforeach
 	@endif
 </div>
+
+
+@section('bottom-scripts')
+<script>
+	$(document).ready(function() {
+    $('select').material_select();
+  });
+</script>
+@stop

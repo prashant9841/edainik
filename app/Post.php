@@ -11,7 +11,7 @@ class Post extends Model implements HasMedia
 {
     use HasSlug,HasMediaTrait;
 
-	protected $fillable = ['title','slug','content','status','verified','publish_on','description' ];
+	protected $fillable = ['title','slug','content','status','verified','publish_on','description','category_id'];
 
 	protected $casts = ['publish_on' => 'date', 'status' => 'boolean', 'verified' => 'boolean'];
 
