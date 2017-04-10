@@ -36,42 +36,11 @@
         <div class="row">
             <div class="col s12 m9">
                 <ul>
-                    @for($i=0; $i < 4; $i++)
-                        <li class="row small-post">
-                            <div class="col s4 img-div">
-                                <img src="http://lorempixel.com/400/200" alt="">
-                            </div>
-                            <div class="col s8">
-                                <h4>News Title Goes Here</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda debitis esse praesentium cupiditate corporis quaerat autem minus tempora, molestiae, non placeat aliquam commodi qui, voluptatem.</p>
-                                <a href="#" class="right">Read More <span></span> </a>
-                            </div>
-                        </li>
-                    @endfor
+                    @include('partials.post._latestPost')
                 </ul>
             </div>
             <div class="col s12 m3">
-                <div class="card">
-                    <div class="card-content">
-                        <p>Nice and Clean Ads</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <h4>Related Posts</h4>
-                        <ul>
-                            <li><a href="#">Related News Title</a></li>
-                            <li><a href="#">Related News Title</a></li>
-                            <li><a href="#">Related News Title</a></li>
-                            <li><a href="#">Related News Title</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <p>Nice and Clean Ads</p>
-                    </div>
-                </div>
+                @include('partials.post._relatedPost')
             </div>
         </div>
     </section>
