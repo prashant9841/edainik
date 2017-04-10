@@ -31,6 +31,7 @@
 							<div class="right">
 								<a class="btn" href="{{ url('/dashboard/medias/'. $image->id .'/edit')}}"><i class="material-icons">create</i></a>
 								<a class="btn red" href="{{ url('/dashboard/medias/removeImage/'.$image->id)}}"><i class="material-icons">delete</i></a>
+								<a href="{{ url('dashboard/posts/'.$image->model_type::find($image->model_id)->id.'/edit') }}">Show</a>
 							</div>
 						</div>
 					</div>

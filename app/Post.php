@@ -27,6 +27,7 @@ class Post extends Model implements HasMedia
         }
         return 'https://www.lorempixel.com/200/200/news';
     }
+    
     public function approved()
     {
     	return $this->where(['verified' => true, 'status' =>true]);
