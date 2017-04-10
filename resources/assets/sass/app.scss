@@ -92,6 +92,18 @@ header {
 	}
 }
 
+.flash-news {
+	background: $primary-color;
+	color: #fff;
+	font-size: 18px;
+	.slick-dots, .slick-arrow {
+		display: none !important;
+	}
+	.slick-dotted.slick-slider {
+		margin-bottom: 0;
+	}
+}
+
 ul.navigation {
 	li {
 		// position: relative;
@@ -128,6 +140,10 @@ ul.navigation {
 				color: $primary-color !important;
 			}
 		}
+	}
+
+	input {
+		margin-bottom: 0;
 	}
 }
 ul.auth {
@@ -208,7 +224,12 @@ ul.auth {
 				width: 100%
 			}
 		}
-	} 
+	}
+
+	.img-div {
+		max-height: 25vh;
+		overflow: hidden;
+	}
 }
 
 section {
@@ -227,6 +248,11 @@ section {
 
 
 // DASHBOARD
+
+
+td, th {
+	max-width: 50vw;
+}
 
 .top-nav {
 	background: $secondary-color;
@@ -294,4 +320,14 @@ nav.breadcrumbs {
 
 #slide-out{
 	z-index: 99999999999;
+}
+
+.note-editor {
+	.note-editable {
+		height: 200px;
+	}
+}
+
+.dropdown-content.select-dropdown {
+	z-index: 9999999;
 }

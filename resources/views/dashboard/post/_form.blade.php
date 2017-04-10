@@ -1,6 +1,6 @@
 {{ csrf_field() }}
 <div class="row">
-	<div class="input-field col s6">
+	<div class="input-field col s12 m6">
 
 		<input id="title" type="text" name="title" class="validate materialize-textarea"
 			@if(isset($post))
@@ -11,6 +11,26 @@
 
 		<label for="title">Title</label>
 	</div>
+	<div class="input-field col s12 m6">
+	    <select name="category_id">
+		  	<option value="" disabled 
+		  	@if(isset($post) && $post->category_id == null)
+		  		selected
+		  	@endif
+		  	>Choose your option</option>
+
+			
+			  @foreach($categories as $category)
+			      <option value="{{ $category->id }}"
+					@if(isset($post) && $post->category_id == $category->id)
+					selected
+					@endif
+			      >{{ $category->title }}</option>
+			  @endforeach
+
+		</select>
+	    <label>Choose a category</label>
+  	</div>
 </div>
 <div class="row">
 	<div class="input-field col s12">
@@ -25,37 +45,19 @@
 	</div>
 </div>
 
-<div class="row">
-	<div class="input-field col s12">
-    <select name="category_id">
-  	<option value="" disabled 
-  	@if(isset($post) && $post->category_id == null)
-  		selected
-  	@endif
-  	>Choose your option</option>
-
-	
-	  @foreach($categories as $category)
-	      <option value="{{ $category->id }}"
-			@if(isset($post) && $post->category_id == $category->id)
-			selected
-			@endif
-	      >{{ $category->title }}</option>
-	  @endforeach
-
-    </select>
-    <label>Choose a category</label>
-  </div>
-</div>
-
-<p>
-	<input type="checkbox" class="filled-in" id="filled-in-box" @if(isset($post)) {{ ($post->status) ?'checked': null }} @endif name="status" />
-	<label for="filled-in-box">Publish</label>
-</p>
 
 <div class="row">
 	<div class="input-field col s12">
-		<input type="file" name="image">
+		<div class="file-field input-field">
+	      <div class="btn">
+	        <span>Media</span>
+	        <input type="file" name="image">
+	      </div>
+	      <div class="file-path-wrapper">
+	        <input class="file-path validate" type="text" placeholder="Upload Image">
+	      </div>
+	    </div>
+		{{-- <input type="file" name="image"> --}}
 	</div>
 	@if(isset($post))
 		@foreach($post->getMedia('images') as $image)
@@ -71,6 +73,12 @@
 		@endforeach
 	@endif
 </div>
+
+
+<p>
+	<input type="checkbox" class="" id="filled-in-box" @if(isset($post)) {{ ($post->status) ?'checked': null }} @endif name="status" />
+	<label for="filled-in-box">Publish</label>
+</p>
 
 
 @section('bottom-scripts')

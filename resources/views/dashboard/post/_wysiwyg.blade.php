@@ -28,7 +28,7 @@
 
         $('#textarea').materialnote({
 //            toolbar: toolbar,
-            height: 550,
+            height: 200,
             minHeight: 100,
             defaultBackColor: '#e0e0e0'
         });

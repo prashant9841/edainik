@@ -19,7 +19,7 @@
 			</nav>
 		</div>
 		<div class="row">
-			<h1>{{ $category->title }} </h1>
+			{{-- <h1>{{ $category->title }} </h1> --}}
 			<h5>Related News</h5>
 			<div class="row">
 				@foreach($category->userPosts(Auth::user()->id) as $post)

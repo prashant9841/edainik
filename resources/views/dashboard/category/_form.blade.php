@@ -1,7 +1,7 @@
 {{ csrf_field() }}
 <div class="row">
 	<div class="input-field col s6">
-		<input placeholder="Title" id="title" type="text" name="title" class="validate" 
+		<input id="title" type="text" name="title" class="validate" 
 
 		@if(isset($category))
 			value="{{ $category->title }}"
@@ -13,7 +13,7 @@
 </div>
 <div class="row">
 	<div class="input-field col s12">
-		<input placeholder="Slug" id="slug" type="text" name="slug" class="validate"
+		<input id="slug" type="text" name="slug" class="validate"
 			@if(isset($category))
 				value="{{ $category->slug }}"
 			@endif
