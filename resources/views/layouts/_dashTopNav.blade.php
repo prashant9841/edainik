@@ -8,7 +8,7 @@
             <ul class="inline">
                 <li>
                      <!-- Dropdown Trigger -->
-                    <i class='dropdown-button material-icons btn' data-beloworigin="true" data-activates='message'>message</i>
+                    <i class='dropdown-button material-icons btn' data-beloworigin="true" data-activates='message'>&#xE0C9;</i>
 
                       <!-- Dropdown Structure -->
                     <ul id='message' class='dropdown-content'>
@@ -20,7 +20,7 @@
                 </li>
                 <li>
                      <!-- Dropdown Trigger -->
-                    <i class='dropdown-button material-icons btn' data-beloworigin="true" data-activates='notifications'>notifications</i>
+                    <i class='dropdown-button material-icons btn' data-beloworigin="true" data-activates='notifications'>&#xE7F4;</i>
 
                       <!-- Dropdown Structure -->
                     <ul id='notifications' class='dropdown-content'>
@@ -32,7 +32,7 @@
                 </li>
                 <li>
                      <!-- Dropdown Trigger -->
-                    <i class='dropdown-button material-icons btn' data-beloworigin="true" data-activates='user'>person</i>
+                    <i class='dropdown-button material-icons btn' data-beloworigin="true" data-activates='user'>&#xE7FD;</i>
 
                       <!-- Dropdown Structure -->
                     <ul id='user' class='dropdown-content'>

@@ -25,7 +25,7 @@ class Post extends Model implements HasMedia
         if($this->getMedia('images')->first()){
             return $this->getMedia('images')->first()->getUrl();
         }
-        return 'https://www.lorempixel.com/200/300';
+        return 'https://www.lorempixel.com/200/200/news';
     }
     public function approved()
     {
