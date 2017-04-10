@@ -23,11 +23,12 @@
 			<div class="card col m4 s6 l4">
 				<div class="card-image">
 					<img src="{{$image->getUrl()}}">
-					<span class="card-title">Card Title</span>
+					<span class="card-title">{{ $image->name }}</span>
 				</div>
 				<div class="card-action">
 					<a href="{{ url('/dashboard/medias/removeImage/'.$image->id)}}">Remove</a>
 					<a href="{{ url('/dashboard/medias/'. $image->id .'/edit')}}">Edit</a>
+					<a href="{{ url('dashboard/posts/'.$image->model_type::find($image->model_id)->id.'/edit') }}">Show</a>
 				</div>
 			</div>
 			@endforeach
