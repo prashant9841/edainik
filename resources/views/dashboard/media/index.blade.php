@@ -20,14 +20,20 @@
 	<div class="all-posts">		
 		@if(isset($medias))
 			@foreach($medias as $image)
-			<div class="card col m4 s6 l4">
-				<div class="card-image">
-					<img src="{{$image->getUrl()}}">
-					<span class="card-title">Card Title</span>
-				</div>
-				<div class="card-action">
-					<a href="{{ url('/dashboard/medias/removeImage/'.$image->id)}}">Remove</a>
-					<a href="{{ url('/dashboard/medias/'. $image->id .'/edit')}}">Edit</a>
+			<div class="col m4 s6">
+				<div class="card">
+					<div class="card-image">
+						<img src="{{$image->getUrl()}}">
+						<div class="card-title row">
+							<h5 class="left">
+								Image
+							</h5>
+							<div class="right">
+								<a class="btn" href="{{ url('/dashboard/medias/'. $image->id .'/edit')}}"><i class="material-icons">create</i></a>
+								<a class="btn red" href="{{ url('/dashboard/medias/removeImage/'.$image->id)}}"><i class="material-icons">delete</i></a>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 			@endforeach

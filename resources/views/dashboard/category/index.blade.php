@@ -25,7 +25,7 @@
 					<a href="{{ url('dashboard/categories/'.$category->id) }}" class="collection-item">
 						<div class="row">
 							<p class="left flow">{{ $category->title }} </p>
-							<div class="right"><button class="btn">View</button></div>
+							<div class="right"><button class="btn" style="padding: 0 1rem;"><i class="material-icons">create</i></button></div>
 						</div>
 					</a>
 					

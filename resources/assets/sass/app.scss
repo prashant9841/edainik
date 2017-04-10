@@ -40,6 +40,15 @@ a.btn, .btn, button.btn, button {
 	// font-weight: bold;
 	background-color: $primary-color;
 	letter-spacing: 2px;
+
+	&:hover {
+		background-color: $primary-color - 30;
+	}
+
+	&:focus {
+		background-color: $primary-color - 30;
+
+	}
 }
 
 a {
@@ -310,6 +319,11 @@ nav.breadcrumbs {
 
 	a {
 		font-size: 13px;
+		color: $secondary-color;
+
+		&:hover {
+			color: $primary-color;
+		}
 	}
 }
 
@@ -336,4 +350,37 @@ nav.breadcrumbs {
 
 .dropdown-content.select-dropdown {
 	z-index: 9999999;
+}
+
+.dashboard {
+	.btn.right {
+		margin-top: 15px;
+	}
+	.card {
+		a {
+			color: $secondary-color !important;
+
+			&:hover {
+				color: $primary-color !important;
+			}
+		}
+		.card-image .card-title {
+			width: 100%;
+			margin: 0;
+
+			.btn {
+				color: #fff !important;
+				padding: 0 1rem;
+			}
+		}
+		p {
+			color: $secondary-color;
+		}
+	}
+
+	table {
+		.btn {
+			padding: 0 1rem;
+		}
+	}
 }

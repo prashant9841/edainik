@@ -34,13 +34,13 @@
 							<td class="line-clamp">{!! $post->content !!}</td>
 							<td>{{ $post->updated_at->diffForHumans() }}</td>
 							<td>
-								<a class="btn" href="{{ url('/dashboard/posts/'.$post->id) }}">View</a>
-								<a class="btn" href="{{ url('/dashboard/posts/'.$post->id.'/edit') }}">Edit</a>
+								<a class="btn" href="{{ url('/dashboard/posts/'.$post->id) }}"><i class="material-icons">open_in_new</i></a>
+								<a class="btn" href="{{ url('/dashboard/posts/'.$post->id.'/edit') }}"><i class="material-icons">mode_edit</i></a>
 								@if(Auth::user()->isSuperAdmin())
 									@if($post->verified)
-										<a class="btn" href="{{ url('/dashboard/posts/'.$post->id.'/unverify') }}">Unverify</a>
+										<a class="btn red" href="{{ url('/dashboard/posts/'.$post->id.'/unverify') }}"><i class="material-icons">block</i></a>
 									@else
-										<a class="btn" href="{{ url('/dashboard/posts/'.$post->id.'/verify') }}">Verify</a>
+										<a class="btn green" href="{{ url('/dashboard/posts/'.$post->id.'/verify') }}"><i class="material-icons">done</i></a>
 									@endif
 
 								@endif

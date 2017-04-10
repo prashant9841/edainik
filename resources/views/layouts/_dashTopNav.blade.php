@@ -1,7 +1,7 @@
 <div class="row top-nav">
     <div class="container">
         <ul class="left">            
-            <a href="#" data-activates="slide-out" class="button-collapse btn"><i class="ti-menu"></i></a>
+            <a href="#" data-activates="slide-out" class="button-collapse btn"><i class="material-icons">menu</i></a>
         </ul>
 
         <div class="right">

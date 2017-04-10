@@ -13,7 +13,7 @@
 			<nav class="breadcrumbs col s12">
 				<div class="nav-wrapper">
 					<a class="breadcrumb" href="/dashboard">Dashboard</a>
-					<a class="breadcrumb" href="/dashboard/cagegories">All Categories</a>
+					<a class="breadcrumb" href="/dashboard/categories">All Categories</a>
 					<a class="breadcrumb" href="#!">{{ $category->title }}</a>
 				</div>
 			</nav>

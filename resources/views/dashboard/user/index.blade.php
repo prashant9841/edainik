@@ -21,7 +21,7 @@
 						<td>{{ $user->email }} </td>
 						<td>{{ $user->created_at->diffForHumans() }} </td>
 						<td>{{ $user->updated_at->diffForHumans() }} </td>
-						<td> <a class="btn" href="#">Edit</a></td>
+						<td> <a class="btn" href="#"><i class="material-icons">create</i></a></td>
 					</tr>
 					@endforeach
 					</tbody>
