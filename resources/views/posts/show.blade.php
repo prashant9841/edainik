@@ -1,10 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
 	<section class="featured-post">
-    
-
         <div class="large-post">        
             <div class="parallax-container">
                 <div class="section">
@@ -22,11 +19,7 @@
 
             </div>
             <div class="ads container">
-                <div class="card">
-                    <div class="card-content">
-                        <h1>Nice and Clean Ads</h1>
-                    </div>
-                </div>
+             {!! Ads::show('responsive') !!}
             </div>
         </div>
     </section>

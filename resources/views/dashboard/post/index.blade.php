@@ -31,7 +31,7 @@
 					@foreach($posts as $post)
 						<tr>
 							<td>{{ $post->title }}</td>
-							<td class="line-clamp">{!! $post->content !!}</td>
+							<td class="line-clamp">{{ $post->description }}</td>
 							<td>{{ $post->updated_at->diffForHumans() }}</td>
 							<td>
 								<a class="btn" href="{{ url('/dashboard/posts/'.$post->id) }}"><i class="material-icons">open_in_new</i></a>

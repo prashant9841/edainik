@@ -1,7 +1,5 @@
 <div class="card">
-    <div class="card-content">
-        {!! Ads::show('responsive') !!}
-    </div>
+    {!! Ads::show('responsive') !!}
 </div>
 <div class="card">
     <div class="card-content">
@@ -15,7 +13,5 @@
     </div>
 </div>
 <div class="card">
-    <div class="card-content">
-        {!! Ads::show('responsive') !!}
-    </div>
+{!! Ads::show('responsive') !!}
 </div>

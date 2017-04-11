@@ -5,35 +5,10 @@
 	<div class="row">
 		<section class="featured-post">
 			@foreach($category->approvedPosts as $post)
-		        <div class="large-post">        
-		            <div class="parallax-container">
-		                <div class="section">
-		                    <div class="container">
-		                        <h1 class="header center">{{$post->title}}</h1>
-		                    </div>
-		                </div>
-		                <div class="parallax"><img src="{{ $post->getFirstImageUrl() }}" alt="Unsplashed background img 1"></div>
-		            </div>
-
-		            <div class="content container">
-		                <div class="row center">
-		                    <p class="wrap">{{ $post->content }}</p>
-		                </div>
-		                <div class="row center btn-row">
-		                    <a href="{{ url('/posts/'.$post->slug) }}" class="btn waves-effect waves-light">View All</a>
-		                </div>
-		            </div>
-		            <div class="ads container">
-		                <div class="card">
-		                    <div class="card-content">
-		                        <h1>Nice and Clean Ads</h1>
-		                    </div>
-		                </div>
-		            </div>
-		        </div>
+		      @include('partials.category._postCard')
 			@endforeach
 		</section>
-
+    @if(isset($related))
     <section class="related container">
         <h3>Related Posts</h3>
         <div class="row">
@@ -77,7 +52,7 @@
             </div>
         </div>
     </section>
-
+    @endif
 	</div>
 
 @stop
