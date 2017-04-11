@@ -1,10 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
 	<section class="featured-post">
-    
-
         <div class="large-post">        
             <div class="parallax-container">
                 <div class="section">
