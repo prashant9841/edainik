@@ -138,11 +138,16 @@ Route::group(['prefix'=>'/dashboard'],function(){
 	Route::delete('/menus/{id}','MenuController@destroy');
 	/*
 	|--------------------------------------------------------------------------
-	| Menu Routes
+	| Users Routes
 	|--------------------------------------------------------------------------
 	*/
 	
 	Route::get('/users','UsersController@index');	
-
+	/*
+	|--------------------------------------------------------------------------
+	| Settings Routes
+	|--------------------------------------------------------------------------
+	*/
+	Route::get('/settings','SettingsController@index');
 });
 

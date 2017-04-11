@@ -16,7 +16,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()->composer('layouts._dashSideNav',function(View $view){
+        view()->composer(['layouts._dashSideNav','layouts._dashTopNav'],function(View $view){
             if(Auth::check())
                 return $view->with('user', Auth::user()); 
         });
