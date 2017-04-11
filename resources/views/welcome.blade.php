@@ -93,8 +93,7 @@
                                 <div class="card-content">                                   
                                     <a class="card-title" href="{{ url('/posts/'.$post->slug) }}" >                                        
                                         {{$post->title}}
-                                    </a>                                    
-                                    <p class="wrap">{{ $post->content }}</p>
+                                    </a>
                                 </div>
                             </div>
                         @endforeach
