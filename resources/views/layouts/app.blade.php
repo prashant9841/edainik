@@ -115,6 +115,13 @@
                     // instead of a settings object
                 ]
             });
+             $('.slide-news').slick({
+                dots: false,
+                autoplay: true,
+                arrow: false,
+                adaptiveHeight: true
+
+             })
         </script>
 
 

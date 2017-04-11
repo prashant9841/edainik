@@ -50,6 +50,7 @@ a.btn, .btn, button.btn, button {
 
 	&:hover {
 		background-color: $primary-color - 30;
+		color: #fff !important;
 	}
 
 	&:focus {
@@ -218,6 +219,7 @@ ul.navigation {
 			}
 
 			a {
+
 				color: $primary-color !important;
 			}
 		}
@@ -248,7 +250,7 @@ ul.auth {
 
 .large-post {
 	.parallax-container {
-		min-height: 380px;
+		min-height: 580px;
 		line-height: 0;
 		height: auto;
 		color: rgba(255,255,255,.9);
@@ -305,7 +307,7 @@ ul.auth {
 		}
 
 		&:hover {
-			color: $primary-color !important;
+			// color: $primary-color !important;
 			span {
 				width: 100%
 			}
@@ -318,9 +320,34 @@ ul.auth {
 	}
 }
 
+.slide-news {
+	.card-content {
+		a {
+			color: #5a5a5a;
+
+			&:hover {
+				color: $primary-color;
+			}
+		}
+		p {
+			@include line-clamp(21px, 3);
+		}
+	}
+}
+
 
 section {
 	padding-bottom: 75px;
+
+	.section-title {
+		h4 { 
+			font-size: 28px;
+		    border-bottom: 2px solid;
+		    float: left;
+		    line-height: 30px;
+
+		}
+	}
 }
 
 .img-div {
