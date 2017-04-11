@@ -27,11 +27,16 @@ $font: 'Open Sans', sans-serif;
 body {
 	// background: #eee;
 	margin: 0;
-	overflow-x: hidden;
+	// width: 100vw;
+	overflow-x: hidden !important;
 }
 
 p {
 	color: $secondary-color;
+
+	@include mobile {
+		font-size: 14px !important;
+	}
 }
 a {
 	font-family: $font;
@@ -65,12 +70,20 @@ h1, h2, h3 {
 	letter-spacing: 2px;
 	font-size: 28px;
 	color: $secondary-color;
+
+	@include mobile {
+		font-size: 22px;
+	}
 }
 h4 {
 	font-family: $font;
 	letter-spacing: 2px;
 	font-size: 22px;
 	color: $secondary-color;
+
+	@include mobile {
+		font-size: 18px;
+	}
 }
 
 .flow {	
@@ -87,6 +100,7 @@ h4 {
 header {
 	width: $container-width !important;
 	.logo-div {
+		margin-bottom: 0;
 		.logo {
 			background: $secondary-color;
 		}
@@ -99,6 +113,20 @@ header {
 				padding: 0;
 			}
 		}
+
+	}
+	@include tab {
+
+		width: 100% !important;
+		background: $secondary-color;
+		overflow-x: hidden;
+		.logo-div {
+			padding: 2%;
+			.ads {
+				display: none;
+			}
+		}
+		
 	}
 }
 
@@ -115,6 +143,35 @@ header {
 	p a {
 		color: #fff;
 		font-size: 18px !important;
+	}
+}
+
+.main-nav {
+	@include tab {		
+	    position: absolute;
+	    top: 2%;
+	    right: 2%;
+	    width: auto;
+
+	    .button-collapse {
+	    	color: #5a5a5a;
+	    }
+
+	    .side-nav {
+	    	li {
+	    		a {
+	    			font-size: 18px;
+	    		}
+	    		&:first-child {
+	    			height: 60px;
+
+	    			span {
+	    				display: none;
+	    			}
+	    		}
+	    	}
+	    }
+
 	}
 }
 
@@ -138,11 +195,20 @@ ul.navigation {
 			// left: 50%;
 			// transform: translateX(50%);
 			@include vendor(transition, all 0.2s ease-out);
+
+			@include tab {
+				margin: 0;
+				margin-top: -10px;
+			}
 		}
 
 		&:hover {
 			span {
-				width: 90%
+				width: 90%;
+
+				@include tab {
+					width: 100%;
+				}
 			}
 		}
 		&.active {
