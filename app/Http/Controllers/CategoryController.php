@@ -118,13 +118,13 @@ class CategoryController extends Controller
         switch ($request->status) {
                             
             case 'published':
-                $post =  Category::where('status',true)->latest()->get();
+                $category =  Category::where('status',true)->latest()->get();
                 break;
 
             default:
-                $post =  Category::latest()->get();
+                $category =  Category::latest()->get();
                 break;
         }
-        return $post;
+        return $category;
     } 
 }
