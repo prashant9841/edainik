@@ -9,7 +9,11 @@
 
 		>
 
-		<label for="title">Title</label>
+		<label for="title" >Title</label>
+
+		@if($errors->has('title'))
+			<p class="errors">{{ $errors->get('title')[0] }}</p>
+		@endif
 	</div>
 	<div class="input-field col s12 m6">
 	    <select name="category_id">
@@ -36,6 +40,11 @@
 	<div class="input-field col s12">
 		<textarea id="description" name="description" class="materialize-textarea">@if(isset($post)){{ $post->description }}@endif</textarea>
 		<label for="description">Description</label>
+
+		@if($errors->has('description'))
+			<p class="errors">{{ $errors->get('description')[0] }}</p>
+		@endif
+
 	</div>
 </div>
 
@@ -43,6 +52,9 @@
 	<div class="input-field col s12">
 		<textarea id="textarea" name="content" class="materialize-textarea">@if(isset($post)){{ $post->content }}@endif</textarea>
 		<label for="textarea">Content</label>
+		@if($errors->has('content'))
+			<p class="errors">{{ $errors->get('content')[0] }}</p>
+		@endif
 	</div>
 </div>
 
@@ -91,7 +103,7 @@
 @section('bottom-scripts')
 <script>
 	$(document).ready(function() {
-    $('select').material_select();
-  });
+		$('select').material_select();
+	});
 </script>
 @stop

@@ -1,4 +1,5 @@
 {{ csrf_field() }}
+
 <div class="row">
 	<div class="input-field col s6">
 		<input id="title" type="text" name="title" class="validate" 
@@ -9,6 +10,9 @@
 
 		>
 		<label for="title">Title</label>
+		@if($errors->has('title'))
+			<p class="errors">{{ $errors->get('title')[0] }}</p>
+		@endif
 	</div>
 </div>
 <div class="row">
@@ -19,6 +23,10 @@
 			@endif
 		>
 		<label for="slug">Slug</label>
+
+		@if($errors->has('slug'))
+			<p class="errors">{{ $errors->get('slug')[0] }}</p>
+		@endif
 	</div>
 </div>
 

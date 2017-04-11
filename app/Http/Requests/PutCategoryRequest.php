@@ -25,7 +25,8 @@ class PutCategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|min:2|max:200'
+            'title' => 'required|min:2|max:200',
+            'slug' => 'nullable|unique:slug|min:5|max:200'
         ];
     }
 }

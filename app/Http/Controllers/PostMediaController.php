@@ -17,6 +17,10 @@ class PostMediaController extends Controller
         $this->middleware('auth');
     }
 
+    public function ajaxGetImageByPost($postId)
+    {
+        return Post::findOrFail($postId)->getMedia('images');
+    }
     /**
      * Detach Image from post without removing
      * @param $postId

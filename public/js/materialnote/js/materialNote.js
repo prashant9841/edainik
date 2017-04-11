@@ -5029,6 +5029,9 @@ var dom = (function() {
         if (dataTransfer && dataTransfer.files && dataTransfer.files.length) {
           event.preventDefault();
           layoutInfo.editable().focus();
+
+          console.log(layoutInfo);
+
           handler.insertImages(layoutInfo, dataTransfer.files);
         } else {
           var insertNodefunc = function() {
@@ -6600,28 +6603,11 @@ var dom = (function() {
 
           imageLimitation = '<small>' + lang.image.maximumFileSize + ' : ' + readableSize + '</small>';
         }
+     
+        var body = globalImageVariable;
+;
 
-        var body = '<div class="row">' +
-                '<div class="col s12">' +
-                    '<div class="file-field input-field">' +
-                            '<div class="btn">' +
-                                '<span>' + lang.image.image + '</span>' +
-                                '<input class="note-image-input" name="files" type="file" />' +
-                            '</div>' +
-                        '<div class="file-path-wrapper">' +
-                            '<input class="file-path" type="text" />' +
-                        '</div>' +
-                    '</div>' +
-                '</div>' +
-            '</div>' +
-            '<div class="row">' +
-                '<div class="input-field col s12">' +
-                    '<input class="note-image-url" type="text" />' +
-                    '<label>' + lang.image.url + '</label>' +
-                '</div>' +
-            '</div>';
-
-        var footer = '<button href="#" class="waves-effect waves-light btn note-image-btn disabled" disabled>' + lang.image.insert + '</button>' +
+        var footer = '<button href="#" class="waves-effect waves-light btn note-image-btn " >' + lang.image.insert + '</button>' +
                      '<button class="waves-effect waves-light btn btnClose">' + lang.shortcut.close + '</button>';
         return tplDialog('note-image-dialog', lang.image.insert, body, footer);
       },
