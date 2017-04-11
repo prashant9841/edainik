@@ -26,7 +26,7 @@ class PutCategoryRequest extends FormRequest
     {
         return [
             'title' => 'required|min:2|max:200',
-            'slug' => 'nullable|unique:slug|min:5|max:200'
+            'slug' => 'nullable|unique:categories|min:5|max:200'
         ];
     }
 }

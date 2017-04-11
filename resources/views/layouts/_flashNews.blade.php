@@ -3,7 +3,7 @@
 			@foreach($latestNews as $news)
 		<div class="">			
 		        	           
-	            <p><a href="{{ url('posts',$news->slug)}}">{{ $news->title }}</a></p>
+	            <p><a href="{{ url('news',$news->slug)}}">{{ $news->title }}</a></p>
 		                
 		</div>
 		    @endforeach

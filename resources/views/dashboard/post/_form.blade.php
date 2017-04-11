@@ -64,7 +64,7 @@
 		<div class="file-field input-field">
 	      <div class="btn">
 	        <span><i class="material-icons">add_a_photo</i></span>
-	        <input type="file" name="image">
+	        <input type="file" name="image[]" multiple="true">
 	      </div>
 	      <div class="file-path-wrapper">
 	        <input class="file-path validate" type="text" placeholder="Upload Image">
@@ -84,6 +84,7 @@
 						</h5>
 						<div class="right">							
 							<a class="btn red" href="{{ url('/dashboard/medias/remove/'.$post->id.'/'.$image->id)}}"><i class="material-icons">delete</i></a>
+							<a class="btn red {{ ($loop->first)? 'disabled':null }}"  href="/dashboard/medias/set-featured/{{$post->id}}/{{$image->id}}"><i class="material-icons">star</i></a>
 						</div>
 					</div>
 				</div>		
