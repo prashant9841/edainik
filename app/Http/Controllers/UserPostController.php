@@ -20,9 +20,9 @@ class UserPostController extends Controller
      * Displays all the posts of the user
      * @return $this
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('dashboard.post.index')->with('posts', Auth::user()->posts()->latest()->get());
+        return view('dashboard.post.index')->with('posts',$this->getPostFromQuery($request));
     }
 
     /**
@@ -111,4 +111,30 @@ class UserPostController extends Controller
             'status' => ($request->status == 'on') ? 1 : 0,
         ];
     }
+
+    protected function getPostFromQuery(Request $request)
+    {
+        $userPost = Auth::user()->posts();
+        switch ($request->status) {
+            case 'verified':
+                $post =  $userPost->where(['verified' => true, 'status' => true])->latest()->get();
+                break;
+
+            case 'unverified':
+                $post =  $userPost->where('verified', false)->latest()->get();
+                break;
+
+            case 'published':
+                $post =  $userPost->where('status',true)->latest()->get();
+                break;
+
+            case 'unpublished':
+                $post =  $userPost->where('status',false)->latest()->get();
+            
+            default:
+                $post =  $userPost->latest()->get();
+                break;
+        }
+        return $post;
+    } 
 }

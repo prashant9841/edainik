@@ -34,14 +34,15 @@
 </div>
 <div class="row">
 	<div class="input-field col s12">
-		<textarea id="textarea" name="content" class="materialize-textarea">@if(isset($post)){{ $post->content }}@endif</textarea>
-		<label for="textarea">Content</label>
-	</div>
-</div>
-<div class="row">
-	<div class="input-field col s12">
 		<textarea id="description" name="description" class="materialize-textarea">@if(isset($post)){{ $post->description }}@endif</textarea>
 		<label for="description">Description</label>
+	</div>
+</div>
+
+<div class="row">
+	<div class="input-field col s12">
+		<textarea id="textarea" name="content" class="materialize-textarea">@if(isset($post)){{ $post->content }}@endif</textarea>
+		<label for="textarea">Content</label>
 	</div>
 </div>
 

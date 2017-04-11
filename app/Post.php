@@ -27,10 +27,25 @@ class Post extends Model implements HasMedia
         }
         return 'https://www.lorempixel.com/200/200/news';
     }
+
+    public function published()
+    {
+        return $this->where(['status' => true]);
+    }
+
+    public function unPublished()
+    {
+        return $this->where(['status' => false]);
+    }
     
     public function approved()
     {
-    	return $this->where(['verified' => true, 'status' =>true]);
+        return $this->where(['verified' => true, 'status' => true]);
+    }
+
+    public function unApproved()
+    {
+    	return $this->where(['verified' => false, 'status' => false]);
     }
 
     public function attachImageFromRequest($field = 'image' ,$collection = 'images')
