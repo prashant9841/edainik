@@ -17,9 +17,9 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Category $category)
+    public function index(Request $request)
     {
-        return view('dashboard.category.index')->with('categories', $category->all());
+        return view('dashboard.category.index')->with('categories', $this->getCategoryFromQuery($request));
     }
 
     /**
@@ -111,4 +111,20 @@ class CategoryController extends Controller
 
         return $data;
     }
+
+
+    protected function getCategoryFromQuery(Request $request)
+    {
+        switch ($request->status) {
+                            
+            case 'published':
+                $post =  Category::where('status',true)->latest()->get();
+                break;
+
+            default:
+                $post =  Category::latest()->get();
+                break;
+        }
+        return $post;
+    } 
 }
