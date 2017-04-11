@@ -17,6 +17,15 @@ class PostMediaController extends Controller
         $this->middleware('auth');
     }
 
+    public function makeTitleImage($postId,$imageId)
+    {
+        $postMedia = Auth::user()->posts()->findOrFail($postId)->getMedia('images');
+        $firstOrder = $postMedia->pluck('order_column')->min();
+        $image = $postMedia->find($imageId);
+        if($firstOrder && $image && $image->update(['order_column' => $firstOrder - 1 ])){
+            return redirect()->back();
+        }
+    }
     public function ajaxGetImageByPost($postId)
     {
         return Post::findOrFail($postId)->getMedia('images');
