@@ -7,6 +7,9 @@
                 <div class="section">
                     <div class="container">
                         <h1 class="header center">{{$post->title}}</h1>
+                         @if($post->category)
+                            <p>{{ $post->category->title }} </p>
+                        @endif
                     </div>
                 </div>
                 <div class="parallax"><img src="{{ $post->getFirstImageUrl() }}" alt="Unsplashed background img 1"></div>
