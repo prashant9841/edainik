@@ -115,6 +115,10 @@
                     // instead of a settings object
                 ]
             });
+             $('.slide-news').slick({
+                dots: false,
+                
+             })
         </script>
 
 
