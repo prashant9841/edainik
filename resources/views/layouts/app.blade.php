@@ -117,7 +117,10 @@
             });
              $('.slide-news').slick({
                 dots: false,
-                
+                autoplay: true,
+                arrow: false,
+                adaptiveHeight: true
+
              })
         </script>
 
