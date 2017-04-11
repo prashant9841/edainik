@@ -25,7 +25,7 @@ class CategoryController extends Controller
     {
         
         if($category = Category::where('slug',$slug)->first()){
-            $relatedPosts = $category->posts()->latest()->take(5)->get();
+            $relatedPosts = $category->posts()->where(['status'=>1,'verified' => true])->latest()->take(5)->get();
             return view('category.show')->with('category', $category)->with('related',$relatedPosts);
         }
         return abort(404);
