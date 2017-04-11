@@ -44,7 +44,7 @@
                                     @endif
                                 </div>
                                 <div class="card-content">                                   
-                                    <a class="card-title" href="{{ url('/posts/'.$post->slug) }}" >                                        
+                                    <a href="{{ url('/posts/'.$post->slug) }}" >                                        
                                         {{$post->title}}
                                     </a>   
                                 </div>
@@ -90,7 +90,7 @@
                                     @endif
                                 </div>
                                 <div class="card-content">                                   
-                                    <a class="card-title" href="{{ url('/posts/'.$post->slug) }}" >
+                                    <a href="{{ url('/posts/'.$post->slug) }}" >
                                         {{$post->title}}
                                     </a>
                                 </div>
