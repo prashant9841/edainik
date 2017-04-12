@@ -151,5 +151,7 @@ Route::group(['prefix'=>'/dashboard'],function(){
 	|--------------------------------------------------------------------------
 	*/
 	Route::get('/settings','SettingsController@index');
+	Route::get('/settings/password','SettingsController@password');
+	Route::post('/settings/password','SettingsController@changePassword');
 });
 
