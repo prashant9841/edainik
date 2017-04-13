@@ -145,6 +145,13 @@ header {
 		color: #fff;
 		font-size: 18px !important;
 	}
+
+	.slick-slide {
+		p {
+			@include line-clamp(21px, 1);
+			color: #fff;
+		}
+	}
 }
 
 .main-nav {
