@@ -20,7 +20,7 @@
                 <div class="section">
                     <div class="container">
                         @if(Auth::check() && Auth::user()->id == $post->user_id)
-                            <a class="btn" href="{{ url('/dashboard/posts/'.$post->id.'/edit')}}"><i class="material-icons">create</i></a>
+                            <a class="btn" href="{{ url('/dashboard/posts/'.$post->id.'/edit')}}"><i class="ti-pencil"></i></a>
                         @endif
                         <h1 class="header center">{{$post->title}}</h1>
                          @if($post->category)

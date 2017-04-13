@@ -7,12 +7,12 @@
         </ul>
 
         <ul class="hide-on-med-and-down right navigation auth">
-            <li><input type="text" placeholder="Search"></li>
+            {{-- <li><input type="text" placeholder="Search"></li> --}}
             @include('layouts._authNav')
         </ul>
 
         <ul id="nav-mobile" class="side-nav navigation">
-            <li><input type="text" placeholder="Search"></li>
+            {{-- <li><input type="text" placeholder="Search"></li> --}}
             <li><a href="/">Home</a></li>
             @include('layouts._frontendMenu')
            

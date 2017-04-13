@@ -77,7 +77,7 @@
                 shares: ["twitter", "facebook", "googleplus", "pinterest"],
                 showLabel: false,
                 showCount: false,
-                url: "https://www.facebook.com/jojiri/?ref=br_rs"
+                url: "http://www.edainikpost.com:2020/"
             });
              $('#flash-news').slick({
                 dots: true,
