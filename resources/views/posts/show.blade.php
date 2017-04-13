@@ -1,11 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="page-single-news">
+    
 	<section class="featured-post">
         <div class="large-post">        
             <div class="parallax-container">
                 <div class="section">
                     <div class="container">
+                        @if(Auth::user()->id == $post->user_id)
+                            <a class="btn" href="{{ url('/dashboard/posts/'.$post->id.'/edit')}}"><i class="material-icons">create</i></a>
+                        @endif
                         <h1 class="header center">{{$post->title}}</h1>
                          @if($post->category)
                             <p>{{ $post->category->title }} </p>
@@ -16,7 +21,8 @@
             </div>
 
             <div class="content container">
-                <div class="row center">
+                <div class="row center">                    
+                    <div class="row share center"> </div>
                     <p class="wrap">{!! $post->content !!}</p>
                 </div>
 
@@ -41,4 +47,7 @@
         </div>
     </section>
 
+</div>
+
 @stop
+

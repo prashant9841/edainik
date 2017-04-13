@@ -7,7 +7,7 @@
             <div class="col s8">
                 <h4>{{ $news->title }}</h4>
                 <p>{{ $news->description }}</p>
-                <a href="{{ url('posts',$news->slug)}}" class="right btn">Read More<span></span></a>
+                <a href="{{ url('news',$news->slug)}}" class="right btn">Read More<span></span></a>
             </div>
         </li>
     @endforeach

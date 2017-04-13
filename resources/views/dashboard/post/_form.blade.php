@@ -9,7 +9,11 @@
 
 		>
 
-		<label for="title">Title</label>
+		<label for="title" >Title</label>
+
+		@if($errors->has('title'))
+			<p class="errors">{{ $errors->get('title')[0] }}</p>
+		@endif
 	</div>
 	<div class="input-field col s12 m6">
 	    <select name="category_id">
@@ -36,6 +40,11 @@
 	<div class="input-field col s12">
 		<textarea id="description" name="description" class="materialize-textarea">@if(isset($post)){{ $post->description }}@endif</textarea>
 		<label for="description">Description</label>
+
+		@if($errors->has('description'))
+			<p class="errors">{{ $errors->get('description')[0] }}</p>
+		@endif
+
 	</div>
 </div>
 
@@ -43,6 +52,9 @@
 	<div class="input-field col s12">
 		<textarea id="textarea" name="content" class="materialize-textarea">@if(isset($post)){{ $post->content }}@endif</textarea>
 		<label for="textarea">Content</label>
+		@if($errors->has('content'))
+			<p class="errors">{{ $errors->get('content')[0] }}</p>
+		@endif
 	</div>
 </div>
 
@@ -52,7 +64,7 @@
 		<div class="file-field input-field">
 	      <div class="btn">
 	        <span><i class="material-icons">add_a_photo</i></span>
-	        <input type="file" name="image">
+	        <input type="file" name="image[]" multiple="true">
 	      </div>
 	      <div class="file-path-wrapper">
 	        <input class="file-path validate" type="text" placeholder="Upload Image">
@@ -72,6 +84,7 @@
 						</h5>
 						<div class="right">							
 							<a class="btn red" href="{{ url('/dashboard/medias/remove/'.$post->id.'/'.$image->id)}}"><i class="material-icons">delete</i></a>
+							<a class="btn red {{ ($loop->first)? 'disabled':null }}"  href="/dashboard/medias/set-featured/{{$post->id}}/{{$image->id}}"><i class="material-icons">star</i></a>
 						</div>
 					</div>
 				</div>		
@@ -91,7 +104,7 @@
 @section('bottom-scripts')
 <script>
 	$(document).ready(function() {
-    $('select').material_select();
-  });
+		$('select').material_select();
+	});
 </script>
 @stop

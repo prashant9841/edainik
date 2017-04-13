@@ -19,11 +19,11 @@
 
     <div class="content container">
         <div class="row center">
-            <p class="wrap">{!! $post->content !!}</p>
+            <p class="wrap">{{ $post->description }}</p>
         </div>
         <div class="row share center"> </div>
         <div class="row center btn-row">
-            <a href="{{ url('/posts/'.$post->slug) }}" class="btn waves-effect waves-light">Read More</a>
+            <a href="{{ url('/news/'.$post->slug) }}" class="btn waves-effect waves-light">Read More</a>
         </div>
     </div>
     <div class="ads container">

@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Auth;
 use Illuminate\Foundation\Http\FormRequest;
 
-class PutCategoryRequest extends FormRequest
+class PasswordRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -14,7 +14,7 @@ class PutCategoryRequest extends FormRequest
      */
     public function authorize()
     {
-        return Auth::user()->isSuperAdmin();
+        return Auth::check();
     }
 
     /**
@@ -25,8 +25,8 @@ class PutCategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|min:2|max:200',
-            'slug' => 'nullable|unique:categories|min:5|max:200'
+            'current_password' => 'required|min:6|max:150',
+            'new_password' => 'required|min:6|max:150|same:retype_password'
         ];
     }
 }

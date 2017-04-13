@@ -16,7 +16,7 @@
 			<p class="wrap">{{ $post->content }}</p>
 		</div>
 		<div class="row center btn-row">
-			<a href="{{ url('/posts/'.$post->slug) }}" class="btn waves-effect waves-light">Read More</a>
+			<a href="{{ url('/news/'.$post->slug) }}" class="btn waves-effect waves-light">Read More</a>
 		</div>
 	</div>
 	<div class="ads container">

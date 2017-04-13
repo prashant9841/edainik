@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Http\Requests\{PostCategoryRequest,PutCategoryRequest};
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -38,7 +39,7 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostCategoryRequest $request)
     {
         if (Category::create($this->getStub($request))) {
             return redirect()->to('/dashboard/categories');
@@ -76,7 +77,7 @@ class CategoryController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PutCategoryRequest $request, $id)
     {
         if (Category::findOrFail($id)->update($this->getStub($request))) {
             return redirect()->to('/dashboard/categories/' . $id);

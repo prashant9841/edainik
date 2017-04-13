@@ -28,8 +28,8 @@ Route::get('/logout',function(){
 |
 */
 
-Route::get('/posts', 'Site\PostController@index');
-Route::get('/posts/{post}', 'Site\PostController@show'); 
+Route::get('/news', 'Site\PostController@index');
+Route::get('/news/{post}', 'Site\PostController@show'); 
 
 /*
 |--------------------------------------------------------------------------
@@ -111,6 +111,8 @@ Route::group(['prefix'=>'/dashboard'],function(){
 	Route::get('/medias/remove/{postId}/{mediaId}','PostMediaController@removeImage'); //Remove an image
 	Route::get('/medias/detach/{postId}/{mediaId}','PostMediaController@removeImage'); //Detach image from model
 	Route::get('/medias/remove-all/{postId}','PostMediaController@removeByPost'); // Remove all the images in post
+
+	Route::get('/medias/set-featured/{postId}/{imageId}','PostMediaController@makeTitleImage'); // Remove all the images in post
 	
 	/*
 	|--------------------------------------------------------------------------
@@ -149,5 +151,7 @@ Route::group(['prefix'=>'/dashboard'],function(){
 	|--------------------------------------------------------------------------
 	*/
 	Route::get('/settings','SettingsController@index');
+	Route::get('/settings/password','SettingsController@password');
+	Route::post('/settings/password','SettingsController@changePassword');
 });
 

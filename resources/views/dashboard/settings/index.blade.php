@@ -14,22 +14,7 @@
 	            </nav>
 	        </div>
 	        <div class="row btn-cards">
-				<h3>Change Password</h3>
-				<form action="">
-					<div class="input-field col s12">
-						<input id="current_password" type="text" class="validate">
-						<label for="current_password">Current Password</label>
-					</div>
-				<div class="input-field col s12">
-					<input id="new_password" type="text" class="validate">
-					<label for="new_password">New Password</label>
-				</div>
-				<div class="input-field col s12">
-					<input id="retype_password" type="text" class="validate">
-					<label for="retype_password">Retype Password</label>
-				</div>
-	            </form>
-	           
+				<a href="/dashboard/settings/password">Change Password</a>
 	        </div>
 	    </div>
     </div>

@@ -22,7 +22,10 @@
                             <div class="col s8">
                                 <h4>{{ $post->title }}</h4>
                                 <p>{{ $post->description }}</p>
-                                <a href="{{ url('posts',$post->slug)}}" class="right">Read More <span></span></a>
+                                <a href="{{ url('news',$post->slug)}}" class="right">Read More <span></span></a>
+                                @if(Auth::user()->id == $post->user_id)
+                                    <a class="btn" href="{{ url('/dashboard/posts/'.$post->id.'/edit')}}"><i class="material-icons">create</i></a>
+                                @endif
                             </div>
                         </li>
                     @endforeach
@@ -39,7 +42,7 @@
                         <h4>Related Posts</h4>
                         <ul>
                             @foreach($related as $post)
-                                <li><a href="{{ url('posts',$post->slug)}}">{{ $post->title }}</a></li>
+                                <li><a href="{{ url('news',$post->slug)}}">{{ $post->title }}</a></li>
                             @endforeach
                         </ul>
                     </div>

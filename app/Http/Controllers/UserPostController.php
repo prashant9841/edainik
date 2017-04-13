@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Auth;
 use App\Post;
+use App\Http\Requests\PostRequest;
 use Illuminate\Http\Request;
 
 class UserPostController extends Controller
@@ -57,10 +58,16 @@ class UserPostController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
-        if ($post = Auth::user()->posts()->create($this->getStub($request))) {
-            ($request->hasFile('image')) ? $post->attachImageFromRequest() : null;
+        if ($post = Auth::user()->posts()->create($this->getStub($request))) 
+        {
+            if($request->hasFile('image')) 
+            {
+                foreach($request->image as $image){
+                    $post->addMedia($image)->toMediaCollection('images');
+                }
+            }
             return redirect()->to('/dashboard/posts');
         }
         return redirect()->back();
@@ -71,12 +78,15 @@ class UserPostController extends Controller
      * @param $id
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(PostRequest $request, $id)
     {
         $post = Auth::user()->posts()->findOrFail($id);
 
         if ($request->hasFile('image')) {
-            $post->attachImageFromRequest();
+            foreach($request->image as $image){
+                $post->addMedia($image)->toMediaCollection('images');
+            }
+
         }
 
         if ($post->update($this->getStub($request))) {

@@ -6,8 +6,9 @@ use Spatie\Sluggable\{HasSlug,SlugOptions};
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Spatie\MediaLibrary\HasMedia\Interfaces\HasMedia;
+use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
 
-class Post extends Model implements HasMedia
+class Post extends Model implements HasMediaConversions
 {
     use HasSlug,HasMediaTrait;
 
