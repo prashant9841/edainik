@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="page-single-news">
+    
 	<section class="featured-post">
         <div class="large-post">        
             <div class="parallax-container">
@@ -19,7 +21,8 @@
             </div>
 
             <div class="content container">
-                <div class="row center">
+                <div class="row center">                    
+                    <div class="row share center"> </div>
                     <p class="wrap">{!! $post->content !!}</p>
                 </div>
 
@@ -44,4 +47,7 @@
         </div>
     </section>
 
+</div>
+
 @stop
+
