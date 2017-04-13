@@ -14,6 +14,13 @@ class Category extends Model
 		return $this->hasOne(Menu::class);
 	}
 
+    //get the wildcard slug
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
+
 	public function published()
 	{
 		return $this->where('status',1);

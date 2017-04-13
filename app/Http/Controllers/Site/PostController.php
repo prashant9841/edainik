@@ -21,21 +21,32 @@ class PostController extends Controller
      * @param Post $post
      * @return $this
      */
-    public function show($slug,Post $p,Category $category)
+    public function show(Post $post)
     {
-        if ($post = $p->approved()->where('slug',$slug)->first()) {
+        if ($post->status === true && $post->verified === true) {
+            $this->incrementCounter($post);
             return view('posts.show')
                 ->with('post', $post)
-                ->with('latestNews',$this->getRelated($post->category_id,$category));
+                ->with('latestNews',$this->getRelated(null))
+                ->with('relatedNews',$this->getRelated($post->category_id));
         }
         abort(404);
     }
 
-    public function getRelated($id = null,Category $category)
+    public function getRelated($id = null)
     {
-        if(!$id){
-            return $category->latest()->first()->posts()->where(['status' => 1,'verified'=>1])->latest()->get();
+        if(is_null($id)){
+            return Category::all()->shuffle()->first()->posts()->where(['status' => 1,'verified'=>1])->latest()->take(5)->get();
         }
-        return $category->findOrFail($id)->posts()->where(['status' => 1,'verified'=>1])->latest()->get();
+        return Category::findOrFail($id)->posts()->where(['status' => 1,'verified'=>1])->latest()->take(5)->get();
+    }
+
+    public function incrementCounter($post)
+    {
+        if($post->viewCount && $post->viewCount->count){
+            $counter = $post->viewCount->count+1;
+            return $post->viewCount()->update(['count' => $counter]);
+        }
+        return $post->viewCount()->create(['count' => 1]);
     }
 }

@@ -16,18 +16,31 @@ class Post extends Model implements HasMediaConversions
 
 	protected $casts = ['publish_on' => 'date', 'status' => 'boolean', 'verified' => 'boolean'];
 
+     //get the wildcard slug
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
+    public function featured()
+    {
+        return $this->has(Featured::class);
+    }
+
     public function user()
     {
     	return $this->belongsTo(User::class);
     }
 
+
     public function getFirstImageUrl()
     {
-        if($this->getMedia('images')->first()){
+        if($this->hasMedia() && $this->getMedia('images')->first()){
             return $this->getMedia('images')->first()->getUrl();
         }
         return 'https://www.lorempixel.com/200/200/news';
     }
+
 
     public function published()
     {
@@ -71,5 +84,10 @@ class Post extends Model implements HasMediaConversions
         return SlugOptions::create()
             ->generateSlugsFrom('title')
             ->saveSlugsTo('slug');
+    }
+
+    public function viewCount()
+    {
+        return $this->hasOne(ViewCount::class);
     }
 }
