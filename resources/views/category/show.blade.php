@@ -1,5 +1,16 @@
 @extends('layouts.app')
 
+@section('title')
+    {{$category->title}} | 
+@stop
+
+@section('meta-description')
+    News for category {{$category->slug}}
+@stop
+
+@section('meta-keyword')
+@stop
+
 @section('content')
 
 	<div class="row">

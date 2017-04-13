@@ -1,5 +1,16 @@
 @extends('layouts.app')
 
+@section('title')
+    Home
+@stop
+
+@section('meta-description')
+
+@stop
+
+@section('meta-keyword')
+@stop
+
 @section('content')
     
     @include('layouts._flashNews')

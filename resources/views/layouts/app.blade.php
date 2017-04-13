@@ -7,8 +7,10 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="description" content="@yield('meta-description')">
+    <meta name="keywords" content="@yield('meta-keyword')">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('title'){{ config('app.name', 'eDainikPost') }}</title>
     <link rel="preload" href="/stylesheets/themify-icons.css" as="style" onload="this.rel='stylesheet'">
     <link rel="preload" href="/stylesheets/animate.css" as="style" onload="this.rel='stylesheet'">
     <link rel="preload" href="/stylesheets/social.css" as="style" onload="this.rel='stylesheet'">

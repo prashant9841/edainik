@@ -1,5 +1,16 @@
 @extends('layouts.app')
 
+@section('title')
+    {{$post->title}} | 
+@stop
+
+@section('meta-description')
+    {{$post->description}}
+@stop
+
+@section('meta-keyword')
+@stop
+
 @section('content')
 <div class="page-single-news">
     
