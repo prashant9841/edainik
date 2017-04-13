@@ -9,13 +9,18 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <link rel="stylesheet" href="/stylesheets/font-awesome.css">
-    <link rel="stylesheet" href="/stylesheets/themify-icons.css">
-    <link rel="stylesheet" href="/stylesheets/animate.css">
-    <link rel="stylesheet" href="/stylesheets/social.css">
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
+    <link rel="preload" href="/stylesheets/themify-icons.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="/stylesheets/animate.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="/stylesheets/social.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css" as="style" onload="this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="/stylesheets/themify-icons.css">
+        <link rel="stylesheet" href="/stylesheets/animate.css">
+        <link rel="stylesheet" href="/stylesheets/social.css">
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
+    </noscript>
 
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
@@ -69,8 +74,9 @@
             
 
         <script src="{{ mix('js/app.js') }}"></script>
+        <script src="/js/csspreload.js"></script>
         <script src="/js/social.js"></script>
-        <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+        <script defer async type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
 
         <script>
              $(".share").jsSocials({
