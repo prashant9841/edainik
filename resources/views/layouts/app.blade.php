@@ -47,18 +47,10 @@
                     <img src="{{asset('images/logo.png')}}" alt="">
                 </div>
                 <div class="col s12 m4 ads">
-                    <div class="card">
-                        <div class="card-content">
-                            <h1>Nice and clean Ads</h1>
-                        </div>
-                    </div>                    
+                      {!! Ads::show('responsive') !!}  
                 </div>
                 <div class="col s12 m4 ads">
-                    <div class="card">
-                        <div class="card-content">
-                            <h1>Nice and clean Ads</h1>
-                        </div>
-                    </div>
+                     {!! Ads::show('responsive') !!}
                 </div>
             </div>
         </header>
