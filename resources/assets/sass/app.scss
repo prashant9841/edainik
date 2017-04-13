@@ -282,6 +282,7 @@ ul.auth {
 		p.wrap {
 			width: 80%;
 			margin: 50px auto 25px;
+			font-size: 18px;
 
 			@include line-clamp (24px, 6);
 		}
@@ -345,6 +346,27 @@ ul.auth {
 .page-single-news {
 	.share {
 		margin-top: 35px;
+	}
+
+	.callout {
+		position: relative;
+		bottom: -150px;
+		left: 4%;
+
+		.callout-content {
+			position: absolute;
+			padding: 20px;
+			font-size: 20px;
+			top: -120px;
+
+			p {
+			}
+			span {
+				font-size: 40px;
+				
+			}
+
+		}
 	}
 }
 

@@ -21,11 +21,15 @@
             </div>
 
             <div class="content container">
+                {{-- <div class="callout">           
+                    <div class="callout-content z-depth-3">
+                        <p><span>"</span>{{$post->description}} <span>"</span></p>
+                    </div>
+                </div> --}}
                 <div class="row center">                    
                     <div class="row share center"> </div>
                     <p class="wrap">{!! $post->content !!}</p>
                 </div>
-
             </div>
             <div class="ads container">
              {!! Ads::show('responsive') !!}
