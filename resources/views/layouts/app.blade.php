@@ -74,7 +74,7 @@
             
 
         <script src="{{ mix('js/app.js') }}"></script>
-        <script src="/js/csspreload.js"></script>
+        <script src="/js/cssrelpreload.js"></script>
         <script src="/js/social.js"></script>
         <script defer async type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
 
