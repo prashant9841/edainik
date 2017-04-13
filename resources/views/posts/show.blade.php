@@ -8,7 +8,7 @@
             <div class="parallax-container">
                 <div class="section">
                     <div class="container">
-                        @if(Auth::user()->id == $post->user_id)
+                        @if(Auth::check() && Auth::user()->id == $post->user_id)
                             <a class="btn" href="{{ url('/dashboard/posts/'.$post->id.'/edit')}}"><i class="material-icons">create</i></a>
                         @endif
                         <h1 class="header center">{{$post->title}}</h1>
