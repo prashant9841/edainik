@@ -19,7 +19,7 @@
 
     <div class="content container">
         <div class="row center">
-            <p class="wrap">{{ $post->content }}</p>
+            <p class="wrap">{!! $post->content !!}</p>
         </div>
         <div class="row share center"> </div>
         <div class="row center btn-row">
