@@ -24,8 +24,8 @@
 
     <section class="related container">
         <div class="row section-title container">
-            <div class="col s12 m4"
-                <h4>@lang('homepage.latest-news')</h4>
+            <div class="col s12 m4">
+                <h4> @lang('homepage.latest-news')</h4>
             </div>
             <div class="col s12 m4">
                 <div class="card">
