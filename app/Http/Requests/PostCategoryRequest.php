@@ -26,7 +26,7 @@ class PostCategoryRequest extends FormRequest
     {
         return [
             'title' => 'required|min:5|max:200',
-            'slug' => 'nullable|unique:posts|min:5|max:200'
+            'slug' => 'nullable|unique:categories|min:5|max:200'
         ];
     }
 }
