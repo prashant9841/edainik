@@ -47,7 +47,7 @@ Route::get('/categories/{category}', 'Site\CategoryController@show');
 |--------------------------------------------------------------------------
 */
 
-Route::group(['prefix'=>'/dashboard'],function(){
+Route::group(['middleware' => ['web','auth'],'prefix'=>'/dashboard'],function(){
 
 	/*
 	|--------------------------------------------------------------------------
