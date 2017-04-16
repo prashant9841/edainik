@@ -21,8 +21,9 @@ class PostController extends Controller
      * @param Post $post
      * @return $this
      */
-    public function show(Post $post)
+    public function show($post)
     {
+        $post = (Post::where('slug',$post)->first()) ?? abort(404);
         if ($post->status === true && $post->verified === true) {
             $this->incrementCounter($post);
             return view('posts.show')

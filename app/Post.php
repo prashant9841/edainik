@@ -16,11 +16,6 @@ class Post extends Model implements HasMediaConversions
 
 	protected $casts = ['publish_on' => 'date', 'status' => 'boolean', 'verified' => 'boolean'];
 
-     //get the wildcard slug
-    public function getRouteKeyName()
-    {
-        return 'slug';
-    }
 
     public function featured()
     {

@@ -28,6 +28,10 @@ class AppServiceProvider extends ServiceProvider
             return $view->with('categories', Category::where('status',1)->get()); 
         });
 
+        view()->composer('post._form',function(View $view){   
+            return $view->with('categories', Category::where('status',1)->get()); 
+        });
+
     }
 
     /**

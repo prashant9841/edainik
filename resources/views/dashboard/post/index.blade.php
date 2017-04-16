@@ -17,7 +17,7 @@
 			</nav>
 		</div>
 		<div class="all-posts">		
-			<table>
+			<table id="all-posts">
 				<thead>
 					<tr>
 						<th>Title</th>
@@ -51,4 +51,13 @@
 			</table>
 		</div>
 	</div>
+@stop
+
+@section('scripts')
+	<script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+	<script>
+		$(document).ready(function() {
+	    	$('#all-posts').DataTable();
+		} );
+	</script>
 @stop

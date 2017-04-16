@@ -14,12 +14,12 @@ class Category extends Model
 		return $this->hasOne(Menu::class);
 	}
 
-    //get the wildcard slug
+
+	//get the wildcard slug
     public function getRouteKeyName()
     {
         return 'slug';
     }
-
 
 	public function published()
 	{
@@ -43,12 +43,12 @@ class Category extends Model
 
 	public function approvedPosts()
 	{
-		return $this->hasMany(Post::class)->where('verified', 1)->where('status', 1);
+		return $this->posts()->where('verified', 1)->where('status', 1);
 	}
 
 	public function unApprovedPosts()
 	{
-		return $this->hasMany(Post::class)->where('verified', 0)->where('status', 0);
+		return $this->post()->where('verified', 0)->where('status', 0);
 	}
 
 	public function userPosts($id)

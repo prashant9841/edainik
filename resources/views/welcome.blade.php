@@ -114,7 +114,7 @@
     </section>
 
     {{-- 3 Categories Post --}}
-
+    @foeach($categoriesList as $categoriesL)
     <section class="home-cat">
         <div class="row section-title container">
             <div class="col s12 m4">
@@ -184,4 +184,5 @@
             </div>
         </div>
     </section>
+    
 @stop
