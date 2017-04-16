@@ -8,7 +8,7 @@
 				<h3>{{ $category->title }}</h3>
 			</div>
 			<div class="col s12 m4">
-				<a href="{{url('/dashboard/categories/'.$category->id)}}/edit" class="btn right"><i class="material-icons">create</i></a>
+				<a href="{{url('/dashboard/categories/'.$category->slug)}}/edit" class="btn right"><i class="material-icons">create</i></a>
 			</div>
 			<nav class="breadcrumbs col s12">
 				<div class="nav-wrapper">
@@ -30,7 +30,7 @@
 				            </div>
 							<div class="card-content">
 								<span class="card-title">{{$post->title}}</span>
-								<p>{{ str_limit($post->content,20) }}</p>
+								<p>{{ $post->description,20 }}</p>
 								
 							</div>
 							<div class="card-action">
