@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Featured extends Model
 {
-    protected  $fillable = ['type','date'];
+    protected  $fillable = ['type','post_id'];
 
     public function post()
     {
