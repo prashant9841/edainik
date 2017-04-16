@@ -2,8 +2,10 @@
 
 return [
 	'latest-news' => 'ताजा खबर ',
+	'latest' => 'ताजा खबर ',
 	'trending-news' => 'लोक प्रिय',
-	'related-news' => 'सम्बन्धित खबर',
+	'trending' => 'लोक प्रिय',
+	'related' => 'सम्बन्धित खबर',
 	'read-more' => 'थप पढ्नुहोस्',
 	'home' => 'गृहपृष्ठ'
 ];
