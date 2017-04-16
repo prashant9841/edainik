@@ -25,6 +25,7 @@
         <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
     </noscript>
 
+    @yield('links')
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
     <!-- Styles -->

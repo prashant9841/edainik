@@ -11,6 +11,9 @@
 @section('meta-keyword')
 @stop
 
+@section('links')
+    <link rel="stylesheet" href="/stylesheets/social.css">
+@stop
 @section('content')
     
     <section class="featured-post">
@@ -152,6 +155,7 @@
 
                     <a href="{{ url('/news/'.$post->slug) }}" class="btn waves-effect waves-light">@lang('homepage.read-more')</a>
                 </div>
+        
             </div>
             <div class="ads container">
                {!! Ads::show('responsive') !!}
