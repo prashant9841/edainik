@@ -30,7 +30,7 @@ class Post extends Model implements HasMediaConversions
 
     public function getFirstImageUrl()
     {
-        if($this->hasMedia() && $this->getMedia('images')->first()){
+        if($this->getMedia('images')->first()){
             return $this->getMedia('images')->first()->getUrl();
         }
         return 'https://www.lorempixel.com/200/200/news';
