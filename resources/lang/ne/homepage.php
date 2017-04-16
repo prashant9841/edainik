@@ -2,6 +2,8 @@
 
 return [
 	'latest-news' => 'Latest News',
+	'latest-news' => 'Latest News',
 	'trending-news' => 'Trending News',
-	'read-more' => 'Read More',
+	'read-more' => 'थप पढ्नुहोस्',
+	'home' => 'गृहपृष्ठ'
 ];

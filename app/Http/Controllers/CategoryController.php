@@ -77,10 +77,10 @@ class CategoryController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(PutCategoryRequest $request, $id)
+    public function update(PutCategoryRequest $request, Category $category)
     {
-        if (Category::findOrFail($id)->update($this->getStub($request))) {
-            return redirect()->to('/dashboard/categories/' . $id);
+        if ($category->update($this->getStub($request))) {
+            return redirect()->to('/dashboard/categories/' . $category->slug);
         }
         return redirect()->back();
     }
