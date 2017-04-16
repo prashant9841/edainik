@@ -11,8 +11,6 @@
         <div class="parallax">
         @if($post->getMedia('images')->count() > 0)
             <img src="{{ $post->getFirstImageUrl() }}" alt="Unsplashed background img 1">
-        @else
-            <img src="http://lorempixel.com/1000/600" alt="Unsplashed background img 1">
         @endif
         </div>
     </div>
@@ -23,7 +21,7 @@
         </div>
         <div class="row share center"> </div>
         <div class="row center btn-row">
-            <a href="{{ url('/news/'.$post->slug) }}" class="btn waves-effect waves-light">थप पढ्नुहोस्</a>
+            <a href="{{ url('/news/'.$post->slug) }}" class="btn waves-effect waves-light">@lang('homepage.read-more')</a>
         </div>
     </div>
     <div class="ads container">

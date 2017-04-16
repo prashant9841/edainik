@@ -165,7 +165,7 @@
 
 
         <div class="related container">
-            <h3>@lang('messages.welcome')</h3>
+            <h3>@lang('homepage.related')</h3>
             <div class="row">
                 <div class="col s12 m9">
                     {{-- 4 Latest Posts from Category   --}}

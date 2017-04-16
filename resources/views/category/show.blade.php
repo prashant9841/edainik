@@ -21,7 +21,7 @@
 		</section>
     @if(isset($related))
     <section class="related container">
-        <h3>Related Posts</h3>
+        <h3>@lang('homepage.related')</h3>
         <div class="row">
             <div class="col s12 m9">
                 <ul>
@@ -50,7 +50,7 @@
                 </div>
                 <div class="card">
                     <div class="card-content">
-                        <h4>Related Posts</h4>
+                        <h4>@lang('homepage.latest')</h4>
                         <ul>
                             @foreach($related as $post)
                                 <li><a href="{{ url('news',$post->slug)}}">{{ $post->title }}</a></li>
