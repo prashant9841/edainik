@@ -301,6 +301,7 @@ ul.auth {
 	}
     .small {
     	font-size: 13px;
+    	margin-bottom: 0;
     }
 
 	a {		
@@ -308,7 +309,7 @@ ul.auth {
 	    display: block;
 	    h4 {
 	    	@include line-clamp(24px, 1);
-	    	
+	    	margin-top: 0;
 	    }
 	}
 }
