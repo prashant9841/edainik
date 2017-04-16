@@ -164,7 +164,7 @@
 
 
         <div class="related container">
-            <h3>Latest News</h3>
+            <h3>भर्खरै </h3>
             <div class="row">
                 <div class="col s12 m9">
                     {{-- 4 Latest Posts from Category   --}}
