@@ -28,14 +28,13 @@ class Post extends Model implements HasMediaConversions
     }
 
 
-    public function getFirstImageUrl()
+    public function getFirstImageUrl($type = '')
     {
-        if($this->hasMedia() && $this->getMedia('images')->first()){
-            return $this->getMedia('images')->first()->getUrl();
+        if($this->getMedia('images')->first()){
+            return $this->getMedia('images')->first()->getUrl($type);
         }
         return 'https://www.lorempixel.com/200/200/news';
     }
-
 
     public function published()
     {
@@ -70,7 +69,7 @@ class Post extends Model implements HasMediaConversions
     public function registerMediaConversions()
     {
         $this->addMediaConversion('thumb')
-             ->setManipulations(['w' => 300, 'h' => 200])
+             ->setManipulations(['w' => 250, 'h' => 150])
              ->performOnCollections('images');
     }
 

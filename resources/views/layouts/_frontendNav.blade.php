@@ -13,7 +13,7 @@
 
         <ul id="nav-mobile" class="side-nav navigation">
             {{-- <li><input type="text" placeholder="Search"></li> --}}
-            <li><a href="/">Home</a></li>
+            <li><a href="/">गृहपृष्‍ठ</a></li>
             @include('layouts._frontendMenu')
            
         </ul>

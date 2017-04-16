@@ -21,8 +21,8 @@
 
     <section class="related container">
         <div class="row section-title container">
-            <div class="col s12 m4">
-                <h4>ताजा खबर</h4>
+            <div class="col s12 m4"
+                <h4>@lang('homepage.latest-news')</h4>
             </div>
             <div class="col s12 m4">
                 <div class="card">
@@ -68,7 +68,7 @@
     <section class="related container">
         <div class="row section-title container">
             <div class="col s12 m4">
-                <h4>लोकप्रिय</h4>
+                <h4>@lang('homepage.trending-news')</h4>
             </div>
             <div class="col s12 m4">
                 <div class="card">
@@ -138,9 +138,7 @@
                 </div>
                 <div class="parallax">
                 @if($relCat->getMedia('images')->count() > 0)
-                    <img src="{{ $relCat->getFirstImageUrl() }}" alt="Unsplashed background img 1">
-                @else
-                    <img src="http://lorempixel.com/1000/600" alt="Unsplashed background img 1">
+                    <img src="{{ $relCat->getFirstImageUrl() }}" alt="{{ $relCat->title }}">
                 @endif
                 </div>
             </div>
@@ -151,7 +149,8 @@
                 </div>
                 <div class="row share center"> </div>
                 <div class="row center btn-row">
-                    <a href="{{ url('/news/'.$post->slug) }}" class="btn waves-effect waves-light">थप पढ्नुहोस्</a>
+
+                    <a href="{{ url('/news/'.$post->slug) }}" class="btn waves-effect waves-light">@lang('homepage.read-more')</a>
                 </div>
             </div>
             <div class="ads container">
@@ -162,7 +161,7 @@
 
 
         <div class="related container">
-            <h3>भर्खरै </h3>
+            <h3>@lang('messages.welcome')</h3>
             <div class="row">
                 <div class="col s12 m9">
                     {{-- 4 Latest Posts from Category   --}}

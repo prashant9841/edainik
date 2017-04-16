@@ -16,7 +16,7 @@
 		</div>		
 
 		<div class="row">
-			<form class="col s12" role="form" method="POST" action="{{ url('/dashboard/categories/'.$category->id) }}">
+			<form class="col s12" role="form" method="POST" action="{{ url('/dashboard/categories/'.$category->slug) }}">
 			 {{--  PUT Method in html   --}}
 			<input type="hidden" name="_method" value="PUT">
 		      @include('dashboard.category._form')

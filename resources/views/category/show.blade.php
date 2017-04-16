@@ -35,7 +35,7 @@
                                 <p>{{ $post->description }}</p>
                                 <a href="{{ url('news',$post->slug)}}" class="right">थप पढ्नुहोस् <span></span></a>
                                 @if(Auth::check() && Auth::user()->id == $post->user_id)
-                                    <a class="btn" href="{{ url('/dashboard/posts/'.$post->id.'/edit')}}"><i class="material-icons">create</i></a>
+                                    <a class="btn" href="{{ url('/dashboard/posts/'.$post->slug.'/edit')}}"><i class="material-icons">create</i></a>
                                 @endif
                             </div>
                         </li>

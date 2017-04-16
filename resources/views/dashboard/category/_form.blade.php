@@ -18,11 +18,8 @@
 <div class="row">
 	<div class="input-field col s12">
 		<input id="slug" type="text" name="slug" class="validate"
-			@if(isset($category))
-				value="{{ $category->slug }}"
-			@endif
 		>
-		<label for="slug">Slug</label>
+		<label for="slug">Slug: {{ ($category->slug) ?? null }}</label>
 
 		@if($errors->has('slug'))
 			<p class="errors">{{ $errors->get('slug')[0] }}</p>
