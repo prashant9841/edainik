@@ -103,7 +103,6 @@ header {
 	.logo-div {
 		margin-bottom: 0;
 		.logo {
-			background: $secondary-color;
 		}
 		img {
 			width: 200px;
@@ -295,36 +294,22 @@ ul.auth {
 }
 
 .small-post {
-	border-bottom: 1px solid #ccc;
+	li {
+		// border-bottom: 1px solid #ccc;
+		// width: 80%;
+		
+	}
+    .small {
+    	font-size: 13px;
+    }
 
 	a {		
-	    padding-right: 30px;
-	    padding-bottom: 15px;
 	    color: $secondary-color;
-
-	    span {
-			width: 0%;
-			// position: absolute;
-			display: block;
-			margin: 0 auto;
-			background: $primary-color;
-			height: 1px;
-			// left: 50%;
-			// transform: translateX(50%);
-			@include vendor(transition, all 0.2s ease-out);
-		}
-
-		&:hover {
-			// color: $primary-color !important;
-			span {
-				width: 100%
-			}
-		}
-	}
-
-	.img-div {
-		max-height: 25vh;
-		overflow: hidden;
+	    display: block;
+	    h4 {
+	    	@include line-clamp(24px, 1);
+	    	
+	    }
 	}
 }
 
@@ -363,9 +348,17 @@ ul.auth {
 			}
 			span {
 				font-size: 40px;
-				
+
 			}
 
+		}
+	}
+}
+
+.latest {
+	a {
+		h4 {
+			font-size: 18px;
 		}
 	}
 }

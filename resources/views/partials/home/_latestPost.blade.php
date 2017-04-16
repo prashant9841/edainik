@@ -1,14 +1,20 @@
- <ul>
+<ul class="row small-post latest">
     @foreach($latestNews as $news)
-        <li class="row small-post">
-            <div class="col s4 img-div">
-                <img src="{{ $news->getFirstImageUrl() }}" alt="">
+        <li class="col s12 m6">
+            <div class="card">
+                <a href="{{ url('news',$news->slug)}}">
+                    <div class="card-content">
+                        <h4>{{ $news->title }}</h4>
+                        <div class="row small">
+                            <div class="col s6">
+                                {{$news->created_at->diffForHumans()}}
+                            </div>
+                        </div>
+                        
+                    </div>
+                </a>
             </div>
-            <div class="col s8">
-                <h4>{{ $news->title }}</h4>
-                <p>{!! $news->description !!}</p>
-                <a href="{{ url('news',$news->slug)}}" class="right btn">Read More<span></span></a>
-            </div>
+
         </li>
     @endforeach
 </ul>
