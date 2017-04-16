@@ -10,11 +10,13 @@ class PagesController extends Controller
 {
     public function homepage(Post $post,Category $category)
     {
+
     	return view('welcome')
     	->with('posts', $post->approved()->latest()->get())
     	->with('latestNews', $post->approved()->latest()->take(5)->get())
     	->with('trendingNews', $this->getTrending())
-    	->with('featuredCategory', $category->get()->random()->first());
+    	->with('featuredCategory', $category->get()->random()->first())
+        ->with('categoriesList', $category->where('status',1)->take(3)->get()->shuffle());
     }
 
     protected function getTrending()

@@ -114,22 +114,18 @@
     </section>
 
     {{-- 3 Categories Post --}}
-    @foeach($categoriesList as $categoriesL)
+    @foreach($categoriesList as $category)
     <section class="home-cat">
         <div class="row section-title container">
             <div class="col s12 m4">
                 {{-- Catgory Title --}}
-                <h4>Category Title</h4>
+                <h4>{{ $category->title }}</h4>
             </div>
             <div class="col s12 m4">
-                <div class="card">
-                    <h5>Ads Here</h5>
-                </div>
+                {!! Ads::show('responsive') !!}
             </div>
             <div class="col s12 m4">
-                <div class="card">
-                    <h5>Ads Here</h5>
-                </div>
+                  {!! Ads::show('responsive') !!}
             </div>
         </div>
 
@@ -138,15 +134,12 @@
             <div class="parallax-container">
                 <div class="section">
                     <div class="container">
-                        <h1 class="header center">{{$post->title}}</h1>
-                        @if($post->category)
-                            <p>{{ $post->category->title }} </p>
-                        @endif
+                        <h1 class="header center">{{$category->posts->first()->title}}</h1>
                     </div>
                 </div>
                 <div class="parallax">
-                @if($post->getMedia('images')->count() > 0)
-                    <img src="{{ $post->getFirstImageUrl() }}" alt="Unsplashed background img 1">
+                @if($category->posts->first()->getMedia('images')->count() > 0)
+                    <img src="{{ $category->posts->first()->getFirstImageUrl() }}" alt="Unsplashed background img 1">
                 @else
                     <img src="http://lorempixel.com/1000/600" alt="Unsplashed background img 1">
                 @endif
@@ -173,7 +166,26 @@
             <div class="row">
                 <div class="col s12 m9">
                     {{-- 4 Latest Posts from Category   --}}
-                    @include('partials.home._latestPost')
+                   <ul class="row small-post latest">
+                        @foreach($category->approvedPosts()->take(6)->get()->shuffle() as $news)
+                            <li class="col s12 m6">
+                                <div class="card">
+                                    <a href="{{ url('news',$news->slug)}}">
+                                        <div class="card-content">
+                                            <h4>{{ $news->title }}</h4>
+                                            <div class="row small">
+                                                <div class="col s6">
+                                                    {{$news->created_at->diffForHumans()}}
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </a>
+                                </div>
+
+                            </li>
+                        @endforeach
+                    </ul>
                     <a href="#" class="right">View All</a>
                 </div>
                 <div class="col s12 m3">
@@ -184,5 +196,6 @@
             </div>
         </div>
     </section>
-    
+    @endforeach
+
 @stop
