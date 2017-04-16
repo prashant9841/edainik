@@ -33,7 +33,7 @@
                             <div class="col s8">
                                 <h4>{{ $post->title }}</h4>
                                 <p>{{ $post->description }}</p>
-                                <a href="{{ url('news',$post->slug)}}" class="right">Read More <span></span></a>
+                                <a href="{{ url('news',$post->slug)}}" class="right">थप पढ्नुहोस् <span></span></a>
                                 @if(Auth::check() && Auth::user()->id == $post->user_id)
                                     <a class="btn" href="{{ url('/dashboard/posts/'.$post->id.'/edit')}}"><i class="material-icons">create</i></a>
                                 @endif

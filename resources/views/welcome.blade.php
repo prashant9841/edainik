@@ -13,8 +13,6 @@
 
 @section('content')
     
-    @include('layouts._flashNews')
-
     <section class="featured-post">
         @foreach ($posts as $post)
             @include('partials.home._post')
@@ -24,7 +22,7 @@
     <section class="related container">
         <div class="row section-title container">
             <div class="col s12 m4">
-                <h4>Latest Posts</h4>
+                <h4>ताजा खबर</h4>
             </div>
             <div class="col s12 m4">
                 <div class="card">
@@ -70,7 +68,7 @@
     <section class="related container">
         <div class="row section-title container">
             <div class="col s12 m4">
-                <h4>Trending Posts</h4>
+                <h4>लोकप्रिय</h4>
             </div>
             <div class="col s12 m4">
                 <div class="card">
@@ -153,7 +151,7 @@
                 </div>
                 <div class="row share center"> </div>
                 <div class="row center btn-row">
-                    <a href="{{ url('/news/'.$post->slug) }}" class="btn waves-effect waves-light">Read More</a>
+                    <a href="{{ url('/news/'.$post->slug) }}" class="btn waves-effect waves-light">थप पढ्नुहोस्</a>
                 </div>
             </div>
             <div class="ads container">
@@ -177,7 +175,7 @@
                                             <h4>{{ $news->title }}</h4>
                                             <div class="row small">
                                                 <div class="col s6">
-                                                    {{$news->created_at->diffForHumans()}}
+                                                    <p><i class="ti-time"></i>&nbsp; {{$news->created_at->diffForHumans()}}</p>
                                                 </div>
                                             </div>
                                             

@@ -2,7 +2,7 @@
     <div class="nav-wrapper container">
         <ul class="hide-on-med-and-down left navigation">
 
-            <li class="active"><a href="/">Home</a></li>
+            <li class="active"><a href="/">गृहपृष्ठ </a></li>
             @include('layouts._frontendMenu')
         </ul>
 

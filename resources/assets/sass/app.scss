@@ -47,6 +47,7 @@ a.btn, .btn, button.btn, button {
 	// font-weight: bold;
 	background-color: $primary-color;
 	letter-spacing: 2px;
+	font-size: 24px;
 
 	&:hover {
 		background-color: $primary-color - 30;
@@ -313,7 +314,7 @@ ul.auth {
 	    }
 	}
 	.card {
-		
+
 	}
 }
 

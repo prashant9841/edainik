@@ -47,7 +47,7 @@
         <header class="pageHeader container">
             <div class="logo-div row">
                 <div class="col s12 m4 logo">
-                    <h3>Edainikpost.com</h3>
+                    <h3>इदैनिक पोस्ट</h3>
                 </div>
                 <div class="col s12 m4 ads">
                       {!! Ads::show('responsive') !!}  
