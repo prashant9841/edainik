@@ -46,7 +46,7 @@
         <header class="pageHeader container">
             <div class="logo-div row">
                 <div class="col s12 m4 logo">
-                    <img src="{{asset('images/logo.png')}}" alt="">
+                    <h3>Edainikpost.com</h3>
                 </div>
                 <div class="col s12 m4 ads">
                       {!! Ads::show('responsive') !!}  
@@ -77,7 +77,7 @@
                 shares: ["twitter", "facebook", "googleplus", "pinterest"],
                 showLabel: false,
                 showCount: false,
-                url: "https://www.facebook.com/jojiri/?ref=br_rs"
+                url: "http://www.edainikpost.com:2020/"
             });
              $('#flash-news').slick({
                 dots: true,
