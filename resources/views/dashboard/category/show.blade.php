@@ -30,7 +30,7 @@
 				            </div>
 							<div class="card-content">
 								<span class="card-title">{{$post->title}}</span>
-								<p>{{ $post->description,20 }}</p>
+								<p>{{ $post->description }}</p>
 								
 							</div>
 							<div class="card-action">
