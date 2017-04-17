@@ -77,7 +77,7 @@
 
         <script>
              $(".share").jsSocials({
-                shares: ["twitter", "facebook", "googleplus", "pinterest"],
+                shares: ["twitter", "facebook", "googleplus"],
                 showLabel: false,
                 showCount: false,
                 url: "http://www.edainikpost.com:2020/"
@@ -121,8 +121,8 @@
              $('.slide-news').slick({
                 dots: false,
                 autoplay: true,
-                arrow: false,
-                adaptiveHeight: true
+                arrow: false
+                // adaptiveHeight: true
 
              })
         </script>

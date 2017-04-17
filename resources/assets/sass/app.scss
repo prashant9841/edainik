@@ -70,7 +70,7 @@ a {
 h1, h2, h3 {
 	font-family: $font;
 	letter-spacing: 2px;
-	font-size: 28px;
+	font-size: 46px;
 	color: $secondary-color;
 
 	@include mobile {
@@ -291,6 +291,11 @@ ul.auth {
 			margin-bottom: 50px;
 		}
 	}
+	.jssocials-share-link {	
+		border: 2px solid $primary-color;
+		background: $primary-color;
+		color: #fff;
+	}
 
 }
 
@@ -310,7 +315,18 @@ ul.auth {
 	    display: block;
 	    h4 {
 	    	@include line-clamp(24px, 1);
+	    	font-size: 20px;
 	    	margin-top: 0;
+	    }
+
+	    &:hover {
+	    	color: #fff;
+	    	background: $primary-color;
+	    	@include vendor(transition, all 0.3s linear);
+
+	    	h4 {
+	    		color: #fff;
+	    	}
 	    }
 	}
 	.card {
@@ -347,11 +363,41 @@ ul.auth {
 	}
 }
 
+.box-post {
+	.card {
+		h1{
+			font-size: 36px;
+			margin: 0;
+			text-align: left;
+		}
+		p {
+			margin: 25px auto;
+		}
+	}
+}
+
 .related {
-	a.card-content {
+	a.btn-div {
 		display: block;
+
+		.card {
+			background: $primary-color;
+			border: 2px solid $t;
+		}
 		h4 {
 			color: #fff;
+		}
+
+		&:hover {
+			.card {
+				background: #fff;
+				border-color: $primary-color;
+				@include vendor(transition, all 0.2s linear);
+
+				h4 {
+					color: $primary-color;
+				}				
+			}
 		}
 	}
 }
@@ -383,13 +429,6 @@ ul.auth {
 	}
 }
 
-.latest {
-	a {
-		h4 {
-			font-size: 18px;
-		}
-	}
-}
 
 
 section {
@@ -397,10 +436,10 @@ section {
 
 	.section-title {
 		h4 { 
-			font-size: 28px;
-		    border-bottom: 2px solid;
-		    float: left;
-		    line-height: 30px;
+			font-size: 41px;
+		    border-bottom: 2px solid $secondary-color;
+		    float: left; 
+		    line-height: 60px;
 
 		}
 	}
