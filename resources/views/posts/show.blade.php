@@ -52,20 +52,27 @@
     </section>
 
     <section class="related container">
-        <h3>सम्बन्धित खबर</h3>
+        <div class="row section-title container">
+            <div class="col s12 m6">
+                <h3>सम्बन्धित खबर</h3>
+            </div>
+            <div class="col s12 m6">
+                {!! Ads::show('responsive') !!}
+            </div>
+        </div>
         <div class="row">
             <div class="col s12 m9">
-                <ul>
+                <ul class="row small-post latest">
+                    @include('partials.post._latestPost')
                 </ul>
             </div>
-            <div class="col s12 m3">
+            <div class="col s12 m3 side-post">
+                @include('partials.post._relatedPost')
             </div>
         </div>
     </section>
 
 </div>
-                    @include('partials.post._latestPost')
-                @include('partials.post._relatedPost')
 
 @stop
 
