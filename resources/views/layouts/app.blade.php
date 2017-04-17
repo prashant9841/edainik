@@ -76,7 +76,7 @@
 
         <script>
              $(".share").jsSocials({
-                shares: ["twitter", "facebook", "googleplus", "pinterest"],
+                shares: ["twitter", "facebook", "googleplus"],
                 showLabel: false,
                 showCount: false,
                 url: "http://www.edainikpost.com:2020/"

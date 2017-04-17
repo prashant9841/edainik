@@ -16,17 +16,21 @@
     
 	<section class="featured-post">
         <div class="large-post">        
+            <div class="section">
+                <div class="container">
+                    <h1 class="header center">{{$post->title}}</h1>
+                </div>
+            </div>
             <div class="parallax-container">
                 <div class="section">
-                    <div class="container">
-                        @if(Auth::check() && Auth::user()->id == $post->user_id)
-                            <a class="btn" href="{{ url('/dashboard/posts/'.$post->id.'/edit')}}"><i class="ti-pencil"></i></a>
-                        @endif
-                        <h1 class="header center">{{$post->title}}</h1>
-                         @if($post->category)
-                            <p>{{ $post->category->title }} </p>
-                        @endif
-                    </div>
+                    @if(Auth::check() && Auth::user()->id == $post->user_id)
+                        <a class="btn" href="{{ url('/dashboard/posts/'.$post->id.'/edit')}}"><i class="ti-pencil"></i></a>
+                    @endif
+                    @if($post->category)
+                        <p>{{ $post->category->title }} </p>
+                    @endif
+                    <div class="row share center"> </div>
+                                        
                 </div>
                 <div class="parallax"><img src="{{ $post->getFirstImageUrl() }}" alt="Unsplashed background img 1"></div>
             </div>
@@ -38,12 +42,11 @@
                     </div>
                 </div> --}}
                 <div class="row center">                    
-                    <div class="row share center"> </div>
                     <p class="wrap">{!! $post->content !!}</p>
                 </div>
             </div>
             <div class="ads container">
-             {!! Ads::show('responsive') !!}
+                {!! Ads::show('responsive') !!}
             </div>
         </div>
     </section>
@@ -53,16 +56,16 @@
         <div class="row">
             <div class="col s12 m9">
                 <ul>
-                    @include('partials.post._latestPost')
                 </ul>
             </div>
             <div class="col s12 m3">
-                @include('partials.post._relatedPost')
             </div>
         </div>
     </section>
 
 </div>
+                    @include('partials.post._latestPost')
+                @include('partials.post._relatedPost')
 
 @stop
 
