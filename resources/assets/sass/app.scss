@@ -31,6 +31,15 @@ body {
 	overflow-x: hidden !important;
 }
 
+.card {
+	border: 1px solid #eaeaea;
+}
+.side-post {
+	.card {
+		border: none;
+	}
+}
+
 p {
 	color: $secondary-color;
 
@@ -46,8 +55,8 @@ a.btn, .btn, button.btn, button {
 	color: #fff !important;
 	// font-weight: bold;
 	background-color: $primary-color;
-	letter-spacing: 2px;
-	font-size: 24px;
+	letter-spacing: 1px;
+	font-size: 20px;
 
 	&:hover {
 		background-color: $primary-color - 30;
@@ -69,7 +78,7 @@ a {
 
 h1, h2, h3 {
 	font-family: $font;
-	letter-spacing: 2px;
+	// letter-spacing: 2px;
 	font-size: 46px;
 	color: $secondary-color;
 
@@ -79,7 +88,7 @@ h1, h2, h3 {
 }
 h4 {
 	font-family: $font;
-	letter-spacing: 2px;
+	// letter-spacing: 2px;
 	font-size: 22px;
 	color: $secondary-color;
 
@@ -91,6 +100,19 @@ h4 {
 .flow {	
 	font-size: 18px !important;
 	padding-bottom: 15px
+}
+
+/*-------------------------------
+		404
+--------------------------------*/
+
+.page-404 {
+	padding: 100px 0;
+	ul.inline {
+		li {
+			margin: 5px 15px;
+		}
+	}
 }
 
 /*---------------------------------
@@ -131,28 +153,6 @@ header {
 	}
 }
 
-.flash-news {
-	background: $primary-color;
-
-	.slick-dots, .slick-arrow {
-		display: none !important;
-	}
-	.slick-dotted.slick-slider {
-		margin-bottom: 0;
-	}
-
-	p a {
-		color: #fff;
-		font-size: 18px !important;
-	}
-
-	.slick-slide {
-		p {
-			@include line-clamp(21px, 1);
-			color: #fff;
-		}
-	}
-}
 
 .main-nav {
 	@include tab {		
@@ -257,7 +257,7 @@ ul.auth {
 
 .large-post {
 	.parallax-container {
-		min-height: 580px;
+		min-height: 480px;
 		line-height: 0;
 		height: auto;
 		color: rgba(255,255,255,.9);
@@ -296,6 +296,11 @@ ul.auth {
 		background: $primary-color;
 		color: #fff;
 	}
+	a.btn {
+		height: 40px;
+		line-height: 40px;
+		font-size: 22px;
+	}
 
 }
 
@@ -327,10 +332,13 @@ ul.auth {
 	    	h4 {
 	    		color: #fff;
 	    	}
+	    	.card {
+	    		border-color: $t;
+	    	}
 	    }
 	}
 	.card {
-
+		background-color: $t;
 	}
 }
 

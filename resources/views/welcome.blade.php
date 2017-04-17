@@ -28,14 +28,10 @@
                 <h4> @lang('homepage.latest-news')</h4>
             </div>
             <div class="col s12 m4">
-                <div class="card">
-                    {!! Ads::show('responsive') !!}
-                </div>
+                {!! Ads::show('responsive') !!}
             </div>
             <div class="col s12 m4">
-                <div class="card">
-                    {!! Ads::show('responsive') !!}
-                </div>
+                {!! Ads::show('responsive') !!}
             </div>
         </div>
         <div class="row">
@@ -74,14 +70,10 @@
                 <h4>@lang('homepage.trending-news')</h4>
             </div>
             <div class="col s12 m4">
-                <div class="card">
                     {!! Ads::show('responsive') !!}
-                </div>
             </div>
             <div class="col s12 m4">
-                <div class="card">
                     {!! Ads::show('responsive') !!}
-                </div>
             </div>
         </div>
         <div class="row">
@@ -174,8 +166,8 @@
                    <ul class="row small-post latest">
                         @foreach($category->approvedPosts()->take(6)->get()->shuffle() as $news)
                             <li class="col s12 m6">
-                                <div class="card">
-                                    <a href="{{ url('news',$news->slug)}}">
+                                <a href="{{ url('news',$news->slug)}}">
+                                    <div class="card">
                                         <div class="card-content">
                                             <h4>{{ $news->title }}</h4>
                                             <div class="row small">
@@ -185,19 +177,19 @@
                                             </div>
                                             
                                         </div>
-                                    </a>
-                                </div>
+                                    </div>
+                                </a>
 
                             </li>
                         @endforeach
                     </ul>
-                    <a href="" class="btn-div">
+                    {{-- <a href="" class="btn-div">
                         <div class="col s12 card center">
-                            {{-- <div class="card-content">                                 --}}
                                 <h4>@lang('homepage.viewall')</h4>
-                            {{-- </div> --}}
                         </div>
-                    </a>
+                    </a> --}}
+                    <a href="" class="right btn">@lang('homepage.viewall')</a>
+
                     
                 </div>
                 <div class="col s12 m3 side-post">
