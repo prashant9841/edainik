@@ -118,14 +118,11 @@
     @foreach($categoriesList as $category)
     <section class="home-cat">
         <div class="row section-title container">
-            <div class="col s12 m4">
+            <div class="col s12 m6">
                 {{-- Catgory Title --}}
                 <h4>{{ $category->title }}</h4>
             </div>
-            <div class="col s12 m4">
-                {!! Ads::show('responsive') !!}
-            </div>
-            <div class="col s12 m4">
+            <div class="col s12 m6">
                 {!! Ads::show('responsive') !!}
             </div>
         </div>
@@ -136,7 +133,7 @@
             <div class="box-post container">
                 <div class="row">                
                     <div class="col m9 s12 card">
-                        <div class="card-content">
+                        <div class="card-content row">
                             <div class="col s12 m6">
                                 <div class="card-image">
                                     
@@ -146,14 +143,12 @@
                                 </div>
                             </div>
                             <div class="col s12 m6">
-                                <div class="card-content">
-                                    <h1 class="header center">{{$relCat->title}}</h1>
-                                    <p class="wrap">{{ $relCat->description }}</p>
-                                    {{-- <div class="row share center"> </div> --}}
-                                    <div class="row center btn-row">
+                                <h1 class="header center">{{$relCat->title}}</h1>
+                                <p class="wrap">{{ $relCat->description }}</p>
+                                {{-- <div class="row share center"> </div> --}}
+                                <div class="row center btn-row">
 
-                                        <a href="{{ url('/news/'.$post->slug) }}" class="btn waves-effect waves-light">@lang('homepage.read-more')</a>
-                                    </div>
+                                    <a href="{{ url('/news/'.$post->slug) }}" class="btn waves-effect waves-light">@lang('homepage.read-more')</a>
                                 </div>
                             </div>
                         </div>
@@ -196,8 +191,8 @@
                             </li>
                         @endforeach
                     </ul>
-                    <a href="" class="card-content">
-                        <div class="col s12 card light-blue darken-1 center">
+                    <a href="" class="btn-div">
+                        <div class="col s12 card center">
                             {{-- <div class="card-content">                                 --}}
                                 <h4>@lang('homepage.viewall')</h4>
                             {{-- </div> --}}
