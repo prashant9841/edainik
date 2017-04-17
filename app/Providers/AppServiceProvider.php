@@ -20,7 +20,7 @@ class AppServiceProvider extends ServiceProvider
             if(Auth::check())
                 return $view->with('user', Auth::user()); 
         });
-        view()->composer('layouts._frontendNav',function(View $view){   
+        view()->composer(['layouts._frontendNav', 'layouts._frontendMenu'],function(View $view){   
             return $view->with('menus', Menu::ordered()->get()); 
         });
 

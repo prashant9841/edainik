@@ -4,11 +4,11 @@
 <div class="card">
     <div class="card-content">
         <h4>@lang('homepage.related')</h4>
-        <ul>
-            <li><a href="#">Related News Title</a></li>
-            <li><a href="#">Related News Title</a></li>
-            <li><a href="#">Related News Title</a></li>
-            <li><a href="#">Related News Title</a></li>
+        <ul class="collection">
+            <a class="collection-item" href="#">Related News Title</a>
+            <a class="collection-item" href="#">Related News Title</a>
+            <a class="collection-item" href="#">Related News Title</a>
+            <a class="collection-item" href="#">Related News Title</a>
         </ul>
     </div>
 </div>

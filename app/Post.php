@@ -33,7 +33,7 @@ class Post extends Model implements HasMediaConversions
         if($this->getMedia('images')->first()){
             return $this->getMedia('images')->first()->getUrl($type);
         }
-        return 'https://www.lorempixel.com/200/200/news';
+        return 'https://www.lorempixel.com/200/200';
     }
 
     public function published()
