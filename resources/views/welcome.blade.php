@@ -29,12 +29,12 @@
             </div>
             <div class="col s12 m4">
                 <div class="card">
-                    <h5>Ads Here</h5>
+                    {!! Ads::show('responsive') !!}
                 </div>
             </div>
             <div class="col s12 m4">
                 <div class="card">
-                    <h5>Ads Here</h5>
+                    {!! Ads::show('responsive') !!}
                 </div>
             </div>
         </div>
@@ -75,12 +75,12 @@
             </div>
             <div class="col s12 m4">
                 <div class="card">
-                    <h5>Ads Here</h5>
+                    {!! Ads::show('responsive') !!}
                 </div>
             </div>
             <div class="col s12 m4">
                 <div class="card">
-                    <h5>Ads Here</h5>
+                    {!! Ads::show('responsive') !!}
                 </div>
             </div>
         </div>
@@ -92,17 +92,17 @@
                 @include('partials.home._relatedPost')
                 <div class="card">
                     <div class="slide-news">
-                        @foreach ($posts as $post)
+                        @foreach ($trendingNews as $post)
                             <div>
                                 <div class="card-image">
                                     @if($post->getMedia('images')->count() > 0)
-                                        <img src="{{ $post->getFirstImageUrl('thumb') }}" alt="Unsplashed background img 1">
+                                        <img src="{{ $post->getFirstImageUrl('thumb') }}" alt="{{$post->title}}">
                                     @else
                                         <img src="http://lorempixel.com/1000/600" alt="Unsplashed background img 1">
                                     @endif
                                 </div>
                                 <div class="card-content">                                   
-                                    <a href="{{ url('/posts/'.$post->slug) }}" >
+                                    <a href="{{ url('/news/'.$post->slug) }}" >
                                         {{$post->title}}
                                     </a>
                                 </div>
@@ -148,7 +148,7 @@
                             <div class="col s12 m6">
                                 <div class="card-content">
                                     <h1 class="header center">{{$relCat->title}}</h1>
-                                    <p class="wrap">{{ $relCat->content }}</p>
+                                    <p class="wrap">{{ $relCat->description }}</p>
                                     {{-- <div class="row share center"> </div> --}}
                                     <div class="row center btn-row">
 

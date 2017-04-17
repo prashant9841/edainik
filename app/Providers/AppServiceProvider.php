@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Carbon\Carbon;
 use Auth;
 use App\{Menu,Category,Post};
 use Illuminate\View\View;
@@ -35,6 +36,8 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('post._form',function(View $view){   
             return $view->with('categories', Category::where('status',1)->get()); 
         });
+
+        Carbon::setLocale(\App::getLocale());
 
     }
 
