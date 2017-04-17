@@ -23,6 +23,7 @@ require('./social');
 	// });
 
    $('ul.navigation li').append('<span></span>');
+   $('a.btn').addClass('waves-effect waves-light');
 
 }));
 
