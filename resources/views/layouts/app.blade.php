@@ -17,6 +17,7 @@
     <link rel="preload" href="/stylesheets/social.css" as="style" onload="this.rel='stylesheet'">
     <link rel="preload" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css" as="style" onload="this.rel='stylesheet'">
     <link rel="preload" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css" as="style" onload="this.rel='stylesheet'">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <noscript>
         <link rel="stylesheet" href="/stylesheets/themify-icons.css">
         <link rel="stylesheet" href="/stylesheets/animate.css">

@@ -14,5 +14,5 @@
     </div>
 </div>
 <div class="card">
-{!! Ads::show('responsive') !!}
+    {!! Ads::show('responsive') !!}
 </div>
