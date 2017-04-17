@@ -7,7 +7,7 @@
 				<h3>All News</h3>
 			</div>
 			<div class="col s12 m4">
-				<a href="/dashboard/posts/create" class="btn right"><i class="material-icons">add</i></a>
+				<a href="/dashboard/posts/create" data-position="left" data-delay="50" data-tooltip="Add a new news" class="btn right tooltipped"><i class="material-icons">add</i></a>
 			</div>
 			<nav class="breadcrumbs col s12">
 				<div class="nav-wrapper">
@@ -22,7 +22,7 @@
 					<tr>
 						<th>Title</th>
 						<th>Content</th>
-						<th>Updated</th>
+						<th>Created</th>
 						<th>Options</th>
 					</tr>
 				</thead>
@@ -32,15 +32,23 @@
 						<tr>
 							<td>{{ $post->title }}</td>
 							<td class="line-clamp">{{ $post->description }}</td>
-							<td>{{ $post->updated_at->diffForHumans() }}</td>
+							<td>{{ $post->created_at->diffForHumans() }}</td>
 							<td>
-								<a class="btn" href="{{ url('/dashboard/posts/'.$post->id) }}"><i class="material-icons">open_in_new</i></a>
-								<a class="btn" href="{{ url('/dashboard/posts/'.$post->id.'/edit') }}"><i class="material-icons">mode_edit</i></a>
+								<a class="btn tooltipped" 
+								data-position="bottom" data-delay="50" data-tooltip="View news"
+								href="{{ url('/dashboard/posts/'.$post->id) }}"><i class="material-icons">open_in_new</i></a>
+								<a class="btn tooltipped"
+								data-position="bottom" data-delay="50" data-tooltip="Edit news" 
+								href="{{ url('/dashboard/posts/'.$post->id.'/edit') }}"><i class="material-icons">mode_edit</i></a>
 								@if(Auth::user()->isSuperAdmin())
 									@if($post->verified)
-										<a class="btn red" href="{{ url('/dashboard/posts/'.$post->id.'/unverify') }}"><i class="material-icons">block</i></a>
+										<a class="btn red tooltipped" 
+										data-position="bottom" data-delay="50" data-tooltip="Unverify"
+										href="{{ url('/dashboard/posts/'.$post->id.'/unverify') }}"><i class="material-icons">block</i></a>
 									@else
-										<a class="btn green" href="{{ url('/dashboard/posts/'.$post->id.'/verify') }}"><i class="material-icons">done</i></a>
+										<a class="btn green tooltipped"
+										data-position="bottom" data-delay="50" data-tooltip="Verify"
+										 href="{{ url('/dashboard/posts/'.$post->id.'/verify') }}"><i class="material-icons">done</i></a>
 									@endif
 
 								@endif
@@ -58,6 +66,7 @@
 	<script>
 		$(document).ready(function() {
 	    	$('#all-posts').DataTable();
-		} );
+		});
+
 	</script>
 @stop

@@ -8,7 +8,7 @@
 				<h3>All Categories</h3>
 			</div>
 			<div class="col s12 m4">
-				<a href="/dashboard/categories/create" class="btn right"><i class="material-icons">add</i></a>
+				<a href="/dashboard/categories/create" class="btn right tooltipped" data-position="left" data-delay="50" data-tooltip="Add a new category"><i class="material-icons">add</i></a>
 			</div>
 			<nav class="breadcrumbs col s12">
 				<div class="nav-wrapper">
@@ -25,7 +25,9 @@
 					<a href="{{ url('dashboard/categories/'.$category->slug) }}" class="collection-item">
 						<div class="row">
 							<p class="left flow">{{ $category->title }} </p>
-							<div class="right"><button class="btn" style="padding: 0 1rem;"><i class="material-icons">create</i></button></div>
+							<div class="right">
+								<button class="btn tooltipped" data-position="left" data-delay="50" data-tooltip="Edit category : {{$category->title}}" style="padding: 0 1rem;"><i class="material-icons">create</i></button>
+							</div>
 						</div>
 					</a>
 					

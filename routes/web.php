@@ -56,6 +56,8 @@ Route::group(['middleware' => ['web','auth'],'prefix'=>'/dashboard'],function(){
 	*/
 	Route::get('/','DashboardController@index');
 
+	Route::get('/ajax/posts','AjaxController@getAllPosts');
+
 	/*
 	|--------------------------------------------------------------------------
 	| User Post Routes

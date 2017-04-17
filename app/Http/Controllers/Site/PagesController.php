@@ -12,7 +12,7 @@ class PagesController extends Controller
     {
 
     	return view('welcome')
-    	->with('posts', $post->approved()->latest()->get())
+    	->with('posts', $this->getFeatured($post))
     	->with('latestNews', $post->approved()->latest()->take(5)->get())
     	->with('trendingNews', $this->getTrending())
     	->with('featuredCategory', $category->get()->random()->first())
@@ -21,9 +21,14 @@ class PagesController extends Controller
 
     protected function getTrending()
     {
-    	
-    	$trendingPost = ViewCount::all()->sortByDesc('count')->take(5)->pluck('post_id');
+        
+        $trendingPost = ViewCount::all()->sortByDesc('count')->take(5)->pluck('post_id');
         $posts = Post::whereIn('id',$trendingPost)->get();
-    	return $posts;
+        return $posts;
+    } 
+
+    protected function getFeatured($post)
+    {
+    	return $post->approved()->latest()->take(8)->get();
     } 
 }

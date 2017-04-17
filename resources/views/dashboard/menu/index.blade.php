@@ -27,11 +27,13 @@
 						<span class="right">	
 							<form method="post" action="{{ url('/dashboard/menus')}}">
 								@include('dashboard.menu._form')
-								<button type="submit" class="btn 
+								<button type="submit" 
+								data-position="left" data-delay="50" data-tooltip="Add {{$category->title}} to Menu"
+								class="btn tooltipped
 								@if(in_array($category->id, $menus->pluck('category_id')->toArray() ))
 									disabled
 								@endif
-								"><i class="material-icons">add</i></button>
+								" ><i class="material-icons">add</i></button>
 							</form>
 						</span>
 
@@ -52,7 +54,9 @@
 							<form method="post" action="{{ url('/dashboard/menus/'.$menu->id) }}">
 								{{ csrf_field() }}
 								<input type="hidden" name="_method" value="DELETE">
-								<button type="submit" class="btn red right"><i class="material-icons">remove</i></button>
+								<button type="submit" class="btn red right tooltipped" 
+								data-position="left" data-delay="50" data-tooltip="Remove {{ $menu->category->title }} from Menu"
+								><i class="material-icons">remove</i></button>
 							</form>
 						</div>
 					</li>
