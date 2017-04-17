@@ -1,7 +1,7 @@
 <?php
 
 return [
-	'latest-news' => 'ताजा खबर ',
+	'latest-news' => 'ताजा खबर',
 	'latest' => 'ताजा खबर ',
 	'trending-news' => 'लोक प्रिय',
 	'trending' => 'लोक प्रिय',
@@ -11,5 +11,6 @@ return [
 	'home' => 'गृहपृष्ठ',
 	'login' => 'लगइन',
 	'logout' => 'लग आउट',
+	'view-all' => 'सबै हेर्नुहोस'
 
 ];
