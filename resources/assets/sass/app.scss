@@ -70,7 +70,7 @@ a {
 h1, h2, h3 {
 	font-family: $font;
 	letter-spacing: 2px;
-	font-size: 28px;
+	font-size: 46px;
 	color: $secondary-color;
 
 	@include mobile {
@@ -291,6 +291,11 @@ ul.auth {
 			margin-bottom: 50px;
 		}
 	}
+	.jssocials-share-link {	
+		border: 2px solid $primary-color;
+		background: $primary-color;
+		color: #fff;
+	}
 
 }
 
@@ -397,10 +402,10 @@ section {
 
 	.section-title {
 		h4 { 
-			font-size: 28px;
-		    border-bottom: 2px solid;
-		    float: left;
-		    line-height: 30px;
+			font-size: 41px;
+		    border-bottom: 2px solid $secondary-color;
+		    float: left; 
+		    line-height: 60px;
 
 		}
 	}
