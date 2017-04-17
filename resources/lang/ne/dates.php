@@ -17,7 +17,7 @@ return array(
     'min' => '1 मिनेट|:count मिनेट',
     'second' => '1 सेकेन्ड|:count सेकेन्ड',
     's' => '1 सेकेन्ड|:count सेकेन्ड',
-    'ago' => ':time पहिला',
+    'ago' => ':time पहिले',
     'from_now' => 'पछी :time',
     'after' => ':time पछी',
     'before' => ':time आगाडी',
