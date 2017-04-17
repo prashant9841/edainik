@@ -1,21 +1,16 @@
 <div class="card">
-    <div class="card-content">
-        {!! Ads::show('responsive') !!}
-    </div>
+    {!! Ads::show('responsive') !!}
 </div>
 <div class="card">
     <div class="card-content">
-        <h4>@lang('homepage.related-news')</h4>
+        <h4>@lang('homepage.latest')</h4>
         <ul>
-            <li><a href="#">Related News Title</a></li>
-            <li><a href="#">Related News Title</a></li>
-            <li><a href="#">Related News Title</a></li>
-            <li><a href="#">Related News Title</a></li>
+            @foreach($latestNews as $news)
+                <li><a href="/news/{{ $news->slug}}">{{ $news->title }}</a></li>
+            @endforeach
         </ul>
     </div>
 </div>
 <div class="card">
-    <div class="card-content">
-        {!! Ads::show('responsive') !!}
-    </div>
+    {!! Ads::show('responsive') !!}
 </div>

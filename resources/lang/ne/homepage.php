@@ -6,6 +6,10 @@ return [
 	'trending-news' => 'लोक प्रिय',
 	'trending' => 'लोक प्रिय',
 	'related' => 'सम्बन्धित खबर',
+	'related-news' => 'सम्बन्धित खबर',
 	'read-more' => 'थप पढ्नुहोस्',
-	'home' => 'गृहपृष्ठ'
+	'home' => 'गृहपृष्ठ',
+	'login' => 'लगइन',
+	'logout' => 'लग आउट',
+
 ];

@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Auth;
-use App\{Menu,Category};
+use App\{Menu,Category,Post};
 use Illuminate\View\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -26,6 +26,10 @@ class AppServiceProvider extends ServiceProvider
 
         view()->composer('dashboard.post._form',function(View $view){   
             return $view->with('categories', Category::where('status',1)->get()); 
+        });
+
+        view()->composer('partials.post._relatedPost',function(View $view){   
+            return $view->with('latestNews', Post::where(['status'=>1,'verified' => 1])->latest()->take(5)->get()); 
         });
 
         view()->composer('post._form',function(View $view){   
