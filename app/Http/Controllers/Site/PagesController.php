@@ -22,7 +22,8 @@ class PagesController extends Controller
     protected function getTrending()
     {
     	
-    	$trendingPost = ViewCount::all()->sortByDesc('count')->take(5)->each->post;
-    	return $trendingPost;
+    	$trendingPost = ViewCount::all()->sortByDesc('count')->take(5)->pluck('post_id');
+        $posts = Post::whereIn('id',$trendingPost)->get();
+    	return $posts;
     } 
 }
