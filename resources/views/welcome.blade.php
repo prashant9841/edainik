@@ -42,10 +42,10 @@
             <div class="col s12 m9">
                @include('partials.home._latestPost')
             </div>
-            <div class="col s12 m3">
+            <div class="col s12 m3 side-post">
                 @include('partials.home._relatedPost')
                 <div class="card">
-                    <div class="slide-news">
+                    {{-- <div class="slide-news">
                         @foreach ($posts as $post)
                             <div>
                                 <div class="card-image">
@@ -62,7 +62,7 @@
                                 </div>
                             </div>
                         @endforeach
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
@@ -88,7 +88,7 @@
             <div class="col s12 m9">
                @include('partials.home._latestPost')
             </div>
-            <div class="col s12 m3">
+            <div class="col s12 m3 side-post">
                 @include('partials.home._relatedPost')
                 <div class="card">
                     <div class="slide-news">
@@ -96,7 +96,7 @@
                             <div>
                                 <div class="card-image">
                                     @if($post->getMedia('images')->count() > 0)
-                                        <img src="{{ $post->getFirstImageUrl() }}" alt="Unsplashed background img 1">
+                                        <img src="{{ $post->getFirstImageUrl('thumb') }}" alt="Unsplashed background img 1">
                                     @else
                                         <img src="http://lorempixel.com/1000/600" alt="Unsplashed background img 1">
                                     @endif
@@ -113,6 +113,7 @@
             </div>
         </div>
     </section>
+
     {{-- 3 Categories Post --}}
     @foreach($categoriesList as $category)
     <section class="home-cat">
@@ -125,49 +126,55 @@
                 {!! Ads::show('responsive') !!}
             </div>
             <div class="col s12 m4">
-                  {!! Ads::show('responsive') !!}
+                {!! Ads::show('responsive') !!}
             </div>
         </div>
 
         {{-- 1 featured Post related to category --}}
-         @if($category->posts->first() && isset($category->posts)) 
-        <?php $relCat = $category->posts->first(); ?>
-        <div class="large-post">        
-            <div class="parallax-container">
-                <div class="section">
-                    <div class="container">
-                        <h1 class="header center">{{$relCat->title}}</h1>
+        @if($category->posts->first() && isset($category->posts)) 
+            <?php $relCat = $category->posts->first(); ?>
+            <div class="box-post container">
+                <div class="row">                
+                    <div class="col m9 s12 card">
+                        <div class="card-content">
+                            <div class="col s12 m6">
+                                <div class="card-image">
+                                    
+                                    @if($relCat->getMedia('images')->count() > 0)
+                                        <img src="{{ $relCat->getFirstImageUrl('thumb') }}" alt="{{ $relCat->title }}">
+                                    @endif                        
+                                </div>
+                            </div>
+                            <div class="col s12 m6">
+                                <div class="card-content">
+                                    <h1 class="header center">{{$relCat->title}}</h1>
+                                    <p class="wrap">{{ $relCat->content }}</p>
+                                    {{-- <div class="row share center"> </div> --}}
+                                    <div class="row center btn-row">
+
+                                        <a href="{{ url('/news/'.$post->slug) }}" class="btn waves-effect waves-light">@lang('homepage.read-more')</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="parallax">
-                @if($relCat->getMedia('images')->count() > 0)
-                    <img src="{{ $relCat->getFirstImageUrl() }}" alt="{{ $relCat->title }}">
-                @endif
-                </div>
-            </div>
-
-            <div class="content container">
-                <div class="row center">
-                    <p class="wrap">{{ $relCat->description }}</p>
-                </div>
-                <div class="row share center"> </div>
-                <div class="row center btn-row">
-
-                    <a href="{{ url('/news/'.$post->slug) }}" class="btn waves-effect waves-light">@lang('homepage.read-more')</a>
-                </div>
-        
+                    <div class="col s12 m3 side-post">
+                        {!! Ads::show('responsive') !!}
+                    </div>
+                </div>       
+                        
+                        
+            
             </div>
             <div class="ads container">
                {!! Ads::show('responsive') !!}
             </div>
-        </div>
         @endif
 
 
         <div class="related container">
-            <h3>@lang('homepage.related')</h3>
             <div class="row">
-                <div class="col s12 m9">
+                <div class="col s12 m9" style="padding: 0;">
                     {{-- 4 Latest Posts from Category   --}}
                    <ul class="row small-post latest">
                         @foreach($category->approvedPosts()->take(6)->get()->shuffle() as $news)
@@ -189,13 +196,21 @@
                             </li>
                         @endforeach
                     </ul>
-                    <a href="#" class="right">View All</a>
+                    <a href="" class="card-content">
+                        <div class="col s12 card light-blue darken-1 center">
+                            {{-- <div class="card-content">                                 --}}
+                                <h4>@lang('homepage.viewall')</h4>
+                            {{-- </div> --}}
+                        </div>
+                    </a>
+                    
                 </div>
-                <div class="col s12 m3">
+                <div class="col s12 m3 side-post">
                     <div class="card">
                         {!!Ads::show('responsive')!!}
                     </div>
                 </div>
+                
             </div>
         </div>
     </section>

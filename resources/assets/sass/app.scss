@@ -332,6 +332,25 @@ ul.auth {
 		}
 	}
 }
+.side-post {
+	ul.collection {
+		border: none;
+
+		a.collection-item {
+			color: $secondary-color;
+			padding-left: 0;
+		}
+	}
+}
+
+.related {
+	a.card-content {
+		display: block;
+		h4 {
+			color: #fff;
+		}
+	}
+}
 
 .page-single-news {
 	.share {
@@ -391,6 +410,14 @@ section {
 
 .page-footer {
 	background-color: $primary-color;
+
+	ul {
+		li {
+			a {
+				color: #fff;
+			}
+		}
+	}
 }
 
 
