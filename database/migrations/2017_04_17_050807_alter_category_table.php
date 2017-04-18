@@ -15,6 +15,7 @@ class AlterCategoryTable extends Migration
     {
         Schema::table('categories', function (Blueprint $table){
             $table->string('header_color')->nullable();
+            $table->string('icon')->nullable();
         });
     }
 
@@ -27,6 +28,7 @@ class AlterCategoryTable extends Migration
     {
         Schema::table('categories', function (Blueprint $table){
             $table->dropColumn('header_color');
+            $table->string('icon')->nullable();
         });
     }
 }

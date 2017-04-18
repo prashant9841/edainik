@@ -27,6 +27,35 @@
 	</div>
 </div>
 
+<div class="row">
+	<div class="input-field col s12">
+		<input id="header_color" type="text" name="header_color" class="validate"
+		@if(isset($category))
+			value="{{ $category->header_color }}"
+		@endif
+		>
+		<label for="header_color">Header Color:</label>
+
+		@if($errors->has('header_color'))
+			<p class="errors">{{ $errors->get('header_color')[0] }}</p>
+		@endif
+	</div>
+</div>
+<div class="row">
+	<div class="input-field col s12">
+		<input id="icon" type="text" name="icon" class="validate"
+		@if(isset($category))
+			value="{{ $category->icon }}"
+		@endif
+		>
+		<label for="icon">Icon:</label>
+
+		@if($errors->has('icon'))
+			<p class="errors">{{ $errors->get('icon')[0] }}</p>
+		@endif
+	</div>
+</div>
+
 <p>
 	<input type="checkbox" class="filled-in" id="filled-in-box" @if(isset($category)) {{ ($category->status) ?'checked': null }} @endif name="status" />
 	<label for="filled-in-box">Publish</label>
