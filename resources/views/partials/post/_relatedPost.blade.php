@@ -11,6 +11,3 @@
         </ul>
     </div>
 </div>
-<div class="card">
-    {!! Ads::show('responsive') !!}
-</div>

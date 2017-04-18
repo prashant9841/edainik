@@ -52,9 +52,11 @@
     </section>
 
     <section class="related container">
-        <div class="row section-title container">
+        <div class="row section-title">
             <div class="col s12 m6">
-                <h3>सम्बन्धित खबर</h3>
+                <h4>@lang('homepage.related')</h4>
+                <i class="ti-user"></i>
+                <div class="skwed"></div>
             </div>
             <div class="col s12 m6">
                 {!! Ads::show('responsive') !!}

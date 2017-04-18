@@ -126,6 +126,10 @@ header {
 	.logo-div {
 		margin-bottom: 0;
 		.logo {
+			float: left;
+			// background: $primary-color;
+			padding-top: 15px;
+			margin-left: -8px;
 		}
 		img {
 			width: 200px;
@@ -153,6 +157,10 @@ header {
 	}
 }
 
+.ads {
+	max-height: 130px;
+}
+
 
 .main-nav {
 	@include tab {		
@@ -169,6 +177,7 @@ header {
 	    	li {
 	    		a {
 	    			font-size: 18px;
+	    			color: #fff;
 	    		}
 	    		&:first-child {
 	    			height: 60px;
@@ -186,41 +195,47 @@ header {
 ul.navigation {
 	li {
 		// position: relative;
+		border-right: 1px solid $primary-color;
 		a {
-			color: $secondary-color;
+			color: #fff;
 			&:hover {
 				background: $t;
 				color: $primary-color !important;
 			}
 		}
-		span {
-			width: 0%;
-			// position: absolute;
-			display: block;
-			margin: -18px auto 0;
-			background: $primary-color;
-			height: 1px;
-			// left: 50%;
-			// transform: translateX(50%);
-			@include vendor(transition, all 0.2s ease-out);
+		// span {
+		// 	width: 0%;
+		// 	// position: absolute;
+		// 	display: block;
+		// 	margin: -18px auto 0;
+		// 	background: $primary-color;
+		// 	height: 1px;
+		// 	// left: 50%;
+		// 	// transform: translateX(50%);
+		// 	@include vendor(transition, all 0.2s ease-out);
 
-			@include tab {
-				margin: 0;
-				margin-top: -10px;
-			}
-		}
+		// 	@include tab {
+		// 		margin: 0;
+		// 		margin-top: -10px;
+		// 	}
+		// }
 
 		&:hover {
-			span {
-				width: 90%;
+			background: #fff;
+			a {
 
-				@include tab {
-					width: 100%;
-				}
+				color:$primary-color;
 			}
+			// span {
+			// 	width: 90%;
+
+			// 	@include tab {
+			// 		width: 100%;
+			// 	}
+			// }
 		}
 		&.active {
-			background: $t;
+			background: #fff;
 			span {
 				width: 90%
 			}
@@ -236,6 +251,7 @@ ul.navigation {
 		margin-bottom: 0;
 	}
 }
+
 ul.auth {
 	a {
 		font-size: 13px;
@@ -342,6 +358,38 @@ ul.auth {
 	}
 }
 
+.small-post.with-image {
+	.card {
+		max-height: 105px;
+		.card-image {
+			float: left;
+			width: 25%;
+
+			img {
+				height: 104px;
+			}
+
+		}
+		.card-content {
+			width: 73%;
+			margin-left: 2%;
+			float: left;
+		}
+	}
+}
+
+.group:before,
+.group:after {
+  content: "";
+  display: table;
+} 
+.group:after {
+  clear: both;
+}
+.group {
+  zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+}
+
 .slide-news {
 	display: none;
 	.card-content {
@@ -357,6 +405,7 @@ ul.auth {
 		}
 	}
 }
+
 .side-post {
 	ul.collection {
 		border: none;
@@ -370,6 +419,9 @@ ul.auth {
 			}
 		}
 	}
+	.card {
+		max-height: 250px;
+	}
 }
 
 .box-post {
@@ -380,7 +432,26 @@ ul.auth {
 			text-align: left;
 		}
 		p {
-			margin: 25px auto;
+			margin: 15px auto 25px;
+		}
+
+		.card-image {
+			position: absolute;
+			height: 100%;
+			padding: 0;
+
+			img {
+				height: 100%;
+			}
+		}
+		.card-content {
+			float: right;
+		}
+	}
+	.small {
+		margin: 0;
+		p {
+			margin: 25px 0 0;
 		}
 	}
 }
@@ -438,6 +509,13 @@ ul.auth {
 	}
 }
 
+.cat-page {
+	section {
+		padding-bottom: 0;
+		padding-top: 25px;
+	}
+}
+
 
 
 section {
@@ -446,10 +524,70 @@ section {
 	.section-title {
 		h4 { 
 			font-size: 41px;
-		    border-bottom: 2px solid $secondary-color;
-		    float: left; 
+		    // border-bottom: 2px solid $secondary-color;
+		    // float: left; 
 		    line-height: 60px;
+		    color: #fff;
 
+		}
+		.col:first-child {
+			position: relative;
+			height: 92px;
+			overflow: hidden;
+			background: $primary-color - 20;
+
+			// h4 {
+			// 	z-index: 999;
+			// 	position: absolute;
+			// 	right: 10px;
+			// 	float: right;
+			// }
+			// i {
+			// 	font-size: 72px;
+			// 	color: #fff;
+			// 	padding: 10px;
+			// 	display: block;
+			// }
+
+			// div.skwed {
+			// 	background: $primary-color;
+			// 	position: absolute;
+			//     width: 84%;
+			//     height: 100%;
+			//     right: -56px;
+			//     top: 0;
+			//     transform: skew(-40deg);
+			//     z-index: 9;
+			// }
+
+			h4 {
+				z-index: 999;
+				position: absolute;
+				left: 20px;
+			}
+			i {
+				font-size: 72px;
+				color: #fff;
+				padding: 10px;
+				display: block;
+				float: right;
+			}
+			img {
+				width: 64px;
+				margin: 14px 25px;
+				float: right;
+			}
+
+			div.skwed {
+				background: $primary-color;
+				position: absolute;
+			    width: 80%;
+			    height: 100%;
+			    left: -56px;
+			    top: 0;
+			    transform: skew(-40deg);
+			    z-index: 9;
+			}
 		}
 	}
 }

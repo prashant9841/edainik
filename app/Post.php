@@ -69,8 +69,13 @@ class Post extends Model implements HasMediaConversions
     public function registerMediaConversions()
     {
         $this->addMediaConversion('thumb')
+             ->setManipulations(['w' => 150, 'h' => 150])
+             ->performOnCollections('images');
+
+        $this->addMediaConversion('small')
              ->setManipulations(['w' => 250, 'h' => 150])
              ->performOnCollections('images');
+
     }
 
     public function getSlugOptions() : SlugOptions

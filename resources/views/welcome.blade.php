@@ -23,14 +23,13 @@
     </section>
 
     <section class="related container">
-        <div class="row section-title container">
-            <div class="col s12 m4">
+        <div class="row section-title">
+            <div class="col s12 m6">
                 <h4> @lang('homepage.latest-news')</h4>
+                <img src="{{asset('/images/icons/latest.png')}}" alt="">
+                <div class="skwed"></div>
             </div>
-            <div class="col s12 m4">
-                {!! Ads::show('responsive') !!}
-            </div>
-            <div class="col s12 m4">
+            <div class="col s12 m6">
                 {!! Ads::show('responsive') !!}
             </div>
         </div>
@@ -40,8 +39,9 @@
             </div>
             <div class="col s12 m3 side-post">
                 @include('partials.home._relatedPost')
+
                 <div class="card">
-                    {{-- <div class="slide-news">
+                    <div class="slide-news">
                         @foreach ($posts as $post)
                             <div>
                                 <div class="card-image">
@@ -58,22 +58,21 @@
                                 </div>
                             </div>
                         @endforeach
-                    </div> --}}
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="related container">
-        <div class="row section-title container">
-            <div class="col s12 m4">
-                <h4>@lang('homepage.trending-news')</h4>
+        <div class="row section-title">
+            <div class="col s12 m6">
+                <h4> @lang('homepage.trending-news')</h4>
+                <img src="{{asset('/images/icons/trending.png')}}" alt="">
+                <div class="skwed"></div>
             </div>
-            <div class="col s12 m4">
-                    {!! Ads::show('responsive') !!}
-            </div>
-            <div class="col s12 m4">
-                    {!! Ads::show('responsive') !!}
+            <div class="col s12 m6">
+                {!! Ads::show('responsive') !!}
             </div>
         </div>
         <div class="row">
@@ -82,6 +81,7 @@
             </div>
             <div class="col s12 m3 side-post">
                 @include('partials.home._relatedPost')
+
                 <div class="card">
                     <div class="slide-news">
                         @foreach ($trendingNews as $post)
@@ -108,11 +108,14 @@
 
     {{-- 3 Categories Post --}}
     @foreach($categoriesList as $category)
-    <section class="home-cat">
-        <div class="row section-title container">
+    <section class="home-cat container">
+        <div class="row section-title">
             <div class="col s12 m6">
                 {{-- Catgory Title --}}
                 <h4>{{ $category->title }}</h4>
+                <img src="{{asset('/images/icons/news.png')}}" alt="">
+                <div class="skwed"></div>
+
             </div>
             <div class="col s12 m6">
                 {!! Ads::show('responsive') !!}
@@ -122,57 +125,75 @@
         {{-- 1 featured Post related to category --}}
         @if($category->posts->first() && isset($category->posts)) 
             <?php $relCat = $category->posts->first(); ?>
-            <div class="box-post container">
+            <div class="box-post">
                 <div class="row">                
-                    <div class="col m9 s12 card">
-                        <div class="card-content row">
-                            <div class="col s12 m6">
-                                <div class="card-image">
-                                    
-                                    @if($relCat->getMedia('images')->count() > 0)
-                                        <img src="{{ $relCat->getFirstImageUrl('thumb') }}" alt="{{ $relCat->title }}">
-                                    @endif                        
-                                </div>
-                            </div>
-                            <div class="col s12 m6">
-                                <h1 class="header center">{{$relCat->title}}</h1>
-                                <p class="wrap">{{ $relCat->description }}</p>
-                                {{-- <div class="row share center"> </div> --}}
-                                <div class="row center btn-row">
+                    <div class="col m9 s12">
+                        <div class="card row">
+                            <div class="card-image col s12 m6">
+                                
+                                @if($relCat->getMedia('images')->count() > 0)
+                                    <img src="{{ $relCat->getFirstImageUrl('small') }}" alt="{{ $relCat->title }}">
+                                @endif                        
+                            </div>                            
+                            <div class="card-content col s12 m6">
+                                {{-- <div class="col s12 m6">
+                                </div> --}}
+                                    <h1 class="header center">{{$relCat->title}}</h1>
 
-                                    <a href="{{ url('/news/'.$post->slug) }}" class="btn waves-effect waves-light">@lang('homepage.read-more')</a>
-                                </div>
+                                    <div class="row small">
+                                        <div class="col s6">
+                                            <p><i class="ti-time"></i> &nbsp;{{$relCat->created_at->diffForHumans()}}</p>
+                                        </div>
+                                        <div class="col s6">
+                                            <p><i class="ti-menu"></i>&nbsp; Category</p>
+                                        </div>
+                                    </div>
+                                    <p class="wrap">{{ $relCat->description }}</p>
+                                    {{-- <div class="row share center"> </div> --}}
+                                    <div class="row center btn-row">
+
+                                        <a href="{{ url('/news/'.$post->slug) }}" class="btn waves-effect waves-light">@lang('homepage.read-more')</a>
+                                    </div>
                             </div>
                         </div>
                     </div>
                     <div class="col s12 m3 side-post">
-                        {!! Ads::show('responsive') !!}
+                        <div class="card">
+                            {!! Ads::show('responsive') !!}
+                            
+                        </div>
                     </div>
                 </div>       
                         
                         
             
             </div>
-            <div class="ads container">
+            <div class="ads">
                {!! Ads::show('responsive') !!}
             </div>
         @endif
 
 
-        <div class="related container">
+        <div class="related">
             <div class="row">
                 <div class="col s12 m9" style="padding: 0;">
                     {{-- 4 Latest Posts from Category   --}}
-                   <ul class="row small-post latest">
+                   <ul class="row small-post with-image latest">
                         @foreach($category->approvedPosts()->take(6)->get()->shuffle() as $news)
                             <li class="col s12 m6">
                                 <a href="{{ url('news',$news->slug)}}">
-                                    <div class="card">
+                                    <div class="card group">
+                                        <div class="card-image">
+                                            <img src="{{ $post->getFirstImageUrl('thumb') }}" alt="">
+                                        </div>
                                         <div class="card-content">
                                             <h4>{{ $news->title }}</h4>
                                             <div class="row small">
                                                 <div class="col s6">
-                                                    <p><i class="ti-time"></i>&nbsp; {{$news->created_at->diffForHumans()}}</p>
+                                                    <p><i class="ti-time"></i> &nbsp;{{$news->created_at->diffForHumans()}}</p>
+                                                </div>
+                                                <div class="col s6">
+                                                    <p><i class="ti-menu"></i>&nbsp; Category</p>
                                                 </div>
                                             </div>
                                             
@@ -183,11 +204,7 @@
                             </li>
                         @endforeach
                     </ul>
-                    {{-- <a href="" class="btn-div">
-                        <div class="col s12 card center">
-                                <h4>@lang('homepage.viewall')</h4>
-                        </div>
-                    </a> --}}
+                    
                     <a href="" class="right btn">@lang('homepage.viewall')</a>
 
                     

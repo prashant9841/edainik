@@ -1,4 +1,4 @@
-<nav class="white main-nav" role="navigation">
+<nav class="main-nav" role="navigation" style="background-color: #0091ea;">
     <div class="nav-wrapper container">
         <ul class="hide-on-med-and-down left navigation">
 
