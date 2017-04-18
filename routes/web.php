@@ -92,7 +92,13 @@ Route::group(['middleware' => ['web','auth'],'prefix'=>'/dashboard'],function(){
 	*/
 	Route::get('/posts/{post}/verify','AdminPostController@verify');
 	Route::get('/posts/{post}/unverify','AdminPostController@unVerify');
+	/*
+	|--------------------------------------------------------------------------
+	| Featured Posts
+	|--------------------------------------------------------------------------
+	*/
 
+	Route::get('/posts/{postId}/featured','PostFeaturedController@toggleFeatured');
 
 	/*
 	|--------------------------------------------------------------------------

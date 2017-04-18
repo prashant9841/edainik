@@ -19,7 +19,7 @@ class Post extends Model implements HasMediaConversions
 
     public function featured()
     {
-        return $this->has(Featured::class);
+        return $this->hasOne(Featured::class);
     }
 
     public function user()
