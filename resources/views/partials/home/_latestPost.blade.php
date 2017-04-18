@@ -4,7 +4,7 @@
             <a href="{{ url('news',$news->slug)}}">
                 <div class="card group">
                     <div class="card-image">
-                        <img src="{{ $post->getFirstImageUrl('thumb') }}" alt="">
+                        <img src="{{ $news->getFirstImageUrl('thumb') }}" alt="">
                     </div>
                     <div class="card-content">
                         <h4>{{ $news->title }}</h4>
