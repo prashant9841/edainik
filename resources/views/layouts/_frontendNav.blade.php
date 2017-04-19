@@ -3,7 +3,7 @@
         <ul class="hide-on-med-and-down left navigation">
 
             <li class="
-            @if(URL::current() == url('/'))
+            @if(url()->current() == url('/'))
                 active
             @endif
             "><a href="/">गृहपृष्ठ </a></li>
