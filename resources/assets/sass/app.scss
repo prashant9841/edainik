@@ -145,7 +145,6 @@ header {
 	@include tab {
 
 		width: 100% !important;
-		background: $secondary-color;
 		overflow-x: hidden;
 		.logo-div {
 			padding: 2%;
@@ -172,12 +171,16 @@ header {
 
 
 .main-nav {
-	@include tab {		
+	@include tab-portrait {		
 	    position: absolute;
 	    top: 2%;
 	    right: 2%;
 	    width: auto;
-	    background: #fff !important;
+	    background: $primary-color !important;
+
+	    .button-collapse i {
+	    	color: #fff;
+	    }
 
 	    .button-collapse {
 	    	color: #5a5a5a;
@@ -199,6 +202,11 @@ header {
 	    	}
 	    }
 
+	}
+	@include tab-landscape {
+		ul.auth {
+			display: none;
+		}
 	}
 }
 
@@ -385,6 +393,16 @@ ul.auth {
 			margin-left: 2%;
 			float: left;
 		}
+
+		@include tab {
+			.card-image{
+				display: none;
+				
+			}
+			.card-content {
+				width: 100%;
+			}
+		}
 	}
 }
 
@@ -449,6 +467,10 @@ ul.auth {
 			position: absolute;
 			height: 100%;
 			padding: 0;
+
+			@include tab {
+				position: static;
+			}
 
 			img {
 				height: 100%;
@@ -558,7 +580,7 @@ section {
 				display: block;
 				float: right;
 
-				@include mobile {
+				@include tab {
 					font-size: 48px;
 					padding: 22px;
 				}
@@ -567,6 +589,11 @@ section {
 				width: 64px;
 				margin: 14px 25px;
 				float: right;
+
+				@include tab {
+					width: 40px;
+					margin: 23px;
+				}
 			}
 
 			div.skwed {

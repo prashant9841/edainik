@@ -15,12 +15,12 @@
     <div class="cat-page">
         <section class="container">
             <div class="row section-title">
-                <div class="col s12 m6">
+                <div class="col s12 l6">
                     <h4>{{$category->title}}</h4>                
                     <img src="{{asset('/images/icons/news.png')}}" alt="">
                     <div class="skwed"></div>
                 </div>
-                <div class="col s12 m6">
+                <div class="col s12 l6">
                     {!! Ads::show('responsive') !!}
                 </div>
             </div>

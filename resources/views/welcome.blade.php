@@ -24,12 +24,12 @@
 
     <section class="related container">
         <div class="row section-title">
-            <div class="col s12 m6">
+            <div class="col s12 l6">
                 <h4> @lang('homepage.latest-news')</h4>
                 <img src="{{asset('/images/icons/latest.png')}}" alt="">
                 <div class="skwed"></div>
             </div>
-            <div class="col s12 m6">
+            <div class="col s12 l6">
                 {!! Ads::show('responsive') !!}
             </div>
         </div>
@@ -66,12 +66,12 @@
 
     <section class="related container">
         <div class="row section-title">
-            <div class="col s12 m6">
+            <div class="col s12 l6">
                 <h4> @lang('homepage.trending-news')</h4>
                 <img src="{{asset('/images/icons/trending.png')}}" alt="">
                 <div class="skwed"></div>
             </div>
-            <div class="col s12 m6">
+            <div class="col s12 l6">
                 {!! Ads::show('responsive') !!}
             </div>
         </div>
@@ -110,14 +110,14 @@
     @foreach($categoriesList as $category)
     <section class="home-cat container">
         <div class="row section-title">
-            <div class="col s12 m6">
+            <div class="col s12 l6">
                 {{-- Catgory Title --}}
                 <h4>{{ $category->title }}</h4>
                 <img src="{{asset('/images/icons/news.png')}}" alt="">
                 <div class="skwed"></div>
 
             </div>
-            <div class="col s12 m6">
+            <div class="col s12 l6">
                 {!! Ads::show('responsive') !!}
             </div>
         </div>
@@ -129,13 +129,13 @@
                 <div class="row">                
                     <div class="col m9 s12">
                         <div class="card row">
-                            <div class="card-image col s12 m6">
+                            <div class="card-image col s12 l6">
                                 
                                 @if($relCat->getMedia('images')->count() > 0)
                                     <img src="{{ $relCat->getFirstImageUrl('small') }}" alt="{{ $relCat->title }}">
                                 @endif                        
                             </div>                            
-                            <div class="card-content col s12 m6">
+                            <div class="card-content col s12 l6">
                                 {{-- <div class="col s12 m6">
                                 </div> --}}
                                     <h1 class="header center">{{$relCat->title}}</h1>
