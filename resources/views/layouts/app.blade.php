@@ -64,8 +64,8 @@
                      {!! Ads::show('responsive') !!}
                 </div>
             </div>
+            @include('layouts._frontendNav')
         </header>
-        @include('layouts._frontendNav')
 
 
         @yield('content')

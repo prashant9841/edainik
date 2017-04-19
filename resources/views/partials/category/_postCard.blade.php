@@ -5,13 +5,13 @@
                 <div class="row">                
                     <div class="col m9 s12">
                         <div class="card row">
-                            <div class="card-image col s12 m6">
+                            <div class="card-image col s12 l6">
                                 
                                 @if($post->getMedia('images')->count() > 0)
                                     <img src="{{ $post->getFirstImageUrl('small') }}" alt="{{ $post->title }}">
                                 @endif                        
                             </div>                            
-                            <div class="card-content col s12 m6">
+                            <div class="card-content col s12 l6">
                                 {{-- <div class="col s12 m6">
                                 </div> --}}
                                     <h1 class="header center">{{$post->title}}</h1>
