@@ -209,6 +209,19 @@ header {
 		}
 	}
 }
+.icon-wrap {
+	position: relative;
+	height: 50px;
+
+	.addthis_inline_share_toolbox  {
+		position: absolute;
+	    left: 50%;
+	    /* right: 0; */
+	    /* margin: 0 auto; */
+	    transform: translateX(-50%);
+	}
+
+}
 
 ul.navigation {
 	li {

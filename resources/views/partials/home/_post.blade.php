@@ -9,9 +9,11 @@
         <div class="section">
             @if($post->category)
                 <p>{{ $post->category->title }} </p>
-                <div class="row share center"> </div>
-                <div class="addthis_inline_share_toolbox centre"></div>
+                {{-- <div class="row share center"> </div> --}}
             @endif
+            <div class="icon-wrap">
+                <div class="addthis_inline_share_toolbox"></div>
+            </div>
         </div>
         <div class="parallax">
             @if($post->getMedia('images')->count() > 0)
