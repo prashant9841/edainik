@@ -18,9 +18,7 @@
             -->
         </div>
         <div class="paralsslax">
-            @if($post->getMedia('images')->count() > 0)
-                <img src="{{ $post->getFirstImageUrl() }}" alt="Unsplashed background img 1">
-            @endif
+            <img src="{{ $post->getFirstImageUrl() }}" alt="{{ $post->title }}">
         </div>
     </div>
 
