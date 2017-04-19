@@ -12,14 +12,12 @@
 
     <title>@yield('title'){{ config('app.name', 'eDainikPost') }}</title>
     <link rel="preload" href="{{ asset('/stylesheets/animate.css') }}" as="style" onload="this.rel='stylesheet'">
-    <link rel="preload" href="{{ asset('/stylesheets/social.css') }}" as="style" onload="this.rel='stylesheet'">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <link rel="preload" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css" as="style" onload="this.rel='stylesheet'">
     <link rel="preload" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css" as="style" onload="this.rel='stylesheet'">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <noscript>
         <link rel="stylesheet" href="{{ asset('/stylesheets/animate.css') }}">
-        <link rel="stylesheet" href="{{ asset('/stylesheets/social.css') }}">
         <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
         <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
     </noscript>
@@ -79,16 +77,17 @@
 
         <script src="{{ mix('js/app.js') }}"></script>
         <script src="/js/cssrelpreload.js"></script>
-        <script defer async src="/js/social.js"></script>
         <script  type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
         <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58f5d96ec9059cb3"></script>
         <script>
+            /*
              $(".share").jsSocials({
                 shares: ["twitter", "facebook", "googleplus"],
                 showLabel: false,
                 showCount: false,
                 url: "http://www.edainikpost.com:2020/"
             });
+            */
              $('#flash-news').slick({
                 dots: true,
                 infinite: true,
