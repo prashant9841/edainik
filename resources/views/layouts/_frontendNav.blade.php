@@ -21,6 +21,6 @@
             @include('layouts._frontendMenu')
            
         </ul>
-        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="ti-menu"></i></a>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="fa fa-bars"></i></a>
     </div>
 </nav>

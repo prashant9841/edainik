@@ -601,13 +601,13 @@ section {
 				}
 			}
 			img {
-				width: 64px;
-				margin: 14px 25px;
-				float: right;
+
+			    margin: 0 25px;
+			    float: right;
+			    height: 100%;
+			    padding: 2%;
 
 				@include tab {
-					width: 40px;
-					margin: 23px;
 				}
 			}
 
