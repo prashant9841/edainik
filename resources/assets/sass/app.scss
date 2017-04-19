@@ -40,6 +40,10 @@ body {
 	}
 }
 
+.container {
+	max-width: none;
+}
+
 p {
 	color: $secondary-color;
 
@@ -602,10 +606,11 @@ section {
 			}
 			img {
 
-			    margin: 0 25px;
+			    margin: 0 3%;
 			    float: right;
 			    height: 100%;
 			    padding: 2%;
+			    max-width: 18%;
 
 				@include tab {
 				}
@@ -620,6 +625,20 @@ section {
 			    top: 0;
 			    transform: skew(-40deg);
 			    z-index: 9;
+			}
+
+			@include mobile {
+				height: 60px;
+
+				h4 {
+					margin: 0;
+					font-size: 24px;
+
+				}
+
+				img {
+					padding: 3%;
+				}
 			}
 		}
 
