@@ -5,7 +5,7 @@
             
         </div>
     </div>
-    <div class="parallax-container">
+    <div class="parallax-constainer container">
         <div class="section">
             @if($post->category)
                 <p>{{ $post->category->title }} </p>
@@ -17,7 +17,7 @@
             </div> 
             -->
         </div>
-        <div class="parallax">
+        <div class="paralsslax">
             @if($post->getMedia('images')->count() > 0)
                 <img src="{{ $post->getFirstImageUrl() }}" alt="Unsplashed background img 1">
             @endif

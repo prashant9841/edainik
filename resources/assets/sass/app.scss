@@ -355,6 +355,32 @@ ul.auth {
 		font-size: 22px;
 	}
 
+	.paralsslax {
+		max-height: 500px;
+		overflow: hidden;
+
+		img {
+			width: 100%;
+		}
+	}
+	.parallax-constainer {
+		position: relative;
+		.section {
+			position: absolute;
+			bottom: 0;
+			background: rgba($secondary-color, 0.5);
+			width: 100%;
+
+			.header {
+				color: #fff;
+			}
+			p {
+				text-align: center;
+				color: #fff;
+			}
+		}
+	}
+
 }
 
 .small-post {
