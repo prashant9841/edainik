@@ -38,11 +38,12 @@
     </script>
 </head>
 <body>
-        {{-- Ads --}}
+        {{--
+        //Ads
         <div class="ads container">
             {!! Ads::show('responsive') !!}
         </div>
-        {{-- Ads --}}
+        --}}
 
         <header class="pageHeader container 
         @if(isset($category))
