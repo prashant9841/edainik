@@ -109,7 +109,14 @@
             <div class="col s12 l6">
                 {{-- Catgory Title --}}
                 <h4>{{ $category->title }}</h4>
-                <img src="{{asset('/images/icons/news.png')}}" alt="">
+               
+                    <img src="
+                    @if(strlen($category->icon) >4)
+                        {{asset('/images/icons/'.$category->icon)}}
+                    @else
+                        {{asset('/images/icons/news.png')}}
+                    @endif
+                    " alt="{{$category->title}}">
                 <div class="skwed"></div>
 
             </div>

@@ -24,7 +24,7 @@
                     @else
                         {{asset('/images/icons/news.png')}}
                     @endif
-                    " alt="">
+                    " alt="{{$category->title}}">
                     <div class="skwed"></div>
                 </div>
                 <div class="col s12 l6">
