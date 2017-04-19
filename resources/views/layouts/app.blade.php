@@ -44,8 +44,12 @@
         </div>
         {{-- Ads --}}
 
-        <header class="">
-            <div class="logo-div row container">
+        <header class="pageHeader container 
+        @if(isset($category))
+            {{$category->header_color}}
+        @endif
+        ">
+            <div class="logo-div row">
                 <div class="col s12 m4">
                     <div class="logo">
                     <img src="{{asset('/images/logo34.png')}}" alt="">
