@@ -46,8 +46,8 @@
         </div>
         {{-- Ads --}}
 
-        <header class="pageHeader container">
-            <div class="logo-div row">
+        <header class="">
+            <div class="logo-div row container">
                 <div class="col s12 m4">
                     <div class="logo">
                     <img src="{{asset('/images/logo34.png')}}" alt="">
@@ -62,8 +62,8 @@
                      {!! Ads::show('responsive') !!}
                 </div>
             </div>
+            @include('layouts._frontendNav')
         </header>
-        @include('layouts._frontendNav')
 
 
         @yield('content')

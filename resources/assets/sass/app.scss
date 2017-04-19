@@ -122,7 +122,7 @@ h4 {
 --------------------------------*/
 
 header {
-	width: $container-width !important;
+	width: 100% !important;
 	.logo-div {
 		margin-bottom: 0;
 		.logo {
@@ -153,7 +153,16 @@ header {
 				display: none;
 			}
 		}
-		
+	}
+	@include mobile {
+		.logo-div {
+			width: 90%;
+			margin: 0 auto !important;
+
+			img {
+				width: 110px;
+			}			
+		}
 	}
 }
 
@@ -168,6 +177,7 @@ header {
 	    top: 2%;
 	    right: 2%;
 	    width: auto;
+	    background: #fff !important;
 
 	    .button-collapse {
 	    	color: #5a5a5a;
@@ -177,7 +187,7 @@ header {
 	    	li {
 	    		a {
 	    			font-size: 18px;
-	    			color: #fff;
+	    			color: $secondary-color;
 	    		}
 	    		&:first-child {
 	    			height: 60px;
@@ -536,30 +546,6 @@ section {
 			overflow: hidden;
 			background: $primary-color - 20;
 
-			// h4 {
-			// 	z-index: 999;
-			// 	position: absolute;
-			// 	right: 10px;
-			// 	float: right;
-			// }
-			// i {
-			// 	font-size: 72px;
-			// 	color: #fff;
-			// 	padding: 10px;
-			// 	display: block;
-			// }
-
-			// div.skwed {
-			// 	background: $primary-color;
-			// 	position: absolute;
-			//     width: 84%;
-			//     height: 100%;
-			//     right: -56px;
-			//     top: 0;
-			//     transform: skew(-40deg);
-			//     z-index: 9;
-			// }
-
 			h4 {
 				z-index: 999;
 				position: absolute;
@@ -571,6 +557,11 @@ section {
 				padding: 10px;
 				display: block;
 				float: right;
+
+				@include mobile {
+					font-size: 48px;
+					padding: 22px;
+				}
 			}
 			img {
 				width: 64px;
@@ -587,6 +578,12 @@ section {
 			    top: 0;
 			    transform: skew(-40deg);
 			    z-index: 9;
+			}
+		}
+
+		@include mobile {
+			h4 {
+				font-size: 24px;
 			}
 		}
 	}
