@@ -44,7 +44,11 @@
         </div>
         {{-- Ads --}}
 
-        <header class="pageHeader container">
+        <header class="pageHeader container 
+        @if(isset($category))
+            {{$category->header_color}}
+        @endif
+        ">
             <div class="logo-div row">
                 <div class="col s12 m4">
                     <div class="logo">
