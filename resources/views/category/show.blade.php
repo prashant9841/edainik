@@ -16,8 +16,15 @@
         <section class="container">
             <div class="row section-title">
                 <div class="col s12 l6">
-                    <h4>{{$category->title}}</h4>                
-                    <img src="{{asset('/images/icons/news.png')}}" alt="">
+                    <h4>{{$category->title}}</h4>
+
+                    <img src="
+                    @if(strlen($category->icon) >4)
+                        {{asset('/images/icons/'.$category->icon)}}
+                    @else
+                        {{asset('/images/icons/news.png')}}
+                    @endif
+                    " alt="">
                     <div class="skwed"></div>
                 </div>
                 <div class="col s12 l6">
@@ -32,6 +39,7 @@
     		      @include('partials.category._postCard')
     			@endforeach
     		</section>
+            
         @if(isset($related))
         <section class="related container">
             
@@ -49,7 +57,7 @@
                                             <h4>{{ $news->title }}</h4>
                                             <div class="row small">
                                                 <div class="col s6">
-                                                    <p><i class="fa fa-clock-o"></i> &nbsp;{{$news->created_at->diffForHumans()}}</p>
+                                                    <p><i class="fa fa-clock-o"></i>&nbsp;{{$news->created_at->diffForHumans()}}</p>
                                                 </div>
                                                 <div class="col s6">
                                                     <p><i class="fa fa-bars"></i>&nbsp; Category</p>

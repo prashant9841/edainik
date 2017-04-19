@@ -25,7 +25,7 @@
     <section class="related container">
         <div class="row section-title">
             <div class="col s12 l6">
-                <h4> @lang('homepage.latest-news')</h4>
+                <h4>@lang('homepage.latest-news')</h4>
                 <img src="{{asset('/images/icons/latest.png')}}" alt="">
                 <div class="skwed"></div>
             </div>
@@ -87,11 +87,7 @@
                         @foreach ($trendingNews as $post)
                             <div>
                                 <div class="card-image">
-                                    @if($post->getMedia('images')->count() > 0)
-                                        <img src="{{ $post->getFirstImageUrl('thumb') }}" alt="{{$post->title}}">
-                                    @else
-                                        <img src="http://lorempixel.com/1000/600" alt="Unsplashed background img 1">
-                                    @endif
+                                    <img src="{{ $post->getFirstImageUrl('thumb') }}" alt="{{$post->title}}">
                                 </div>
                                 <div class="card-content">                                   
                                     <a href="{{ url('/news/'.$post->slug) }}" >

@@ -13,7 +13,7 @@
     <title>@yield('title'){{ config('app.name', 'eDainikPost') }}</title>
     <link rel="preload" href="{{ asset('/stylesheets/animate.css') }}" as="style" onload="this.rel='stylesheet'">
     <link rel="preload" href="{{ asset('/stylesheets/social.css') }}" as="style" onload="this.rel='stylesheet'">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <link rel="preload" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css" as="style" onload="this.rel='stylesheet'">
     <link rel="preload" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css" as="style" onload="this.rel='stylesheet'">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
