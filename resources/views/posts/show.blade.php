@@ -29,7 +29,7 @@
                     @if($post->category)
                         <p>{{ $post->category->title }} </p>
                     @endif
-                    <div class="row share center"> </div>
+                    <div class="addthis_inline_share_toolbox center"> </div>
                                         
                 </div>
                 <div class="parallax"><img src="{{ $post->getFirstImageUrl() }}" alt="Unsplashed background img 1"></div>
