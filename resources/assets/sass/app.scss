@@ -123,6 +123,7 @@ h4 {
 
 header {
 	width: 100% !important;
+	background-color: $primary-color;
 	.logo-div {
 		margin-bottom: 0;
 		.logo {
@@ -171,6 +172,7 @@ header {
 
 
 .main-nav {
+	background-color: rgba(#000, 0.1);
 	@include tab-portrait {		
 	    position: absolute;
 	    top: 2%;
@@ -226,7 +228,7 @@ header {
 ul.navigation {
 	li {
 		// position: relative;
-		border-right: 1px solid $primary-color;
+		// border-right: 1px solid $primary-color;
 		a {
 			color: #fff;
 			&:hover {
@@ -610,11 +612,11 @@ section {
 			}
 
 			div.skwed {
-				background: $primary-color;
+				background: rgba(#000, 0.1);
 				position: absolute;
 			    width: 80%;
 			    height: 100%;
-			    left: -56px;
+			    right: -50%;
 			    top: 0;
 			    transform: skew(-40deg);
 			    z-index: 9;

@@ -45,25 +45,27 @@
         </div>
         --}}
 
-        <header class="pageHeader container 
+        <header class="pageHeader 
         @if(isset($category))
             {{$category->header_color}}
         @endif
         ">
-            <div class="logo-div row">
-                <div class="col s12 m4">
-                    <div class="logo">
-                    <img src="{{asset('/images/logo34.png')}}" alt="">
-                        
+            <div class="container">
+                <div class="logo-div row">
+                    <div class="col s12 m4">
+                        <div class="logo">
+                        <img src="{{asset('/images/0.png')}}" alt="">
+                            
+                        </div>
+                        {{-- <h3>इदैनिक पोस्ट</h3> --}}
                     </div>
-                    {{-- <h3>इदैनिक पोस्ट</h3> --}}
-                </div>
-                <div class="col s12 m4 ads">
-                      {!! Ads::show('responsive') !!}  
-                </div>
-                <div class="col s12 m4 ads">
-                     {!! Ads::show('responsive') !!}
-                </div>
+                    <div class="col s12 m4 ads">
+                          {!! Ads::show('responsive') !!}  
+                    </div>
+                    <div class="col s12 m4 ads">
+                         {!! Ads::show('responsive') !!}
+                    </div>
+                </div>                
             </div>
             @include('layouts._frontendNav')
         </header>

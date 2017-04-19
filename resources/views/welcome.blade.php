@@ -106,7 +106,7 @@
     @foreach($categoriesList as $category)
     <section class="home-cat container">
         <div class="row section-title">
-            <div class="col s12 l6">
+            <div class="col s12 l6 {{$category->header_color}}">
                 {{-- Catgory Title --}}
                 <h4>{{ $category->title }}</h4>
                 <img src="{{asset('/images/icons/news.png')}}" alt="">
