@@ -45,11 +45,7 @@
                         @foreach ($posts as $post)
                             <div>
                                 <div class="card-image">
-                                    @if($post->getMedia('images')->count() > 0)
-                                        <img src="{{ $post->getFirstImageUrl() }}" alt="Unsplashed background img 1">
-                                    @else
-                                        <img src="http://lorempixel.com/1000/600" alt="Unsplashed background img 1">
-                                    @endif
+                                    <img src="{{ $post->getFirstImageUrl() }}" alt="{{ $post->title }}">
                                 </div>
                                 <div class="card-content">                                   
                                     <a href="{{ url('/posts/'.$post->slug) }}" >                                        
@@ -133,10 +129,7 @@
                     <div class="col m9 s12">
                         <div class="card row">
                             <div class="card-image col s12 l6">
-                                
-                                @if($relCat->getMedia('images')->count() > 0)
-                                    <img src="{{ $relCat->getFirstImageUrl('small') }}" alt="{{ $relCat->title }}">
-                                @endif                        
+                                <img src="{{ $relCat->getFirstImageUrl('small') }}" alt="{{ $relCat->title }}">
                             </div>                            
                             <div class="card-content col s12 l6">
                                 {{-- <div class="col s12 m6">
@@ -187,7 +180,7 @@
                                 <a href="{{ url('news',$news->slug)}}">
                                     <div class="card group">
                                         <div class="card-image">
-                                            <img src="{{ $post->getFirstImageUrl('thumb') }}" alt="">
+                                            <img src="{{ $post->getFirstImageUrl('thumb') }}" alt="{{$post->title}}">
                                         </div>
                                         <div class="card-content">
                                             <h4>{{ $news->title }}</h4>
