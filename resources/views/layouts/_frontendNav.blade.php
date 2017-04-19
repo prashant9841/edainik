@@ -1,11 +1,11 @@
-<nav class="main-nav" role="navigation" style="background-color: #0091ea;">
+<nav class="main-nav" role="navigation">
     <div class="nav-wrapper container">
         <ul class="hide-on-med-and-down left navigation">
 
             <li class="
-
+            @if(url()->current() == url('/'))
                 active
-                
+            @endif
             "><a href="/">गृहपृष्ठ </a></li>
             @include('layouts._frontendMenu')
         </ul>
