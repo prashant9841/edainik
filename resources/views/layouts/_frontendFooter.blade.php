@@ -9,7 +9,7 @@
           <h5 class="white-text">मेनु</h5>
           <ul>
             <li><a href="/">@lang('homepage.home')</a></li>
-            @include('layouts._frontendMenu')
+            @include('layouts._frontendFooter')
           </ul>
         </div>
       </div>
