@@ -7,7 +7,7 @@
         <ul class="collection">
         @if(isset($category))
             @foreach($category->approvedPosts()->get() as $news)
-                <a class="collection-item" href="news/{{$news->slug}}">{{$news->title}}</a>
+                <a class="collection-item" href="{{ url('news',$news->slug) }}">{{$news->title}}</a>
             @endforeach
         @endif
         </ul>
