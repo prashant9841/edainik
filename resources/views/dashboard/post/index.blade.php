@@ -40,6 +40,12 @@
 								<a class="btn tooltipped"
 								data-position="bottom" data-delay="50" data-tooltip="Edit news" 
 								href="{{ url('/dashboard/posts/'.$post->id.'/edit') }}"><i class="material-icons">mode_edit</i></a>
+								<form action="{{ url('/dashboard/posts',$post->id)}}" method="post">
+									{!! method_field('DELETE') !!}
+									<button type="submit" class="btn tooltipped"
+									data-position="bottom" data-delay="50" data-tooltip="Delete News" 
+									href="{{ url('/dashboard/posts/'.$post->id.'/delete') }}"><i class="material-icons">delete_forever</i></button>
+								</form>
 								@if(Auth::user()->isSuperAdmin())
 									@if($post->verified)
 										<a class="btn red tooltipped" 
