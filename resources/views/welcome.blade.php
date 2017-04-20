@@ -201,7 +201,7 @@
                         @endforeach
                     </ul>
                     
-                    <a href="" class="right btn">@lang('homepage.viewall')</a>
+                    <a href="{{ url('categories',$category->slug)}}" class="right btn">@lang('homepage.viewall')</a>
 
                     
                 </div>
