@@ -21,18 +21,20 @@
                     <h1 class="header center">{{$post->title}}</h1>
                 </div>
             </div>
-            <div class="parallax-container">
-                <div class="section">
-                    @if(Auth::check() && Auth::user()->id == $post->user_id)
-                        <a class="btn" href="{{ url('/dashboard/posts/'.$post->id.'/edit')}}"><i class="ti-pencil"></i></a>
-                    @endif
+            <div class="parallax-constainer container">
+                {{-- <div class="section">
                     @if($post->category)
                         <p>{{ $post->category->title }} </p>
                     @endif
-                    <div class="addthis_inline_share_toolbox center"> </div>
-                                        
+                    
+                    <div class="icon-wrap">
+                        <div class="addthis_inline_share_toolbox"></div>
+                    </div> 
+                   
+                </div> --}}
+                <div class="paralsslax">
+                    <img src="{{ $post->getFirstImageUrl() }}" alt="{{ $post->title }}">
                 </div>
-                <div class="parallax"><img src="{{ $post->getFirstImageUrl() }}" alt="Unsplashed background img 1"></div>
             </div>
 
             <div class="content container">

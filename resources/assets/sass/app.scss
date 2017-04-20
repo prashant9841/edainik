@@ -146,6 +146,18 @@ header {
 			}
 		}
 
+		.social {
+			float: right;
+			margin-top: 15%;
+			li {
+				margin-right: 25px;
+			}
+			a {
+				font-size: 40px;
+				color: #fff;
+			}
+		}
+
 	}
 	@include tab {
 
@@ -235,6 +247,7 @@ ul.navigation {
 		// border-right: 1px solid $primary-color;
 		a {
 			color: #fff;
+			font-size: 20px;
 			&:hover {
 				background: $t;
 				color: $primary-color !important;
@@ -336,9 +349,9 @@ ul.auth {
 		p.wrap {
 			width: 80%;
 			margin: 50px auto 25px;
-			font-size: 18px;
+			font-size: 24px;
 
-			@include line-clamp (24px, 6);
+			@include line-clamp (28px, 6);
 		}
 
 		.btn-row {
@@ -357,6 +370,11 @@ ul.auth {
 	}
 
 	// no parallax
+
+	h1{
+		font-size: 64px;
+		font-weight: bold;
+	}
 
 	.paralsslax {
 		max-height: 500px;
@@ -397,7 +415,7 @@ ul.auth {
 		
 	}
     .small {
-    	font-size: 13px;
+    	font-size: 15px;
     	margin-bottom: 0;
     }
 
@@ -405,9 +423,14 @@ ul.auth {
 	    color: $secondary-color;
 	    display: block;
 	    h4 {
-	    	@include line-clamp(24px, 1);
-	    	font-size: 20px;
+	    	@include line-clamp(32px, 1);
+	    	font-size: 28px;
 	    	margin-top: 0;
+	    	margin-bottom: 7px;
+	    }
+
+	    p {
+	    	@include line-clamp(21px, 2);
 	    }
 
 	    &:hover {
@@ -430,13 +453,13 @@ ul.auth {
 
 .small-post.with-image {
 	.card {
-		max-height: 105px;
+		// max-height: 105px;
 		.card-image {
 			float: left;
 			width: 25%;
 
 			img {
-				height: 104px;
+				height: 130px;
 			}
 
 		}
@@ -455,6 +478,17 @@ ul.auth {
 				width: 100%;
 			}
 		}
+	}
+}
+
+
+.tiny-post {
+	li{
+		width: 40%;
+		margin-right: 5%;
+		padding-left: 5px;
+		float: left;
+		border-bottom: 1px solid #ccc;
 	}
 }
 
