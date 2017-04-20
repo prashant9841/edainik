@@ -52,8 +52,8 @@
                 <div class="logo-div row">
                     <div class="col s12 m4">
                         <div class="logo">
-                        <img src="{{asset('/images/0.png')}}" alt="">
-                            
+                            <img src="{{asset('/images/0.png')}}" alt="">
+                            <p class="time white-text">24/12/2017 Wednesday</p>                            
                         </div>
                         {{-- <h3>इदैनिक पोस्ट</h3> --}}
                     </div>
@@ -61,7 +61,12 @@
                           {!! Ads::show('responsive') !!}  
                     </div>
                     <div class="col s12 m4 ads">
-                         {!! Ads::show('responsive') !!}
+                         {{-- {!! Ads::show('responsive') !!} --}}
+                         <ul class="inline social">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                         </ul>
                     </div>
                 </div>                
             </div>
