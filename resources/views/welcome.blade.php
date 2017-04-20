@@ -122,7 +122,7 @@
         </div>
 
         {{-- 1 featured Post related to category --}}
-        @if($category->posts->first() && isset($category->posts)) 
+        @if($category->posts->count() && isset($category->posts)) 
             <?php $relCat = $category->posts->first(); ?>
             <div class="box-post">
                 <div class="row">                
@@ -141,7 +141,7 @@
                                             <p><i class="ti-time"></i> &nbsp;{{$relCat->created_at->diffForHumans()}}</p>
                                         </div>
                                         <div class="col s6">
-                                            <p><i class="ti-menu"></i>&nbsp; Category</p>
+                                            <p><i class="ti-menu"></i>&nbsp; {{ $relCat->category->title}}</p>
                                         </div>
                                     </div>
                                     <p class="wrap">{{ $relCat->description }}</p>
