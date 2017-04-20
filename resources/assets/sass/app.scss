@@ -309,6 +309,7 @@ ul.auth {
 
 
 .large-post {
+	border-top: 1px solid #ccc;
 	.parallax-container {
 		min-height: 480px;
 		line-height: 0;
@@ -355,6 +356,8 @@ ul.auth {
 		font-size: 22px;
 	}
 
+	// no parallax
+
 	.paralsslax {
 		max-height: 500px;
 		overflow: hidden;
@@ -379,6 +382,10 @@ ul.auth {
 				color: #fff;
 			}
 		}
+	}
+
+	&:first-child {
+		border-top: none;
 	}
 
 }
