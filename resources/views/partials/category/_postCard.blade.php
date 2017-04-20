@@ -18,10 +18,10 @@
 
                                     <div class="row small">
                                         <div class="col s6">
-                                            <p><i class="ti-time"></i> &nbsp;{{$post->created_at->diffForHumans()}}</p>
+                                            <p><i class="fa fa-clock-o"></i> &nbsp;{{$post->created_at->diffForHumans()}}</p>
                                         </div>
                                         <div class="col s6">
-                                            <p><i class="ti-menu"></i>&nbsp; Category</p>
+                                            <p><i class="fa fa-bars"></i>&nbsp; {{ $post->category->title }}</p>
                                         </div>
                                     </div>
                                     <p class="wrap">{{ $post->description }}</p>

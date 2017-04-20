@@ -73,7 +73,7 @@
         </div>
         <div class="row">
             <div class="col s12 m9">
-               @include('partials.home._latestPost')
+               @include('partials.home._trendingPost')
             </div>
             <div class="col s12 m3 side-post">
                 @include('partials.home._relatedPost')

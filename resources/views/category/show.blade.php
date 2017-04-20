@@ -60,7 +60,7 @@
                                                     <p><i class="fa fa-clock-o"></i>&nbsp;{{$news->created_at->diffForHumans()}}</p>
                                                 </div>
                                                 <div class="col s6">
-                                                    <p><i class="fa fa-bars"></i>&nbsp; Category</p>
+                                                    <p><i class="fa fa-bars"></i>&nbsp; {{ $news->category->title }}</p>
                                                 </div>
                                             </div>
                                             
@@ -73,22 +73,7 @@
                     </ul>
                 </div>
                 <div class="col s12 m3 side-post">
-                    <div class="card">
-                        {!! Ads::show('responsive') !!}
-                    </div>
-                    <div class="card">
-                        <div class="card-content">
-                            <h4>@lang('homepage.latest')</h4>
-                            <ul class="collection">
-                                @foreach($related as $post)
-                                   <a class="collection-item" href="{{ url('news',$post->slug)}}">{{ $post->title }}</a>
-                                @endforeach
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card">
-                        {!! Ads::show('responsive') !!}
-                    </div>
+                   @include('partials.post._relatedPost')
                 </div>
             </div>
         </section>
