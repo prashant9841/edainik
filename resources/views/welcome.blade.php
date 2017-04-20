@@ -107,7 +107,7 @@
                 <h4>{{ $category->title }}</h4>
                
                     <img src="
-                    @if(strlen($category->icon) >4)
+                    @if(strlen($category->icon) > 3)
                         {{asset('/images/icons/'.$category->icon)}}
                     @else
                         {{asset('/images/icons/news.png')}}
@@ -138,10 +138,10 @@
 
                                     <div class="row small">
                                         <div class="col s6">
-                                            <p><i class="ti-time"></i> &nbsp;{{$relCat->created_at->diffForHumans()}}</p>
+                                            <p><i class="fa fa-clock-o"></i> &nbsp;{{$relCat->created_at->diffForHumans()}}</p>
                                         </div>
                                         <div class="col s6">
-                                            <p><i class="ti-menu"></i>&nbsp; {{ $relCat->category->title}}</p>
+                                            <p><i class="fa fa-bars"></i>&nbsp; {{ $relCat->category->title}}</p>
                                         </div>
                                     </div>
                                     <p class="wrap">{{ $relCat->description }}</p>
@@ -186,10 +186,10 @@
                                             <h4>{{ $news->title }}</h4>
                                             <div class="row small">
                                                 <div class="col s6">
-                                                    <p><i class="ti-time"></i> &nbsp;{{$news->created_at->diffForHumans()}}</p>
+                                                    <p><i class="fa fa-clock-o"></i> &nbsp;{{$news->created_at->diffForHumans()}}</p>
                                                 </div>
                                                 <div class="col s6">
-                                                    <p><i class="ti-menu"></i>&nbsp; Category</p>
+                                                    <p><i class="fa fa-bars"></i>&nbsp; {{ $news->category->title }}</p>
                                                 </div>
                                             </div>
                                             
