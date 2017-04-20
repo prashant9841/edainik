@@ -41,6 +41,7 @@
 								data-position="bottom" data-delay="50" data-tooltip="Edit news" 
 								href="{{ url('/dashboard/posts/'.$post->id.'/edit') }}"><i class="material-icons">mode_edit</i></a>
 								<form action="{{ url('/dashboard/posts',$post->id)}}" method="post">
+									{!! csrf_field() !!}
 									{!! method_field('DELETE') !!}
 									<button type="submit" class="btn tooltipped"
 									data-position="bottom" data-delay="50" data-tooltip="Delete News" 
