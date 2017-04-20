@@ -6,7 +6,7 @@
         <h4>@lang('homepage.latest')</h4>
         <ul  class="collection">
             @foreach($latestNews as $news)
-                <a class="collection-item" href="news/{{$news->slug}}">{{$news->title}}</a>
+                <a class="collection-item" href="{{ url('news',$news->slug) }}">{{$news->title}}</a>
             @endforeach
         </ul>
     </div>

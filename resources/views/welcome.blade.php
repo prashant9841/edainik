@@ -73,7 +73,7 @@
         </div>
         <div class="row">
             <div class="col s12 m9">
-               @include('partials.home._latestPost')
+               @include('partials.home._trendingPost')
             </div>
             <div class="col s12 m3 side-post">
                 @include('partials.home._relatedPost')
@@ -107,7 +107,7 @@
                 <h4>{{ $category->title }}</h4>
                
                     <img src="
-                    @if(strlen($category->icon) >4)
+                    @if(strlen($category->icon) > 3)
                         {{asset('/images/icons/'.$category->icon)}}
                     @else
                         {{asset('/images/icons/news.png')}}
@@ -122,7 +122,7 @@
         </div>
 
         {{-- 1 featured Post related to category --}}
-        @if($category->posts->first() && isset($category->posts)) 
+        @if($category->posts->count() && isset($category->posts)) 
             <?php $relCat = $category->posts->first(); ?>
             <div class="box-post">
                 <div class="row">                
@@ -138,10 +138,10 @@
 
                                     <div class="row small">
                                         <div class="col s6">
-                                            <p><i class="ti-time"></i> &nbsp;{{$relCat->created_at->diffForHumans()}}</p>
+                                            <p><i class="fa fa-clock-o"></i> &nbsp;{{$relCat->created_at->diffForHumans()}}</p>
                                         </div>
                                         <div class="col s6">
-                                            <p><i class="ti-menu"></i>&nbsp; Category</p>
+                                            <p><i class="fa fa-bars"></i>&nbsp; {{ $relCat->category->title}}</p>
                                         </div>
                                     </div>
                                     <p class="wrap">{{ $relCat->description }}</p>
@@ -180,16 +180,16 @@
                                 <a href="{{ url('news',$news->slug)}}">
                                     <div class="card group">
                                         <div class="card-image">
-                                            <img src="{{ $post->getFirstImageUrl('thumb') }}" alt="{{$post->title}}">
+                                            <img src="{{ $news->getFirstImageUrl('thumb') }}" alt="{{$post->title}}">
                                         </div>
                                         <div class="card-content">
                                             <h4>{{ $news->title }}</h4>
                                             <div class="row small">
                                                 <div class="col s6">
-                                                    <p><i class="ti-time"></i> &nbsp;{{$news->created_at->diffForHumans()}}</p>
+                                                    <p><i class="fa fa-clock-o"></i> &nbsp;{{$news->created_at->diffForHumans()}}</p>
                                                 </div>
                                                 <div class="col s6">
-                                                    <p><i class="ti-menu"></i>&nbsp; Category</p>
+                                                    <p><i class="fa fa-bars"></i>&nbsp; {{ $news->category->title }}</p>
                                                 </div>
                                             </div>
                                             
@@ -201,7 +201,7 @@
                         @endforeach
                     </ul>
                     
-                    <a href="" class="right btn">@lang('homepage.viewall')</a>
+                    <a href="{{ url('categories',$category->slug)}}" class="right btn">@lang('homepage.viewall')</a>
 
                     
                 </div>
