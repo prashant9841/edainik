@@ -44,7 +44,7 @@
         --}}
 
         <header class="pageHeader 
-        @if(isset($category))
+        @if(url()->current()== url('/') && isset($category))
             {{$category->header_color}}
         @endif
         ">
@@ -54,6 +54,7 @@
                         <div class="logo">
                             <img src="{{asset('/images/0.png')}}" alt="">
                             <p class="time white-text">24/12/2017 Wednesday</p>                            
+
                         </div>
                         {{-- <h3>इदैनिक पोस्ट</h3> --}}
                     </div>

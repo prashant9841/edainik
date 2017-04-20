@@ -48,7 +48,7 @@
                                     <img src="{{ $post->getFirstImageUrl() }}" alt="{{ $post->title }}">
                                 </div>
                                 <div class="card-content">                                   
-                                    <a href="{{ url('/posts/'.$post->slug) }}" >                                        
+                                    <a href="{{ route('singleNews',$post->slug) }}" >                                        
                                         {{$post->title}}
                                     </a>   
                                 </div>
@@ -86,7 +86,7 @@
                                     <img src="{{ $post->getFirstImageUrl('thumb') }}" alt="{{$post->title}}">
                                 </div>
                                 <div class="card-content">                                   
-                                    <a href="{{ url('/news/'.$post->slug) }}" >
+                                    <a href="{{ route('singleNews',$post->slug) }}" >
                                         {{$post->title}}
                                     </a>
                                 </div>
@@ -196,7 +196,7 @@
                         @endforeach
                     </ul>
                     
-                    <a href="{{ url('categories',$category->slug)}}" class="right btn">@lang('homepage.viewall')</a>
+                    <a href="{{ route('singleCategory',$category->slug)}}" class="right btn">@lang('homepage.viewall')</a>
 
                     
                 </div>

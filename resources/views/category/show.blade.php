@@ -48,7 +48,7 @@
                     <ul class="row small-post with-image latest">
                         @foreach($related as $news)
                             <li class="col s12 m6">
-                                <a href="{{ url('news',$news->slug)}}">
+                                <a href="{{ route('singleNews',$news->slug)}}">
                                     <div class="card group">
                                         <div class="card-image">
                                             <img src="{{ $news->getFirstImageUrl('thumb') }}" alt="">
