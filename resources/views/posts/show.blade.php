@@ -21,8 +21,11 @@
                     <h1 class="header center">{{$post->title}}</h1>
                 </div>
             </div>
+            @if($post->checkImage())
+                @include('partials.component.carousel',['slider' => $post->getMedia('images')])
+                {{-- 
             <div class="parallax-constainer container">
-                {{-- <div class="section">
+                <div class="section">
                     @if($post->category)
                         <p>{{ $post->category->title }} </p>
                     @endif
@@ -31,11 +34,13 @@
                         <div class="addthis_inline_share_toolbox"></div>
                     </div> 
                    
-                </div> --}}
+                </div> 
                 <div class="paralsslax">
                     <img src="{{ $post->getFirstImageUrl() }}" alt="{{ $post->title }}">
                 </div>
             </div>
+                --}}
+            @endif
 
             <div class="content container">
                 {{-- <div class="callout">           
@@ -80,3 +85,11 @@
 
 @stop
 
+
+@push('scripts')
+    <script>
+    $(document).ready(function(){
+        $('.carousel').carousel();
+    });
+    </script>
+@endpush
