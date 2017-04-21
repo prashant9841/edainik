@@ -250,7 +250,6 @@ ul.navigation {
 			font-size: 20px;
 			&:hover {
 				background: $t;
-				color: $primary-color !important;
 			}
 		}
 		// span {
@@ -274,7 +273,7 @@ ul.navigation {
 			background: #fff;
 			a {
 
-				color:$primary-color;
+				// color:$primary-color;
 			}
 			// span {
 			// 	width: 90%;
@@ -292,7 +291,7 @@ ul.navigation {
 
 			a {
 
-				color: $primary-color !important;
+				color: $primary-color;
 			}
 		}
 	}
@@ -535,6 +534,15 @@ ul.auth {
 	}
 	.card {
 		//max-height: 250px;
+		.card-title {
+			padding: 5px 15px;
+			h4 {
+				color: #fff;
+			}
+		}
+		.card-content {
+			padding-top: 0;
+		}
 	}
 }
 
