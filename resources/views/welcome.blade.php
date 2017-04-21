@@ -38,11 +38,14 @@
                @include('partials.home._latestPost')
             </div>
             <div class="col s12 m3 side-post">
-                @component('partials.component.sideList',['route' => 'singleCategory','items' => $categoriesList])
+                @component('partials.component.sideList',['background' => $category->header_color ?? null ])
                     @slot('title')
                         @lang('homepage.category-list')
                     @endslot
+                   
+                        @include('partials.component.collectionItems',['route' => 'singleCategory','items' => $categoriesList])
                 @endcomponent
+
 
                 <div class="card"> 
                     <div class="slide-news">
