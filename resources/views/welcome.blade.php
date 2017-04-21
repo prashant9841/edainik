@@ -123,7 +123,7 @@
 
         {{-- 1 featured Post related to category --}}
         @if($category->posts->count() && isset($category->posts)) 
-            <?php $relCat = $category->posts->first(); ?>
+            <?php $relCat = $category->approvedPosts()->latest()->first(); ?>
             <div class="box-post">
                 <div class="row">                
                     <div class="col m9 s12">
@@ -167,16 +167,13 @@
             <div class="ads">
                {!! Ads::show('responsive') !!}
             </div>
-        @else
-            @include('partials.home._notFound')
-        @endif
-
+        
         <div class="related">
             <div class="row">
                 <div class="col s12 m9" style="padding: 0;">
                     {{-- 4 Latest Posts from Category   --}}
                    <ul class="row small-post with-image latest">
-                        @foreach($category->approvedPosts()->take(6)->get()->shuffle() as $news)
+                        @foreach($category->approvedPosts()->latest()->take(10)->skip(1)->get() as $news)
                             <li class="col s12 m6">
                                 <a href="{{ url('news',$news->slug)}}">
                                     <div class="card group">
@@ -209,6 +206,10 @@
                 
             </div>
         </div>
+        @else
+            @include('partials.home._notFound')
+        @endif
+
     </section>
 
     @endforeach
