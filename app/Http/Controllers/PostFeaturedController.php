@@ -32,4 +32,17 @@ class PostFeaturedController extends Controller
     {
     	return Featured::where('post_id',$postId)->first();
     }
+
+    public function index()
+    {
+        $featured = Featured::latest()->take(20)->get();
+        $featuredd = $featured->each->post;
+        dd($featuredd);
+        $posts = $featured->map(function($value){
+            return $value->post;
+        });
+
+        return view('dashboard.featured.index');
+
+    }
 }
