@@ -1,8 +1,4 @@
 <?php
-
-if(env('APP_ENV') == 'production'){
-	URL::forceRootUrl(env('APP_URL'));
-}
 /*
 |--------------------------------------------------------------------------
 | Web Routes
