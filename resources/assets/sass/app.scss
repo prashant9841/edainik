@@ -137,7 +137,7 @@ header {
 			margin-left: -8px;
 		}
 		img {
-			width: 200px;
+			width: 130px;
 		}
 
 		.card {
@@ -148,12 +148,12 @@ header {
 
 		.social {
 			float: right;
-			margin-top: 15%;
+			margin-top: 13%;
 			li {
 				margin-right: 25px;
 			}
 			a {
-				font-size: 40px;
+				font-size: 24px;
 				color: #fff;
 			}
 		}
@@ -189,6 +189,8 @@ header {
 
 .main-nav {
 	background-color: rgba(#000, 0.1);
+	    height: 46px;
+    line-height: 44px;
 	@include tab-portrait {		
 	    position: absolute;
 	    top: 2%;
@@ -242,9 +244,11 @@ header {
 }
 
 ul.navigation {
+	height: 100%;
 	li {
 		// position: relative;
 		// border-right: 1px solid $primary-color;
+		height: 100%;
 		a {
 			color: #fff;
 			font-size: 20px;
@@ -535,9 +539,10 @@ ul.auth {
 	.card {
 		//max-height: 250px;
 		.card-title {
-			padding: 5px 15px;
+			padding: 15px;
 			h4 {
 				color: #fff;
+				margin: 0;
 			}
 		}
 		.card-content {
@@ -652,13 +657,14 @@ section {
 			font-size: 41px;
 		    // border-bottom: 2px solid $secondary-color;
 		    // float: left; 
-		    line-height: 60px;
+		    line-height: 55px;
 		    color: #fff;
+		    margin: 0;
 
 		}
 		.col:first-child {
 			position: relative;
-			height: 92px;
+			height: 55px;
 			overflow: hidden;
 			background: $primary-color - 20;
 

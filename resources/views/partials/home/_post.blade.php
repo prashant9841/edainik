@@ -18,16 +18,7 @@
         </div>
     </div>
     <div class="parallax-constainer container">
-        {{-- <div class="section">
-            @if($post->category)
-                <p>{{ $post->category->title }} </p>
-            @endif
-            
-            <div class="icon-wrap">
-                <div class="addthis_inline_share_toolbox"></div>
-            </div> 
-           
-        </div> --}}
+       
         <div class="paralsslax">
             <img src="{{ $post->getFirstImageUrl() }}" alt="{{ $post->title }}">
         </div>

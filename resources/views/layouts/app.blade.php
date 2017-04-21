@@ -37,11 +37,10 @@
     <style>
     @isset($category)
         ul.navigation a:hover {
-            @if($category->header_color)
-            color: {{$category->header_color}}
-            @else
-            color: #0091ea;
-            @endif
+
+            color: {{ $category->header_color ?? '#0091ea' }} !important;
+
+
         }
     @endisset
     </style>
@@ -58,7 +57,8 @@
         @if(url()->current() == url('/'))
            active
         @else
-        {{$category->header_color}}
+        {{ $category->header_color ?? null}}
+        {{ $post->category->header_color ?? null}}
         @endif
         ">
             <div class="container">
