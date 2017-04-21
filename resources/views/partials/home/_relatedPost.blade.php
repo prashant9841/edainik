@@ -3,7 +3,7 @@
 </div>
 <div class="card">
 
-    <div class="card-title {{$category->header_color}}">
+    <div class="card-title @isset($category){{$category->header_color}} @endisset">
         <h4>@lang('homepage.latest')</h4>
     </div>
     <div class="card-content">
