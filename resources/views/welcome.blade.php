@@ -63,24 +63,12 @@
                 @endcomponent
 
 
-                <div class="card"> 
-                    <div class="slide-news">
-                        @foreach ($posts as $post)
-                            <div>
-                                <div class="card-image">
-                                    <img src="{{ $post->getFirstImageUrl() }}" alt="{{ $post->title }}">
-                                </div>
-                                <div class="card-content">                                   
-                                    <a href="{{ route('singleNews',$post->slug) }}" >                                        
-                                        {{$post->title}}
-                                    </a>   
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-
+                
                 <div class="card">
+
+                    <div class="card-title {{ $category->header_color ?? 'light-blue accent-4' }}">
+                        <h4>Facebook</h4>
+                    </div>
                     <div class="fb-page" data-href="https://www.facebook.com/eDainikpost/" data-tabs="timeline" data-height="450px" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true"><blockquote cite="https://www.facebook.com/eDainikpost/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/eDainikpost/">Adventure Nepal</a></blockquote></div>
                 </div>
 
@@ -89,53 +77,8 @@
         </div>
     </section>
 
-{{--     <section class="related container">
-        <div class="row section-title">
-            <div class="col s12 l6">
-                <h4> @lang('homepage.trending-news')</h4>
-                <img src="{{asset('/images/icons/trending.png')}}" alt="">
-                <div class="skwed"></div>
-            </div>
-            <div class="col s12 l6">
-                {!! Ads::show('responsive') !!}
-            </div>
-        </div>
-        <div class="row">
-            <div class="col s12 m9">
-               @include('partials.home._trendingPost')
-            </div>
-
-            <div class="col s12 m3 side-post">
-
-
-                <div class="card">
-                    <div class="fb-page" data-href="https://www.facebook.com/eDainikpost/" data-tabs="timeline" data-height="450px" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true"><blockquote cite="https://www.facebook.com/eDainikpost/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/eDainikpost/">Adventure Nepal</a></blockquote></div>
-                </div>
-
-                <div class="card">
-                    <div class="slide-news">
-                        @foreach ($trendingNews as $post)
-                            <div>
-                                <div class="card-image">
-                                    <img src="{{ $post->getFirstImageUrl('thumb') }}" alt="{{$post->title}}">
-                                </div>
-                                <div class="card-content">                                   
-                                    <a href="{{ route('singleNews',$post->slug) }}" >
-                                        {{$post->title}}
-                                    </a>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
- --}}
-    {{-- 3 Categories Post --}}
     <section class="home-cat container">            
 
-            {{-- 1 featured Post related to category --}}
                     <div class="row">                
                         <div class="col m9 s12">
                             @foreach($categoriesList->take(3) as $category)
@@ -222,6 +165,8 @@
                             @endforeach
                         </div>
 
+                        {{-- SIDE --}}
+
                         <div class="col s12 m3 side-post">
                             <div class="card">
                                 {!! Ads::show('responsive') !!}
@@ -236,7 +181,31 @@
                                
                                     @include('partials.component.collectionItems',['route' => 'singleCategory','items' => $categoriesList])
                             @endcomponent
+
                             </div>
+                            <div class="card">
+                                <div class="card-title {{ $category->header_color ?? 'light-blue accent-4' }}">
+                                    <h4>Twitter</h4>
+                                </div>
+                                <a class="twitter-timeline" href="https://twitter.com/eDainikpost">Tweets by GeniusFootball</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                            </div>
+                            <div class="card"> 
+                                <div class="slide-news">
+                                    @foreach ($posts as $post)
+                                        <div>
+                                            <div class="card-image">
+                                                <img src="{{ $post->getFirstImageUrl() }}" alt="{{ $post->title }}">
+                                            </div>
+                                            <div class="card-content">                                   
+                                                <a href="{{ route('singleNews',$post->slug) }}" >                                        
+                                                    {{$post->title}}
+                                                </a>   
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+
                         </div>
                     </div>   
             
