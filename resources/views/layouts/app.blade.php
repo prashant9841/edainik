@@ -35,6 +35,7 @@
         ]) !!};
     </script>
     <style>
+    @isset($category)
         ul.navigation a:hover {
             @if($category->header_color)
             color: {{$category->header_color}}
@@ -42,6 +43,7 @@
             color: #0091ea;
             @endif
         }
+    @endisset
     </style>
 </head>
 <body>

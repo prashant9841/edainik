@@ -81,9 +81,15 @@
             </div>
 
             <div class="col s12 m3 side-post">
-                 @component('partials.component.sideList',['route' => 'singleNews','items' => $posts->take(6)])
+                @component('partials.component.sideList',['route' => 'singleNews','items' => $posts->take(6)])
                     @slot('title')
                         @lang('homepage.related')
+                    @endslot
+                    
+                    @slot('text-color')
+                    @endslot
+
+                    @slot('background-color')
                     @endslot
                 @endcomponent
 
