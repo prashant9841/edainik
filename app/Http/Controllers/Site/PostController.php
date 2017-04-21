@@ -28,6 +28,7 @@ class PostController extends Controller
             $this->incrementCounter($post);
             return view('posts.show')
                 ->with('post', $post)
+                ->with('category', $post->category)
                 ->with('latestNews',$this->getRelated(null))
                 ->with('relatedNews',$this->getRelated($post->category_id));
         }

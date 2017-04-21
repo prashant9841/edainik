@@ -58,7 +58,7 @@
         @if(url()->current() == url('/'))
            active
         @else
-        {{$category->header_color}}
+        {{$category->header_color ?? null}}
         @endif
         ">
             <div class="container">
