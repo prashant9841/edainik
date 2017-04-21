@@ -492,9 +492,22 @@ ul.auth {
 		padding-left: 5px;
 		float: left;
 		border-bottom: 1px solid #ccc;
+		h4 {
+			@include line-clamp(28px, 1);
+		}
 	}
 }
+.home-cat  {
+	position: relative;
 
+	.cat {
+		margin-bottom: 110px;
+	}
+
+	.absolute {
+
+	}
+}
 .group:before,
 .group:after {
   content: "";
@@ -610,6 +623,10 @@ ul.auth {
 				}				
 			}
 		}
+	}
+
+	.section-title {
+		margin: 80px 0 30px;
 	}
 }
 
