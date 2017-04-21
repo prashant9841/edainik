@@ -98,6 +98,7 @@ Route::group(['middleware' => ['web','auth'],'prefix'=>'/dashboard'],function(){
 	*/
 
 	Route::get('/posts/{postId}/featured','PostFeaturedController@toggleFeatured');
+	Route::get('/featured','PostFeaturedController@index');
 
 	/*
 	|--------------------------------------------------------------------------

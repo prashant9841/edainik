@@ -107,7 +107,6 @@
 
         <script src="{{ mix('js/app.js') }}"></script>
         <script src="/js/cssrelpreload.js"></script>
-        <script  type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
         <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58f5d96ec9059cb3"></script>
         <script>
             /*
