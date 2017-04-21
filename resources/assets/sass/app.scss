@@ -326,53 +326,6 @@ ul.auth {
 
 .large-post {
 	border-top: 1px solid #ccc;
-	.parallax-container {
-		min-height: 480px;
-		line-height: 0;
-		height: auto;
-		color: rgba(255,255,255,.9);
-		min-width: 100%;
-
-		.section {
-			position: absolute;
-			bottom: 0;
-			background: rgba($secondary-color, 0.5);
-			width: 100%;
-
-			.header {
-				color: #fff;
-			}
-			p {
-				text-align: center;
-				color: #fff;
-			}
-		}
-	}
-	.content {
-		p.wrap {
-			width: 80%;
-			margin: 50px auto 25px;
-			font-size: 24px;
-
-			@include line-clamp (28px, 6);
-		}
-
-		.btn-row {
-			margin-bottom: 50px;
-		}
-	}
-	.jssocials-share-link {	
-		border: 2px solid $primary-color;
-		background: $primary-color;
-		color: #fff;
-	}
-	a.btn {
-		height: 40px;
-		line-height: 40px;
-		font-size: 22px;
-	}
-
-	// no parallax
 
 	h1{
 		font-size: 64px;
@@ -387,21 +340,21 @@ ul.auth {
 			width: 100%;
 		}
 	}
-	.parallax-constainer {
+	.title-section {
 		position: relative;
-		.section {
-			position: absolute;
-			bottom: 0;
-			background: rgba($secondary-color, 0.5);
-			width: 100%;
 
-			.header {
-				color: #fff;
-			}
-			p {
-				text-align: center;
-				color: #fff;
-			}
+		.btn.cat {
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+	.parallax-constainer {
+		height: 450px;
+		overflow: hidden;
+
+		img {
+			min-height: 450px;
 		}
 	}
 
@@ -626,7 +579,8 @@ ul.auth {
 	}
 
 	.section-title {
-		margin: 80px 0 30px;
+		margin-top: 80px;
+		margin-bottom: 30px;
 	}
 }
 

@@ -1,20 +1,17 @@
 <div class="large-post">        
     <div class="section">
-        <div class="container">
-            <h1 class="header center">{{$post->title}}</h1>            
-            <div class="row center">
-                <div class="btn {{$post->category->header_color}} ">
-                    {{$post->category->title}}
-                    <img src="
-                    @if(strlen($post->category->icon) >4)
-                        {{asset('/images/icons/'.$post->category->icon)}}
-                    @else
-                        {{asset('/images/icons/news.png')}}
-                    @endif
-                    " style="width: 20px; margin: 0 0 -3px 15px; height: 20px;" alt="{{$post->category->title}}">                    
-                </div>
+        <div class="title-section">
+            <h1 class="header center">{{$post->title}}</h1>
+            <div class="btn cat {{$post->category->header_color}} ">
+                {{$post->category->title}}
+                <img src="
+                @if(strlen($post->category->icon) >4)
+                    {{asset('/images/icons/'.$post->category->icon)}}
+                @else
+                    {{asset('/images/icons/news.png')}}
+                @endif
+                " style="width: 20px; margin: 0 0 -3px 15px; height: 20px;" alt="{{$post->category->title}}">                    
             </div>
-            
         </div>
     </div>
     @if($post->checkImage())
