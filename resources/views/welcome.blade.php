@@ -38,9 +38,13 @@
                @include('partials.home._latestPost')
             </div>
             <div class="col s12 m3 side-post">
-                @include('partials.home._relatedPost')
+                @component('partials.component.sideList',['route' => 'singleCategory','items' => $categoriesList])
+                    @slot('title')
+                        @lang('homepage.category-list')
+                    @endslot
+                @endcomponent
 
-                <div class="card">
+                <div class="card"> 
                     <div class="slide-news">
                         @foreach ($posts as $post)
                             <div>
@@ -75,8 +79,13 @@
             <div class="col s12 m9">
                @include('partials.home._trendingPost')
             </div>
+
             <div class="col s12 m3 side-post">
-                @include('partials.home._relatedPost')
+                 @component('partials.component.sideList',['route' => 'singleNews','items' => $posts->take(6)])
+                    @slot('title')
+                        @lang('homepage.related')
+                    @endslot
+                @endcomponent
 
                 <div class="card">
                     <div class="slide-news">
@@ -99,7 +108,7 @@
     </section>
 
     {{-- 3 Categories Post --}}
-    @foreach($categoriesList as $category)
+    @foreach($categoriesList->take(3) as $category)
     <section class="home-cat container">
         <div class="row section-title">
             <div class="col s12 l6 {{$category->header_color}}">

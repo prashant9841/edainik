@@ -7,6 +7,7 @@ return [
 	'trending' => 'लोक प्रिय',
 	'related' => 'सम्बन्धित खबर',
 	'related-news' => 'सम्बन्धित खबर',
+	'category-list' => 'Category List',
 	'read-more' => 'थप पढ्नुहोस्',
 	'home' => 'गृहपृष्ठ',
 	'login' => 'लगइन',

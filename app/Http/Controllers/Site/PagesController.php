@@ -16,7 +16,7 @@ class PagesController extends Controller
     	->with('latestNews', $post->approved()->latest()->take(5)->get())
     	->with('trendingNews', $this->getTrending())
     	->with('featuredCategory', $approvedCategory->get()->random()->first())
-        ->with('categoriesList', $approvedCategory->take(3)->get()->shuffle());
+        ->with('categoriesList', $approvedCategory->get());
     }
 
     protected function getTrending()
