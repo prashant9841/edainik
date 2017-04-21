@@ -6,5 +6,5 @@
         @lang('homepage.related')
     @endslot
    
-        @include('partials.component.collectionItems',['route' => 'singleNews','items' => $latestNews])
+    @include('partials.component.collectionItems',['route' => 'singleNews','items' => $latestNews])
 @endcomponent

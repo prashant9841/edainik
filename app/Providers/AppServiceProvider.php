@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Carbon\Carbon;
-use Auth;
+use URL;
 use App\{Menu,Category,Post};
 use Illuminate\View\View;
 use Illuminate\Support\ServiceProvider;
@@ -19,7 +19,7 @@ class AppServiceProvider extends ServiceProvider
     {
         view()->composer(['layouts._dashSideNav','layouts._dashTopNav'],function(View $view){
             if(Auth::check())
-                return $view->with('user', Auth::user()); 
+                return $view->with('user', auth()->user()); 
         });
         view()->composer(['layouts._frontendNav', 'layouts._frontendMenu','layouts._footerMenu'],function(View $view){   
             return $view->with('menus', Menu::ordered()->get()); 
@@ -38,6 +38,10 @@ class AppServiceProvider extends ServiceProvider
         });
 
         Carbon::setLocale(\App::getLocale());
+
+        if(env('APP_ENV') == 'production'){
+            URL::forceRootUrl(env('APP_URL'));
+        }
 
     }
 
