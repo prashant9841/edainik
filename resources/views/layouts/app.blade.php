@@ -34,6 +34,15 @@
             'csrfToken' => csrf_token(),
         ]) !!};
     </script>
+    <style>
+        ul.navigation a:hover {
+            @if($category->header_color)
+            color: {{$category->header_color}}
+            @else
+            color: #0091ea;
+            @endif
+        }
+    </style>
 </head>
 <body>
         {{--
@@ -44,8 +53,10 @@
         --}}
 
         <header class="pageHeader 
-        @if(url()->current()== url('/') && isset($category))
-            {{$category->header_color}}
+        @if(url()->current() == url('/'))
+           active
+        @else
+        {{$category->header_color}}
         @endif
         ">
             <div class="container">

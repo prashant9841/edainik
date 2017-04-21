@@ -2,8 +2,11 @@
     {!! Ads::show('responsive') !!}
 </div>
 <div class="card">
+
+    <div class="card-title @isset($category){{$category->header_color}} @endisset">
+        <h4>@lang('homepage.latest')</h4>
+    </div>
     <div class="card-content">
-        <h4>@lang('homepage.related')</h4>
         <ul class="collection">
         @if(isset($category))
             @foreach($category->approvedPosts()->take(8)->get() as $news)

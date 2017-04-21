@@ -60,12 +60,7 @@
                                         <div class="card-content">
                                             <h4>{{ $news->title }}</h4>
                                             <div class="row small">
-                                                <div class="col s6">
-                                                    <p><i class="fa fa-clock-o"></i>&nbsp;{{$news->created_at->diffForHumans()}}</p>
-                                                </div>
-                                                <div class="col s6">
-                                                    <p><i class="fa fa-bars"></i>&nbsp; {{ $news->category->title }}</p>
-                                                </div>
+                                                <p>{{ $news->description }}</p>
                                             </div>
                                             
                                         </div>

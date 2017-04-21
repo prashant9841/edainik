@@ -2,8 +2,10 @@
     {!! Ads::show('responsive') !!}
 </div>
 <div class="card">
+	<div class="card-title {{$category->header_color}}">
+    	<h4>@lang('homepage.latest')</h4>
+	</div>
     <div class="card-content">
-        <h4>@lang('homepage.latest')</h4>
         <ul  class="collection">
             @foreach($latestNews as $news)
                 <a class="collection-item" href="{{ url('news',$news->slug) }}">{{$news->title}}</a>

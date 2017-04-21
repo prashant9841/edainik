@@ -8,5 +8,11 @@
     @if(url()->current() == url('/categories/'.$menu->category->slug) )
     	active
     @endif
-    "><a href="{{ url('/categories/'.$menu->category->slug ) }}">{{$menu->category->title}}</a></li>
+    "><a href="{{ url('/categories/'.$menu->category->slug ) }}" 
+    @if(url()->current() == url('/categories/'.$menu->category->slug) )
+    	class="{{$menu->category->header_color}}-text"
+    @endif
+
+    >{{$menu->category->title}}</a></li>
+    
 @endforeach
