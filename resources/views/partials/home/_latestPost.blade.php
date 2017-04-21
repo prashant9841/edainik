@@ -12,6 +12,5 @@
 	    @endforeach
 	</ul>
 @else
-	<div class="card">
-		@lang('homepage.no-item-found')
-	</div>
+	@include('partials.home._notFound')
+@endif

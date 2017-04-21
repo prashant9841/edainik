@@ -35,9 +35,13 @@
 
     	<div class="row">
     		<section class="featured-post">
+            @if($category->approvedPosts->count())
     			@foreach($category->approvedPosts as $post)
     		      @include('partials.category._postCard')
     			@endforeach
+            @else
+                @include('partials.home._notFound')
+            @endif
     		</section>
             
         @if(isset($related))
@@ -77,6 +81,8 @@
                 </div>
             </div>
         </section>
+       @else
+            @include('partials.home._notFound')
         @endif
 	</div>
 

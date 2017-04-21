@@ -2,7 +2,7 @@
     @if(url()->current() == url('/'))
        class="active"
     @endif
-    ><a href="/">गृहपृष्ठ </a></li>
+    ><a href="/">@lang('homepage.home')</a></li>
 @foreach($menus as $menu)
     <li class="
     @if(url()->current() == url('/categories/'.$menu->category->slug) )

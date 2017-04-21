@@ -167,8 +167,9 @@
             <div class="ads">
                {!! Ads::show('responsive') !!}
             </div>
+        @else
+            @include('partials.home._notFound')
         @endif
-
 
         <div class="related">
             <div class="row">
