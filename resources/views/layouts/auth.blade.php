@@ -14,7 +14,7 @@
     <link rel="preload" href="{{ asset('/stylesheets/animate.css') }}" as="style" onload="this.rel='stylesheet'">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="{{ mix('css/app.css') }}" rel="preload" as="style" onload="this.rel='stylesheet'">
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet" >
     <noscript>
         <link rel="stylesheet" href="{{ asset('/stylesheets/animate.css') }}">
         <link href="{{ mix('css/app.css') }}" rel="stylesheet">
