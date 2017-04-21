@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Carbon\Carbon;
-use URL;
+use URL,Auth;
 use App\{Menu,Category,Post};
 use Illuminate\View\View;
 use Illuminate\Support\ServiceProvider;
