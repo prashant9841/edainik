@@ -17,13 +17,13 @@
             
         </div>
     </div>
+    @if($post->checkImage())
     <div class="parallax-constainer container">
-       
         <div class="paralsslax">
             <img src="{{ $post->getFirstImageUrl() }}" alt="{{ $post->title }}">
         </div>
     </div>
-
+    @endif
     <div class="content container">
         <div class="row center">
             <p class="wrap">{{ $post->description }}</p>
