@@ -494,7 +494,13 @@ ul.auth {
 		border-bottom: 1px solid #ccc;
 	}
 }
+.home-cat  {
+	position: relative;
 
+	.absolute {
+		
+	}
+}
 .group:before,
 .group:after {
   content: "";

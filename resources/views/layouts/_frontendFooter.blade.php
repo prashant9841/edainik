@@ -19,7 +19,7 @@
     </div>
     <div class="footer-copyright">
       <div class="container">
-      © २०७४ इदैनिक पोस्ट. सबै अधिकार बाट बन्चित |
+      © २०७४ इदैनिक पोस्ट. सबै अधिकार बाट सुरक्षित |
       </div>
     </div>
 </footer>
