@@ -33,6 +33,6 @@ class PagesController extends Controller
         {
            return $post->whereIn('id',$featured->pluck('post_id')->toArray())->latest()->take(8)->get();
         }
-	   return $post->latest()->take(8)->get();
+	   return $post->approved()->latest()->take(8)->get();
     } 
 }
