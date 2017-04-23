@@ -84,81 +84,83 @@
                             @foreach($categoriesList->take(3) as $category)
                                 @if($category->posts->count() && isset($category->posts)) 
                                     <?php $relCat = $category->approvedPosts()->latest()->first(); ?>
-                                    <div class="cat">
-                                            
-                                        <div class="row section-title">
-                                            <div class="col s12 l6 {{$category->header_color}}">
-                                                {{-- Catgory Title --}}
-                                                <h4>{{ $category->title }}</h4>
-                                               
-                                                    <img src="
-                                                    @if(strlen($category->icon) > 3)
-                                                        {{asset('/images/icons/'.$category->icon)}}
-                                                    @else
-                                                        {{asset('/images/icons/news.png')}}
-                                                    @endif
-                                                    " alt="{{$category->title}}">
-                                                <div class="skwed"></div>
+                                    @if($relCat)
+                                        <div class="cat">
+                                                
+                                            <div class="row section-title">
+                                                <div class="col s12 l6 {{$category->header_color}}">
+                                                    {{-- Catgory Title --}}
+                                                    <h4>{{ $category->title }}</h4>
+                                                   
+                                                        <img src="
+                                                        @if(strlen($category->icon) > 3)
+                                                            {{asset('/images/icons/'.$category->icon)}}
+                                                        @else
+                                                            {{asset('/images/icons/news.png')}}
+                                                        @endif
+                                                        " alt="{{$category->title}}">
+                                                    <div class="skwed"></div>
 
-                                            </div>
-                                            <div class="col s12 l6">
-                                                {!! Ads::show('responsive') !!}
-                                            </div>
-                                        </div>
-                                        <div class="box-post">
-                                            <div class="card row">
-                                                <div class="card-image col s12 l6">
-                                                    <img src="{{ $relCat->getFirstImageUrl('small') }}" alt="{{ $relCat->title }}">
-                                                </div>                            
-                                                <div class="card-content col s12 l6">
-                                                    {{-- <div class="col s12 m6">
-                                                    </div> --}}
-                                                        <h1 class="header center">{{$relCat->title}}</h1>
-
-                                                        <div class="row small">
-                                                            <div class="col s6">
-                                                                <p><i class="fa fa-clock-o"></i> &nbsp;{{$relCat->created_at->diffForHumans()}}</p>
-                                                            </div>
-                                                            <div class="col s6">
-                                                                <p><i class="fa fa-bars"></i>&nbsp; {{ $relCat->category->title}}</p>
-                                                            </div>
-                                                        </div>
-                                                        <p class="wrap">{{ $relCat->description }}</p>
-                                                        {{-- <div class="row share center"> </div> --}}
-                                                        <div class="row center btn-row">
-
-                                                            <a href="{{ url('/news/'.$post->slug) }}" class="btn waves-effect waves-light">@lang('homepage.read-more')</a>
-                                                        </div>
+                                                </div>
+                                                <div class="col s12 l6">
+                                                    {!! Ads::show('responsive') !!}
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="ads">
-                                           {!! Ads::show('responsive') !!}
-                                        </div>
-                                        <ul class="row small-post with-image latest">
-                                            @foreach($category->approvedPosts()->latest()->take(10)->skip(1)->get() as $news)
-                                                <li class="col s12 m6">
-                                                    <a href="{{ url('news',$news->slug)}}">
-                                                        <div class="card group">
-                                                            <div class="card-image">
-                                                                <img src="{{ $news->getFirstImageUrl('thumb') }}" alt="{{$post->title}}">
-                                                            </div>
-                                                            <div class="card-content">
-                                                                <h4>{{ $news->title }}</h4>
-                                                                <div class="row small">
-                                                                    <p>{{ $news->description }}</p>
-                                                                </div>
-                                                                
-                                                            </div>
-                                                        </div>
-                                                    </a>
+                                            <div class="box-post">
+                                                <div class="card row">
+                                                    <div class="card-image col s12 l6">
+                                                        <img src="{{ $relCat->getFirstImageUrl('small') }}" alt="{{ $relCat->title }}">
+                                                    </div>                            
+                                                    <div class="card-content col s12 l6">
+                                                        {{-- <div class="col s12 m6">
+                                                        </div> --}}
+                                                            <h1 class="header center">{{$relCat->title}}</h1>
 
-                                                </li>
-                                            @endforeach
-                                        </ul>
-                                        
-                                        <a href="{{ route('singleCategory',$category->slug)}}" class="right btn">@lang('homepage.viewall')</a>
-                                    </div>
+                                                            <div class="row small">
+                                                                <div class="col s6">
+                                                                    <p><i class="fa fa-clock-o"></i> &nbsp;{{$relCat->created_at->diffForHumans()}}</p>
+                                                                </div>
+                                                                <div class="col s6">
+                                                                    <p><i class="fa fa-bars"></i>&nbsp; {{ $relCat->category->title}}</p>
+                                                                </div>
+                                                            </div>
+                                                            <p class="wrap">{{ $relCat->description }}</p>
+                                                            {{-- <div class="row share center"> </div> --}}
+                                                            <div class="row center btn-row">
+
+                                                                <a href="{{ url('/news/'.$post->slug) }}" class="btn waves-effect waves-light">@lang('homepage.read-more')</a>
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="ads">
+                                               {!! Ads::show('responsive') !!}
+                                            </div>
+                                            <ul class="row small-post with-image latest">
+                                                @foreach($category->approvedPosts()->latest()->take(10)->skip(1)->get() as $news)
+                                                    <li class="col s12 m6">
+                                                        <a href="{{ url('news',$news->slug)}}">
+                                                            <div class="card group">
+                                                                <div class="card-image">
+                                                                    <img src="{{ $news->getFirstImageUrl('thumb') }}" alt="{{$post->title}}">
+                                                                </div>
+                                                                <div class="card-content">
+                                                                    <h4>{{ $news->title }}</h4>
+                                                                    <div class="row small">
+                                                                        <p>{{ $news->description }}</p>
+                                                                    </div>
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                        </a>
+
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                            
+                                            <a href="{{ route('singleCategory',$category->slug)}}" class="right btn">@lang('homepage.viewall')</a>
+                                        </div>
+                                    @endif
                                 @else
                                     @include('partials.home._notFound')
                                 @endif
