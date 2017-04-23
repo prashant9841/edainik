@@ -52,7 +52,7 @@
                 <div class="logo-div row">
                     <div class="col s12 m4">
                         <div class="logo">
-                        <img src="{{asset('/images/0.png')}}" alt="">
+                        <img src="{{asset('/images/logo_t.png')}}" alt="">
                             
                         </div>
                         {{-- <h3>इदैनिक पोस्ट</h3> --}}
