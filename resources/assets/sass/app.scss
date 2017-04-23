@@ -59,7 +59,7 @@ a.btn, .btn, button.btn, button {
 	color: #fff !important;
 	// font-weight: bold;
 	background-color: $primary-color;
-	letter-spacing: 1px;
+	letter-spacing: 0px;
 	font-size: 20px;
 
 	&:hover {
@@ -454,6 +454,11 @@ ul.auth {
 		h4 {
 			@include line-clamp(28px, 1);
 		}
+
+		@include mobile {
+			width: 100%;
+			margin: 0;
+		}
 	}
 }
 .home-cat  {
@@ -477,6 +482,13 @@ ul.auth {
 }
 .group {
   zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+}
+
+.notfound {
+	margin-left: 43px;
+	@include tab {
+		margin-left: 0;
+	}
 }
 
 .slide-news {
