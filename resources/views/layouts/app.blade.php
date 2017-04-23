@@ -33,7 +33,18 @@
         window.Laravel = {!! json_encode([
             'csrfToken' => csrf_token(),
         ]) !!};
+
     </script>
+    <style>
+    @isset($category)
+        ul.navigation a:hover {
+
+            color: {{ $category->header_color ?? '#0091ea' }} !important;
+
+
+        }
+    @endisset
+    </style>
 </head>
 <body>
         {{--
@@ -42,18 +53,30 @@
             {!! Ads::show('responsive') !!}
         </div>
         --}}
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=1048607425174697";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
 
         <header class="pageHeader 
-        @if(isset($category))
-            {{$category->header_color}}
+        @if(url()->current() == url('/'))
+           active
+        @else
+        {{ $category->header_color ?? null}}
+        {{ $post->category->header_color ?? null}}
         @endif
         ">
             <div class="container">
                 <div class="logo-div row">
                     <div class="col s12 m4">
                         <div class="logo">
-                        <img src="{{asset('/images/logo_t.png')}}" alt="">
-                            
+                            <img src="{{asset('/images/0.png')}}" alt="">
+                            <p class="time white-text">{{ \Carbon\Carbon::now()->toFormattedDateString() }}</p>                            
+
                         </div>
                         {{-- <h3>इदैनिक पोस्ट</h3> --}}
                     </div>
@@ -61,7 +84,12 @@
                           {!! Ads::show('responsive') !!}  
                     </div>
                     <div class="col s12 m4 ads">
-                         {!! Ads::show('responsive') !!}
+                         {{-- {!! Ads::show('responsive') !!} --}}
+                         <ul class="inline social">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                         </ul>
                     </div>
                 </div>                
             </div>
@@ -79,7 +107,6 @@
 
         <script src="{{ mix('js/app.js') }}"></script>
         <script src="/js/cssrelpreload.js"></script>
-        <script  type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
         <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58f5d96ec9059cb3"></script>
         <script>
             /*
@@ -134,6 +161,8 @@
 
              })
         </script>
+
+    @stack('scripts')
 
 
 </body>

@@ -1,29 +1,26 @@
 <div class="large-post">        
     <div class="section">
-        <div class="container">
+        <div class="title-section">
             <h1 class="header center">{{$post->title}}</h1>
-            
+            <div class="btn cat {{$post->category->header_color}} ">
+                {{$post->category->title}}
+                <img src="
+                @if(strlen($post->category->icon) >4)
+                    {{asset('/images/icons/'.$post->category->icon)}}
+                @else
+                    {{asset('/images/icons/news.png')}}
+                @endif
+                " style="width: 20px; margin: 0 0 -3px 15px; height: 20px;" alt="{{$post->category->title}}">                    
+            </div>
         </div>
     </div>
+    @if($post->checkImage())
     <div class="parallax-constainer container">
-        <div class="section">
-            @if($post->category)
-                <p>{{ $post->category->title }} </p>
-                {{-- <div class="row share center"> </div> --}}
-            @endif
-            <!-- 
-            <div class="icon-wrap">
-                <div class="addthis_inline_share_toolbox"></div>
-            </div> 
-            -->
-        </div>
         <div class="paralsslax">
-            @if($post->getMedia('images')->count() > 0)
-                <img src="{{ $post->getFirstImageUrl() }}" alt="Unsplashed background img 1">
-            @endif
+            <img src="{{ $post->getFirstImageUrl() }}" alt="{{ $post->title }}">
         </div>
     </div>
-
+    @endif
     <div class="content container">
         <div class="row center">
             <p class="wrap">{{ $post->description }}</p>
@@ -32,7 +29,9 @@
             <a href="{{ url('/news/'.$post->slug) }}" class="btn waves-effect waves-light">@lang('homepage.read-more')</a>
         </div>
     </div>
+    {{-- 
     <div class="ads container">
        {!! Ads::show('responsive') !!}
-    </div>
+    </div> 
+    --}}
 </div>

@@ -33,7 +33,7 @@ class UserPostController extends Controller
      */
     public function show($id)
     {
-        return view('dashboard.post.show')->with('post', Auth::user()->posts()->findOrFail($id));
+        return view('dashboard.post.show')->with('post', auth()->user()->posts()->findOrFail($id));
     }
 
     /**
@@ -43,7 +43,7 @@ class UserPostController extends Controller
      */
     public function edit($id)
     {
-        return view('dashboard.post.edit')->with('post', Auth::user()->posts()->findOrFail($id));
+        return view('dashboard.post.edit')->with('post', auth()->user()->posts()->findOrFail($id));
     }
 
     /**
@@ -60,7 +60,7 @@ class UserPostController extends Controller
      */
     public function store(PostRequest $request)
     {
-        if ($post = Auth::user()->posts()->create($this->getStub($request))) 
+        if ($post = auth()->user()->posts()->create($this->getStub($request))) 
         {
             if($request->hasFile('image')) 
             {
@@ -80,7 +80,7 @@ class UserPostController extends Controller
      */
     public function update(PostRequest $request, $id)
     {
-        $post = Auth::user()->posts()->findOrFail($id);
+        $post = auth()->user()->posts()->findOrFail($id);
 
         if ($request->hasFile('image')) {
             foreach($request->image as $image){
@@ -101,7 +101,7 @@ class UserPostController extends Controller
      */
     public function delete($id)
     {
-        if (Auth::user()->posts()->findOrFail($id)->delete()) {
+        if (auth()->user()->posts()->findOrFail($id)->delete()) {
             return redirect()->to('/dashboard/posts');
         }
         return redirect()->back();
@@ -122,9 +122,23 @@ class UserPostController extends Controller
         ];
     }
 
+     /**
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function destroy($id)
+    {
+        if (auth()->user()->posts->find($id)->delete()) {
+            session()->flash('sucMsg','News Post deleted sucessfully');
+            return redirect()->back();
+        }
+        session()->flash('errMsg','You cannot delete this post');
+        return redirect()->back();
+    }
+
     protected function getPostFromQuery(Request $request)
     {
-        $userPost = Auth::user()->posts();
+        $userPost = auth()->user()->posts();
         switch ($request->status) {
             case 'verified':
                 $post =  $userPost->where(['verified' => true, 'status' => true])->latest()->get();

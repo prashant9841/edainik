@@ -35,9 +35,13 @@
 
     	<div class="row">
     		<section class="featured-post">
+            @if($category->approvedPosts->count())
     			@foreach($category->approvedPosts as $post)
     		      @include('partials.category._postCard')
     			@endforeach
+            @else
+                @include('partials.home._notFound')
+            @endif
     		</section>
             
         @if(isset($related))
@@ -48,20 +52,15 @@
                     <ul class="row small-post with-image latest">
                         @foreach($related as $news)
                             <li class="col s12 m6">
-                                <a href="{{ url('news',$news->slug)}}">
+                                <a href="{{ route('singleNews',$news->slug) }}">
                                     <div class="card group">
                                         <div class="card-image">
-                                            <img src="{{ $post->getFirstImageUrl('thumb') }}" alt="">
+                                            <img src="{{ $news->getFirstImageUrl('thumb') }}" alt="">
                                         </div>
                                         <div class="card-content">
                                             <h4>{{ $news->title }}</h4>
                                             <div class="row small">
-                                                <div class="col s6">
-                                                    <p><i class="fa fa-clock-o"></i>&nbsp;{{$news->created_at->diffForHumans()}}</p>
-                                                </div>
-                                                <div class="col s6">
-                                                    <p><i class="fa fa-bars"></i>&nbsp; Category</p>
-                                                </div>
+                                                <p>{{ $news->description }}</p>
                                             </div>
                                             
                                         </div>
@@ -73,25 +72,12 @@
                     </ul>
                 </div>
                 <div class="col s12 m3 side-post">
-                    <div class="card">
-                        {!! Ads::show('responsive') !!}
-                    </div>
-                    <div class="card">
-                        <div class="card-content">
-                            <h4>@lang('homepage.latest')</h4>
-                            <ul class="collection">
-                                @foreach($related as $post)
-                                   <a class="collection-item" href="{{ url('news',$post->slug)}}">{{ $post->title }}</a>
-                                @endforeach
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card">
-                        {!! Ads::show('responsive') !!}
-                    </div>
+                   @include('partials.post._relatedPost')
                 </div>
             </div>
         </section>
+       @else
+            @include('partials.home._notFound')
         @endif
 	</div>
 

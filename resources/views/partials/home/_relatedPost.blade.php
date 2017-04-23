@@ -1,15 +1,9 @@
 <div class="card">
     {!! Ads::show('responsive') !!}
 </div>
-<div class="card">
-    <div class="card-content">
-        <h4>@lang('homepage.related')</h4>
-        <ul class="collection">
-        @if(isset($category))
-            @foreach($category->approvedPosts()->get() as $news)
-                <a class="collection-item" href="news/{{$news->slug}}">{{$news->title}}</a>
-            @endforeach
-        @endif
-        </ul>
-    </div>
-</div>
+@component('partials.component.sideList',['background' => $category->header_color ?? null ])
+    @slot('title')
+        @lang('homepage.latest')
+    @endslot
+    @include('partials.component.collectionItems',['route' => 'singleNews','items' => $category->approvedPosts()->take(8)->get()])
+@endcomponent

@@ -137,13 +137,30 @@ header {
 			margin-left: -8px;
 		}
 		img {
-			width: 200px;
+			width: 130px;
 		}
 
 		.card {
 			.card-content {
 				padding: 0;
 			}
+		}
+
+		.social {
+			float: right;
+			margin-top: 13%;
+			li {
+				margin-right: 25px;
+			}
+			a {
+				font-size: 24px;
+				color: #fff;
+			}
+		}
+
+		p.time {
+			margin: 0;
+			margin-bottom: 5px;
 		}
 
 	}
@@ -177,6 +194,8 @@ header {
 
 .main-nav {
 	background-color: rgba(#000, 0.1);
+	    height: 46px;
+    line-height: 44px;
 	@include tab-portrait {		
 	    position: absolute;
 	    top: 2%;
@@ -230,14 +249,16 @@ header {
 }
 
 ul.navigation {
+	height: 100%;
 	li {
 		// position: relative;
 		// border-right: 1px solid $primary-color;
+		height: 100%;
 		a {
 			color: #fff;
+			font-size: 20px;
 			&:hover {
 				background: $t;
-				color: $primary-color !important;
 			}
 		}
 		// span {
@@ -261,7 +282,7 @@ ul.navigation {
 			background: #fff;
 			a {
 
-				color:$primary-color;
+				// color:$primary-color;
 			}
 			// span {
 			// 	width: 90%;
@@ -279,7 +300,7 @@ ul.navigation {
 
 			a {
 
-				color: $primary-color !important;
+				color: $primary-color;
 			}
 		}
 	}
@@ -309,50 +330,11 @@ ul.auth {
 
 
 .large-post {
-	.parallax-container {
-		min-height: 480px;
-		line-height: 0;
-		height: auto;
-		color: rgba(255,255,255,.9);
-		min-width: 100%;
+	border-top: 1px solid #ccc;
 
-		.section {
-			position: absolute;
-			bottom: 0;
-			background: rgba($secondary-color, 0.5);
-			width: 100%;
-
-			.header {
-				color: #fff;
-			}
-			p {
-				text-align: center;
-				color: #fff;
-			}
-		}
-	}
-	.content {
-		p.wrap {
-			width: 80%;
-			margin: 50px auto 25px;
-			font-size: 18px;
-
-			@include line-clamp (24px, 6);
-		}
-
-		.btn-row {
-			margin-bottom: 50px;
-		}
-	}
-	.jssocials-share-link {	
-		border: 2px solid $primary-color;
-		background: $primary-color;
-		color: #fff;
-	}
-	a.btn {
-		height: 40px;
-		line-height: 40px;
-		font-size: 22px;
+	h1{
+		font-size: 64px;
+		font-weight: bold;
 	}
 
 	.paralsslax {
@@ -363,22 +345,26 @@ ul.auth {
 			width: 100%;
 		}
 	}
-	.parallax-constainer {
+	.title-section {
 		position: relative;
-		.section {
-			position: absolute;
-			bottom: 0;
-			background: rgba($secondary-color, 0.5);
-			width: 100%;
 
-			.header {
-				color: #fff;
-			}
-			p {
-				text-align: center;
-				color: #fff;
-			}
+		.btn.cat {
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
 		}
+	}
+	.parallax-constainer {
+		height: 450px;
+		overflow: hidden;
+
+		img {
+			min-height: 450px;
+		}
+	}
+
+	&:first-child {
+		border-top: none;
 	}
 
 }
@@ -390,7 +376,7 @@ ul.auth {
 		
 	}
     .small {
-    	font-size: 13px;
+    	font-size: 15px;
     	margin-bottom: 0;
     }
 
@@ -398,9 +384,14 @@ ul.auth {
 	    color: $secondary-color;
 	    display: block;
 	    h4 {
-	    	@include line-clamp(24px, 1);
-	    	font-size: 20px;
+	    	@include line-clamp(32px, 1);
+	    	font-size: 28px;
 	    	margin-top: 0;
+	    	margin-bottom: 7px;
+	    }
+
+	    p {
+	    	@include line-clamp(21px, 2);
 	    }
 
 	    &:hover {
@@ -423,13 +414,13 @@ ul.auth {
 
 .small-post.with-image {
 	.card {
-		max-height: 105px;
+		// max-height: 105px;
 		.card-image {
 			float: left;
 			width: 25%;
 
 			img {
-				height: 104px;
+				height: 130px;
 			}
 
 		}
@@ -451,6 +442,31 @@ ul.auth {
 	}
 }
 
+
+.tiny-post {
+	margin-bottom: 70px;
+	li{
+		width: 40%;
+		margin-right: 5%;
+		padding-left: 5px;
+		float: left;
+		border-bottom: 1px solid #ccc;
+		h4 {
+			@include line-clamp(28px, 1);
+		}
+	}
+}
+.home-cat  {
+	position: relative;
+
+	.cat {
+		margin-bottom: 110px;
+	}
+
+	.absolute {
+
+	}
+}
 .group:before,
 .group:after {
   content: "";
@@ -494,6 +510,16 @@ ul.auth {
 	}
 	.card {
 		//max-height: 250px;
+		.card-title {
+			padding: 15px;
+			h4 {
+				color: #fff;
+				margin: 0;
+			}
+		}
+		.card-content {
+			padding-top: 0;
+		}
 	}
 }
 
@@ -557,6 +583,10 @@ ul.auth {
 			}
 		}
 	}
+
+	.section-title {
+		margin-bottom: 30px;
+	}
 }
 
 .page-single-news {
@@ -603,13 +633,14 @@ section {
 			font-size: 41px;
 		    // border-bottom: 2px solid $secondary-color;
 		    // float: left; 
-		    line-height: 60px;
+		    line-height: 55px;
 		    color: #fff;
+		    margin: 0;
 
 		}
 		.col:first-child {
 			position: relative;
-			height: 92px;
+			height: 55px;
 			overflow: hidden;
 			background: $primary-color - 20;
 

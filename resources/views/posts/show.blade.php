@@ -21,19 +21,26 @@
                     <h1 class="header center">{{$post->title}}</h1>
                 </div>
             </div>
-            <div class="parallax-container">
+            @if($post->checkImage())
+                @include('partials.component.carousel',['slider' => $post->getMedia('images')])
+                {{-- 
+            <div class="parallax-constainer container">
                 <div class="section">
-                    @if(Auth::check() && Auth::user()->id == $post->user_id)
-                        <a class="btn" href="{{ url('/dashboard/posts/'.$post->id.'/edit')}}"><i class="ti-pencil"></i></a>
-                    @endif
                     @if($post->category)
                         <p>{{ $post->category->title }} </p>
                     @endif
-                    <div class="addthis_inline_share_toolbox center"> </div>
-                                        
+                    
+                    <div class="icon-wrap">
+                        <div class="addthis_inline_share_toolbox"></div>
+                    </div> 
+                   
+                </div> 
+                <div class="paralsslax">
+                    <img src="{{ $post->getFirstImageUrl() }}" alt="{{ $post->title }}">
                 </div>
-                <div class="parallax"><img src="{{ $post->getFirstImageUrl() }}" alt="Unsplashed background img 1"></div>
             </div>
+                --}}
+            @endif
 
             <div class="content container">
                 {{-- <div class="callout">           
@@ -78,3 +85,11 @@
 
 @stop
 
+
+@push('scripts')
+    <script>
+    $(document).ready(function(){
+        $('.carousel').carousel();
+    });
+    </script>
+@endpush

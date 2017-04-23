@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,7 +28,7 @@ Route::get('/logout',function(){
 */
 
 Route::get('/news', 'Site\PostController@index');
-Route::get('/news/{post}', 'Site\PostController@show'); 
+Route::get('/news/{post}', 'Site\PostController@show')->name('singleNews'); 
 
 /*
 |--------------------------------------------------------------------------
@@ -39,7 +38,7 @@ Route::get('/news/{post}', 'Site\PostController@show');
 |
 */
 Route::get('/categories', 'Site\CategoryController@index');
-Route::get('/categories/{category}', 'Site\CategoryController@show'); 
+Route::get('/categories/{category}', 'Site\CategoryController@show')->name('singleCategory'); 
 
 /*
 |--------------------------------------------------------------------------
@@ -99,6 +98,7 @@ Route::group(['middleware' => ['web','auth'],'prefix'=>'/dashboard'],function(){
 	*/
 
 	Route::get('/posts/{postId}/featured','PostFeaturedController@toggleFeatured');
+	Route::get('/featured','PostFeaturedController@index');
 
 	/*
 	|--------------------------------------------------------------------------
