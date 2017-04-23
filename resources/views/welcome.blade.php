@@ -81,7 +81,7 @@
 
                     <div class="row">                
                         <div class="col m9 s12">
-                            @foreach($categoriesList->take(3) as $category)
+                            @foreach($categoriesList as $category)
                                 @if($category->posts->count() && isset($category->posts)) 
                                     <?php $relCat = $category->approvedPosts()->latest()->first(); ?>
                                     @if($relCat)
@@ -161,8 +161,6 @@
                                             {{-- <a href="{{ route('singleCategory',$category->slug)}}" class="right btn">@lang('homepage.viewall')</a> --}}
                                         </div>
                                     @endif
-                                @else
-                                    @include('partials.home._notFound')
                                 @endif
                             @endforeach
                         </div>
@@ -170,10 +168,10 @@
                         {{-- SIDE --}}
 
                         <div class="col s12 m3 side-post">
-                            <div class="card">
+                            {{-- <div class="card">
                                 {!! Ads::show('responsive') !!}
                                 
-                            </div>
+                            </div> --}}
                             <div class="absolute">
                                 
                             @component('partials.component.sideList',['background' => $category->header_color ?? null ])
