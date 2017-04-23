@@ -128,7 +128,7 @@
                                                             {{-- <div class="row share center"> </div> --}}
                                                             <div class="row center btn-row">
 
-                                                                <a href="{{ url('/news/'.$post->slug) }}" class="btn waves-effect waves-light">@lang('homepage.read-more')</a>
+                                                                <a href="{{ url('/news/'.$relCat->slug) }}" class="btn waves-effect waves-light">@lang('homepage.read-more')</a>
                                                             </div>
                                                     </div>
                                                 </div>
