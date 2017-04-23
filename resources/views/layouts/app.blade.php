@@ -74,7 +74,10 @@
                 <div class="logo-div row">
                     <div class="col s12 m4">
                         <div class="logo">
-                            <img src="{{asset('/images/0.png')}}" alt="">
+                            <a href="/">
+                                
+                            <img src="{{asset('/images/logo_t.png')}}" alt="">
+                            </a>
                             <p class="time white-text">{{ \Carbon\Carbon::now()->toFormattedDateString() }}</p>                            
 
                         </div>

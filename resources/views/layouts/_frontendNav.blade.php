@@ -6,7 +6,7 @@
 
         <ul class="hide-on-med-and-down right navigation auth">
             {{-- <li><input type="text" placeholder="Search"></li> --}}
-            {{--@include('layouts._authNav') --}}
+            @include('layouts._authNav') 
         </ul>
 
         <ul id="nav-mobile" class="side-nav navigation">
