@@ -158,7 +158,7 @@
                                                 @endforeach
                                             </ul>
                                             
-                                            <a href="{{ route('singleCategory',$category->slug)}}" class="right btn">@lang('homepage.viewall')</a>
+                                            {{-- <a href="{{ route('singleCategory',$category->slug)}}" class="right btn">@lang('homepage.viewall')</a> --}}
                                         </div>
                                     @endif
                                 @else
