@@ -69,6 +69,9 @@
 	      <div class="file-path-wrapper">
 	        <input class="file-path validate" type="text" placeholder="Upload Image">
 	      </div>
+	      @if($errors->has('image'))
+			<p class="errors">{{ $errors->get('image')[0] }}</p>
+		@endif
 	    </div>
 		{{-- <input type="file" name="image"> --}}
 	</div>
