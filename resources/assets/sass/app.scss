@@ -332,6 +332,10 @@ ul.auth {
 .large-post {
 	border-top: 1px solid #ccc;
 
+	.carousel.carousel-slider {
+		height: 400px;
+	}
+
 	h1{
 		font-size: 64px;
 		font-weight: bold;
