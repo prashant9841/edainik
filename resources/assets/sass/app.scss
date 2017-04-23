@@ -230,7 +230,7 @@ header {
 	}
 	@include tab-landscape {
 		ul.auth {
-			display: none;
+			// display: none;
 		}
 	}
 }
@@ -312,7 +312,7 @@ ul.navigation {
 
 ul.auth {
 	a {
-		font-size: 13px;
+		font-size: 13px !important;
 	}
 	li {
 		&:hover {
