@@ -23,7 +23,7 @@ class PagesController extends Controller
     {
         
         $trendingPost = ViewCount::all()->sortByDesc('count')->take(5)->pluck('post_id');
-        $posts = Post::whereIn('id',$trendingPost)->get();
+        $posts = Post::whereIn('id',$trendingPost)->where(['status'=>1,'verified'=>1])->get();
         return $posts;
     } 
 
