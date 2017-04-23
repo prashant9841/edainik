@@ -23,7 +23,7 @@
     @endif
     <div class="content container">
         <div class="row center">
-            <p class="wrap">{{ $post->description }}</p>
+            <p class="wrap" style="font-size: 20px;">{{ $post->description }}</p>
         </div>
         <div class="row center btn-row">
             <a href="{{ url('/news/'.$post->slug) }}" class="btn waves-effect waves-light">@lang('homepage.read-more')</a>

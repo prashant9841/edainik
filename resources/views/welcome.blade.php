@@ -88,7 +88,7 @@
                                         <div class="cat">
                                                 
                                             <div class="row section-title">
-                                                <div class="col s12 l6 {{$category->header_color}}">
+                                                <div class="col s12 l6 {{$category->header_color}} lighten-1">
                                                     {{-- Catgory Title --}}
                                                     <h4>{{ $category->title }}</h4>
                                                    
@@ -186,7 +186,7 @@
 
                             </div>
                             <div class="card">
-                                <div class="card-title {{ $category->header_color ?? 'light-blue accent-4' }}">
+                                <div class="card-title lighten-1 {{ $category->header_color ?? 'light-blue accent-4' }}">
                                     <h4>Twitter</h4>
                                 </div>
                                 <a class="twitter-timeline" href="https://twitter.com/eDainikpost">Tweets by GeniusFootball</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>

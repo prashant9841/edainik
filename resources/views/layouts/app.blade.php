@@ -67,6 +67,7 @@
            active
         @else
         {{ $category->header_color ?? null}}
+        lighten-1
         {{ $post->category->header_color ?? null}}
         @endif
         ">
