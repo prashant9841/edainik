@@ -7,7 +7,7 @@
     <li 
     @if( url()->current() == url('/categories/'.$menu->category->slug ) )
     	class="active"
-    @elseif(url()->current() != url('/') && (isset($post)&& $post->category && $post->category->slug == $menu->category->slug)
+    @elseif(url()->current() != url('/') && (isset($post)&& $post->category && $post->category->slug == $menu->category->slug))
         class="active"
     @endif
     ><a href="{{ url('/categories/'.$menu->category->slug ) }}" 
