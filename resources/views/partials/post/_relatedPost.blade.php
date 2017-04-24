@@ -5,6 +5,9 @@
     @slot('title')
         @lang('homepage.related')
     @endslot
+    @slot('icon')
+        <img src="" alt="">
+    @endslot
    
     @include('partials.component.collectionItems',['route' => 'singleNews','items' => $latestNews])
 @endcomponent

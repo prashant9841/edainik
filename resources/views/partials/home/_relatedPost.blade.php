@@ -5,5 +5,8 @@
     @slot('title')
         @lang('homepage.latest')
     @endslot
+    @slot('icon')
+        <img src="" alt="">
+    @endslot
     @include('partials.component.collectionItems',['route' => 'singleNews','items' => $category->approvedPosts()->take(8)->get()])
 @endcomponent

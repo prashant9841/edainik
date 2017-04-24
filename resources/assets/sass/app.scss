@@ -524,7 +524,7 @@ ul.auth {
 
 	a {
 		width: 100% !important;
-		
+
 	}
 }
 
@@ -548,6 +548,63 @@ ul.auth {
 			h4 {
 				color: #fff;
 				margin: 0;
+			}
+			position: relative;
+			height: 55px;
+			overflow: hidden;
+			background: $primary-color - 20;
+
+			h4 {
+				z-index: 999;
+				position: absolute;
+				left: 20px;
+			}
+			i {
+				font-size: 30px;
+				color: #fff;
+				display: block;
+				float: right;
+
+				@include tab {
+					font-size: 48px;
+					padding: 22px;
+				}
+			}
+			img {
+
+			    margin: 0 3%;
+			    float: right;
+			    height: 100%;
+			    padding: 1%;
+			    max-width: 18%;
+
+				@include tab {
+				}
+			}
+
+			div.skwed {
+				background: rgba(#000, 0.1);
+				position: absolute;
+			    width: 80%;
+			    height: 100%;
+			    right: -50%;
+			    top: 0;
+			    transform: skew(-40deg);
+			    z-index: 9;
+			}
+
+			@include mobile {
+				height: 60px;
+
+				h4 {
+					margin: 0;
+					font-size: 24px;
+
+				}
+
+				img {
+					padding: 3%;
+				}
 			}
 		}
 		.card-content {

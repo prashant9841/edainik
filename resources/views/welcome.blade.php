@@ -62,6 +62,10 @@
 
                     <div class="card-title {{ $category->header_color ?? 'light-blue accent-4' }}">
                         <h4>Facebook</h4>
+
+                        <i class="fa fa-facebook"></i>
+                        <div class="skwed"></div>
+
                     </div>
                     <div class="fb-page" data-href="https://www.facebook.com/eDainikpost/" data-tabs="timeline" data-height="450px" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true"><blockquote cite="https://www.facebook.com/eDainikpost/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/eDainikpost/">Adventure Nepal</a></blockquote></div>
                 </div>
@@ -179,6 +183,9 @@
                     @slot('title')
                         @lang('homepage.category-list')
                     @endslot
+                    @slot('icon')
+                        <i class="fa fa-bars"></i>
+                    @endslot
                    
                         @include('partials.component.collectionItems',['route' => 'singleCategory','items' => $categoriesList])
                 @endcomponent
@@ -187,22 +194,12 @@
                 <div class="card">
                     <div class="card-title lighten-1 {{ $category->header_color ?? 'light-blue accent-4' }}">
                         <h4>Twitter</h4>
+                        <i class="fa fa-twitter"></i>
+                        <div class="skwed"></div>
                     </div>
                     <a class="twitter-timeline" href="https://twitter.com/eDainikpost">Tweets by GeniusFootball</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
                 </div>
-                <div class="card"> 
-                    <div class="slide-news">
-                            <div>
-                                <div class="card-image">
-                                    <img src="{{ $post->getFirstImageUrl() }}" alt="{{ $post->title }}">
-                                </div>
-                                <div class="card-content">                                   
-                                    <a href="{{ route('singleNews',$post->slug) }}" >                                        
-                                        {{$post->title}}
-                                    </a>   
-                                </div>
-                            </div>
-                    </div>
+                <div class="card">
                       <div class="carousel small-slider">
                         @foreach ($posts as $post)
                         <a class="carousel-item" href="{{ route('singleNews',$post->slug) }}">
