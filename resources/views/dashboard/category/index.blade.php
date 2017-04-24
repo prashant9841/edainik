@@ -27,6 +27,11 @@
 							<p class="left flow">{{ $category->title }} </p>
 							<div class="right">
 								<button class="btn tooltipped" data-position="left" data-delay="50" data-tooltip="Edit category : {{$category->title}}" style="padding: 0 1rem;"><i class="material-icons">create</i></button>
+								<form action="{{ url('/dashboard/post/',$category->slug) }}">
+									{{ csrf_field() }}
+									{{ method_field('delete')}}
+									<button class="btn  red tooltipped" data-position="left" data-delay="50" data-tooltip="Delete : {{$category->title}}" style="padding: 0 1rem;"><i class="material-icons">delete</i></button>
+								</form>
 							</div>
 						</div>
 					</a>
