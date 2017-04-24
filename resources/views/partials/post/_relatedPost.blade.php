@@ -1,9 +1,9 @@
 
 <section class="related">
     <div class="row">
-        <ul class="row small-post with-image latest">
+        <ul class="row small-post latest">
             @foreach($latestNews as $news)
-                <li class="col s12 m6">
+                <li class="col s12 m6 {{ $news->checkImage() ? 'with-image' : null }}">
                     <a href="{{ route('singleNews',$news->slug) }}">
                         <div class="card group">
                             <div class="card-image">

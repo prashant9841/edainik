@@ -342,14 +342,6 @@ ul.auth {
 		font-weight: bold;
 	}
 
-	.paralsslax {
-		max-height: 500px;
-		overflow: hidden;
-
-		img {
-			width: 100%;
-		}
-	}
 	.title-section {
 		position: relative;
 		padding-top: 30px;
@@ -371,11 +363,12 @@ ul.auth {
 		}
 	}
 	.parallax-constainer {
-		height: 450px;
+		max-height: 650px;
 		overflow: hidden;
 
 		img {
 			min-height: 450px;
+			width: 100%;
 		}
 	}
 
@@ -432,22 +425,16 @@ ul.auth {
 	}
 }
 
-.small-post.with-image {
+.small-post {
 	.card {
 		// max-height: 105px;
+
 		.card-image {
-			float: left;
-			width: 25%;
-
-			img {
-				height: 130px;
-			}
-
+			display: none;
 		}
+		
 		.card-content {
-			width: 73%;
-			margin-left: 2%;
-			float: left;
+			width: 100%;
 		}
 
 		@include tab {
@@ -458,6 +445,24 @@ ul.auth {
 			.card-content {
 				width: 100%;
 			}
+		}
+	}
+	.with-image {
+		.card-image {
+			float: left;
+			width: 25%;
+			display: block;
+
+			img {
+				height: 130px;
+			}
+
+		}
+		
+		.card-content {
+			width: 73%;
+			margin-left: 2%;
+			float: left;
 		}
 	}
 }
@@ -627,31 +632,16 @@ ul.auth {
 }
 
 .box-post {
-	.card {
+	a.card {
+		display: block;
 		h1{
 			font-size: 36px;
 			margin: 0;
 			text-align: left;
 		}
 		p {
-			margin: 15px auto 25px;
-		}
-
-		.card-image {
-			position: absolute;
-			height: 100%;
-			padding: 0;
-
-			@include tab {
-				position: static;
-			}
-
-			img {
-				height: 100%;
-			}
-		}
-		.card-content {
-			float: right;
+			margin: 15px auto 0;
+			color: $secondary-color !important;
 		}
 	}
 	.small {
@@ -659,6 +649,10 @@ ul.auth {
 		p {
 			margin: 25px 0 0;
 		}
+	}
+
+	.tiny-post {
+		margin-left: 20px;
 	}
 
 	width: 95%;
