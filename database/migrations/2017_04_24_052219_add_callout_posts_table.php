@@ -15,7 +15,7 @@ class AddCalloutPostsTable extends Migration
     {
         Schema::table('posts',function(Blueprint $table){
             $table->string('callout'); //Breaker
-            $table->string('subtitle')
+            $table->string('subtitle');
             $table->string('address');
             $table->string('author');
         });
