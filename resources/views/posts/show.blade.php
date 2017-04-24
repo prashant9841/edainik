@@ -35,9 +35,9 @@
             </div>
             @if($post->checkImage())
             <div class="parallax-constainer container">
-                <div class="paralsslax">
+                <a class="paralsslax">
                     <img src="{{ $post->getFirstImageUrl() }}" alt="{{ $post->title }}">
-                </div>
+                </a>
             </div>
             @endif
             <div class="content container">
