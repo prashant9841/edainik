@@ -41,11 +41,29 @@
             </div>
             @endif
             <div class="content container">
+                <div class="row">
+                    <div class="col s12 m6">
+                        <i class="fa fa-user"></i> &nbsp; {{$post->author}}
+                    </div>
+                    <div class="col s12 m6">
+                        <p class="right">
+                            <i class="fa fa-map"></i> &nbsp; {{$post->address}}
+                        </p>
+                    </div>
+                </div>
                 <div class="row center">
                     <p class="wrap" style="font-size: 20px;">{{ $post->description }}</p>
                 </div>
                 <div class="row">
-                    <p style="text-align: justify;">{!!$post->content!!}</p>
+                    <div class="col s12 m9">
+                        <div style="text-align: justify;">{!!$post->content!!}</div>
+                        <br>
+                        <div> <i class="fa fa-clock-o"></i> &nbsp; {{$post->created_at->format('D d, M, Y')}} </div>
+                        
+                    </div>
+                    <div class="col s12 m3">
+                        <h5>{{$post->callout}}</h5>
+                    </div>
                 </div>
             </div>
             {{-- 

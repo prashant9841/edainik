@@ -8,11 +8,11 @@
                     <div class="card-content col s12 l6">
                         <h1 class="header center">{{$post->title}}</h1>
                         <div class="row small">
-                            <div class="col s6">
-                                <p><i class="fa fa-clock-o"></i> &nbsp;{{$post->created_at->diffForHumans()}}</p>
+                             <div class="col s6">
+                                <p><i class="fa fa-user"></i> &nbsp;{{$post->author}}</p>
                             </div>
                             <div class="col s6">
-                                <p><i class="fa fa-bars"></i>&nbsp; {{ $post->category->title }}</p>
+                                <p><i class="fa fa-map"></i>&nbsp; {{ $post->address}}</p>
                             </div>
                         </div>
                         <p class="wrap">{{ $post->description }}</p>

@@ -12,6 +12,11 @@
                 @endif
                 " style="width: 20px; margin: 0 0 -3px 15px; height: 20px;" alt="{{$post->category->title}}">                    
             </div>
+            @if($post->subtitle)
+            <div class="btn subtitle">
+                {{$post->subtitle}}
+            </div>
+            @endif
         </div>
     </div>
     @if($post->checkImage())
