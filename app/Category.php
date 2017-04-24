@@ -46,6 +46,11 @@ class Category extends Model
 		return $this->posts()->where('verified', 1)->where('status', 1);
 	}
 
+	public static function approvedPost()
+	{
+		return $self::posts()->where('verified', 1)->where('status', 1);
+	}
+
 	public function unApprovedPosts()
 	{
 		return $this->post()->where('verified', 0)->where('status', 0);
