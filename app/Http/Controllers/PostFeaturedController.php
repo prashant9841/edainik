@@ -37,12 +37,11 @@ class PostFeaturedController extends Controller
     {
         $featured = Featured::latest()->take(20)->get();
         $featuredd = $featured->each->post;
-        dd($featuredd);
         $posts = $featured->map(function($value){
             return $value->post;
         });
 
-        return view('dashboard.featured.index');
+        return view('dashboard.featured.index')->with('posts',$posts);
 
     }
 }

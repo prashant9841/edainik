@@ -33,7 +33,7 @@
       <li><a href="{{ url('/dashboard/medias') }}"><i class="material-icons">art_track</i> &nbsp; Media</a></li>
     
     @if($user->isSuperAdmin())
-        <li><a href="{{ url('/dashboard/all-posts') }}"><i class="material-icons">list</i> &nbsp; All Posts</a></li>
+        <li><a href="{{ url('/dashboard/all-posts') }}"><i class="material-icons">list</i> &nbsp; All Posts</a><li><a href="{{ url('/dashboard/featured') }}"><i class="material-icons">star</i> &nbsp; Featured</a></li>
     
       <ul class="collapsible" data-collapsible="accordion">
           <li>
