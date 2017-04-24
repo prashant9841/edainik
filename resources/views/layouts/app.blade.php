@@ -79,7 +79,7 @@
                                 
                             <img src="{{asset('/images/logo_t.png')}}" alt="">
                             </a>
-                            <p class="time white-text">{{ \Carbon\Carbon::now()->toFormattedDateString() }}</p>                            
+                            <p class="time white-text">{{ \Carbon\Carbon::now()->addYears(56)->addMonths(8)->addDays(15)->formatLocalized('%A %d/%m/%Y') }}</p>                            
 
                         </div>
                         {{-- <h3>इदैनिक पोस्ट</h3> --}}
