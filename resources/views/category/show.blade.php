@@ -53,9 +53,11 @@
                                     <li class="col s12 m6 {{ $news->checkImage() ?'with-image' : null }}">
                                         <a href="{{ route('singleNews',$news->slug) }}">
                                             <div class="card group">
-                                                <div class="card-image">
-                                                    <img src="{{ $news->getFirstImageUrl('thumb') }}" alt="">
-                                                </div>
+                                                @if($news->checkImage())
+                                                    <div class="card-image">
+                                                        <img src="{{ $news->getFirstImageUrl('thumb') }}" alt="">
+                                                    </div>
+                                                @endif
                                                 <div class="card-content">
                                                     <h4>{{ $news->title }}</h4>
                                                     <div class="row small">
