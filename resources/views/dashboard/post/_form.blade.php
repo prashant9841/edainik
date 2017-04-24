@@ -61,7 +61,7 @@
 
 		>
 
-		<label for="author" >Address: (Posted From)</label>
+		<label for="author" >Author:</label>
 
 		@if($errors->has('author'))
 			<p class="errors">{{ $errors->get('author')[0] }}</p>
