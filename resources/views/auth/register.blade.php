@@ -1,12 +1,21 @@
-@extends('layouts.app')
+@extends('layouts.dashboard')
 
 @section('content')
 <div class="container">
+                <h3>Register User</h3>            
+
+            <nav class="breadcrumbs col s12">
+                <div class="nav-wrapper">
+                    <a class="breadcrumb" href="/dashboard">Dashboard</a>
+                    <a class="breadcrumb" href="/dashboard/settings">Settings</a>
+                    <a class="breadcrumb" href="#!">Register a user</a>
+                </div>
+            </nav>
     <div class="row">
         <div class="col m8 offset-m2">
             <div class="card">
                 <div class="card-content">
-                    86  hui<div class="panel-heading">Register</div>
+                    <div class="panel-heading">Register A New User</div>
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
 

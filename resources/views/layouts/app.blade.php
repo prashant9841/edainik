@@ -66,9 +66,9 @@
         @if(url()->current() == url('/'))
            active
         @else
-        {{ strtolower($category->header_color) ?? null}}
+        {{ strtolower($category->header_color ?? null) }}
         lighten-1
-        {{ strtolower($post->category->header_color) ?? null}}
+        {{ strtolower($post->category->header_color ?? null) }}
         @endif
         ">
             <div class="container">
