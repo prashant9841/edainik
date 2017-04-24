@@ -54,7 +54,7 @@
             </div>
 
             <div class="col s12 m3 side-post">
-                @component('partials.component.sideList',['background' => $category->header_color ?? null ])
+               {{--  @component('partials.component.sideList',['background' => $category->header_color ?? null ])
                     @slot('title')
                         @lang('homepage.category-list')
                     @endslot
@@ -62,7 +62,7 @@
                     @include('partials.component.collectionItems',['route' => 'singleCategory','items' => $categoriesList])
                 @endcomponent
 
-
+ --}}
                 
                 <div class="card">
 
