@@ -72,7 +72,7 @@
                     </ul>
                 </div>
                 <div class="col s12 m3 side-post">
-                   @include('partials.post._relatedPost')
+                   @include('partials.post._latestPost')
                 </div>
             </div>
         </section>

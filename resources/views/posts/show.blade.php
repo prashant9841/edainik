@@ -57,7 +57,7 @@
         <div class="row">
             <div class="col s12 m9">
                 <ul class="row small-post latest">
-                    @include('partials.post._relatedPost',['latestPost' => $post->approvedSiblings()->latest()->take(8)->get()])
+                    @include('partials.post._relatedPost',['latestNews' => $post->approvedSiblings()->latest()->take(8)->get()])
                 </ul>
             </div>
             <div class="col s12 m3 side-post">

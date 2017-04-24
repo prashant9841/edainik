@@ -29,7 +29,7 @@ class AppServiceProvider extends ServiceProvider
             return $view->with('categories', Category::where('status',1)->get()); 
         });
 
-        view()->composer('partials.post._relatedPost',function(View $view){   
+        view()->composer('partials.post._latestPost',function(View $view){   
             return $view->with('latestNews', Post::where(['status'=>1,'verified' => 1])->latest()->take(5)->get()); 
         });
 

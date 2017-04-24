@@ -31,7 +31,8 @@ class Post extends Model implements HasMediaConversions
     {
         return $this->where(['category_id' => $this->category_id]);
     }
-
+    
+    //Get Related Posts which are approved and of same category
     public function approvedSiblings()
     {
         return $this->relatedPost()->where(['status' => 1, 'verified' => 1]);
