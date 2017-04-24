@@ -36,7 +36,6 @@ class PostFeaturedController extends Controller
     public function index()
     {
         $featured = Featured::latest()->take(20)->get();
-        $featuredd = $featured->each->post;
         $posts = $featured->map(function($value){
             return $value->post;
         });
