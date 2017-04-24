@@ -52,6 +52,21 @@
 			<p class="errors">{{ $errors->get('slug')[0] }}</p>
 		@endif
 </div>
+<div class="input-field col s12 m6">
+
+		<input id="author" type="text" name="author" class="validate materialize-textarea"
+			@if(isset($post))
+				value="{{ $post->author }}"
+			@endif
+
+		>
+
+		<label for="author" >Address: (Posted From)</label>
+
+		@if($errors->has('author'))
+			<p class="errors">{{ $errors->get('author')[0] }}</p>
+		@endif
+</div>
 <div class="input-field col s12 m12">
 
 		<input id="callout" type="text" name="callout" class="validate materialize-textarea"
@@ -82,6 +97,7 @@
 			<p class="errors">{{ $errors->get('address')[0] }}</p>
 		@endif
 </div>
+
 <div class="input-field col s12 m12">
 
 		<input id="subtitle" type="text" name="subtitle" class="validate materialize-textarea"
