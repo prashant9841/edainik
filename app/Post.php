@@ -103,4 +103,11 @@ class Post extends Model implements HasMediaConversions
     {
         return $this->hasOne(ViewCount::class);
     }
+
+    public function getNepaliDate($query)
+    {
+        setlocale(LC_TIME, 'ne_NP.utf8');
+        return $query->addYears(56)->addMonths(8)->addDays(15)->formatLocalized('%A %d/%m/%Y');
+        //->format('D d/m/Y');
+    }
 }

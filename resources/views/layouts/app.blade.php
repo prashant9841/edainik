@@ -77,9 +77,9 @@
                         <div class="logo">
                             <a href="/">
                                 
-                            <img src="{{asset('/images/logo_t.png')}}" alt="">
+                            <img src="{{asset('/images/logo_t.png')}}" alt="eDainik Post logo">
                             </a>
-                            <p class="time white-text">{{ \Carbon\Carbon::now()->toFormattedDateString() }}</p>                            
+                            <p class="time white-text">{{ \Carbon\Carbon::now()->formatLocalized('%A') }} {{ \Carbon\Carbon::now()->format('d/m/Y') }}</p>                            
 
                         </div>
                         {{-- <h3>इदैनिक पोस्ट</h3> --}}

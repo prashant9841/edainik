@@ -38,6 +38,10 @@ class AppServiceProvider extends ServiceProvider
         });
 
         Carbon::setLocale(\App::getLocale());
+        if(\App::getLocale('ne'))
+        {
+            setlocale(LC_TIME, 'ne_NP.utf8');
+        }
 
         if(env('APP_ENV') == 'production'){
             URL::forceRootUrl(env('APP_URL'));
