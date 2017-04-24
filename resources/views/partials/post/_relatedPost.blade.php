@@ -6,7 +6,7 @@
         @lang('homepage.related')
     @endslot
     @slot('icon')
-        <img src="" alt="">
+    	<i class="material-icons">leak_add</i>
     @endslot
    
     @include('partials.component.collectionItems',['route' => 'singleNews','items' => $latestNews])
