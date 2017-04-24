@@ -48,15 +48,7 @@
             </div>
 
             <div class="col s12 m3 side-post">
-               {{--  @component('partials.component.sideList',['background' => $category->header_color ?? null ])
-                    @slot('title')
-                        @lang('homepage.category-list')
-                    @endslot
-                   
-                    @include('partials.component.collectionItems',['route' => 'singleCategory','items' => $categoriesList])
-                @endcomponent
 
- --}}
                 
                 <div class="card">
 
@@ -114,10 +106,10 @@
 
                                                 <div class="row small">
                                                     <div class="col s6">
-                                                        <p><i class="fa fa-clock-o"></i> &nbsp;{{$relCat->created_at->diffForHumans()}}</p>
+                                                        <p><i class="fa fa-user"></i> &nbsp;{{$relCat->author}}</p>
                                                     </div>
                                                     <div class="col s6">
-                                                        <p><i class="fa fa-bars"></i>&nbsp; {{ $relCat->category->title}}</p>
+                                                        <p><i class="fa fa-map"></i>&nbsp; {{ $relCat->address}}</p>
                                                     </div>
                                                 </div>
                                                 <p class="wrap">{{ $relCat->description }}</p>

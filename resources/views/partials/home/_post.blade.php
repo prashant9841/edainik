@@ -1,7 +1,7 @@
 <div class="large-post">        
     <div class="section">
         <div class="title-section">
-            <h1 class="header center">{{$post->title}}</h1>
+            <a href="{{ url('/news/'.$post->slug) }}"><h1 class="header center">{{$post->title}}</h1></a>
             <div class="btn cat {{$post->category->header_color}} ">
                 {{$post->category->title}}
                 <img src="
@@ -16,17 +16,14 @@
     </div>
     @if($post->checkImage())
     <div class="parallax-constainer container">
-        <div class="paralsslax">
+        <a class="paralsslax">
             <img src="{{ $post->getFirstImageUrl() }}" alt="{{ $post->title }}">
-        </div>
+        </a>
     </div>
     @endif
     <div class="content container">
         <div class="row center">
             <p class="wrap" style="font-size: 20px;">{{ $post->description }}</p>
-        </div>
-        <div class="row center btn-row">
-            <a href="{{ url('/news/'.$post->slug) }}" class="btn waves-effect waves-light">@lang('homepage.read-more')</a>
         </div>
     </div>
     {{-- 

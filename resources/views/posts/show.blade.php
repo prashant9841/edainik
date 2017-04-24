@@ -13,50 +13,61 @@
 
 @section('content')
 <div class="page-single-news">
+
+
     
 	<section class="featured-post">
         <div class="large-post">        
             <div class="section">
-                <div class="container">
+                <div class="title-section">
                     <h1 class="header center">{{$post->title}}</h1>
+                    <div class="btn cat {{$post->category->header_color}} ">
+                        {{$post->category->title}}
+                        <img src="
+                        @if(strlen($post->category->icon) >4)
+                            {{asset('/images/icons/'.$post->category->icon)}}
+                        @else
+                            {{asset('/images/icons/news.png')}}
+                        @endif
+                        " style="width: 20px; margin: 0 0 -3px 15px; height: 20px;" alt="{{$post->category->title}}">                    
+                    </div>
                 </div>
             </div>
             @if($post->checkImage())
-                @include('partials.component.carousel',['slider' => $post->getMedia('images')])
-            @endif
-
-            <div class="content container">
-                {{-- <div class="callout">           
-                    <div class="callout-content z-depth-3">
-                        <p><span>"</span>{{$post->description}} <span>"</span></p>
-                    </div>
-                </div> --}}
-                <div class="row center">                    
-                    <p class="wrap">{!! $post->content !!}</p>
+            <div class="parallax-constainer container">
+                <div class="paralsslax">
+                    <img src="{{ $post->getFirstImageUrl() }}" alt="{{ $post->title }}">
                 </div>
             </div>
-            {{--
-            <div class="ads container">
-                {!! Ads::show('responsive') !!}
+            @endif
+            <div class="content container">
+                <div class="row center">
+                    <p class="wrap" style="font-size: 20px;">{{ $post->description }}</p>
+                </div>
+                <div class="row">
+                    <p style="text-align: justify;">{!!$post->content!!}</p>
+                </div>
             </div>
+            {{-- 
+            <div class="ads container">
+               {!! Ads::show('responsive') !!}
+            </div> 
             --}}
         </div>
     </section>
 
-    <section class="related container">
-        <div class="row section-title">
-            <div class="col s12 l6">
-                <h4>@lang('homepage.related')</h4>
-                <i class="ti-user"></i>
-                <div class="skwed"></div>
-            </div>
-            <div class="col s12 l6">
-                {!! Ads::show('responsive') !!}
-            </div>
-        </div>
+    <section class="container">
         <div class="row">
             <div class="col s12 m9">
-                <ul class="row small-post latest">
+                <div class="row section-title">
+                    <div class="col s12">
+                        <h4>@lang('homepage.related')</h4>
+                        <i class="material-icons">leak_add</i>
+                        <div class="skwed"></div>
+                    </div>
+                </div>
+
+                <ul class=" small-post latest">
                     @include('partials.post._relatedPost',['latestNews' => $post->approvedSiblings()->latest()->take(8)->get()])
                 </ul>
             </div>
