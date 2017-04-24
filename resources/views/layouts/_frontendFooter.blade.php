@@ -10,7 +10,11 @@
           </ul>
         </div>
         <div class="col m4 s12 white-text">
-                    
+          <ul class="inline social">
+            <li><a href="https://www.facebook.com/eDainikpost/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="https://twitter.com/edainikpost" target="_blank"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="https://google-plus.com/edainikpost" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+         </ul>          
         </div>
         <div class="col m4 s12">
           <h5 class="white-text">मेनु</h5>
