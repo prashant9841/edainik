@@ -43,12 +43,16 @@
             <div class="content container">
                 <div class="row">
                     <div class="col s12 m6">
-                        <i class="fa fa-user"></i> &nbsp; {{$post->author}}
+                        @if($post->author)
+                            <i class="fa fa-user"></i> &nbsp; {{$post->author}}
+                        @endif
                     </div>
                     <div class="col s12 m6">
-                        <p class="right">
-                            <i class="fa fa-map"></i> &nbsp; {{$post->address}}
-                        </p>
+                        @if($post->address)
+                            <p class="right">
+                                <i class="fa fa-map"></i> &nbsp; {{$post->address}}
+                            </p>
+                        @endif
                     </div>
                 </div>
                 <div class="row center">
