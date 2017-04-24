@@ -14,10 +14,10 @@ class AddCalloutPostsTable extends Migration
     public function up()
     {
         Schema::table('posts',function(Blueprint $table){
-            $table->string('callout'); //Breaker
-            $table->string('subtitle');
-            $table->string('address');
-            $table->string('author');
+            $table->string('callout')->nullable(); //Breaker
+            $table->string('subtitle')->nullable();
+            $table->string('address')->nullable();
+            $table->string('author')->nullable();
         });
     }
 
