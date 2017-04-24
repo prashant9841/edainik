@@ -4,7 +4,7 @@
 	<div class="post-page">
 		<div class="row">
 			<div class="col s12 m8">
-				<h3>Featured Post</h3>
+				<h3>Featured Posts</h3>
 			</div>
 			</div>
 			<nav class="breadcrumbs col s12">
@@ -26,6 +26,7 @@
 				</thead>
 
 				<tbody>
+				@if($posts->count() > 0)
 					@foreach($posts as $post)
 						<tr>
 							<td>{{ $post->title }}</td>
@@ -69,6 +70,7 @@
 							</td>
 						</tr>
 					@endforeach
+				@endif
 				</tbody>
 			</table>
 		</div>
