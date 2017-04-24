@@ -51,7 +51,22 @@
 		@if($errors->has('slug'))
 			<p class="errors">{{ $errors->get('slug')[0] }}</p>
 		@endif
-	</div>
+</div>
+<div class="input-field col s12 m12">
+
+		<input id="callout" type="text" name="callout" class="validate materialize-textarea"
+			@if(isset($post))
+				value="{{ $post->callout }}"
+			@endif
+
+		>
+
+		<label for="callout" >Callout</label>
+
+		@if($errors->has('callout'))
+			<p class="errors">{{ $errors->get('callout')[0] }}</p>
+		@endif
+</div>
 <div class="row">
 	<div class="input-field col s12">
 		<textarea id="description" name="description" class="materialize-textarea">@if(isset($post)){{ $post->description }}@endif</textarea>
