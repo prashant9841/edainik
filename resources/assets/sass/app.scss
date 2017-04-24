@@ -346,7 +346,8 @@ ul.auth {
 		font-weight: bold;
 
 		@include mobile {
-			font-size: 40px;
+			font-size: 32px;
+			font-weight: lighter;
 		}
 	}
 
@@ -368,13 +369,17 @@ ul.auth {
 			top: 15px;
 			color: $secondary-color !important;
 
+			@include tab {
+				display: none;
+			}
+
 		}
 	}
 	.parallax-constainer {
 		// max-height: 650px;
 		overflow: hidden;
 
-		a.paralsslax {
+		.paralsslax {
 			display: block;
 			min-height: 450px;
 			position: relative
@@ -385,6 +390,17 @@ ul.auth {
 			position: absolute;
 			left: 50%;
 			transform: translateX(-50%);
+		}
+
+		@include tab-portrait {
+			.paralsslax {
+				min-height: 250px;
+			}
+
+			img {
+				width: 100%;
+				min-height: auto !important;
+			}
 		}
 	}
 
