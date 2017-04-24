@@ -195,21 +195,21 @@ header {
 
 .main-nav {
 	background-color: rgba(#000, 0.1);
-	    height: 46px;
+	height: 46px;
     line-height: 44px;
 	@include tab-portrait {		
 	    position: absolute;
 	    top: 2%;
 	    right: 2%;
 	    width: auto;
-	    background: $primary-color !important;
+	    background: #fff !important;
+	    height: 55px;
 
 	    .button-collapse i {
-	    	color: #fff;
+	    	font-size: 20px;
 	    }
 
 	    .button-collapse {
-	    	color: #5a5a5a;
 	    }
 
 	    .side-nav {
@@ -255,6 +255,10 @@ ul.navigation {
 		// position: relative;
 		// border-right: 1px solid $primary-color;
 		height: 100%;
+
+		@include tab {
+			height: auto !important;
+		}
 		a {
 			color: #fff;
 			font-size: 20px;
@@ -340,6 +344,10 @@ ul.auth {
 	h1{
 		font-size: 64px;
 		font-weight: bold;
+
+		@include mobile {
+			font-size: 40px;
+		}
 	}
 
 	.title-section {
@@ -488,10 +496,15 @@ ul.auth {
 			@include line-clamp(28px, 1);
 		}
 
-		@include mobile {
+	}
+	@include mobile {
+		width: 96%;
+		margin: 0 auto 70px !important;
+		li {
 			width: 100%;
 			margin: 0;
 		}
+		
 	}
 }
 .home-cat  {
@@ -546,6 +559,7 @@ ul.auth {
 
 .small-slider {
 	height: 200px;
+	display: none;
 
 	a {
 		width: 100% !important;
@@ -574,27 +588,21 @@ ul.auth {
 				color: #fff;
 				margin: 0;
 				font-size: 24px;
+				z-index: 999;
+				position: absolute;
+				left: 20px;
 			}
 			position: relative;
 			height: 50px;
 			overflow: hidden;
 			background: $primary-color - 20;
 
-			h4 {
-				z-index: 999;
-				position: absolute;
-				left: 20px;
-			}
 			i {
 				font-size: 30px;
 				color: #fff;
 				display: block;
 				float: right;
 
-				@include tab {
-					font-size: 48px;
-					padding: 22px;
-				}
 			}
 			img {
 
@@ -620,7 +628,7 @@ ul.auth {
 			}
 
 			@include mobile {
-				height: 60px;
+				height: 45px;
 
 				h4 {
 					margin: 0;
@@ -629,8 +637,9 @@ ul.auth {
 				}
 
 				img {
-					padding: 3%;
+					padding: 0;
 				}
+
 			}
 		}
 		.card-content {
@@ -765,7 +774,7 @@ section {
 			background: $primary-color - 20;
 
 			h4 {
-				z-index: 999;
+				z-index: 99;
 				position: absolute;
 				left: 20px;
 			}
@@ -804,7 +813,8 @@ section {
 			}
 
 			@include mobile {
-				height: 60px;
+				height: 50px;
+				width: 100%;
 
 				h4 {
 					margin: 0;

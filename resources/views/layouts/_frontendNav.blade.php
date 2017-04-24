@@ -14,6 +14,12 @@
             @include('layouts._frontendMenu')
            
         </ul>
-        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="fa fa-bars"></i></a>
+        <a href="#" data-activates="nav-mobile" class="button-collapse 
+        @if(url()->current() == url('/'))
+           blue-text
+        @else
+        {{ strtolower($category->header_color ?? 'blue') }}-text
+        @endif
+        "><i class="fa fa-bars"></i></a>
     </div>
 </nav>
