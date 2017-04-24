@@ -91,7 +91,7 @@
 
 		>
 
-		<label for="subtitle" >Subtitle:</label>
+		<label for="subtitle" >Sub Header:</label>
 
 		@if($errors->has('subtitle'))
 			<p class="errors">{{ $errors->get('subtitle')[0] }}</p>
