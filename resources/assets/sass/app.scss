@@ -366,9 +366,17 @@ ul.auth {
 		// max-height: 650px;
 		overflow: hidden;
 
+		a.paralsslax {
+			display: block;
+			min-height: 450px;
+			position: relative
+		}
+
 		img {
 			min-height: 450px;
-			width: 100%;
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
 		}
 	}
 
