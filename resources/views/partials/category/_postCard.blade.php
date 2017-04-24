@@ -1,7 +1,6 @@
-<div class="container">
-    <div class="box-post">
-        <div class="row">                
-            <div class="col m9 s12">
+
+    <div class="box-post">               
+            <div class="col s12">
                 <div class="card row">
                     <div class="card-image col s12 l6">
                         <img src="{{ $post->getFirstImageUrl('small') }}" alt="{{ $post->title }}">
@@ -29,10 +28,8 @@
                 <div class="card">
                 	{!! Ads::show('responsive') !!}
                 </div>
-            </div>
-        </div>       
+            </div>  
     </div>
     <div class="ads">
        {!! Ads::show('responsive') !!}
     </div>
-</div>

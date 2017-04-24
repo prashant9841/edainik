@@ -474,6 +474,10 @@ ul.auth {
 
 	.cat {
 		margin-bottom: 110px;
+
+		.related {
+			width: 95%;
+		}
 	}
 
 	.absolute {
@@ -512,6 +516,14 @@ ul.auth {
 		p {
 			@include line-clamp(21px, 3);
 		}
+	}
+}
+
+.small-slider {
+	height: 200px;
+
+	a {
+		width: 100% !important;
 	}
 }
 
@@ -577,9 +589,16 @@ ul.auth {
 			margin: 25px 0 0;
 		}
 	}
+
+	width: 95%;
+
+	@include mobile {
+		width: 100%;
+	}
 }
 
 .related {
+	padding-bottom: 0;
 	a.btn-div {
 		display: block;
 
@@ -641,6 +660,9 @@ ul.auth {
 		padding-bottom: 0;
 		padding-top: 25px;
 	}
+	.related {
+		width: 95%;
+	}
 }
 
 
@@ -660,6 +682,7 @@ section {
 		}
 		.col:first-child {
 			position: relative;
+			width: 95%;
 			height: 55px;
 			overflow: hidden;
 			background: $primary-color - 20;
@@ -686,7 +709,7 @@ section {
 			    margin: 0 3%;
 			    float: right;
 			    height: 100%;
-			    padding: 2%;
+			    padding: 1%;
 			    max-width: 18%;
 
 				@include tab {
