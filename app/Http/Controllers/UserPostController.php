@@ -116,10 +116,14 @@ class UserPostController extends Controller
         $data =  [
             'title' => $request->title,
             'content' => $request->content,
-            'callout' => $request->callout,
+            'author' => $request->author,
             'description' => $request->description,
             'category_id' => ($request->category_id)?? null,
             'status' => ($request->status == 'on') ? 1 : 0,
+            'callout' => $request->callout,
+            'subtitle' => $request->subtitle,
+            'address' => $request->address,
+            'author' => $request->author
         ];
         if(strlen($request->slug) > 5)
         {

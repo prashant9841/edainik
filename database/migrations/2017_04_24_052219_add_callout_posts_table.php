@@ -14,7 +14,10 @@ class AddCalloutPostsTable extends Migration
     public function up()
     {
         Schema::table('posts',function(Blueprint $table){
-            $table->string('callout');
+            $table->string('callout'); //Breaker
+            $table->string('subtitle')
+            $table->string('address');
+            $table->string('author');
         });
     }
 
@@ -26,7 +29,10 @@ class AddCalloutPostsTable extends Migration
     public function down()
     {
         Schema::table('posts',function(Blueprint $table){
-            $table->deleteColumn('callout');
+            $table->dropColumn('callout');
+            $table->string('subtitle');
+            $table->string('address');
+            $table->string('author');
         });
     }
 }
