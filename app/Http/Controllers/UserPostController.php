@@ -113,13 +113,19 @@ class UserPostController extends Controller
      */
     protected function getStub(Request $request)
     {
-        return [
+        $data =  [
             'title' => $request->title,
             'content' => $request->content,
             'description' => $request->description,
             'category_id' => ($request->category_id)?? null,
             'status' => ($request->status == 'on') ? 1 : 0,
         ];
+        if(strlen($request->slug) > 5)
+        {
+            $data = array_merge($data, [ 'slug' => str_slug($request->slug) ]);
+        }
+
+        return $data;
     }
 
      /**
