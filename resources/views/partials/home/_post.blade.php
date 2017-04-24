@@ -1,5 +1,5 @@
 <div class="large-post">        
-    <div class="section">
+    <div class="section container">
         <div class="title-section">
             <a href="{{ url('/news/'.$post->slug) }}"><h1 class="header center">{{$post->title}}</h1></a>
             <div class="btn cat {{$post->category->header_color}} ">

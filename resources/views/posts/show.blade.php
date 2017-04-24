@@ -18,7 +18,7 @@
     
 	<section class="featured-post">
         <div class="large-post">        
-            <div class="section">
+            <div class="section container">
                 <div class="title-section">
                     <h1 class="header center">{{$post->title}}</h1>
                     <div class="btn cat {{$post->category->header_color}} ">
