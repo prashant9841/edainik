@@ -79,6 +79,9 @@
                                 
                             <img src="{{asset('/images/logo_t.png')}}" alt="">
                             </a>
+                            @php
+                                \Carbon\Carbon::setLocale(config('app.locale'))
+                            @endphp
                             <p class="time white-text">{{ \Carbon\Carbon::now()->addYears(56)->addMonths(8)->addDays(15)->formatLocalized('%A %d/%m/%Y') }}</p>                            
 
                         </div>
