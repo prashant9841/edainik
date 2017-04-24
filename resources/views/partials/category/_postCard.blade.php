@@ -8,11 +8,16 @@
                     <div class="card-content col s12 l6">
                         <h1 class="header center">{{$post->title}}</h1>
                         <div class="row small">
+
                              <div class="col s6">
-                                <p><i class="fa fa-user"></i> &nbsp;{{$post->author}}</p>
+                                @if($post->author)
+                                    <p><i class="fa fa-user"></i> &nbsp;{{$post->author}}</p>
+                                @endif
                             </div>
                             <div class="col s6">
-                                <p><i class="fa fa-map"></i>&nbsp; {{ $post->address}}</p>
+                                @if($post->address)
+                                    <p><i class="fa fa-map"></i>&nbsp; {{ $post->address}}</p>
+                                @endif
                             </div>
                         </div>
                         <p class="wrap">{{ $post->description }}</p>
