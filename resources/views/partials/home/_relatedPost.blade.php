@@ -6,7 +6,7 @@
         @lang('homepage.latest')
     @endslot
     @slot('icon')
-        <i class="material-icons">leak_add</i>sdk
+        <img src="{{asset('/images/icons/latest.png')}}" alt="">
     @endslot
     @include('partials.component.collectionItems',['route' => 'singleNews','items' => $category->approvedPosts()->take(8)->get()])
 @endcomponent
