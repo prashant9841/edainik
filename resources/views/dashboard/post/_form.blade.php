@@ -15,6 +15,7 @@
 			<p class="errors">{{ $errors->get('title')[0] }}</p>
 		@endif
 	</div>
+
 	<div class="input-field col s12 m6">
 	    <select name="category_id">
 		  	<option value="" disabled 
@@ -36,6 +37,21 @@
 	    <label>Choose a category</label>
   	</div>
 </div>
+<div class="input-field col s12 m6">
+
+		<input id="slug" type="text" name="slug" class="validate materialize-textarea"
+			@if(isset($post))
+				value="{{ $post->slug }}"
+			@endif
+
+		>
+
+		<label for="slug" >Slug</label>
+
+		@if($errors->has('slug'))
+			<p class="errors">{{ $errors->get('slug')[0] }}</p>
+		@endif
+	</div>
 <div class="row">
 	<div class="input-field col s12">
 		<textarea id="description" name="description" class="materialize-textarea">@if(isset($post)){{ $post->description }}@endif</textarea>

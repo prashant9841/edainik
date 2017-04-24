@@ -23,23 +23,6 @@
             </div>
             @if($post->checkImage())
                 @include('partials.component.carousel',['slider' => $post->getMedia('images')])
-                {{-- 
-            <div class="parallax-constainer container">
-                <div class="section">
-                    @if($post->category)
-                        <p>{{ $post->category->title }} </p>
-                    @endif
-                    
-                    <div class="icon-wrap">
-                        <div class="addthis_inline_share_toolbox"></div>
-                    </div> 
-                   
-                </div> 
-                <div class="paralsslax">
-                    <img src="{{ $post->getFirstImageUrl() }}" alt="{{ $post->title }}">
-                </div>
-            </div>
-                --}}
             @endif
 
             <div class="content container">
@@ -52,9 +35,11 @@
                     <p class="wrap">{!! $post->content !!}</p>
                 </div>
             </div>
+            {{--
             <div class="ads container">
                 {!! Ads::show('responsive') !!}
             </div>
+            --}}
         </div>
     </section>
 
@@ -72,11 +57,11 @@
         <div class="row">
             <div class="col s12 m9">
                 <ul class="row small-post latest">
-                    @include('partials.post._latestPost')
+                    @include('partials.post._relatedPost',['latestNews' => $post->approvedSiblings()->latest()->take(8)->get()])
                 </ul>
             </div>
             <div class="col s12 m3 side-post">
-                @include('partials.post._relatedPost')
+                @include('partials.post._latestPost')
             </div>
         </div>
     </section>

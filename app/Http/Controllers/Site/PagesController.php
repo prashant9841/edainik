@@ -31,7 +31,7 @@ class PagesController extends Controller
     {
         if($featured = Featured::select('post_id')->latest()->take(10)->get())
         {
-           return $post->whereIn('id',$featured->pluck('post_id')->toArray())->latest()->take(8)->get();
+           return $post->whereIn('id',$featured->pluck('post_id')->toArray())->where(['status'=> 1,'verified' => 1])->latest()->take(8)->get();
         }
 	   return $post->approved()->latest()->take(8)->get();
     } 

@@ -29,7 +29,6 @@ class PostRequest extends FormRequest
             'content' => 'required',
             'status' => 'required',
 
-
         ];
     }
 }
