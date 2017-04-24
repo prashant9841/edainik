@@ -30,7 +30,7 @@
 	                @if($post->getMedia('images') && $post->getMedia('images')->count() > 0)
 	                	<img src="{{$post->getMedia('images')->first()->getUrl() }}" alt="Unsplashed background img 1">
                 	@else
-	                	<img src="http://lorempixel.com/1000/600" alt="Unsplashed background img 1">
+	                	<!-- <img src="http://lorempixel.com/1000/600" alt="Unsplashed background img 1"> -->
 	                @endif
             	</div>
             </div>

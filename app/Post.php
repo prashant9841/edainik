@@ -27,6 +27,16 @@ class Post extends Model implements HasMediaConversions
     	return $this->belongsTo(User::class);
     }
 
+    public function relatedPost()
+    {
+        return $this->where(['category_id' => $this->category_id]);
+    }
+    
+    //Get Related Posts which are approved and of same category
+    public function approvedSiblings()
+    {
+        return $this->relatedPost()->where(['status' => 1, 'verified' => 1]);
+    }
 
     public function getFirstImageUrl($type = '')
     {
