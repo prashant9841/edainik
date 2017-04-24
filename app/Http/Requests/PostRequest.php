@@ -28,6 +28,13 @@ class PostRequest extends FormRequest
             'title' => 'required|min:5|max:250',
             'content' => 'required',
             'status' => 'required',
+            'author' => 'min:3|max:200',
+            //'description' => '',
+            'category_id' => 'required|integer',
+            /*'callout' => '',
+            'subtitle' => '',
+            'address' => '',
+            'author' => '',*/
 
         ];
     }

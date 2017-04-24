@@ -12,7 +12,7 @@ class Post extends Model implements HasMediaConversions
 {
     use HasSlug,HasMediaTrait;
 
-	protected $fillable = ['title','slug','callout','content','status','verified','publish_on','description','category_id'];
+	protected $fillable = ['title','slug','content','status','verified','publish_on','description','category_id','callout','subtitle','address','author'];
 
 	protected $casts = ['publish_on' => 'date', 'status' => 'boolean', 'verified' => 'boolean'];
 

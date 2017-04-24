@@ -67,6 +67,36 @@
 			<p class="errors">{{ $errors->get('callout')[0] }}</p>
 		@endif
 </div>
+<div class="input-field col s12 m12">
+
+		<input id="address" type="text" name="address" class="validate materialize-textarea"
+			@if(isset($post))
+				value="{{ $post->address }}"
+			@endif
+
+		>
+
+		<label for="address" >Address: (Posted From)</label>
+
+		@if($errors->has('address'))
+			<p class="errors">{{ $errors->get('address')[0] }}</p>
+		@endif
+</div>
+<div class="input-field col s12 m12">
+
+		<input id="subtitle" type="text" name="subtitle" class="validate materialize-textarea"
+			@if(isset($post))
+				value="{{ $post->subtitle }}"
+			@endif
+
+		>
+
+		<label for="subtitle" >Sub Header:</label>
+
+		@if($errors->has('subtitle'))
+			<p class="errors">{{ $errors->get('subtitle')[0] }}</p>
+		@endif
+</div>
 <div class="row">
 	<div class="input-field col s12">
 		<textarea id="description" name="description" class="materialize-textarea">@if(isset($post)){{ $post->description }}@endif</textarea>
