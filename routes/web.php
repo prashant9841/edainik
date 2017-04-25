@@ -27,7 +27,7 @@ Route::get('/logout',function(){
 |
 */
 
-Route::get('/news', 'Site\PostController@index');
+//Route::get('/news', 'Site\PostController@index');
 Route::get('/news/{post}', 'Site\PostController@show')->name('singleNews'); 
 
 /*
