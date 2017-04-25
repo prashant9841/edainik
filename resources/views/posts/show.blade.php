@@ -36,12 +36,16 @@
             @if($post->checkImage())
             <div class="parallax-constainer container">
                 <a class="paralsslax">
-                    {{-- <img src="{{ $post->getFirstImageUrl() }}" alt="{{ $post->title }}"> --}}
+                @if($post->getMedia('images')->count() == 1)
+                    <img src="{{ $post->getFirstImageUrl() }}" alt="{{ $post->title }}"> 
+                @endif
+                @if($post->getMedia('images')->count() > 1)
                       <div class="carousel carousel-slider">
-                        @foreach($post->getMedia('images') as $image) --}}
+                        @foreach($post->getMedia('images') as $image)
                             <img class="carousel-item" src="{{$image->getUrl()}}"> 
                         @endforeach
                       </div>
+                @endif
                 </a>
             </div>
             @endif
