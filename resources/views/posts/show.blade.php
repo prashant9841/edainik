@@ -36,7 +36,14 @@
             @if($post->checkImage())
             <div class="parallax-constainer container">
                 <a class="paralsslax">
-                    <img src="{{ $post->getFirstImageUrl() }}" alt="{{ $post->title }}">
+                    {{-- <img src="{{ $post->getFirstImageUrl() }}" alt="{{ $post->title }}"> --}}
+                      <div class="carousel carousel-slider">
+                        {{-- @foreach --}}
+                        <img class="carousel-item" src="http://lorempixel.com/800/400/food/1">
+                        <img class="carousel-item" src="http://lorempixel.com/800/400/food/2">
+                        <img class="carousel-item" src="http://lorempixel.com/800/400/food/3">
+                        {{-- @endforeach --}}
+                      </div>
                 </a>
             </div>
             @endif
