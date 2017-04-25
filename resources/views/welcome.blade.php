@@ -162,6 +162,18 @@
                     {!! Ads::show('responsive') !!}
                     
                 </div> --}}
+                <div class="card">
+                    <div class="card-title lighten-1 {{ $category->header_color ?? 'light-blue accent-4' }}">
+                        <h4>Weather</h4>
+                        <i class="material-icons">wb_sunny</i>
+                        <div class="skwed"></div>
+                    </div>
+                    <a href="https://www.accuweather.com/en/us/new-york-ny/10007/weather-forecast/349727" class="aw-widget-legal">
+                    <!--
+                    By accessing and/or using this code snippet, you agree to AccuWeather’s terms and conditions (in English) which can be found at https://www.accuweather.com/en/free-weather-widgets/terms and AccuWeather’s Privacy Statement (in English) which can be found at https://www.accuweather.com/en/privacy.
+                    -->
+                    </a><div id="awcc1493107463585" class="aw-widget-current"  data-locationkey="" data-unit="c" data-language="en-us" data-useip="true" data-uid="awcc1493107463585"></div><script type="text/javascript" src="https://oap.accuweather.com/launch.js"></script>
+                </div>
                 <div class="absolute">
                     
                 @component('partials.component.sideList',['background' => $category->header_color ?? null ])
