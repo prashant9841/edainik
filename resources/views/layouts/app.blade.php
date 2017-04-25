@@ -21,6 +21,7 @@
         <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
         <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
     </noscript>
+    @include('layouts._favicon')
 
     @yield('links')
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">

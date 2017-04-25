@@ -9,7 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>@yield('title') Dashboard</title>
-
+    <meta name="robots" content="nofollow" />
     <link rel="stylesheet" href="/stylesheets/font-awesome.css">
     <link rel="stylesheet" href="/stylesheets/themify-icons.css">
     <link rel="stylesheet" href="/stylesheets/animate.css">
