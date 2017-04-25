@@ -23,7 +23,7 @@
 						<td>{{ $user->updated_at->diffForHumans() }} </td>
 						<td> 
 							<a class="btn" href="#"><i class="material-icons">create</i></a>
-							<a class="btn" href="{{url('/dashboard/stats/',$user->id) }}"><i class="material-icons">insert_chart</i></a>
+							<a class="btn" href="{{url('/dashboard/stats',$user->id) }}"><i class="material-icons">insert_chart</i></a>
 						</td>
 					</tr>
 					@endforeach
