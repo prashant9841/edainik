@@ -606,7 +606,7 @@ ul.auth {
 				left: 20px;
 			}
 			position: relative;
-			height: 50px;
+			height: 40px;
 			overflow: hidden;
 			background: $primary-color - 20;
 
@@ -771,10 +771,10 @@ section {
 
 	.section-title {
 		h4 { 
-			font-size: 34px;
+			font-size: 27px;
 		    // border-bottom: 2px solid $secondary-color;
 		    // float: left; 
-		    line-height: 50px;
+		    line-height: 40px;
 		    color: #fff;
 		    margin: 0;
 
@@ -782,7 +782,7 @@ section {
 		.col:first-child {
 			position: relative;
 			width: 50%;
-			height: 50px;
+			height: 40px;
 			overflow: hidden;
 			background: $primary-color - 20;
 
