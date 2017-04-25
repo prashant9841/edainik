@@ -367,7 +367,8 @@ ul.auth {
 			transform: translateX(-50%);
 			background: $t;
 			top: 15px;
-			color: $secondary-color !important;
+			color: #fff;
+			// color: $secondary-color !important;
 
 			@include tab {
 				display: none;
@@ -401,10 +402,6 @@ ul.auth {
 
 	&:first-child {
 		border-top: none;
-	}
-
-	.content.container {
-		margin-top: 55px; 
 	}
 
 }
