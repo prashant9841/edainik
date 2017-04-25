@@ -114,7 +114,7 @@
 @push('scripts')
     <script>
     $(document).ready(function(){
-        $('.carousel').carousel();
+        $('.carousel').carousel({fullWidth: true});
     });
     </script>
 @endpush
