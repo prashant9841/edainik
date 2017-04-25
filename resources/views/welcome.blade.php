@@ -174,6 +174,10 @@
                     -->
                     </a><div id="awcc1493107463585" class="aw-widget-current"  data-locationkey="" data-unit="c" data-language="en-us" data-useip="true" data-uid="awcc1493107463585"></div><script type="text/javascript" src="https://oap.accuweather.com/launch.js"></script>
                 </div>
+                <div class="card">
+                    <iframe src="http://www.ashesh.com.np/forex/widget2.php?api=552142h349" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" style="border:none; overflow:hidden; width:100%; height:383px; border-radius:5px;" allowtransparency="true">
+                    </iframe><br><span style="color:gray; font-size:8px; text-align:left">© <a href="http://www.ashesh.com.np/forex/" title="Nepal Exchange Rates" target="_top" style="text-decoration:none; color:gray;">Nepal Exchange Rates</a></span>
+                </div>
                 <div class="absolute">
                     
                 @component('partials.component.sideList',['background' => $category->header_color ?? null ])
