@@ -13,7 +13,7 @@
                 " style="width: 20px; margin: 0 0 -3px 15px; height: 20px;" alt="{{$post->category->title}}">                    
             </div>
             @if($post->subtitle)
-            <div class="btn subtitle">
+            <div class="btn subtitle {{$post->category->header_color}} lighten-1">
                 {{$post->subtitle}}
             </div>
             @endif
