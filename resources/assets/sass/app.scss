@@ -504,7 +504,9 @@ ul.auth {
 		float: left;
 		border-bottom: 1px solid #ccc;
 		h4 {
-			@include line-clamp(28px, 1);
+			@include line-clamp(24px, 1);
+			margin: 8px 0;
+			font-size: 18px;
 		}
 
 	}
@@ -522,7 +524,7 @@ ul.auth {
 	position: relative;
 
 	.cat {
-		margin-bottom: 110px;
+		margin-bottom: 40px;
 
 		.related {
 			width: 95%;
@@ -779,7 +781,7 @@ section {
 		}
 		.col:first-child {
 			position: relative;
-			width: 95%;
+			width: 50%;
 			height: 50px;
 			overflow: hidden;
 			background: $primary-color - 20;

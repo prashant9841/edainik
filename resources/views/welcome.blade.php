@@ -27,7 +27,7 @@
             <div class="col s12 m9">
 
                 <div class="row section-title">
-                    <div class="col s12">
+                    <div class="col s12 l6">
                         <h4>@lang('homepage.latest-news')</h4>
                         <img src="{{asset('/images/icons/latest.png')}}" alt="">
                         <div class="skwed"></div>
@@ -37,7 +37,7 @@
 
 
                 <div class="row section-title">
-                    <div class="col s12">
+                    <div class="col s12 l6">
                         <h4> @lang('homepage.trending-news')</h4>
                         <img src="{{asset('/images/icons/trending.png')}}" alt="">
                         <div class="skwed"></div>
@@ -59,7 +59,7 @@
                         <div class="skwed"></div>
 
                     </div>
-                    <div class="fb-page" data-href="https://www.facebook.com/eDainikpost/" data-tabs="timeline" data-height="1000px" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true"><blockquote cite="https://www.facebook.com/eDainikpost/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/eDainikpost/">Adventure Nepal</a></blockquote></div>
+                    <div class="fb-page" data-href="https://www.facebook.com/eDainikpost/" data-tabs="timeline" data-height="700px" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true"><blockquote cite="https://www.facebook.com/eDainikpost/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/eDainikpost/">Adventure Nepal</a></blockquote></div>
                 </div>
 
 
@@ -77,7 +77,7 @@
                         @if($relCat)
                             <div class="cat">
                                     
-                                <div class="row section-title">
+                                <div class="section-title">
                                     <div class="col s12 {{$category->header_color}} lighten-1">
                                         {{-- Catgory Title --}}
                                         <h4>{{ $category->title }}</h4>
