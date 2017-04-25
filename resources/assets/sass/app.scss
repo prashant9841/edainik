@@ -596,7 +596,7 @@ ul.auth {
 	.card {
 		//max-height: 250px;
 		.card-title {
-			padding: 10px;
+			padding: 7px;
 			h4 {
 				color: #fff;
 				margin: 0;
@@ -792,20 +792,21 @@ section {
 				left: 20px;
 			}
 			i {
-				font-size: 55px;
+				font-size: 40px;
 				color: #fff;
 				display: block;
-				float: right;
+				position: absolute;
+				right: 0;
 
 				@include tab {
-					font-size: 48px;
-					padding: 22px;
+					font-size: 40px;
 				}
 			}
 			img {
 
 			    margin: 0 3%;
-			    float: right;
+			    position: absolute;
+			    right: 0;
 			    height: 100%;
 			    padding: 1%;
 			    max-width: 18%;
