@@ -381,15 +381,10 @@ ul.auth {
 
 		.paralsslax {
 			display: block;
-			min-height: 450px;
-			position: relative
 		}
 
 		img {
 			min-height: 450px;
-			position: absolute;
-			left: 50%;
-			transform: translateX(-50%);
 		}
 
 		@include tab-portrait {

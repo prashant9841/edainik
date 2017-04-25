@@ -21,7 +21,7 @@
     </div>
     @if($post->checkImage())
     <div class="parallax-constainer container">
-        <a class="paralsslax">
+        <a href="{{ url('/news/'.$post->slug) }}" class="paralsslax center">
             <img src="{{ $post->getFirstImageUrl() }}" alt="{{ $post->title }}">
         </a>
     </div>
