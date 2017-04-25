@@ -23,6 +23,9 @@
 						<th>Title</th>
 						<th>Content</th>
 						<th>Created</th>
+						@if(auth::user()->isSuperAdmin() && url()->current() == url('/dashboard/all-posts'))
+							<th>User</th>
+						@endif
 						<th>Options</th>
 					</tr>
 				</thead>
@@ -33,6 +36,9 @@
 							<td>{{ $post->title }}</td>
 							<td class="line-clamp">{{ $post->description }}</td>
 							<td>{{ $post->created_at->diffForHumans() }}</td>
+							@if(auth()->user()->isSuperAdmin() && url()->current() == url('/dashboard/all-posts'))
+							<td>{{ $post->user->name }}</td>
+							@endif
 							<td>
 								<a class="btn tooltipped" 
 								data-position="bottom" data-delay="50" data-tooltip="View news"
