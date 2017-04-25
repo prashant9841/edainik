@@ -30,9 +30,14 @@ $factory->define(App\Post::class, function (Faker\Generator $faker) {
         'title' => $faker->name,
         'slug' => $faker->slug(5),
         'content' => $faker->paragraph(10),
+        'subtitle' => $faker->paragraph(1),
+        'description' => $faker->paragraph(1),
+        'author' => $faker->name(),
+        'address' => $faker->address(),
+      //  'callout' => $faker->paragraph(1),
         'status' => random_int(0, 1),
         'verified' => random_int(0, 1),
-        'user_id' => 1,
+        'user_id' => 2,
         'category_id' => random_int(1, 6),
     ];
 });

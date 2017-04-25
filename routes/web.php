@@ -155,6 +155,15 @@ Route::group(['middleware' => ['web','auth'],'prefix'=>'/dashboard'],function(){
 	Route::get('/users','UsersController@index');	
 	Route::get('/users/{user}/edit','UsersController@edit');	
 	Route::put('/users/{user}','UsersController@update');	
+
+
+	/*
+	|--------------------------------------------------------------------------
+	| Stats Routes
+	|--------------------------------------------------------------------------
+	*/
+	Route::get('/stats/{user}','StatisticsController@userStats');
+
 	/*
 	|--------------------------------------------------------------------------
 	| Settings Routes
