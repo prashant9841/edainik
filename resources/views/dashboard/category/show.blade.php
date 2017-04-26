@@ -37,7 +37,7 @@
 							<tr>
 								<td>{{ $post->title }}</td>
 								<td class="line-clamp">{{ $post->description }}</td>
-								<td>{{ $post->created_at->diffForHumans() }}</td>
+								<td>{{ $post->created_at }}</td>
 								<td>
 									<a class="btn tooltipped" 
 									data-position="bottom" data-delay="50" data-tooltip="View news"
@@ -46,7 +46,7 @@
 									<a class="btn tooltipped"
 									data-position="bottom" data-delay="50" data-tooltip="Edit news" 
 									href="{{ url('/dashboard/posts/'.$post->id.'/edit') }}"><i class="material-icons">mode_edit</i></a>
-									@if(Auth::user()->isSuperAdmin())
+									@if(Auth::user()->isSuperAdmin() || auth()->user()->isEditor())
 										@if(isset($post->featured) && $post->featured->count())
 											<a class="btn red tooltipped" 
 											data-position="bottom" data-delay="50" data-tooltip="Remove from featured"
@@ -56,6 +56,8 @@
 											data-position="bottom" data-delay="50" data-tooltip="Add as featured"
 											href="{{ url('/dashboard/posts/'.$post->id.'/featured') }}"><i class="material-icons">star</i></a>
 										@endif
+									@endif
+									@if(Auth::user()->isSuperAdmin())
 										@if($post->verified)
 											<a class="btn red tooltipped" 
 											data-position="bottom" data-delay="50" data-tooltip="Unverify"
