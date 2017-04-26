@@ -6,6 +6,25 @@
 		<div class="row">
 			<div class="col s12 m8">
 				<h3>Stats of user: {{$user->name}}</h3>
+				<div class="fixed-action-btn toolbar">
+				    <a class="btn-floating btn-large red">
+				      <i class="large material-icons">mode_edit</i>
+				    </a>
+				    <ul>
+						<li>
+							<a href="/dashboard/stats/{{ $user->id }}?status=verified" class="green"><i class="material-icons">publish</i>&nbsp;Verified</a>
+						</li>
+						<li>
+							<a href="/dashboard/stats/{{ $user->id }}?status=unverified" class="blue darken-1"><i class="material-icons">highlight_off</i>&nbsp;UnVerified</a>
+						</li>
+						<li>
+							<a href="/dashboard/stats/{{ $user->id }}?status=published" class="yellow"><i class="material-icons">done</i>&nbsp;Published</a>
+						</li>
+						<li>
+							<a href="/dashboard/stats/{{ $user->id }}?status=unpublished" class="red"><i class="material-icons">block</i>&nbsp;Unpublished</a>
+						</li>
+				    </ul>
+				  </div>
 			</div>
 			<div class="col s12 m4">
 				<ul class="collection">
@@ -77,4 +96,15 @@
 		</div>
 	</div>
 
+@stop
+
+@section('scripts')
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+	<script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+	<script>
+		$(document).ready(function() {
+	    	$('#all-posts').DataTable();
+		});
+
+	</script>
 @stop

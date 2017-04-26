@@ -1,5 +1,8 @@
 @extends('layouts.dashboard')
 
+@section('title')
+	{{ $user->name }} Stats
+@stop
 @section('content')
 	<div class="post-page">
 		<div class="row">
