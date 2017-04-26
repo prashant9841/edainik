@@ -145,10 +145,10 @@
                                     
                                 </div>
 
-                                <div class="ads">
+                                {{-- <div class="ads">
                                    {!! Ads::show('responsive') !!}
                                 </div>
-
+                                 --}}
                             </div>
                         @endif
                     @endif

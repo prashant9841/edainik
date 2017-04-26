@@ -25,11 +25,11 @@
                 </div>
             </div>
             <div class="col s12 m3 side-post">
-                <div class="card">
-                	{!! Ads::show('responsive') !!}
-                </div>
+                {{-- <div class="card">
+                    {!! Ads::show('responsive') !!}
+                </div> --}}
             </div>  
     </div>
-    <div class="ads">
+    {{-- <div class="ads">
        {!! Ads::show('responsive') !!}
-    </div>
+    </div> --}}
