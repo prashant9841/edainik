@@ -179,22 +179,23 @@
                     </iframe><br><span style="color:gray; font-size:8px; text-align:left">© <a href="http://www.ashesh.com.np/forex/" title="Nepal Exchange Rates" target="_top" style="text-decoration:none; color:gray;">Nepal Exchange Rates</a></span>
                 </div>
                 <div class="absolute">
+                {{-- COMPONENT WON'T WORK--}}
                     @foreach($sidebarCategory as $sideCat)
-                        @component('partials.component.sideList',['background' => $sideCat->header_color ?? null ])
-                            @slot('title')
-                                {{ $sideCat->title }}
-                            @endslot
-                            @slot('icon')
+                        <div class="card">
+                            <div class="card-title lighten-1  {{ $sideCat->header_color ??  'light-blue accent-4'}} ">
+                                <h4>{{ $sideCat->title }}</h4>
                                 @if($sideCat->icon)
                                     <img src="{{asset('/images/icons/'.$sideCat->icon)}}" alt="{{ $category->title }}">
                                 @endif
-                            @endslot
-                           
-                                @include('partials.component.collectionItems',['route' => 'singleCategory','items' => $sideCat->approvedPosts()->take(10)->get()])
-                        @endcomponent
+                                
+                                <div class="skwed"></div>
+                                
+                            </div>
+                            @include('partials.component.collectionItems',['route' => 'singleCategory','items' => $sideCat->approvedPosts()->take(10)->get()])
+                            </div>
                     @endforeach
-
                 </div>
+                {{-- COMPONENT WON'T WORK--}}
 
                 <div class="card">
                     <div class="card-title lighten-1 {{ $category->header_color ?? 'light-blue accent-4' }}">
