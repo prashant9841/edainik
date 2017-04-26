@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 
 @section('title')
-	{{ $user->name }} Stats
+	All Posts
 @stop
 @section('content')
 	<div class="post-page">
