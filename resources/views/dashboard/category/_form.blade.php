@@ -55,9 +55,29 @@
 		@endif
 	</div>
 </div>
-
-<p>
-	<input type="checkbox" class="filled-in" id="filled-in-box" @if(isset($category)) {{ ($category->status) ?'checked': null }} @endif name="status" />
-	<label for="filled-in-box">Publish</label>
-</p>
+<div class="row">
+	<div class="input-field col s12 m6">
+		<p>
+			<input type="checkbox" class="filled-in" id="on_homepage" @if(isset($category)) {{ ($category->on_homepage) ?'checked': null }} @endif name="on_homepage" />
+			<label for="on_homepage">Show on homepage</label>
+		</p>
+		
+	</div>
+	<div class="input-field col s12 m6">
+		<p>
+			<input type="checkbox" class="filled-in" id="on_sidebar" @if(isset($category)) {{ ($category->on_sidebar) ?'checked': null }} @endif name="on_sidebar" />
+			<label for="on_sidebar">Show on sidebar(homepage)</label>
+		</p>
+		
+	</div>
+</div>
+<div class="row">
+	<div class="input-field col s12 m12">
+		<p>
+			<input type="checkbox" class="filled-in" id="filled-in-box" @if(isset($category)) {{ ($category->status) ?'checked': null }} @endif name="status" />
+			<label for="filled-in-box">Publish</label>
+		</p>
+		
+	</div>
+</div>
 

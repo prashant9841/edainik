@@ -6,8 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-	protected $fillable = ['title','slug','status','header_color','icon'];
+	protected $fillable = ['title','slug','status','header_color','icon','on_homepage','on_sidebar'];
 
+	protected $casts = ['status' => 'boolean', 'on_homepage' => 'boolean', 'on_sidebar' => 'boolean'];
 
 	public function menu()
 	{
@@ -48,7 +49,7 @@ class Category extends Model
 
 	public static function approvedPost()
 	{
-		return $self::posts()->where('verified', 1)->where('status', 1);
+		return self::posts()->where('verified', 1)->where('status', 1)->latest();
 	}
 
 	public function unApprovedPosts()

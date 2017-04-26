@@ -12,11 +12,11 @@ class PagesController extends Controller
     {
         $approvedCategory = $category->where('status',1);
     	return view('welcome')
-    	->with('posts', $this->getFeatured($post))
+    	->with('posts', $this->getFeatured($post)) //This is featured Post
     	->with('latestNews', $post->approved()->latest()->take(20)->get())
     	->with('trendingNews', $this->getTrending())
-    	->with('featuredCategory', $approvedCategory->get()->random()->first())
-        ->with('categoriesList', $approvedCategory->get());
+        ->with('categoriesList', $approvedCategory->where('on_homepage',true)->get())
+        ->with('sidebarCategory', $approvedCategory->where('on_sidebar',true)->get());
     }
 
     protected function getTrending()
