@@ -1,6 +1,6 @@
 <div class="large-post">        
     <div class="section container">
-        <div class="title-section">
+        <div class="title-section" @if($post->subtitle) style="padding-top: 30px;" @endif>
             <a href="{{ url('/news/'.$post->slug) }}"><h1 class="header center">{{$post->title}}</h1></a>
             <div class="btn cat {{$post->category->header_color}} ">
                 {{$post->category->title}}
