@@ -793,6 +793,7 @@ ul.auth {
 			img {
 				height: 250px;
 				width: auto !important;
+				max-width: 100% !important;
 				position: relative;
 				left: 50%;
 				transform: translateX(-50%);
