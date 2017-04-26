@@ -153,9 +153,10 @@ Route::group(['middleware' => ['web','auth'],'prefix'=>'/dashboard'],function(){
 	*/
 	
 	Route::get('/users','UsersController@index');	
-	Route::get('/users/{user}/edit','UsersController@edit');	
-	Route::put('/users/{user}','UsersController@update');	
-
+	//Route::get('/users/{user}/edit','UsersController@edit');	
+	//Route::put('/users/{user}','UsersController@update');	
+	Route::get('/users/add/{user}','UsersController@addAsEditor');
+	Route::get('/users/remove/{user}','UsersController@removeFromEditor');
 
 	/*
 	|--------------------------------------------------------------------------

@@ -19,4 +19,20 @@ class UsersController extends Controller
     {
         return view('dashboard.user.index')->with(['users' => $user->all()]);
     }
+
+    public function addAsEditor(User $user)
+    {
+        if($user->update(['type' => 'editor'])){
+            return redirect()->back();
+        }
+        return redirect()->back();
+    }
+
+    public function removeFromEditor(User $user)
+    {
+        if($user->update(['type' => null])){
+            return redirect()->back();
+        }
+        return redirect()->back();
+    }
 }
