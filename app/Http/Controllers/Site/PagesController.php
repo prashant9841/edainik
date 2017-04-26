@@ -36,15 +36,4 @@ class PagesController extends Controller
 	   return $post->approved()->latest()->take(8)->get();
     } 
 
-    public function testkit(Post $post,Category $category)
-    {
-        $approvedCategory = $category->where('status',1);
-        dd($approvedCategory->where('on_sidebar',true)->get());
-        return view('welcome')
-        ->with('posts', $this->getFeatured($post)) //This is featured Post
-        ->with('latestNews', $post->approved()->latest()->take(20)->get())
-        ->with('trendingNews', $this->getTrending())
-        ->with('categoriesList', $approvedCategory->where('on_homepage',true)->get())
-        ->with('sidebarCategory', $approvedCategory->where('on_sidebar',true)->get());
-    }
 }
