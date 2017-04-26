@@ -1,6 +1,6 @@
-<div class="card">
+{{-- <div class="card">
     {!! Ads::show('responsive') !!}
-</div>
+</div> --}}
 @component('partials.component.sideList',['background' => $category->header_color ?? null ])
     @slot('title')
         @lang('homepage.latest')
