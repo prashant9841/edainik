@@ -23,7 +23,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        $relatedPosts = $category->posts()->where(['status'=>1,'verified' => true])->latest()->take(5)->get();
+        $relatedPosts = $category->posts()->where(['status'=>1,'verified' => true])->take(5)->latest()->get();
         return view('category.show')->with('category', $category)->with('related',$relatedPosts);
     }
 }

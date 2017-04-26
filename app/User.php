@@ -36,4 +36,9 @@ class User extends Authenticatable
     {
         return ($this->id == 1) ? true : false;
     }
+
+    public function isEditor()
+    {
+        return $this->type == 'editor';
+    }
 }

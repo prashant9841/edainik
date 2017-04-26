@@ -43,7 +43,7 @@ class Category extends Model
 
 	public function approvedPosts()
 	{
-		return $this->posts()->where('verified', 1)->where('status', 1);
+		return $this->posts()->where('verified', 1)->where('status', 1)->latest();
 	}
 
 	public static function approvedPost()
