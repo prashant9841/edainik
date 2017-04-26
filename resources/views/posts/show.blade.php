@@ -16,7 +16,7 @@
 	<section class="featured-post">
         <div class="large-post">        
             <div class="section container">
-                <div class="title-section">
+                <div class="title-section" @if($post->subtitle) style="padding-top: 30px;" @endif>
                     <h1 class="header center">{{$post->title}}</h1>
                     <div class="btn cat {{$post->category->header_color}} ">
                         {{$post->category->title}}

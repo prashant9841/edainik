@@ -696,6 +696,12 @@ ul.auth {
 	@include mobile {
 		width: 100%;
 	}
+
+	.card-content {
+		p.wrap {
+			@include line-clamp(20px, 5);
+		}
+	}
 }
 
 .related {
