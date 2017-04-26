@@ -73,7 +73,7 @@
             <div class="col m9 s12">
                 @foreach($categoriesList as $category)
                     @if($category->posts->count() && isset($category->posts)) 
-                        <?php $relCat = $category->approvedPosts()->latest()->first(); ?>
+                        <?php $relCat = $category->approvedPosts()->first(); ?>
                         @if($relCat)
                             <div class="cat">
                                     
@@ -179,19 +179,23 @@
                     </iframe><br><span style="color:gray; font-size:8px; text-align:left">© <a href="http://www.ashesh.com.np/forex/" title="Nepal Exchange Rates" target="_top" style="text-decoration:none; color:gray;">Nepal Exchange Rates</a></span>
                 </div>
                 <div class="absolute">
-                    
-                @component('partials.component.sideList',['background' => $category->header_color ?? null ])
-                    @slot('title')
-                        @lang('homepage.category-list')
-                    @endslot
-                    @slot('icon')
-                        <i class="fa fa-bars"></i>
-                    @endslot
-                   
-                        @include('partials.component.collectionItems',['route' => 'singleCategory','items' => $categoriesList])
-                @endcomponent
+                    @foreach($sidebarCategory as $sideCat)
+                        @component('partials.component.sideList',['background' => $sideCat->header_color ?? null ])
+                            @slot('title')
+                                {{ $sideCat->title }}
+                            @endslot
+                            @slot('icon')
+                                @if($sideCat->icon)
+                                    <img src="{{asset('/images/icons/'.$sideCat->icon)}}" alt="{{ $category->title }}">
+                                @endif
+                            @endslot
+                           
+                                @include('partials.component.collectionItems',['route' => 'singleCategory','items' => $sideCat->approvedPosts()->take(10)->get()])
+                        @endcomponent
+                    @endforeach
 
                 </div>
+
                 <div class="card">
                     <div class="card-title lighten-1 {{ $category->header_color ?? 'light-blue accent-4' }}">
                         <h4>Twitter</h4>

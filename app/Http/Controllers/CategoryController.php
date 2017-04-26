@@ -106,6 +106,8 @@ class CategoryController extends Controller
             'status' => ($request->status == 'on') ? 1 : 0,
             'header_color' => $request->header_color,
             'icon' => $request->icon,
+            'on_homepage' =>($request->on_homepage == 'on') ? 1 : 0,
+            'on_sidebar' =>($request->on_sidebar == 'on') ? 1 : 0,
 
         ];
         //If the slug exists
