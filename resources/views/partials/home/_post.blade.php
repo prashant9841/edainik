@@ -2,16 +2,7 @@
     <div class="section container">
         <div class="title-section" @if($post->subtitle) style="padding-top: 30px;" @endif>
             <a href="{{ url('/news/'.$post->slug) }}"><h1 class="header center">{{$post->title}}</h1></a>
-            <div class="btn cat {{$post->category->header_color}} ">
-                {{$post->category->title}}
-                <img src="
-                @if(strlen($post->category->icon) >4)
-                    {{asset('/images/icons/'.$post->category->icon)}}
-                @else
-                    {{asset('/images/icons/news.png')}}
-                @endif
-                " style="width: 20px; margin: 0 0 -3px 15px; height: 20px;" alt="{{$post->category->title}}">                    
-            </div>
+            
             @if($post->subtitle)
             <div class="btn subtitle {{$post->category->header_color}} lighten-1">
                 {{$post->subtitle}}
