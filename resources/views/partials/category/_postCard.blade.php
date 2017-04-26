@@ -2,10 +2,12 @@
     <div class="box-post">               
             <div class="col s12">
                 <div class="card row">
+                    @if($post->checkImage())
                     <div class="card-image col s12 l6">
                         <img src="{{ $post->getFirstImageUrl('small') }}" alt="{{ $post->title }}">
-                    </div>                            
-                    <div class="card-content col s12 l6">
+                    </div>  
+                    @endif                          
+                    <div class="card-content col s12 @if($post->checkImage()) l6 @endif">
                         <a href="{{ route('singleNews',$post->slug) }}" ><h1 class="header center">{{$post->title}}</h1></a>
                         {{-- <div class="row small">
 
@@ -24,11 +26,6 @@
                 </div>
                 </div>
             </div>
-            <div class="col s12 m3 side-post">
-                {{-- <div class="card">
-                    {!! Ads::show('responsive') !!}
-                </div> --}}
-            </div>  
     </div>
     {{-- <div class="ads">
        {!! Ads::show('responsive') !!}
