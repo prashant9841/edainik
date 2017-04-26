@@ -786,6 +786,17 @@ ul.auth {
 	.side-post {
 		padding-top: 25px;
 	}
+	.box-post {
+		.card-image {
+			max-height: 250px;
+
+			img {
+				height: 250px;
+				width: auto !important;
+				position: relative;
+			}
+		}
+	}
 }
 
 
