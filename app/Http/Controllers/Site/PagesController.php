@@ -16,7 +16,7 @@ class PagesController extends Controller
     	->with('latestNews', $post->approved()->latest()->take(20)->get())
     	->with('trendingNews', $this->getTrending())
         ->with('categoriesList', $approvedCategory->where('on_homepage',true)->get())
-        ->with('sidebarCategory', $approvedCategory->where('on_sidebar',true)->get());
+        ->with('sidebarCategory', $category->where(['on_sidebar' => true,'status' => 1])->get());
     }
 
     protected function getTrending()
@@ -35,4 +35,5 @@ class PagesController extends Controller
         }
 	   return $post->approved()->latest()->take(8)->get();
     } 
+
 }
