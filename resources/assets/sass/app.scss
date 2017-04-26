@@ -789,6 +789,7 @@ ul.auth {
 	.box-post {
 		.card-image {
 			max-height: 250px;
+			overflow: hidden;
 
 			img {
 				height: 250px;
