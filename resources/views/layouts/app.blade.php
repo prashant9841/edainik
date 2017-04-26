@@ -44,6 +44,12 @@
 
 
         }
+         ul.navigation li.active a {
+
+            color: {{ $category->header_color ?? '#0091ea' }} !important;
+
+
+        }
     @endisset
     </style>
 </head>
