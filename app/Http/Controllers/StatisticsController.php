@@ -13,7 +13,7 @@ class StatisticsController extends Controller
 		return $this->middleware('superAdmin');
 	}
 
-	public function userStats(User $user)
+	public function userStats(User $user,Request $request)
 	{
 			
 		/*$yesterday = Carbon::now();
@@ -26,11 +26,36 @@ class StatisticsController extends Controller
 		//$between = $allPosts->where('created_at', '>=', $weeks_ago)->where('created_at', '<=', $yesterday);
 
 		return view('dashboard.stats.userStats')->with([
-			'userPosts' => $allPosts->get(), 
+			'userPosts' => $this->getPostFromQuery($request,$allPosts), 
 			'user' => $user,
 			'todayCount' => $allPosts->whereRaw('created_at < CURRENT_DATE + INTERVAL 1 DAY')->whereRaw('created_at > CURRENT_DATE - INTERVAL 1 DAY')->count(),
 			'verificationCount' => $allPosts->where(['status' => 1, 'verified' => 1])->count(),
 			]);
 	}
+
+	protected function getPostFromQuery(Request $request,$userPost)
+    {
+        switch ($request->status) {
+            case 'verified':
+                $post =  $userPost->where(['verified' => true, 'status' => true])->latest()->get();
+                break;
+
+            case 'unverified':
+                $post =  $userPost->where('verified', false)->latest()->get();
+                break;
+
+            case 'published':
+                $post =  $userPost->where('status',true)->latest()->get();
+                break;
+
+            case 'unpublished':
+                $post =  $userPost->where('status',false)->latest()->get();
+            
+            default:
+                $post =  $userPost->latest()->get();
+                break;
+        }
+        return $post;
+    } 
 }
 

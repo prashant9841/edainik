@@ -13,9 +13,6 @@
 
 @section('content')
 <div class="page-single-news">
-
-
-    
 	<section class="featured-post">
         <div class="large-post">        
             <div class="section container">
