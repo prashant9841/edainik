@@ -32,18 +32,18 @@
             </div>
             @if($post->checkImage())
             <div class="parallax-constainer container">
+                    @if($post->getMedia('images')->count() == 1)
                 <a class="paralsslax">
-                @if($post->getMedia('images')->count() == 1)
-                    <img src="{{ $post->getFirstImageUrl() }}" alt="{{ $post->title }}"> 
-                @endif
-                @if($post->getMedia('images')->count() > 1)
-                      <div class="carousel carousel-slider">
-                        @foreach($post->getMedia('images') as $image)
-                            <img class="carousel-item" src="{{$image->getUrl()}}"> 
-                        @endforeach
-                      </div>
-                @endif
+                        <img src="{{ $post->getFirstImageUrl() }}" alt="{{ $post->title }}"> 
                 </a>
+                    @endif
+                    @if($post->getMedia('images')->count() > 1)
+                          <div class="carousel carousel-slider">
+                            @foreach($post->getMedia('images') as $image)
+                                <img class="carousel-item" src="{{$image->getUrl()}}"> 
+                            @endforeach
+                          </div>
+                    @endif
             </div>
             @endif
             <div class="content container">
