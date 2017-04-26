@@ -78,6 +78,7 @@
                 </div>
                 <div class="col s12 m3 side-post">
                    @include('partials.post._latestPost')
+                   @include('partials.post._trendingPost')
                 </div>
             </div>
             

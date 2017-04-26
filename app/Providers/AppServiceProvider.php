@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use Carbon\Carbon;
 use URL,Auth;
-use App\{Menu,Category,Post};
+use App\{Menu,Category,Post,ViewCount};
 use Illuminate\View\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -31,6 +31,10 @@ class AppServiceProvider extends ServiceProvider
 
         view()->composer('partials.post._latestPost',function(View $view){   
             return $view->with('latestNews', Post::where(['status'=>1,'verified' => 1])->latest()->take(20)->get()); 
+        });
+
+        view()->composer('partials.post._trendingPost',function(View $view){   
+            return $view->with('trending', Post::whereIn('id',ViewCount::all()->sortByDesc('count')->take(12)->pluck('post_id'))->where(['status'=>1,'verified'=>1])->take(10)->get()); 
         });
 
         view()->composer('post._form',function(View $view){   
