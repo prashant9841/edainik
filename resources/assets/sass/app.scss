@@ -794,6 +794,8 @@ ul.auth {
 				height: 250px;
 				width: auto !important;
 				position: relative;
+				left: 50%;
+				transform: translateX(-50%);
 			}
 		}
 	}
