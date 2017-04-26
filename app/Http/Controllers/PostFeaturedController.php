@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class PostFeaturedController extends Controller
 {
 	public function __construct(){
-		return $this->middleware('superAdmin');
+		return $this->middleware('auth');
 	}
 
     public function toggleFeatured($postId)
