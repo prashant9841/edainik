@@ -11,6 +11,7 @@
 */
 
 Route::get('/', 'Site\PagesController@homepage');
+Route::get('/testkit', 'Site\PagesController@testkit');
 
 Auth::routes();
 
