@@ -85,9 +85,9 @@
                         </div>
                         {{-- <h3>इदैनिक पोस्ट</h3> --}}
                     </div>
-                    <div class="col s12 m4 ads">
-                          {!! Ads::show('responsive') !!}  
-                    </div>
+                   {{--  <div class="col s12 m4 ads">
+                         {!! Ads::show('responsive') !!}  
+                   </div> --}}
                     <div class="col s12 m4 ads">
                          {{-- {!! Ads::show('responsive') !!} --}}
                          <ul class="inline social">
