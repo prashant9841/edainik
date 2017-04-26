@@ -69,7 +69,7 @@
                 </div>
                 <div class="row">
                     <div class="col s12 m9">
-                        <div style="text-align: justify;">{!!$post->content!!}</div>
+                        <div class="post-content">{!!$post->content!!}</div>
                         <br>
                         <div> <i class="fa fa-clock-o"></i> &nbsp; {{$post->getNepaliDate($post->created_at)}} </div>
                         
