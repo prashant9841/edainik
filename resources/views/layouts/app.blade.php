@@ -88,13 +88,22 @@
                    {{--  <div class="col s12 m4 ads">
                          {!! Ads::show('responsive') !!}  
                    </div> --}}
-                    <div class="col s12 m4 ads">
+                    <div class="col s12 m4 right">
                          {{-- {!! Ads::show('responsive') !!} --}}
-                         <ul class="inline social">
-                            <li><a href="https://www.facebook.com/eDainikpost/" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="https://twitter.com/edainikpost" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="https://google-plus.com/edainikpost" target="_blank"><i class="fa fa-google-plus"></i></a></li>
-                         </ul>
+                         <div class="row">
+                             <div class="col s12">
+                                <ul class="inline social right">
+                                    <li><a href="https://www.facebook.com/eDainikpost/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="https://twitter.com/edainikpost" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="https://google-plus.com/edainikpost" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                                </ul>                                 
+                             </div>
+                             <div class="col s12">
+                                <h5 class="white-text right tagline">सत्य र तथ्यकाे निरन्तर पहरेदार</h5>
+                                 
+                             </div>
+                         </div>
+                             
                     </div>
                 </div>                
             </div>
