@@ -38,7 +38,7 @@
 						<tr>
 							<td>{{ $post->title }}</td>
 							<td class="line-clamp">{{ $post->description }}</td>
-							<td>{{ $post->created_at->diffForHumans() }}</td>
+							<td>{{ $post->created_at }}</td>
 							@if(auth()->user()->isSuperAdmin() && url()->current() == url('/dashboard/all-posts'))
 							<td>{{ $post->user->name }}</td>
 							@endif
@@ -57,6 +57,7 @@
 									href="{{ url('/dashboard/posts/'.$post->id.'/delete') }}"><i class="material-icons">delete_forever</i></button>
 								</form>
 								@if(Auth::user()->isSuperAdmin() || auth()->user()->isEditor())
+								{{--Featured--}}
 									@if(isset($post->featured) && $post->featured->count())
 										<a class="btn red tooltipped" 
 										data-position="bottom" data-delay="50" data-tooltip="Remove from featured"
@@ -66,8 +67,8 @@
 										data-position="bottom" data-delay="50" data-tooltip="Add as featured"
 										href="{{ url('/dashboard/posts/'.$post->id.'/featured') }}"><i class="material-icons">star</i></a>
 									@endif
-								@endif
-								@if(Auth::user()->isSuperAdmin())
+
+									{{--Verifiation--}}
 									@if($post->verified)
 										<a class="btn red tooltipped" 
 										data-position="bottom" data-delay="50" data-tooltip="Unverify"
@@ -77,8 +78,8 @@
 										data-position="bottom" data-delay="50" data-tooltip="Verify"
 										 href="{{ url('/dashboard/posts/'.$post->id.'/verify') }}"><i class="material-icons">done</i></a>
 									@endif
-
 								@endif
+								
 							</td>
 						</tr>
 					@endforeach

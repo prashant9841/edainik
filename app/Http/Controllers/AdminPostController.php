@@ -13,7 +13,7 @@ class AdminPostController extends Controller
      */
     public function __construct()
     {
-        return $this->middleware('superAdmin');
+        return $this->middleware('editor');
     }
 
     /**
