@@ -697,8 +697,22 @@ ul.auth {
 	}
 
 	.small-post {
+
+		a:hover {
+			background: $t !important;
+			color: $primary-color !important;
+
+			h4 {
+				color: $primary-color !important;
+
+			}
+			.card {
+				border-color: $primary-color;
+			}
+
+		}
 		.card {
-			max-height: 100px;
+			max-height: 100	px;
 			margin: 2px 0;
 			box-shadow: none;
 		    border: none;
