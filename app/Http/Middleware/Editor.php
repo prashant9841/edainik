@@ -16,7 +16,7 @@ class Editor
      */
     public function handle($request, Closure $next)
     {
-        if(auth()->user()->isEditor() || auth()->user()->isEditor()){
+        if(auth()->user()->isSuperAdmin() || auth()->user()->isEditor()){
             return $next($request);
         }
         return abort(403);
