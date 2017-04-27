@@ -105,7 +105,7 @@
                                 </ul>                                 
                              </div>
                              <div class="col s12">
-                                <h5 class="white-text right tagline">सत्य र तथ्यकाे निरन्तर पहरेदार</h5>
+                                <h5 class="white-text right tagline"><span>---------</span> सत्य र तथ्यकाे निरन्तर पहरेदार <span>---------</span> </h5>
                                  
                              </div>
                          </div>

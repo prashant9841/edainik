@@ -118,23 +118,23 @@
                                             </a>
                                         </div>
                                         <div class="col s12 m6">
-                                            <ul class="row tiny-post latest">
-                                                @foreach($category->approvedPosts()->latest()->take(10)->skip(1)->get() as $news)
+                                            <ul class="row small-post latest">
+                                                @foreach($category->approvedPosts()->latest()->take(5)->skip(1)->get() as $news)
                                                     <li class="col s12 {{ $news->checkImage() ? 'with-image' : null }}">
                                                         <a href="{{ url('news',$news->slug)}}">
-                                                            {{-- <div class="card group">
+                                                            <div class="card group">
                                                                 <div class="card-image">
 
                                                                     <img src="{{ $news->getFirstImageUrl('thumb') }}" alt="{{$news->title}}">
                                                                 </div>
-                                                                <div class="card-content"> --}}
+                                                                <div class="card-content">
                                                                     <h4>{{ $news->title }}</h4>
-                                                                    {{-- <div class="row small">
+                                                                    <div class="row small">
                                                                         <p>{{ $news->description }}</p>
                                                                     </div>
                                                                     
                                                                 </div>
-                                                            </div> --}}
+                                                            </div>
                                                         </a>
 
                                                     </li>

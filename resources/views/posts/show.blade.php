@@ -70,15 +70,15 @@
                     <p class="wrap" style="font-size: 20px;">{{ $post->description }}</p>
                 </div>
                 <div class="row">
-                    <div class="col s12 m9">
+                    <div class="col s12">
                         <div class="post-content">{!!$post->content!!}</div>
                         <br>
                         <div> <i class="fa fa-clock-o"></i> &nbsp; {{$post->getNepaliDate($post->created_at)}} </div>
                         
                     </div>
-                    <div class="col s12 m3">
+                    {{-- <div class="col s12 m3">
                         <h5>{{$post->callout}}</h5>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
             {{-- 
