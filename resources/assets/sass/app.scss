@@ -459,9 +459,13 @@ ul.auth {
 	}
 }
 
+.twitter-timeline {
+	max-height: 1590px !important;
+}
+
 .small-post {
 	.card {
-		// max-height: 105px;
+		max-height: 130px;
 
 		.card-image {
 			display: none;
@@ -781,6 +785,21 @@ ul.auth {
 
 	.side-post {
 		padding-top: 25px;
+	}
+	.box-post {
+		.card-image {
+			max-height: 250px;
+			overflow: hidden;
+
+			img {
+				height: 250px;
+				width: auto !important;
+				max-width: 100% !important;
+				position: relative;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+		}
 	}
 }
 

@@ -59,7 +59,7 @@
                         <div class="skwed"></div>
 
                     </div>
-                    <div class="fb-page" data-href="https://www.facebook.com/eDainikpost/" data-tabs="timeline" data-height="700px" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true"><blockquote cite="https://www.facebook.com/eDainikpost/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/eDainikpost/">eDainik Post</a></blockquote></div>
+                    <div class="fb-page" data-href="https://www.facebook.com/eDainikpost/" data-tabs="timeline" data-height="730px" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true"><blockquote cite="https://www.facebook.com/eDainikpost/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/eDainikpost/">eDainik Post</a></blockquote></div>
                 </div>
 
 
