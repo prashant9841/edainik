@@ -171,6 +171,12 @@ header {
 			margin-bottom: 5px;
 		}
 
+		.col.right {
+			@include tab {
+				display: none;
+			}
+		}
+
 	}
 	@include tab {
 
